@@ -1,0 +1,11 @@
+<resources>
+
+    <style name="Widget.Theme.Diplwmatikh.ActionBar.Fullscreen" parent="Theme.AppCompat.Light">
+        <item name="android:background">@color/white</item>
+    </style>
+
+    <style name="Widget.Theme.Diplwmatikh.ButtonBar.Fullscreen" parent="Theme.AppCompat.Light">
+        <item name="android:background">@color/background</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+</resources>
