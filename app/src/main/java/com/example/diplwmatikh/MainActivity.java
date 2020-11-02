@@ -30,6 +30,7 @@ public class MainActivity extends universal{
     int x_cord, y_cord;
     int identification; // to recognize the target for each item
     int counter = 0; // counter = counter to align the dropped items on target
+    int activity_finished=0;
     String title = "Αντιστοίχηση";
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -71,7 +72,6 @@ public class MainActivity extends universal{
                 alert.show();
             }
         });
-
     }
 
         View.OnLongClickListener longClickListener = new View.OnLongClickListener() {
@@ -155,8 +155,15 @@ public class MainActivity extends universal{
                             animationY.setDuration(500);
                             animationY.start();
                             selected.setOnLongClickListener(null);
+                            activity_finished++;
                         }
                         break;
+                }
+                if (activity_finished==2){
+                    create_builder_finished();
+                    AlertDialog alert = builderfinished.create();
+                    alert.show();
+                    activity_finished=0;
                 }
                 return true;
             }

@@ -10,7 +10,7 @@ import android.view.WindowManager;
 import android.widget.Button;
 
 public class Mainmenu extends AppCompatActivity {
-    Button dragndrop, correct_wrong;
+    Button dragndrop, correct_wrong,place_in_order;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,6 +32,7 @@ public class Mainmenu extends AppCompatActivity {
 
         dragndrop=findViewById(R.id.dragndrop);
         correct_wrong=findViewById(R.id.correctwrong);
+        place_in_order=findViewById(R.id.placeinorder);
 
         dragndrop.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -45,6 +46,14 @@ public class Mainmenu extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(Mainmenu.this, Correct_wrong.class);
+                startActivity(intent);
+            }
+        });
+
+        place_in_order.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Mainmenu.this, place_in_order.class);
                 startActivity(intent);
             }
         });

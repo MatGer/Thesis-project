@@ -16,7 +16,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class universal extends AppCompatActivity {
     Intent intent;
-    AlertDialog.Builder builderreset, builderback;
+    AlertDialog.Builder builderreset, builderback, builderfinished, builderfinished_score;
     public void runtime(){
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);//screen always on
         View decorView = getWindow().getDecorView();
@@ -69,5 +69,51 @@ public class universal extends AppCompatActivity {
                 });
 
 
+    }
+
+    void create_builder_finished_with_score(int a){
+        builderfinished_score = new AlertDialog.Builder(universal.this);
+        builderfinished_score.setTitle("Η δραστηριότητα ολοκληρώθηκε!");
+        builderfinished_score.setMessage("Το σκορ ειναι : "+a+" .Θέλετε να ξανακάνετε την δραστηριότητα;")
+                .setPositiveButton("Ναι", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        intent = getIntent();
+                        finish();
+                        startActivity(intent);
+                        intent=null;
+                    }
+                })
+                .setNegativeButton("Όχι", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        intent = new Intent(universal.this, Mainmenu.class);
+                        startActivity(intent);
+                        intent=null;
+                    }
+                });
+    }
+
+    void create_builder_finished(){
+        builderfinished = new AlertDialog.Builder(universal.this);
+        builderfinished.setTitle("Η δραστηριότητα ολοκληρώθηκε!");
+        builderfinished.setMessage("Συγχαρητήρια! Ολοκληρώσατε την δραστηριότητα. Θέλετε να ξαναξεκινήσετε;")
+                .setPositiveButton("Ναι", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        intent = getIntent();
+                        finish();
+                        startActivity(intent);
+                        intent=null;
+                    }
+                })
+                .setNegativeButton("Όχι", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        intent = new Intent(universal.this, Mainmenu.class);
+                        startActivity(intent);
+                        intent=null;
+                    }
+                });
     }
 }

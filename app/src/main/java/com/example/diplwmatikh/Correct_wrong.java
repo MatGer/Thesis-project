@@ -22,7 +22,6 @@ import java.util.Collections;
 import java.util.Random;
 
 public class Correct_wrong extends universal{
-    AlertDialog.Builder builderfinished;
     String title = "Σωστό - Λάθος";
     TextView header,question;
     ImageButton restart,back;
@@ -96,9 +95,10 @@ public class Correct_wrong extends universal{
                 correct.setEnabled(true);
                 wrong.setEnabled(true);
                 if(counter==4){
-                    create_builder_finished(score);
-                    AlertDialog alert = builderfinished.create();
+                    create_builder_finished_with_score(score);
+                    AlertDialog alert = builderfinished_score.create();
                     alert.show();
+                    counter=0;
                 }
                 counter++;
             }
@@ -115,28 +115,5 @@ public class Correct_wrong extends universal{
             Toast.makeText(getApplicationContext(), "Απαντήσατε Λάθος!!! :(", Toast.LENGTH_SHORT).show();
             score--;
         }
-    }
-
-    void create_builder_finished(int a){
-        builderfinished = new AlertDialog.Builder(Correct_wrong.this);
-        builderfinished.setTitle("Η δραστηριότητα ολοκληρώθηκε!");
-        builderfinished.setMessage("Το σκορ ειναι : "+a+" .Θέλετε να ξανακάνετε την δραστηριότητα;")
-                .setPositiveButton("Ναι", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        intent = getIntent();
-                        finish();
-                        startActivity(intent);
-                        intent=null;
-                    }
-                })
-                .setNegativeButton("Όχι", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        intent = new Intent(Correct_wrong.this, Mainmenu.class);
-                        startActivity(intent);
-                        intent=null;
-                    }
-                });
     }
 }

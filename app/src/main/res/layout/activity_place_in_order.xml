@@ -1,0 +1,88 @@
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Correct_wrong"
+    android:id="@+id/mainlayout"
+    android:background="@color/white">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <include layout="@layout/appbar"
+            android:id="@+id/toolbar"/>
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        android:layout_marginTop="?attr/actionBarSize">
+
+    <View
+        android:id="@+id/targ1"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_margin="40dp"
+        android:layout_alignParentStart="true"
+        android:background="@color/teal_700" />
+    <View
+        android:id="@+id/targ2"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_margin="40dp"
+        android:background="@color/teal_700"
+        android:layout_toEndOf="@+id/targ1"/>
+    <View
+        android:id="@+id/targ3"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_margin="40dp"
+        android:background="@color/teal_700"
+        android:layout_toStartOf="@+id/targ4"/>
+    <View
+        android:id="@+id/targ4"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_margin="40dp"
+        android:layout_alignParentEnd="true"
+        android:background="@color/teal_700"/>
+
+    <ImageView
+        android:id="@+id/drag1"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="200dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        android:background="@color/light_blue_600" />
+    <ImageView
+        android:id="@+id/drag2"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="200dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        android:layout_toEndOf="@id/drag1"
+        android:background="@color/light_blue_600" />
+    <ImageView
+        android:id="@+id/drag3"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="200dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        android:layout_toStartOf="@id/drag4"
+        android:background="@color/light_blue_600"  />
+    <ImageView
+        android:id="@+id/drag4"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="200dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        android:layout_alignParentEnd="true"
+        android:background="@color/light_blue_600" />
+
+    </RelativeLayout>
+
+</RelativeLayout>
