@@ -110,12 +110,12 @@ public class place_in_order extends universal {
     };
 
     void animate_movement(View Source, View destination, View v1){
-        activity_finished++;
         v1.animate()
                 .x(destination.getX())
                 .y(destination.getY())
                 .setDuration(500)
                 .start();
+        activity_finished++;
         Source.setOnLongClickListener(null);
     }
 }

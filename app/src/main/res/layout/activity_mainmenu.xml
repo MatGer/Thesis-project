@@ -39,15 +39,24 @@
             android:elevation="5dp"
             android:layout_height="0dp"
             android:layout_width="0dp">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Catergory 1"
+                android:gravity="center"
+                android:padding="10dp"/><!--add textview for title-->
             <androidx.core.widget.NestedScrollView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center">
-            <LinearLayout
+                android:layout_gravity="center"
+                android:layout_marginTop="30dp"><!--Add this line and textview to add titles-->
+                <!--to make text scrollable just move textview inside linear layout-->
+                <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:weightSum="3"
                 android:orientation="vertical">
+
                 <Button
                     android:id="@+id/dragndrop"
                     android:layout_width="match_parent"

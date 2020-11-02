@@ -10,7 +10,8 @@
         android:screenOrientation="landscape"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
-        <activity android:name=".place_in_order"></activity>
+        <activity android:name=".place_in_order"
+            android:screenOrientation="landscape"/>
         <activity
             android:name=".Mainmenu"
             android:screenOrientation="landscape">
@@ -22,11 +23,9 @@
         </activity>
         <activity
             android:name=".MainActivity"
-            android:parentActivityName=".Mainmenu"
             android:screenOrientation="landscape" />
         <activity
             android:name=".Correct_wrong"
-            android:parentActivityName=".Mainmenu"
             android:screenOrientation="landscape" />
     </application>
 

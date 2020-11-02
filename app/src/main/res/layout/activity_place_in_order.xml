@@ -17,71 +17,74 @@
         android:layout_width="match_parent"
         android:layout_height="fill_parent"
         android:layout_marginTop="?attr/actionBarSize">
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_centerHorizontal="true">
 
     <View
         android:id="@+id/targ1"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:layout_margin="40dp"
-        android:layout_alignParentStart="true"
-        android:background="@color/teal_700" />
+        android:layout_margin="30dp"
+        android:background="@color/teal_700"/>
+
     <View
         android:id="@+id/targ2"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:layout_margin="40dp"
+        android:layout_margin="30dp"
         android:background="@color/teal_700"
-        android:layout_toEndOf="@+id/targ1"/>
+        android:layout_toEndOf="@id/targ1"/>
+
     <View
         android:id="@+id/targ3"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:layout_margin="40dp"
+        android:layout_margin="30dp"
         android:background="@color/teal_700"
-        android:layout_toStartOf="@+id/targ4"/>
+        android:layout_toEndOf="@id/targ2"/>
+
     <View
         android:id="@+id/targ4"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:layout_margin="40dp"
-        android:layout_alignParentEnd="true"
-        android:background="@color/teal_700"/>
+        android:layout_margin="30dp"
+        android:background="@color/teal_700"
+        android:layout_toEndOf="@id/targ3"/>
 
     <ImageView
         android:id="@+id/drag1"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:layout_marginTop="200dp"
-        android:layout_marginLeft="40dp"
-        android:layout_marginRight="40dp"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="30dp"
         android:background="@color/light_blue_600" />
     <ImageView
         android:id="@+id/drag2"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:layout_marginTop="200dp"
-        android:layout_marginLeft="40dp"
-        android:layout_marginRight="40dp"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="30dp"
         android:layout_toEndOf="@id/drag1"
         android:background="@color/light_blue_600" />
     <ImageView
         android:id="@+id/drag3"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:layout_marginTop="200dp"
-        android:layout_marginLeft="40dp"
-        android:layout_marginRight="40dp"
-        android:layout_toStartOf="@id/drag4"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="30dp"
+        android:layout_toEndOf="@id/drag2"
         android:background="@color/light_blue_600"  />
     <ImageView
         android:id="@+id/drag4"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:layout_marginTop="200dp"
-        android:layout_marginLeft="40dp"
-        android:layout_marginRight="40dp"
-        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="30dp"
+        android:layout_toEndOf="@id/drag3"
         android:background="@color/light_blue_600" />
+</RelativeLayout>
 
     </RelativeLayout>
 
