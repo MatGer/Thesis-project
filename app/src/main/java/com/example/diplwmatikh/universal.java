@@ -17,18 +17,19 @@ import androidx.appcompat.app.AppCompatActivity;
 public class universal extends AppCompatActivity {
     Intent intent;
     AlertDialog.Builder builderreset, builderback, builderfinished, builderfinished_score;
+    View decorView;
+    int uiOptions = View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION        //options to hide nav bar, status bar and further functionality
+            | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
+            | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
+            | View.SYSTEM_UI_FLAG_FULLSCREEN
+            | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY;
     public void runtime(){
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);//screen always on
-        View decorView = getWindow().getDecorView();
+        decorView = getWindow().getDecorView();
         // Hide both the navigation bar and the status bar.
         // SYSTEM_UI_FLAG_FULLSCREEN is only available on Android 4.1 and higher, but as
         // a general rule, you should design your app to hide the status bar whenever you
         // hide the navigation bar.
-        int uiOptions = View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION        //options to hide nav bar, status bar and further functionality
-                | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
-                | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
-                | View.SYSTEM_UI_FLAG_FULLSCREEN
-                | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY;
         decorView.setSystemUiVisibility(uiOptions);
 
         builderback = new AlertDialog.Builder(universal.this);
@@ -115,5 +116,10 @@ public class universal extends AppCompatActivity {
                         intent=null;
                     }
                 });
+    }
+
+    public void onResume(){
+        super.onResume();
+        decorView.setSystemUiVisibility(uiOptions);
     }
 }
