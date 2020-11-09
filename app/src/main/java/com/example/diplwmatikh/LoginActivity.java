@@ -14,6 +14,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
@@ -64,6 +65,13 @@ public class LoginActivity extends universal {
                                     Toast.makeText(LoginActivity.this, "Error: "+ task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                                 }
                             }
+                        })
+                        //if something goes wrong
+                        .addOnFailureListener(LoginActivity.this, new OnFailureListener() {
+                            @Override
+                            public void onFailure(@NonNull Exception e) {
+                                prog.setVisibility(View.INVISIBLE);
+                            }
                         });
             }
         });
@@ -76,12 +84,3 @@ public class LoginActivity extends universal {
         });
     }
 }
-
-
-/*
- Logout code
-FirebaseAuth.getInstance().signOut();
-startActivity(new Intent(getApplicationContext(), LoginActivity.class));
-finish();
-
-*/
