@@ -3,10 +3,12 @@ package com.example.diplwmatikh;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
@@ -31,12 +33,17 @@ public class LoginActivity extends universal {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         runtime();
-
         login_email=findViewById(R.id.edloginemail);
         login_password=findViewById(R.id.edloginpassword);
         login_button=findViewById(R.id.loginbutton);
         create_new_account_text_button=findViewById(R.id.create_new_account_text);
         prog=findViewById(R.id.progressbar_login);
+        fAuth=FirebaseAuth.getInstance();
+
+        if(fAuth.getCurrentUser()!=null){
+            startActivity(new Intent(getApplicationContext(), Mainmenu.class));
+            finish();
+        }
 
         login_button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -52,6 +59,10 @@ public class LoginActivity extends universal {
                     login_password.setError("Πρέπει να προσθέσετε ένα E-mail");
                     return;
                 }
+                //close keyboard on button press
+                InputMethodManager inputManager = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
+                inputManager.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(),InputMethodManager.HIDE_NOT_ALWAYS);
+
                 prog.setVisibility(View.VISIBLE);
                 fAuth.signInWithEmailAndPassword(lgemail, lgpass)
                         .addOnCompleteListener(new OnCompleteListener<AuthResult>() {

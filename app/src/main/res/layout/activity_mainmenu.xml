@@ -15,10 +15,11 @@
         android:layout_height="0dp"
         android:layout_weight="2">
             <TextView
+                android:id="@+id/weclome_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="@color/white"
-                android:text="Welcome"
+                android:text="Loading..."
                 android:textStyle="bold"
                 android:textSize="20sp"
                 android:layout_centerInParent="true"/>
@@ -249,9 +250,10 @@
                         android:textAllCaps="false"
                         android:layout_gravity="center"/>
                     <Button
+                        android:id="@+id/set_score_button"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:text="Correct Wrong"
+                        android:text="Upload score"
                         android:textColor="@color/white"
                         android:background="@drawable/start_menu_button"
                         android:padding="15dp"
@@ -259,9 +261,10 @@
                         android:textAllCaps="false"
                         android:layout_gravity="center"/>
                     <Button
+                        android:id="@+id/bring_score_button"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:text="drag n drop"
+                        android:text="get score"
                         android:textColor="@color/white"
                         android:background="@drawable/start_menu_button"
                         android:padding="15dp"

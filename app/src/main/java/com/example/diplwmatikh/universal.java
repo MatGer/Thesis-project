@@ -5,16 +5,29 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
+import android.util.Log;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
-public class universal extends AppCompatActivity {
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.EventListener;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.FirebaseFirestoreException;
+
+import java.util.HashMap;
+import java.util.Map;
+
+ public class universal extends AppCompatActivity {
     Intent intent;
     AlertDialog.Builder builderreset, builderback, builderfinished, builderfinished_score;
     View decorView;
@@ -72,10 +85,10 @@ public class universal extends AppCompatActivity {
 
     }
 
-    void create_builder_finished_with_score(int a){
+    void create_builder_finished_with_score(int score){
         builderfinished_score = new AlertDialog.Builder(universal.this);
         builderfinished_score.setTitle("Η δραστηριότητα ολοκληρώθηκε!");
-        builderfinished_score.setMessage("Το σκορ ειναι : "+a+" .Θέλετε να ξανακάνετε την δραστηριότητα;")
+        builderfinished_score.setMessage("Το σκορ ειναι : "+score+" .Θέλετε να ξανακάνετε την δραστηριότητα;")
                 .setPositiveButton("Ναι", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
@@ -92,7 +105,7 @@ public class universal extends AppCompatActivity {
                         startActivity(intent);
                         intent=null;
                     }
-                });
+                }).create().show();
     }
 
     void create_builder_finished(){
@@ -115,11 +128,42 @@ public class universal extends AppCompatActivity {
                         startActivity(intent);
                         intent=null;
                     }
-                });
+                }).create().show();
     }
 
-    public void onResume(){
-        super.onResume();
-        decorView.setSystemUiVisibility(uiOptions);
+    public void upload_score(String activityname,String uid){
+        FirebaseFirestore fStore=FirebaseFirestore.getInstance();
+        DocumentReference dR = fStore.collection("scores").document(uid);
+        Map<String, Object> user = new HashMap<>();
+        user.put(activityname, 5);
+        dR.set(user).addOnSuccessListener(new OnSuccessListener<Void>() {
+            @Override
+            public void onSuccess(Void aVoid) {
+                Log.d("universal method", "score uploaded");
+            }
+        });
+
     }
+
+    public void get_score(String activityname,String uid){
+        FirebaseFirestore fStore=FirebaseFirestore.getInstance();
+        DocumentReference fetch_test = fStore.collection("scores").document(uid);
+        fetch_test.addSnapshotListener(this, new EventListener<DocumentSnapshot>() {
+            @Override
+            public void onEvent(@Nullable DocumentSnapshot value, @Nullable FirebaseFirestoreException error) {
+                if(value.getDouble("activity1")==null){
+                    //Handle exception here
+                    Toast.makeText(getApplicationContext(), "Null value occured (class: universal method:get_score)", Toast.LENGTH_SHORT).show();
+                }else{
+                    double score = value.getDouble(activityname);
+                    create_builder_finished_with_score((int) score);
+                }
+            }
+        });
+    }
+
+     public void onResume(){
+         super.onResume();
+         decorView.setSystemUiVisibility(uiOptions);
+     }
 }

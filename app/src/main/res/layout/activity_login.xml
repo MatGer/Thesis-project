@@ -91,9 +91,10 @@
             android:id="@+id/progressbar_login"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            style="@android:style/Widget.Holo.ProgressBar.Large"
             android:layout_centerHorizontal="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginBottom="50dp"
+            android:layout_below="@id/create_new_account_text"
+            android:layout_marginTop="50dp"
             android:visibility="invisible"/>
     </RelativeLayout>
 </RelativeLayout>
