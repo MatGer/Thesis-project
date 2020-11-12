@@ -131,11 +131,11 @@ import java.util.Map;
                 }).create().show();
     }
 
-    public void upload_score(String activityname,String uid){
+    public void upload_score(String activityname,String uid,int score){
         FirebaseFirestore fStore=FirebaseFirestore.getInstance();
         DocumentReference dR = fStore.collection("scores").document(uid);
         Map<String, Object> user = new HashMap<>();
-        user.put(activityname, 5);
+        user.put(activityname, score);
         dR.set(user).addOnSuccessListener(new OnSuccessListener<Void>() {
             @Override
             public void onSuccess(Void aVoid) {

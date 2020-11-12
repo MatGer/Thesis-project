@@ -103,7 +103,7 @@ public class Mainmenu extends universal {
         setscore.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                upload_score("activity1", UserID);
+                upload_score("activity1", UserID,7);
             }
         });
 
