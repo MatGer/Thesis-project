@@ -17,6 +17,7 @@ import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
@@ -133,15 +134,7 @@ import java.util.Map;
 
     public void upload_score(String activityname,String uid,int score){
         FirebaseFirestore fStore=FirebaseFirestore.getInstance();
-        DocumentReference dR = fStore.collection("scores").document(uid);
-        Map<String, Object> user = new HashMap<>();
-        user.put(activityname, score);
-        dR.set(user).addOnSuccessListener(new OnSuccessListener<Void>() {
-            @Override
-            public void onSuccess(Void aVoid) {
-                Log.d("universal method", "score uploaded");
-            }
-        });
+        Task<Void> dR = fStore.collection("scores").document(uid).update(activityname,score);
 
     }
 

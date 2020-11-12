@@ -101,7 +101,7 @@ public class path_with_numbers extends universal implements OnClickListener {
                         counter_score++;
                     }
                 }
-                upload_score("path_of_numbers", userid, counter_score);
+                upload_score("path_of_numbers2", userid, counter_score);
                 create_builder_finished_with_score(counter_score);
             }
         });
