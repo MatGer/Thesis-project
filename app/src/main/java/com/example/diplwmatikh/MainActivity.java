@@ -13,6 +13,7 @@ import android.view.DragEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowManager;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -22,15 +23,20 @@ import android.widget.Toast;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.firebase.auth.FirebaseAuth;
+
 public class MainActivity extends universal{
     ImageView img1, img2, selected;
     TextView txt,header;
     View target, target2;
     ImageButton restart,back;
+    Button check;
     int x_cord, y_cord;
     int identification; // to recognize the target for each item
     int counter = 0; // counter = counter to align the dropped items on target
     int activity_finished=0;
+    int score;
+    String userID;
     String title = "Αντιστοίχηση";
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -50,6 +56,11 @@ public class MainActivity extends universal{
 
         target.setOnDragListener(dragListener);
         target2.setOnDragListener(dragListener);
+        check=findViewById(R.id.check_button_main_activity);
+
+        userID = FirebaseAuth.getInstance().getUid();
+
+
         //---------------Toolbar functionality------------------//
         back=findViewById(R.id.backbutton);
         restart=findViewById(R.id.restartbutton);
@@ -70,6 +81,12 @@ public class MainActivity extends universal{
             public void onClick(View v) {
                 AlertDialog alert = builderreset.create();
                 alert.show();
+            }
+        });
+        check.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                upload_score("drag and drop", userID, 99);
             }
         });
     }

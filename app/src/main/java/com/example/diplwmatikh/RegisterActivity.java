@@ -84,6 +84,12 @@ public class RegisterActivity extends universal {
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if(task.isSuccessful()){
                             Toast.makeText(RegisterActivity.this, "Επιτυχής δημιουργία χρήστη", Toast.LENGTH_SHORT).show();
+                            fAuth.getCurrentUser().sendEmailVerification().addOnFailureListener(new OnFailureListener() {
+                                @Override
+                                public void onFailure(@NonNull Exception e) {
+                                    Log.d("email verification", e.getMessage());
+                                }
+                            });
                             userID = fAuth.getCurrentUser().getUid();
                             DocumentReference dR = fStore.collection("users").document(userID);
                             Map<String, Object> user = new HashMap<>();
@@ -110,5 +116,10 @@ public class RegisterActivity extends universal {
                 });
             }
         });
+    }
+
+    public void send_verification_email(){
+        //send verification Email
+
     }
 }

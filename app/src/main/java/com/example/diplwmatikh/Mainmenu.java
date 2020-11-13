@@ -95,7 +95,7 @@ public class Mainmenu extends universal {
             @Override
             public void onClick(View v) {
                 fAuth.signOut();
-                startActivity(new Intent(getApplicationContext(), LoginActivity.class));
+                startActivity(new Intent(Mainmenu.this, LoginActivity.class));
                 finish();
             }
         });

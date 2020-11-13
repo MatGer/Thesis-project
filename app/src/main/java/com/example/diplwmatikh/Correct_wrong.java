@@ -16,6 +16,7 @@ import android.widget.Toast;
 
 import com.google.android.material.snackbar.BaseTransientBottomBar;
 import com.google.android.material.snackbar.Snackbar;
+import com.google.firebase.auth.FirebaseAuth;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -30,7 +31,7 @@ public class Correct_wrong extends universal{
     int selected_question=0;
     String[] questions={"Ερώτηση 1","Ερώτηση 2","Ερώτηση 3","Ερώτηση 4","Ερώτηση 5","Ερώτηση 6","Ερώτηση 7","Ερώτηση 8","Ερώτηση 9","Ερώτηση 10"};
     boolean[] answers={true,false,true,false,true,false,true,false,true,false};
-
+    String userID;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,6 +41,7 @@ public class Correct_wrong extends universal{
         correct=findViewById(R.id.correntbutton);
         wrong=findViewById(R.id.wrongbutton);
         question=findViewById(R.id.question);
+        userID= FirebaseAuth.getInstance().getUid();
 //----------------------for random and unique questions-------------
         ArrayList<Integer> list = new ArrayList<Integer>();
         for (int i=0; i<10; i++) {
@@ -97,6 +99,7 @@ public class Correct_wrong extends universal{
                 if(counter==4){
                     create_builder_finished_with_score(score);
                     AlertDialog alert = builderfinished_score.create();
+                    upload_score("correct wrong", userID, 33);
                     alert.show();
                     counter=0;
                 }

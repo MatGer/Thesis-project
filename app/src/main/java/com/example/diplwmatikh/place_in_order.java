@@ -8,11 +8,14 @@ import android.os.Bundle;
 import android.view.DragEvent;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.google.firebase.auth.FirebaseAuth;
 
 public class place_in_order extends universal {
     TextView header;
@@ -20,6 +23,8 @@ public class place_in_order extends universal {
     String title="Δημιούργησε μία ιστορία...";
     View target1,target2,target3,target4;
     ImageView drag1,drag2,drag3,drag4;
+    Button check;
+    String userID,score;
     int activity_finished=0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +42,8 @@ public class place_in_order extends universal {
         drag3=findViewById(R.id.drag3);
         drag4=findViewById(R.id.drag4);
 
+        check=findViewById(R.id.check_button_place_in_order);
+        userID=FirebaseAuth.getInstance().getUid();
         //---------------Toolbar functionality------------------//
         back=findViewById(R.id.backbutton);
         restart=findViewById(R.id.restartbutton);
@@ -70,6 +77,12 @@ public class place_in_order extends universal {
         target3.setOnDragListener(dragListener);
         target4.setOnDragListener(dragListener);
 
+        check.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                upload_score("place in order",userID,1);
+            }
+        });
     }
     View.OnLongClickListener longClickListener = new View.OnLongClickListener() {
         @Override

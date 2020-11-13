@@ -1,9 +1,11 @@
 package com.example.diplwmatikh;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -17,6 +19,7 @@ import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
@@ -25,7 +28,7 @@ import com.google.firebase.auth.FirebaseUser;
 public class LoginActivity extends universal {
     EditText login_email, login_password;
     Button login_button;
-    TextView create_new_account_text_button;
+    TextView create_new_account_text_button,forget_password_button;
     FirebaseAuth fAuth;
     ProgressBar prog;
     @Override
@@ -39,6 +42,7 @@ public class LoginActivity extends universal {
         create_new_account_text_button=findViewById(R.id.create_new_account_text);
         prog=findViewById(R.id.progressbar_login);
         fAuth=FirebaseAuth.getInstance();
+        forget_password_button=findViewById(R.id.forget_password_button);
 
         if(fAuth.getCurrentUser()!=null){
             startActivity(new Intent(getApplicationContext(), Mainmenu.class));
@@ -91,6 +95,54 @@ public class LoginActivity extends universal {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(getApplicationContext(),RegisterActivity.class));
+            }
+        });
+
+        forget_password_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                final EditText ps = new EditText(v.getContext());
+                AlertDialog.Builder password_reset= new AlertDialog.Builder(v.getContext());
+                System.out.println("-------------------------------------------------------------------------");
+                password_reset.setTitle("Επαναφορά κωδικού");
+                password_reset.setMessage("Πληκρολόγησε το E-mail σου");
+                password_reset.setCancelable(false);
+                password_reset.setView(ps);
+                password_reset.setPositiveButton("Οκ", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        fAuth.sendPasswordResetEmail(ps.getText().toString().trim())
+                                .addOnSuccessListener(new OnSuccessListener<Void>() {
+                                    @Override
+                                    public void onSuccess(Void aVoid) {
+                                        //System.out.println("-------------------------------------------------------------------------done");
+                                        Toast.makeText(LoginActivity.this, "Στάλθηκε e-mail στη διεύθυνση που πληκτρολογήσατε", Toast.LENGTH_SHORT).show();
+                                    }
+                                })
+                                .addOnFailureListener(new OnFailureListener() {
+                                    @Override
+                                    public void onFailure(@NonNull Exception e) {
+                                        //System.out.println("-------------------------------------------------------------------------not done");
+                                        Toast.makeText(LoginActivity.this, "Κάτι πήγε στραβά. Ξαναπροσπάθησε.", Toast.LENGTH_SHORT).show();
+                                        System.out.println("Error"+ e.getMessage());
+                                    }
+                                });
+
+                    }
+                })
+                  .setNegativeButton("Ακυρο", new DialogInterface.OnClickListener() {
+                      @Override
+                      public void onClick(DialogInterface dialog, int which) {
+                            decorView.setVisibility(uiOptions);
+                      }
+                  });
+                password_reset.setNegativeButton("Άκυρο", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        System.out.println("-------------------------------------------------------------------------cancel"+ps.getText().toString());
+                    }
+                });
+                password_reset.create().show();
             }
         });
     }

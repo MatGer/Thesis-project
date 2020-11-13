@@ -78,14 +78,25 @@
             android:layout_centerHorizontal="true"
             android:textColor="@color/register_login"/>
         <TextView
+            android:id="@+id/forget_password_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ξέχασα τον κωδικό μου"
+            android:textColor="@color/register_login"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/loginbutton"
+            android:clickable="true"
+            android:layout_marginTop="10dp"/>
+        <TextView
             android:id="@+id/create_new_account_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Δημιουργία νέου λογαριασμού"
             android:textColor="@color/register_login"
-            android:layout_below="@id/loginbutton"
+            android:layout_below="@id/forget_password_button"
             android:layout_centerHorizontal="true"
-            android:clickable="true"/>
+            android:clickable="true"
+            android:layout_marginTop="20dp"/>
 
         <ProgressBar
             android:id="@+id/progressbar_login"

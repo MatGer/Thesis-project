@@ -21,7 +21,14 @@
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_centerHorizontal="true">
-
+    <Button
+        android:id="@+id/check_button_place_in_order"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Έλεγχος"
+        android:textAllCaps="false"
+        android:textColor="@color/register_login"
+        android:layout_centerInParent="true"/>
     <View
         android:id="@+id/targ1"
         android:layout_width="100dp"
