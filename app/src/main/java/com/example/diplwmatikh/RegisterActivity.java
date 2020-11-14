@@ -91,6 +91,7 @@ public class RegisterActivity extends universal {
                                 }
                             });
                             userID = fAuth.getCurrentUser().getUid();
+                            //for the users
                             DocumentReference dR = fStore.collection("users").document(userID);
                             Map<String, Object> user = new HashMap<>();
                             user.put("Username", Username);
@@ -101,6 +102,17 @@ public class RegisterActivity extends universal {
                                     Log.d("Register Activity", "Το προφίλ του χρήστη" + userID + "δημιουργήθηκε");
                                 }
                             });
+                            //in case of scores collection be deleted run the following code
+                            /*
+                            DocumentReference dR2 = fStore.collection("scores").document(userID);
+                            Map<String, Object> score = new HashMap<>();
+                            score.put("user_created",1);
+                            dR2.set(score).addOnFailureListener(new OnFailureListener() {
+                                @Override
+                                public void onFailure(@NonNull Exception e) {
+                                    Log.d("Register Activity", "something went wrong" +e.getMessage().toString());
+                                }
+                            });*/
                             startActivity(new Intent(getApplicationContext(),Mainmenu.class));
                         }else{
                             Toast.makeText(RegisterActivity.this, "Error: "+ task.getException().getMessage(), Toast.LENGTH_SHORT).show();

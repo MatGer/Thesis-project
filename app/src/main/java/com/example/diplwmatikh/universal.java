@@ -12,10 +12,12 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
@@ -134,7 +136,16 @@ import java.util.Map;
 
     public void upload_score(String activityname,String uid,int score){
         FirebaseFirestore fStore=FirebaseFirestore.getInstance();
-        Task<Void> dR = fStore.collection("scores").document(uid).update(activityname,score);
+        Map<String, Object> data = new HashMap<>();
+        fStore.collection("scores").document(uid);
+                data.put(activityname, score);
+                fStore.collection("scores").document(uid).update(data)
+                        .addOnFailureListener(new OnFailureListener() {
+                            @Override
+                            public void onFailure(@NonNull Exception e) {
+                                Log.w("upload score method", "Error on uploading score document", e);
+                            }
+                        });
 
     }
 
