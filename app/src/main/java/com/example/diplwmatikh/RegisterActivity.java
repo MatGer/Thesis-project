@@ -32,7 +32,6 @@ public class RegisterActivity extends universal {
     FirebaseAuth fAuth;
     ProgressBar progressbar;
     FirebaseFirestore fStore;
-    String userID;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

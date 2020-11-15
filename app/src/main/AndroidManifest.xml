@@ -12,20 +12,21 @@
         android:screenOrientation="landscape"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
-        <activity android:name=".complete_the_shape">
+        <activity android:name=".drag_and_drop_numbers">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".compete_the_pattern">
+        <activity android:name=".complete_the_shape">
 
         </activity>
+        <activity android:name=".compete_the_pattern"></activity>
         <activity android:name=".select_the_bigger" />
         <activity android:name=".path_with_numbers" />
         <activity android:name=".RegisterActivity" />
-        <activity android:name=".LoginActivity"></activity>
+        <activity android:name=".LoginActivity" />
         <activity
             android:name=".place_in_order"
             android:screenOrientation="landscape" />

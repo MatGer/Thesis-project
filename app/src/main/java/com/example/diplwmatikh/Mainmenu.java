@@ -25,7 +25,6 @@ public class Mainmenu extends universal {
     Button dragndrop, correct_wrong,place_in_order,logoutbutton,setscore,bringscore;
     TextView weclome_message;
     FirebaseFirestore fStore;
-    FirebaseAuth fAuth;
     String UserID, uname;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,7 +40,6 @@ public class Mainmenu extends universal {
         bringscore=findViewById(R.id.bring_score_button);
 
         fStore=FirebaseFirestore.getInstance();
-        fAuth=FirebaseAuth.getInstance();
         UserID=fAuth.getCurrentUser().getUid();
         //------------bring data code--------------
         DocumentReference fetch_test = fStore.collection("users").document(UserID);
@@ -103,7 +101,7 @@ public class Mainmenu extends universal {
         setscore.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                upload_score("activity1", UserID,7);
+                upload_score("activity1",7);
             }
         });
 

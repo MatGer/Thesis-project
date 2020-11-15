@@ -24,7 +24,7 @@ public class place_in_order extends universal {
     View target1,target2,target3,target4;
     ImageView drag1,drag2,drag3,drag4;
     Button check;
-    String userID,score;
+    String score;
     int activity_finished=0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -80,7 +80,7 @@ public class place_in_order extends universal {
         check.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                upload_score("place in order",userID,1);
+                upload_score("place in order",1);
             }
         });
     }

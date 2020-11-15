@@ -36,7 +36,6 @@ public class MainActivity extends universal{
     int counter = 0; // counter = counter to align the dropped items on target
     int activity_finished=0;
     int score;
-    String userID;
     String title = "Αντιστοίχηση";
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -57,9 +56,6 @@ public class MainActivity extends universal{
         target.setOnDragListener(dragListener);
         target2.setOnDragListener(dragListener);
         check=findViewById(R.id.check_button_main_activity);
-
-        userID = FirebaseAuth.getInstance().getUid();
-
 
         //---------------Toolbar functionality------------------//
         back=findViewById(R.id.backbutton);
@@ -86,7 +82,7 @@ public class MainActivity extends universal{
         check.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                upload_score("drag and drop", userID, 99);
+                upload_score("drag and drop", 99);
             }
         });
     }

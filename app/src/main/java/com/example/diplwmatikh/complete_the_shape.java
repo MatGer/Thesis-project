@@ -21,8 +21,6 @@ public class complete_the_shape extends universal {
     Button check;
     TextView text;
     int score = 0;
-    FirebaseAuth fAuth;
-    String userID;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,9 +59,6 @@ public class complete_the_shape extends universal {
         fill5.setOnDragListener(dragListener);
         fill6.setOnDragListener(dragListener);
 
-        fAuth=FirebaseAuth.getInstance();
-        userID=fAuth.getCurrentUser().getUid();
-
         check.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -72,7 +67,7 @@ public class complete_the_shape extends universal {
                         score++;
                     }
                 }
-                upload_score("complete the shape",userID,score);
+                upload_score("complete the shape",score);
                 create_builder_finished_with_score(score);
             }
         });

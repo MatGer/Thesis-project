@@ -21,7 +21,6 @@ public class path_with_numbers extends universal implements OnClickListener {
     Button check;
     int counter_score=0;
     int selected_path; //poio path epilegetai kathe fora
-    String userid;
     boolean [][] paths={
             {true,true,false,false,false,true,true,false,false,false,false,true,true,false,false,false,false,true,true,true,false,false,true,true,false},//path0
             {false,false,false,true,true,true,true,true,true,true,true,true,false,false,true,false,false,false,false,true,false,false,false,false,false},//path1
@@ -34,8 +33,6 @@ public class path_with_numbers extends universal implements OnClickListener {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_path_with_numbers);
         runtime();
-        FirebaseAuth fAuth = FirebaseAuth.getInstance();
-        userid=fAuth.getUid();
         selected_path=(int) (Math.random() * (3-0+1)+0);
         //assign tiles
         tile1=findViewById(R.id.tile1);
@@ -101,7 +98,7 @@ public class path_with_numbers extends universal implements OnClickListener {
                         counter_score++;
                     }
                 }
-                upload_score("path_of_numbers2", userid, counter_score);
+                upload_score("path_of_numbers2",counter_score);
                 create_builder_finished_with_score(counter_score);
             }
         });

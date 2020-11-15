@@ -35,6 +35,8 @@ import java.util.Map;
     Intent intent;
     AlertDialog.Builder builderreset, builderback, builderfinished, builderfinished_score;
     View decorView;
+    FirebaseAuth fAuth;
+    String userID;
     int uiOptions = View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION        //options to hide nav bar, status bar and further functionality
             | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
             | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
@@ -48,6 +50,10 @@ import java.util.Map;
         // a general rule, you should design your app to hide the status bar whenever you
         // hide the navigation bar.
         decorView.setSystemUiVisibility(uiOptions);
+
+        //get user id
+        fAuth=FirebaseAuth.getInstance();
+        userID=fAuth.getCurrentUser().getUid();
 
         builderback = new AlertDialog.Builder(universal.this);
         builderback.setCancelable(false);       //makes alert to close only if you press yes or no
@@ -135,12 +141,12 @@ import java.util.Map;
                 }).create().show();
     }
 
-    public void upload_score(String activityname,String uid,int score){
+    public void upload_score(String activityname,int score){
         FirebaseFirestore fStore=FirebaseFirestore.getInstance();
         Map<String, Object> data = new HashMap<>();
-        fStore.collection("scores").document(uid);
+        fStore.collection("scores").document(userID);
                 data.put(activityname, score);
-                fStore.collection("scores").document(uid).update(data)
+                fStore.collection("scores").document(userID).update(data)
                         .addOnFailureListener(new OnFailureListener() {
                             @Override
                             public void onFailure(@NonNull Exception e) {

@@ -30,8 +30,6 @@ public class compete_the_pattern extends universal {
     int[] match_to_answer = {-1,-1,-1,-1,-1,-1};
     int current_object=-1;
     int score=0;
-    FirebaseAuth fAuth;
-    String userID;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -69,9 +67,6 @@ public class compete_the_pattern extends universal {
         fill3_1.setOnDragListener(dragListener);
         fill3_2.setOnDragListener(dragListener);
 
-        fAuth=FirebaseAuth.getInstance();
-        userID=fAuth.getCurrentUser().getUid();
-
         check.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -80,7 +75,7 @@ public class compete_the_pattern extends universal {
                         score++;
                     }
                 }
-                upload_score("complete the pattern",userID,score);
+                upload_score("complete the pattern",score);
                 create_builder_finished_with_score(score);
             }
         });

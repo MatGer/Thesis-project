@@ -15,8 +15,6 @@ public class select_the_bigger extends universal {
     Button next;
     int counter=0;
     int score=0;
-    FirebaseAuth fAuth;
-    String userID;
     int selected=0;      //if 0, no selection made. if 1 first image selected. if 2 second image selected
     //activity name = select_the_bigger
     @Override
@@ -28,8 +26,6 @@ public class select_the_bigger extends universal {
         first=findViewById(R.id.first_image);
         second=findViewById(R.id.second_image);
         next=findViewById(R.id.next_button);
-        fAuth=FirebaseAuth.getInstance();
-        userID=fAuth.getCurrentUser().getUid();
         first.setImageDrawable(getDrawable(R.drawable.tomato));
         second.setImageDrawable(getDrawable(R.drawable.pizza));
 
@@ -87,7 +83,7 @@ public class select_the_bigger extends universal {
                         break;
 
                     case 4:
-                        upload_score("select_the_bigger",userID,score);
+                        upload_score("select_the_bigger",score);
                         create_builder_finished_with_score(score);
                         break;
                     default:
