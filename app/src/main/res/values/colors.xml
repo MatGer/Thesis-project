@@ -15,5 +15,6 @@
     <color name="black_overlay">#66000000</color>
     <color name="background">#0E7547</color>
     <color name="register_login">#FF2B7F</color>
+    <color name="grey">#A1A1A1</color>
 
 </resources>

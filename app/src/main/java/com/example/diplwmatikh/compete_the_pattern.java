@@ -2,12 +2,21 @@ package com.example.diplwmatikh;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.animation.Animator;
+import android.animation.AnimatorSet;
+import android.animation.ObjectAnimator;
 import android.content.ClipData;
+import android.content.ClipDescription;
+import android.graphics.Rect;
 import android.os.Bundle;
 import android.view.DragEvent;
 import android.view.View;
+import android.view.ViewGroup;
+import android.view.animation.DecelerateInterpolator;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.google.firebase.auth.FirebaseAuth;
@@ -79,7 +88,7 @@ public class compete_the_pattern extends universal {
     View.OnLongClickListener longClickListener = new View.OnLongClickListener() {
         @Override
         public boolean onLongClick(View v) {
-            ClipData data = ClipData.newPlainText("","");
+            ClipData data = ClipData.newPlainText("clipdata","text2");
             View.DragShadowBuilder myShadowBBuilder = new View.DragShadowBuilder(v);// Instantiates the drag shadow builder.
             v.startDragAndDrop(data, myShadowBBuilder, v, 0);
             return true;
@@ -92,11 +101,7 @@ public class compete_the_pattern extends universal {
             int dragEvent = event.getAction();                  //v.getId()=id of target item
             final View view = (View) event.getLocalState(); //takes info of dragged item imports it into view item
             switch (dragEvent){
-                case DragEvent.ACTION_DRAG_ENTERED:
-                    text.setText("target= "+v.getId()+" , source: "+view.getId());
-                    //to do
-                    break;
-                case DragEvent.ACTION_DROP:
+                case DragEvent.ACTION_DRAG_STARTED:
                     switch (view.getId()){         //get dragged item id
                         case R.id.row4_1:
                             current_object=0;
@@ -117,29 +122,38 @@ public class compete_the_pattern extends universal {
                             current_object=5;
                             break;
                     }
-                    switch (v.getId()){         //get target id
-                        case R.id.fill1_7:
-                            match_to_answer[0]=current_object;
-                            break;
-                        case R.id.fill1_8:
-                            match_to_answer[1]=current_object;
-                            break;
-                        case R.id.fill2_7:
-                            match_to_answer[2]=current_object;
-                            break;
-                        case R.id.fill2_8:
-                            match_to_answer[3]=current_object;
-                            break;
-                        case R.id.fill3_7:
-                            match_to_answer[4]=current_object;
-                            break;
-                        case R.id.fill3_8:
-                            match_to_answer[5]=current_object;
-                            break;
-                    }
+                    break;
+                case DragEvent.ACTION_DRAG_ENTERED:
+                    text.setText("target= "+v.getId()+" , source: "+view.getId()+"\n"+"target X "+v.getX()+" Y "+v.getY()+" , source: X "+view.getX()+" Y "+view.getY());
+                    break;
+                case DragEvent.ACTION_DROP:
+                        switch (v.getId()) {         //get target id
+                            case R.id.fill1_7:
+                                match_to_answer[0] = current_object;
+                                break;
+                            case R.id.fill1_8:
+                                match_to_answer[1] = current_object;
+                                break;
+                            case R.id.fill2_7:
+                                match_to_answer[2] = current_object;
+                                break;
+                            case R.id.fill2_8:
+                                match_to_answer[3] = current_object;
+                                break;
+                            case R.id.fill3_7:
+                                match_to_answer[4] = current_object;
+                                break;
+                            case R.id.fill3_8:
+                                match_to_answer[5] = current_object;
+                                break;
+                        }
+                    view.animate()
+                            .x(v.getX())
+                            .y(v.getY())
+                            .setDuration(500)
+                            .start();
                     break;
             }
-
             return true;
         }
     };
