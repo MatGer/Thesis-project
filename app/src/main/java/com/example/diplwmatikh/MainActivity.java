@@ -90,18 +90,7 @@ public class MainActivity extends universal{
             }
         });
     }
-
-        View.OnLongClickListener longClickListener = new View.OnLongClickListener() {
-            @Override
-            public boolean onLongClick(View v) {
-                ClipData data = ClipData.newPlainText("","");
-                View.DragShadowBuilder myShadowBBuilder = new View.DragShadowBuilder(v);// Instantiates the drag shadow builder.
-                v.startDragAndDrop(data, myShadowBBuilder, v, 0);
-                return true;
-            }
-        };
-
-        View.OnDragListener dragListener = new View.OnDragListener() {
+    View.OnDragListener dragListener = new View.OnDragListener() {
             @Override
             public boolean onDrag(View v, DragEvent event) {
                 int dragEvent = event.getAction();

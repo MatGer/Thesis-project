@@ -85,15 +85,6 @@ public class compete_the_pattern extends universal {
             }
         });
     }
-    View.OnLongClickListener longClickListener = new View.OnLongClickListener() {
-        @Override
-        public boolean onLongClick(View v) {
-            ClipData data = ClipData.newPlainText("clipdata","text2");
-            View.DragShadowBuilder myShadowBBuilder = new View.DragShadowBuilder(v);// Instantiates the drag shadow builder.
-            v.startDragAndDrop(data, myShadowBBuilder, v, 0);
-            return true;
-        }
-    };
 
     View.OnDragListener dragListener = new View.OnDragListener() {
         @Override

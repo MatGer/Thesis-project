@@ -1,6 +1,7 @@
  package com.example.diplwmatikh;
 
 import android.app.AlertDialog;
+import android.content.ClipData;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
@@ -165,7 +166,15 @@ import java.util.Map;
             }
         });
     }
-
+     View.OnLongClickListener longClickListener = new View.OnLongClickListener() {
+         @Override
+         public boolean onLongClick(View v) {
+             ClipData data = ClipData.newPlainText("clipdata","text2");
+             View.DragShadowBuilder myShadowBBuilder = new View.DragShadowBuilder(v);// Instantiates the drag shadow builder.
+             v.startDragAndDrop(data, myShadowBBuilder, v, 0);
+             return true;
+         }
+     };
      public void onResume(){
          super.onResume();
          decorView.setSystemUiVisibility(uiOptions);
