@@ -16,5 +16,6 @@
     <color name="background">#0E7547</color>
     <color name="register_login">#FF2B7F</color>
     <color name="grey">#A1A1A1</color>
+    <color name="light_grey">#D1D1D1</color>
 
 </resources>

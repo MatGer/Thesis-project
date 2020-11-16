@@ -12,17 +12,19 @@
         android:screenOrientation="landscape"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
-        <activity android:name=".Drag_2_items">
+        <activity android:name=".next_number">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Edit_data">
+        <activity android:name=".how_many">
 
         </activity>
-        <activity android:name=".drag_and_drop_numbers"></activity>
+        <activity android:name=".Drag_2_items"></activity>
+        <activity android:name=".Edit_data" />
+        <activity android:name=".drag_and_drop_numbers" />
         <activity android:name=".complete_the_shape" />
         <activity android:name=".compete_the_pattern" />
         <activity android:name=".select_the_bigger" />
