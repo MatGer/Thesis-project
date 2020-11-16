@@ -8,11 +8,13 @@ import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.util.Log;
 import android.view.View;
+import android.view.Window;
 import android.view.WindowManager;
 import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.activity.OnBackPressedCallback;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.ActionBar;
@@ -44,6 +46,7 @@ import java.util.Map;
             | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY;
     public void runtime(){
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);//screen always on
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
         decorView = getWindow().getDecorView();
         // Hide both the navigation bar and the status bar.
         // SYSTEM_UI_FLAG_FULLSCREEN is only available on Android 4.1 and higher, but as
@@ -91,8 +94,6 @@ import java.util.Map;
                         decorView.setSystemUiVisibility(uiOptions);
                     }
                 });
-
-
     }
 
     void create_builder_finished_with_score(int score){
@@ -181,6 +182,7 @@ import java.util.Map;
              return true;
          }
      };
+
      public void onResume(){
          super.onResume();
          decorView.setSystemUiVisibility(uiOptions);
