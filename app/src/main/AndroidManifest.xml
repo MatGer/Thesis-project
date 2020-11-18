@@ -12,7 +12,10 @@
         android:screenOrientation="landscape"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
-        <activity android:name=".add_animals"
+        <activity android:name=".which_one_is_different"></activity>
+        <activity android:name=".write_height" />
+        <activity
+            android:name=".add_animals"
             android:screenOrientation="landscape">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -22,10 +25,8 @@
         </activity>
         <activity
             android:name=".next_number"
-            android:screenOrientation="landscape">
-
-        </activity>
-        <activity android:name=".how_many"></activity>
+            android:screenOrientation="landscape" />
+        <activity android:name=".how_many" />
         <activity
             android:name=".Drag_2_items"
             android:screenOrientation="landscape" />
