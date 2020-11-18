@@ -30,7 +30,7 @@ public class Edit_data extends universal {
     EditText username,email;
     TextView change_pass;
     FirebaseAuth fAuth;
-    String userID,mail;
+    String userID,mail_from_database;
     FirebaseFirestore fStore;
     Button cancel,update;
     @Override
@@ -49,15 +49,15 @@ public class Edit_data extends universal {
         userID=fAuth.getCurrentUser().getUid();
         fStore=FirebaseFirestore.getInstance();
 
+        //fix bug when reading the email address
+        
         DocumentReference fetch_test = fStore.collection("users").document(userID);
-
-
         fetch_test.addSnapshotListener(this, new EventListener<DocumentSnapshot>() {
             @Override
             public void onEvent(@Nullable DocumentSnapshot value, @Nullable FirebaseFirestoreException error) {
                 username.setText(value.getString("Username"));
                 email.setText(value.getString("Email"));
-                mail=value.getString("Email");
+                mail_from_database=value.getString("Email");
             }
         });
 
@@ -75,7 +75,6 @@ public class Edit_data extends universal {
                 Map<String, Object> data = new HashMap<>();
                 data.put("Username", username.getText().toString().trim());
                 data.put("Email", email.getText().toString().trim());
-
                 fStore.collection("users").document(userID).update(data)
                         .addOnFailureListener(new OnFailureListener() {
                             @Override
@@ -95,14 +94,6 @@ public class Edit_data extends universal {
                         });
 
                  */
-            }
-        });
-
-        change_pass.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                fAuth.sendPasswordResetEmail(mail);
-                Toast.makeText(getApplicationContext(), "Στάλθηκε ένα email στη διεύθυνση που δώσατε. Μεταβείτε εκεί για την αλλαγή κωδικού",Toast.LENGTH_SHORT).show();
             }
         });
     }
