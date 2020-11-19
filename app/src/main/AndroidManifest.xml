@@ -12,10 +12,7 @@
         android:screenOrientation="landscape"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
-        <activity android:name=".which_one_is_different"></activity>
-        <activity android:name=".write_height" />
-        <activity
-            android:name=".add_animals"
+        <activity android:name=".choose_arrows"
             android:screenOrientation="landscape">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -23,6 +20,20 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".choose"
+            android:screenOrientation="landscape">
+
+        </activity>
+        <activity
+            android:name=".which_one_is_different"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".write_height"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".add_animals"
+            android:screenOrientation="landscape"></activity>
         <activity
             android:name=".next_number"
             android:screenOrientation="landscape" />
