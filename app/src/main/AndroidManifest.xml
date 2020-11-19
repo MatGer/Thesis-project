@@ -12,7 +12,7 @@
         android:screenOrientation="landscape"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
-        <activity android:name=".choose_arrows"
+        <activity android:name=".drag_items_with_audio"
             android:screenOrientation="landscape">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -21,10 +21,13 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".choose"
+            android:name=".choose_arrows"
             android:screenOrientation="landscape">
 
         </activity>
+        <activity
+            android:name=".choose"
+            android:screenOrientation="landscape"></activity>
         <activity
             android:name=".which_one_is_different"
             android:screenOrientation="landscape" />
@@ -33,7 +36,7 @@
             android:screenOrientation="landscape" />
         <activity
             android:name=".add_animals"
-            android:screenOrientation="landscape"></activity>
+            android:screenOrientation="landscape" />
         <activity
             android:name=".next_number"
             android:screenOrientation="landscape" />
@@ -49,7 +52,9 @@
             android:screenOrientation="landscape" />
         <activity
             android:name=".complete_the_shape"
-            android:screenOrientation="landscape" />
+            android:screenOrientation="landscape">
+
+        </activity>
         <activity
             android:name=".compete_the_pattern"
             android:screenOrientation="landscape" />

@@ -125,6 +125,7 @@ public class complete_the_shape extends universal {
                             match_to_answer[5] = current_object;
                             break;
                     }
+
                     view.animate()
                             .x(v.getX())
                             .y(v.getY())
