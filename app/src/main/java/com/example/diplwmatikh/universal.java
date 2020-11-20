@@ -2,10 +2,12 @@
 
 import android.app.AlertDialog;
 import android.content.ClipData;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
+import android.media.MediaPlayer;
 import android.util.Log;
 import android.view.View;
 import android.view.Window;
@@ -32,6 +34,8 @@ import com.google.firebase.firestore.FirebaseFirestoreException;
 
 import java.util.HashMap;
 import java.util.Map;
+
+import io.grpc.internal.SharedResourceHolder;
 
  public class universal extends AppCompatActivity {
     Intent intent;
@@ -182,6 +186,11 @@ import java.util.Map;
              return true;
          }
      };
+    //track is an integer... must be formatted as R.raw.filename
+    public void play_sound(int track){
+        final MediaPlayer player = MediaPlayer.create(this,track);
+        player.start();
+    }
 
      public void onResume(){
          super.onResume();
