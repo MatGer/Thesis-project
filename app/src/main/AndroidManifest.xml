@@ -12,8 +12,10 @@
         android:screenOrientation="landscape"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
-        <activity android:name=".choose_description"
-            android:screenOrientation="landscape"></activity>
+        <activity android:name=".choose_those_who_match"></activity>
+        <activity
+            android:name=".choose_description"
+            android:screenOrientation="landscape" />
         <activity
             android:name=".drag_items_with_audio"
             android:screenOrientation="landscape">
@@ -25,7 +27,7 @@
         </activity>
         <activity
             android:name=".choose_arrows"
-            android:screenOrientation="landscape"></activity>
+            android:screenOrientation="landscape" />
         <activity
             android:name=".choose"
             android:screenOrientation="landscape" />
@@ -53,7 +55,7 @@
             android:screenOrientation="landscape" />
         <activity
             android:name=".complete_the_shape"
-            android:screenOrientation="landscape"></activity>
+            android:screenOrientation="landscape" />
         <activity
             android:name=".compete_the_pattern"
             android:screenOrientation="landscape" />
