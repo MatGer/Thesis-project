@@ -249,13 +249,13 @@
             android:id="@+id/image_start"
             android:layout_width="60dp"
             android:layout_height="60dp"
-            android:background="@color/teal_700"
+            android:src="@drawable/teddy"
             android:layout_below="@id/tile1"/>
         <ImageView
             android:id="@+id/image_end"
             android:layout_width="60dp"
             android:layout_height="60dp"
-            android:background="@color/teal_700"
+            android:src="@drawable/candy"
             android:layout_toEndOf="@id/tile25"
             android:layout_below="@id/tile15"/>
         </RelativeLayout>

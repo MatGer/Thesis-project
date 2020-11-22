@@ -12,18 +12,22 @@
         android:screenOrientation="landscape"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
-        <activity android:name=".choose_those_who_match"></activity>
-        <activity
-            android:name=".choose_description"
-            android:screenOrientation="landscape" />
-        <activity
-            android:name=".drag_items_with_audio"
+        <activity android:name=".find_the_path"
             android:screenOrientation="landscape">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity android:name=".choose_those_who_match" />
+        <activity
+            android:name=".choose_description"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".drag_items_with_audio"
+            android:screenOrientation="landscape">
+
         </activity>
         <activity
             android:name=".choose_arrows"

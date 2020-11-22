@@ -18,5 +18,8 @@
     <color name="grey">#A1A1A1</color>
     <color name="light_grey">#D1D1D1</color>
     <color name="purple">#8B109C</color>
-
+    <color name="yellow_light">#FFD970</color>
+    <color name="mustard">#EDAE00</color>
+    <color name="light_red">#FF9494</color>
+    <color name="light_blue">#94BDFF</color>
 </resources>
