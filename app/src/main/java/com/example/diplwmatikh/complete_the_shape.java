@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.ClipData;
 import android.os.Bundle;
+import android.text.method.ScrollingMovementMethod;
 import android.view.DragEvent;
 import android.view.View;
 import android.widget.Button;
@@ -28,8 +29,11 @@ public class complete_the_shape extends universal {
         setContentView(R.layout.activity_complete_the_shape);
         runtime();
 
-        text = findViewById(R.id.info);
-        check = findViewById(R.id.complete_check);
+        TextView title = findViewById(R.id.title);
+        title.setText("Σείρε τα δεξιά μέρη και ολοκλήρωσε τα σχήματα");
+        title.setMovementMethod(new ScrollingMovementMethod());
+
+        check = findViewById(R.id.check);
 
         drag1 = findViewById(R.id.drag1_complete);
         drag2 = findViewById(R.id.drag2_complete);

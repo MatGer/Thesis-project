@@ -21,7 +21,7 @@
         <RelativeLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_centerInParent="true">
+            android:layout_centerHorizontal="true">
         <RelativeLayout
             android:id="@+id/row1"
             android:layout_width="wrap_content"
@@ -380,14 +380,6 @@
                 android:textColorHint="@color/register_login"
                 android:textColorLink="@color/register_login"/>
             </RelativeLayout>
-            <Button
-                android:id="@+id/check"
-                android:layout_below="@+id/row4"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerHorizontal="true"
-                android:text="check"
-                android:layout_margin="5dp"/>
         </RelativeLayout>
     </RelativeLayout>
 </RelativeLayout>

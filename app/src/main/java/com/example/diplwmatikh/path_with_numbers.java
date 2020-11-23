@@ -2,6 +2,7 @@ package com.example.diplwmatikh;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
+import android.text.method.ScrollingMovementMethod;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
@@ -33,6 +34,10 @@ public class path_with_numbers extends universal implements OnClickListener {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_path_with_numbers);
         runtime();
+        TextView title = findViewById(R.id.title);
+        title.setText("Βοήθησε το αρκουδάκι να φτάσει στην καραμέλα.");
+        title.setMovementMethod(new ScrollingMovementMethod());
+
         selected_path=(int) (Math.random() * (3-0+1)+0);
         //assign tiles
         tile1=findViewById(R.id.tile1);
@@ -89,7 +94,7 @@ public class path_with_numbers extends universal implements OnClickListener {
         tile24.setOnClickListener(this);
         tile25.setOnClickListener(this);
 
-        check=findViewById(R.id.check_path_button);
+        check=findViewById(R.id.check);
         check.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {

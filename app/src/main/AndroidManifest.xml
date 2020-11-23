@@ -14,40 +14,40 @@
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
         <activity android:name=".find_the_path"
             android:screenOrientation="landscape">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
-        <activity android:name=".choose_those_who_match" />
+        <activity android:name=".choose_those_who_match"
+            android:screenOrientation="landscape"/>
         <activity
             android:name=".choose_description"
             android:screenOrientation="landscape" />
         <activity
             android:name=".drag_items_with_audio"
             android:screenOrientation="landscape">
-
         </activity>
         <activity
             android:name=".choose_arrows"
-            android:screenOrientation="landscape" />
+            android:screenOrientation="landscape"/>
         <activity
             android:name=".choose"
-            android:screenOrientation="landscape" />
+            android:screenOrientation="landscape">
+        </activity>
         <activity
             android:name=".which_one_is_different"
             android:screenOrientation="landscape" />
         <activity
             android:name=".write_height"
-            android:screenOrientation="landscape" />
+            android:screenOrientation="landscape" >
+        </activity>
         <activity
             android:name=".add_animals"
-            android:screenOrientation="landscape" />
+            android:screenOrientation="landscape">
+        </activity>
         <activity
             android:name=".next_number"
-            android:screenOrientation="landscape" />
-        <activity android:name=".how_many" />
+            android:screenOrientation="landscape">
+        </activity>
+        <activity android:name=".how_many"
+            android:screenOrientation="landscape"/>
         <activity
             android:name=".Drag_2_items"
             android:screenOrientation="landscape" />
@@ -70,11 +70,15 @@
             android:name=".path_with_numbers"
             android:screenOrientation="landscape" />
         <activity
-            android:name=".RegisterActivity"
-            android:screenOrientation="landscape" />
+            android:name=".RegisterActivity"/>
         <activity
-            android:name=".LoginActivity"
-            android:screenOrientation="landscape" />
+            android:name=".LoginActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity
             android:name=".place_in_order"
             android:screenOrientation="landscape" />
@@ -88,5 +92,4 @@
             android:name=".Correct_wrong"
             android:screenOrientation="landscape" />
     </application>
-
 </manifest>

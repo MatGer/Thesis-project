@@ -4,9 +4,11 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.media.Image;
 import android.os.Bundle;
+import android.text.method.ScrollingMovementMethod;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 public class which_one_is_different extends universal {
     ImageView row11,row12,row13,row21,row22,row23,row31,row32,row33;
@@ -20,6 +22,10 @@ public class which_one_is_different extends universal {
 
         runtime();
 
+        TextView title = findViewById(R.id.title);
+        title.setText("Επέλεξε ποιά εικόνα διαφέρει");
+        title.setMovementMethod(new ScrollingMovementMethod());
+
         row11=findViewById(R.id.row11);
         row12=findViewById(R.id.row12);
         row13=findViewById(R.id.row13);
@@ -29,6 +35,7 @@ public class which_one_is_different extends universal {
         row31=findViewById(R.id.row13);
         row32=findViewById(R.id.row32);
         row33=findViewById(R.id.row33);
+
         check=findViewById(R.id.check);
 
         row11.setOnClickListener(clickListener);

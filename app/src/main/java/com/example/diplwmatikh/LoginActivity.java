@@ -29,13 +29,17 @@ public class LoginActivity extends universal {
     EditText login_email, login_password;
     Button login_button;
     TextView create_new_account_text_button,forget_password_button;
-    FirebaseAuth fAuth;
     ProgressBar prog;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+
         runtime();
+        if(fAuth.getCurrentUser()!=null){
+            startActivity(new Intent(getApplicationContext(), Mainmenu.class));
+            finish();
+        }
         login_email=findViewById(R.id.edloginemail);
         login_password=findViewById(R.id.edloginpassword);
         login_button=findViewById(R.id.loginbutton);
@@ -44,10 +48,7 @@ public class LoginActivity extends universal {
         fAuth=FirebaseAuth.getInstance();
         forget_password_button=findViewById(R.id.forget_password_button);
 
-        if(fAuth.getCurrentUser()!=null){
-            startActivity(new Intent(getApplicationContext(), Mainmenu.class));
-            finish();
-        }
+
 
         login_button.setOnClickListener(new View.OnClickListener() {
             @Override

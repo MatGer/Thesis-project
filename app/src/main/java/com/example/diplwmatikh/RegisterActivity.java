@@ -102,7 +102,7 @@ public class RegisterActivity extends universal {
                                 }
                             });
                             //in case of scores collection be deleted run the following code
-                            /*
+
                             DocumentReference dR2 = fStore.collection("scores").document(userID);
                             Map<String, Object> score = new HashMap<>();
                             score.put("user_created",1);
@@ -111,7 +111,7 @@ public class RegisterActivity extends universal {
                                 public void onFailure(@NonNull Exception e) {
                                     Log.d("Register Activity", "something went wrong" +e.getMessage().toString());
                                 }
-                            });*/
+                            });
                             startActivity(new Intent(getApplicationContext(),Mainmenu.class));
                         }else{
                             Toast.makeText(RegisterActivity.this, "Error: "+ task.getException().getMessage(), Toast.LENGTH_SHORT).show();

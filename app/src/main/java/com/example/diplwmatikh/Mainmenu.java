@@ -39,9 +39,9 @@ public class Mainmenu extends universal {
         setscore=findViewById(R.id.set_score_button);
         bringscore=findViewById(R.id.bring_score_button);
 
-        fStore=FirebaseFirestore.getInstance();
         UserID=fAuth.getCurrentUser().getUid();
-        //------------bring data code--------------
+
+        //------------bring data code-------------- theloume na treksei mono mia fora gi ayto kanoume delete meta
         DocumentReference fetch_test = fStore.collection("users").document(UserID);
         fetch_test.addSnapshotListener(this, new EventListener<DocumentSnapshot>() {
             @Override
@@ -51,6 +51,8 @@ public class Mainmenu extends universal {
             }
         });
         //------------bring data code--------------
+        fetch_test.delete();
+
 
         /*//------------bring data code2-------(a bit slower)-------
         DocumentReference fetch_name = fStore.collection("users").document(UserID);
@@ -93,7 +95,8 @@ public class Mainmenu extends universal {
             @Override
             public void onClick(View v) {
                 fAuth.signOut();
-                startActivity(new Intent(Mainmenu.this, LoginActivity.class));
+                Intent intent = new Intent(Mainmenu.this, LoginActivity.class);
+                startActivity(intent);
                 finish();
             }
         });

@@ -3,9 +3,11 @@ package com.example.diplwmatikh;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.text.method.ScrollingMovementMethod;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
@@ -23,6 +25,11 @@ public class select_the_bigger extends universal {
         setContentView(R.layout.activity_select_the_bigger);
         runtime();
 
+        TextView title = findViewById(R.id.title);
+        title.setText("Επέλεξε την μεγαλύτερη εικόνα");
+        title.setMovementMethod(new ScrollingMovementMethod());
+        Button check = findViewById(R.id.check);
+        check.setVisibility(View.INVISIBLE);
         first=findViewById(R.id.first_image);
         second=findViewById(R.id.second_image);
         next=findViewById(R.id.next_button);

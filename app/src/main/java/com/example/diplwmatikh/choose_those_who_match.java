@@ -3,6 +3,7 @@ package com.example.diplwmatikh;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.text.method.ScrollingMovementMethod;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -21,6 +22,10 @@ public class choose_those_who_match extends universal {
         setContentView(R.layout.activity_choose_those_who_match);
 
         runtime();
+
+        TextView title = findViewById(R.id.title);
+        title.setText("Επέλεξε αυτά που ταιρι΄ζουν με τις εικόνες. Πάτησε στο ηχειάκι για να ακούσεις τις οδηγίες");
+        title.setMovementMethod(new ScrollingMovementMethod());
 
         txt1=findViewById(R.id.click1);
         txt2=findViewById(R.id.click2);

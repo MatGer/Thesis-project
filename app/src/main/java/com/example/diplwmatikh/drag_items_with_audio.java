@@ -3,10 +3,12 @@ package com.example.diplwmatikh;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.text.method.ScrollingMovementMethod;
 import android.view.DragEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 public class drag_items_with_audio extends universal{
     ImageView circle,rectangle,square,triangle;
@@ -22,6 +24,10 @@ public class drag_items_with_audio extends universal{
         setContentView(R.layout.activity_drag_items_with_audio);
 
         runtime();
+
+        TextView title = findViewById(R.id.title);
+        title.setText("Ακολούθησε τα βήματα. Πάτησε στο ηχειάκι για να ακούσεις τις οδηγίες");
+        title.setMovementMethod(new ScrollingMovementMethod());
 
         circle=findViewById(R.id.target1);
         rectangle=findViewById(R.id.target2);

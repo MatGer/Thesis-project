@@ -26,6 +26,7 @@ import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.EventListener;
@@ -58,10 +59,13 @@ import io.grpc.internal.SharedResourceHolder;
         // hide the navigation bar.
         decorView.setSystemUiVisibility(uiOptions);
 
-        //get user id
-        fAuth=FirebaseAuth.getInstance();
-        userID=fAuth.getCurrentUser().getUid();
+        getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN);       //if needed keyboard it wont pop up on activity start
 
+        //get user id       //DO NOT MOVE BUG CREATED ON MAIN MENU IF THOSE LINES MISSING
+        fAuth=FirebaseAuth.getInstance();
+        if(fAuth.getCurrentUser()!=null) {
+            userID = fAuth.getCurrentUser().getUid();
+        }
         builderback = new AlertDialog.Builder(universal.this);
         builderback.setCancelable(false);       //makes alert to close only if you press yes or no
         builderback.setMessage("Θέλετε να επιστρέψετε στο αρχικό μενού;")
@@ -189,6 +193,13 @@ import io.grpc.internal.SharedResourceHolder;
     //track is an integer... must be formatted as R.raw.filename
     public void play_sound(int track){
         final MediaPlayer player = MediaPlayer.create(this,track);
+        player.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mp) {
+                //re enable the button
+            }
+        });
+        //disable the button
         player.start();
     }
 

@@ -3,6 +3,7 @@ package com.example.diplwmatikh;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.text.method.ScrollingMovementMethod;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -17,6 +18,9 @@ public class next_number extends universal {
         setContentView(R.layout.activity_next_number);
 
         runtime();
+        TextView title = findViewById(R.id.title);
+        title.setText("Επέλεξε ποις αριθμός ακολουθεί.");
+        title.setMovementMethod(new ScrollingMovementMethod());
 
         no1=findViewById(R.id.no15);
         no2=findViewById(R.id.no16);

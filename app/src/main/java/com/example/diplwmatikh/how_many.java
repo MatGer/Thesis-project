@@ -3,8 +3,10 @@ package com.example.diplwmatikh;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.text.method.ScrollingMovementMethod;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 public class how_many extends universal {
     View no1,no2,no3,no4,no5,no6,no7,no8,no9;
@@ -16,6 +18,10 @@ public class how_many extends universal {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_how_many);
         runtime();
+
+        TextView title = findViewById(R.id.title);
+        title.setText("Επέλεξε πόσα ζωάκια δείχνει η κάθε φωτογραφία");
+        title.setMovementMethod(new ScrollingMovementMethod());
 
         check=findViewById(R.id.check);
         no1=findViewById(R.id.no11);
