@@ -98,13 +98,22 @@
             android:id="@+id/change_password"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Αλλαγή κωδικού"
+            android:text="Δημιουργία νέου λογαριασμού"
             android:textColor="@color/register_login"
             android:layout_below="@id/showupdate"
             android:layout_centerHorizontal="true"
             android:clickable="true"
-            android:paddingHorizontal="50dp"
+            android:paddingHorizontal="20dp"
             android:layout_marginTop="50dp"/>
 
+        <ProgressBar
+            android:id="@+id/progressbar_login"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@android:style/Widget.Holo.ProgressBar.Large"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/change_password"
+            android:layout_marginTop="50dp"
+            android:visibility="invisible"/>
     </RelativeLayout>
 </RelativeLayout>

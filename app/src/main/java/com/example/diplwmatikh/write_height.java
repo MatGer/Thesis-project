@@ -3,11 +3,9 @@ package com.example.diplwmatikh;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
-import android.text.method.ScrollingMovementMethod;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 
 public class write_height extends universal {
     EditText no1,no2,no3,no4,no5;
@@ -19,10 +17,6 @@ public class write_height extends universal {
         setContentView(R.layout.activity_write_height);
 
         runtime();
-
-        TextView title = findViewById(R.id.title);
-        title.setText("Γράψε το ύψος κάθε αντικειμένου με βάση το γράφημα.");
-        title.setMovementMethod(new ScrollingMovementMethod());
 
         no1=findViewById(R.id.type1);
         no2=findViewById(R.id.type2);

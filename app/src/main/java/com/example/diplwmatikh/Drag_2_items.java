@@ -3,12 +3,10 @@ package com.example.diplwmatikh;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
-import android.text.method.ScrollingMovementMethod;
 import android.view.DragEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.TextView;
 
 public class Drag_2_items extends universal {
     Button check;
@@ -21,10 +19,6 @@ public class Drag_2_items extends universal {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_drag_2_items);
         runtime();
-
-        TextView title = findViewById(R.id.title);
-        title.setText("Σείρε δύο (2) αντικείμενα στο κουτί");
-        title.setMovementMethod(new ScrollingMovementMethod());
 
         check=findViewById(R.id.check);
         target=findViewById(R.id.target);

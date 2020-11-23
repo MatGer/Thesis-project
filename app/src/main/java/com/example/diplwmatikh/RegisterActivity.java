@@ -91,11 +91,12 @@ public class RegisterActivity extends universal {
                             });
                             userID = fAuth.getCurrentUser().getUid();
                             //for the users
-                            DocumentReference dR = fStore.collection("users").document(userID);
                             Map<String, Object> user = new HashMap<>();
                             user.put("Username", Username);
                             user.put("Email", Email);
-                            dR.set(user).addOnSuccessListener(new OnSuccessListener<Void>() {
+                            fStore.collection("users").document(userID)
+                                    .set(user)
+                                    .addOnSuccessListener(new OnSuccessListener<Void>() {
                                 @Override
                                 public void onSuccess(Void aVoid) {
                                     Log.d("Register Activity", "Το προφίλ του χρήστη" + userID + "δημιουργήθηκε");
@@ -103,10 +104,11 @@ public class RegisterActivity extends universal {
                             });
                             //in case of scores collection be deleted run the following code
 
-                            DocumentReference dR2 = fStore.collection("scores").document(userID);
                             Map<String, Object> score = new HashMap<>();
                             score.put("user_created",1);
-                            dR2.set(score).addOnFailureListener(new OnFailureListener() {
+                            fStore.collection("scores").document(userID)
+                                    .set(score)
+                                    .addOnFailureListener(new OnFailureListener() {
                                 @Override
                                 public void onFailure(@NonNull Exception e) {
                                     Log.d("Register Activity", "something went wrong" +e.getMessage().toString());

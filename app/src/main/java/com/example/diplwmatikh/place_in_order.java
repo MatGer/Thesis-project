@@ -42,10 +42,11 @@ public class place_in_order extends universal {
         drag3=findViewById(R.id.drag3);
         drag4=findViewById(R.id.drag4);
 
-        check=findViewById(R.id.check);
+        check=findViewById(R.id.check_button_place_in_order);
         userID=FirebaseAuth.getInstance().getUid();
         //---------------Toolbar functionality------------------//
         back=findViewById(R.id.backbutton);
+        restart=findViewById(R.id.restartbutton);
         header = findViewById(R.id.title);
         header.setText(title);
         back.setOnClickListener(new View.OnClickListener() {
@@ -57,7 +58,14 @@ public class place_in_order extends universal {
 
             }
         });
-        
+
+        restart.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                AlertDialog alert = builderreset.create();
+                alert.show();
+            }
+        });
 
         drag1.setOnLongClickListener(longClickListener);
         drag2.setOnLongClickListener(longClickListener);

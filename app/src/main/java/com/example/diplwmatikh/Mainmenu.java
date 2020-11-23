@@ -23,9 +23,9 @@ import com.google.firebase.firestore.auth.User;
 
 public class Mainmenu extends universal {
     Button dragndrop, correct_wrong,place_in_order,logoutbutton,setscore,bringscore;
-    TextView weclome_message;
     FirebaseFirestore fStore;
-    String UserID, uname;
+    String UserID=null;
+    DocumentReference fetch_test;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,23 +35,29 @@ public class Mainmenu extends universal {
         correct_wrong=findViewById(R.id.correctwrong);
         place_in_order=findViewById(R.id.placeinorder);
         logoutbutton=findViewById(R.id.logout_mainmenu_button);
-        weclome_message=findViewById(R.id.weclome_text);
         setscore=findViewById(R.id.set_score_button);
         bringscore=findViewById(R.id.bring_score_button);
 
+        fStore=FirebaseFirestore.getInstance();
+        fAuth=FirebaseAuth.getInstance();
+
         UserID=fAuth.getCurrentUser().getUid();
 
-        //------------bring data code-------------- theloume na treksei mono mia fora gi ayto kanoume delete meta
-        DocumentReference fetch_test = fStore.collection("users").document(UserID);
-        fetch_test.addSnapshotListener(this, new EventListener<DocumentSnapshot>() {
-            @Override
-            public void onEvent(@Nullable DocumentSnapshot value, @Nullable FirebaseFirestoreException error) {
-                uname = value.getString("Username");
-                weclome_message.setText("Γειά σου " +uname);
-            }
-        });
-        //------------bring data code--------------
-        fetch_test.delete();
+        /*
+        if(userID!=null){
+            //------------bring data code--------------
+            fetch_test = fStore.collection("users").document(UserID);
+            fetch_test.addSnapshotListener(this, new EventListener<DocumentSnapshot>() {
+                @Override
+                public void onEvent(@Nullable DocumentSnapshot value, @Nullable FirebaseFirestoreException error) {
+                    uname = value.getString("Username");
+                    weclome_message.setText("Γειά σου " + uname);
+                }
+            });
+            //------------bring data code--------------
+        }
+
+         */
 
 
         /*//------------bring data code2-------(a bit slower)-------
@@ -94,9 +100,9 @@ public class Mainmenu extends universal {
         logoutbutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                userID=null;
                 fAuth.signOut();
-                Intent intent = new Intent(Mainmenu.this, LoginActivity.class);
-                startActivity(intent);
+                startActivity(new Intent(Mainmenu.this, LoginActivity.class));
                 finish();
             }
         });

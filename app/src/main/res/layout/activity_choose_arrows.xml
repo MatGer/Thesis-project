@@ -13,13 +13,18 @@
         android:layout_height="wrap_content">
         <include layout="@layout/appbar"
             android:id="@+id/toolbar"/>
+        <Button
+            android:id="@+id/check"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="check"
+            android:layout_alignParentEnd="true"/>
     </RelativeLayout>
     <RelativeLayout
         android:id="@+id/header"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="?attr/actionBarSize"
-        android:layout_centerHorizontal="true">
+        android:layout_marginTop="?attr/actionBarSize">
         <TextView
             android:id="@+id/title_text"
             android:layout_width="wrap_content"
@@ -28,21 +33,21 @@
             android:layout_marginVertical="30dp"
             android:layout_marginHorizontal="5dp"
             android:textColor="@color/black"/>
-        <ImageView
-            android:id="@+id/sample"
-            android:layout_width="70dp"
-            android:layout_height="70dp"
-            android:src="@drawable/arrow_right"
-            android:layout_toEndOf="@+id/title_text"
-            android:layout_margin="5dp"/>
         <ImageButton
             android:id="@+id/play_audio"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/play_button"
-            android:layout_toEndOf="@+id/sample"
+            android:layout_toEndOf="@+id/title_text"
             android:layout_marginVertical="20dp"
             android:layout_marginHorizontal="10dp"/>
+        <ImageView
+            android:id="@+id/sample"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:src="@drawable/arrow_right"
+            android:layout_toEndOf="@+id/play_audio"
+            android:layout_margin="5dp"/>
     </RelativeLayout>
     <RelativeLayout
         android:layout_width="match_parent"

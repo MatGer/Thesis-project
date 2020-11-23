@@ -3,7 +3,6 @@ package com.example.diplwmatikh;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
-import android.text.method.ScrollingMovementMethod;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
@@ -46,9 +45,6 @@ public class choose_arrows extends universal {
             add_to_header.append("αριστερά");
             answers=new boolean[][]{{false,true,false,true,true,false,true,false},{true,false,true,false,false,false,true,false},{true,true,false,true,false,true,false,true}};// inverted se sxesh me ton apo panw pinaka
         }
-        TextView title = findViewById(R.id.title);
-        title.setText("Πάτησε στο ηχειάκι για να ακούσεις τις οδηγίες");
-        title.setMovementMethod(new ScrollingMovementMethod());
 
         check=findViewById(R.id.check);
         row11=findViewById(R.id.row11);

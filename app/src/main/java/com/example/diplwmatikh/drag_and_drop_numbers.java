@@ -3,7 +3,6 @@ package com.example.diplwmatikh;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
-import android.text.method.ScrollingMovementMethod;
 import android.view.DragEvent;
 import android.view.View;
 import android.widget.Button;
@@ -27,10 +26,6 @@ public class drag_and_drop_numbers extends universal {
         setContentView(R.layout.activity_drag_and_drop_numbers);
         runtime();
 
-        TextView title = findViewById(R.id.title);
-        title.setText("Ταίριαξε τους αριθμούς στις εικόνες");
-        title.setMovementMethod(new ScrollingMovementMethod());
-
         img1=findViewById(R.id.pencil);
         img2=findViewById(R.id.balls);
         img3=findViewById(R.id.eggs);
@@ -43,7 +38,7 @@ public class drag_and_drop_numbers extends universal {
         txt2.setOnLongClickListener(longClickListener);
         txt3.setOnLongClickListener(longClickListener);
 
-        check=findViewById(R.id.check);
+        check=findViewById(R.id.numbers_check);
 
         img1.setOnDragListener(dragListener);
         img2.setOnDragListener(dragListener);

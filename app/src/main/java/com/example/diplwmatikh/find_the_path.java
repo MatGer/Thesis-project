@@ -4,11 +4,9 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
-import android.text.method.ScrollingMovementMethod;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.TextView;
 
 public class find_the_path extends universal {
     ImageView circle1,circle2,circle3,circle4,circle5,circle6,circle7,circle8,circle9,circle10;
@@ -25,9 +23,7 @@ public class find_the_path extends universal {
         setContentView(R.layout.activity_find_the_path);
 
         runtime();
-        TextView title = findViewById(R.id.title);
-        title.setText("Βοήθησε την καμηλοπάρδαλη να φτάσει στο μπισκότο.");
-        title.setMovementMethod(new ScrollingMovementMethod());
+
         circle1=findViewById(R.id.circle1);
         circle2=findViewById(R.id.circle2);
         circle3=findViewById(R.id.circle3);

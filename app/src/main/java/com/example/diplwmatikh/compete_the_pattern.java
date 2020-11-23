@@ -9,7 +9,6 @@ import android.content.ClipData;
 import android.content.ClipDescription;
 import android.graphics.Rect;
 import android.os.Bundle;
-import android.text.method.ScrollingMovementMethod;
 import android.view.DragEvent;
 import android.view.View;
 import android.view.ViewGroup;
@@ -36,9 +35,6 @@ public class compete_the_pattern extends universal {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_compete_the_pattern);
         runtime();
-        TextView title = findViewById(R.id.title);
-        title.setText("Ολοκλήρωσε το μοτίβο");
-        title.setMovementMethod(new ScrollingMovementMethod());
 
         fill1_1=findViewById(R.id.fill1_7);
         fill1_2=findViewById(R.id.fill1_8);
@@ -54,7 +50,8 @@ public class compete_the_pattern extends universal {
         drag5=findViewById(R.id.row4_5);
         drag6=findViewById(R.id.row4_6);
 
-        check=findViewById(R.id.check);
+        text=findViewById(R.id.info);
+        check=findViewById(R.id.complete_check);
 
         drag1.setOnLongClickListener(longClickListener);
         drag2.setOnLongClickListener(longClickListener);

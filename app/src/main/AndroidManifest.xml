@@ -15,8 +15,7 @@
         <activity android:name=".find_the_path"
             android:screenOrientation="landscape">
         </activity>
-        <activity android:name=".choose_those_who_match"
-            android:screenOrientation="landscape"/>
+        <activity android:name=".choose_those_who_match" />
         <activity
             android:name=".choose_description"
             android:screenOrientation="landscape" />
@@ -26,28 +25,23 @@
         </activity>
         <activity
             android:name=".choose_arrows"
-            android:screenOrientation="landscape"/>
+            android:screenOrientation="landscape" />
         <activity
             android:name=".choose"
-            android:screenOrientation="landscape">
-        </activity>
+            android:screenOrientation="landscape" />
         <activity
             android:name=".which_one_is_different"
             android:screenOrientation="landscape" />
         <activity
             android:name=".write_height"
-            android:screenOrientation="landscape" >
-        </activity>
+            android:screenOrientation="landscape" />
         <activity
             android:name=".add_animals"
-            android:screenOrientation="landscape">
-        </activity>
+            android:screenOrientation="landscape" />
         <activity
             android:name=".next_number"
-            android:screenOrientation="landscape">
-        </activity>
-        <activity android:name=".how_many"
-            android:screenOrientation="landscape"/>
+            android:screenOrientation="landscape" />
+        <activity android:name=".how_many" />
         <activity
             android:name=".Drag_2_items"
             android:screenOrientation="landscape" />
@@ -70,9 +64,11 @@
             android:name=".path_with_numbers"
             android:screenOrientation="landscape" />
         <activity
-            android:name=".RegisterActivity"/>
+            android:name=".RegisterActivity"
+            android:screenOrientation="landscape" />
         <activity
-            android:name=".LoginActivity">
+            android:name=".LoginActivity"
+            android:screenOrientation="landscape">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -92,4 +88,5 @@
             android:name=".Correct_wrong"
             android:screenOrientation="landscape" />
     </application>
+
 </manifest>

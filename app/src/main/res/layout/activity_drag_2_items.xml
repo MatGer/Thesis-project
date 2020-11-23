@@ -78,5 +78,16 @@
          android:layout_below="@+id/drag1"
          android:layout_alignParentEnd="true"
          android:layout_margin="20dp"/>
+     <Button
+         android:id="@+id/check"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:text="check"
+         android:textAllCaps="false"
+         android:textColor="@color/register_login"
+         android:layout_alignBottom="@+id/target"
+         android:layout_alignStart="@+id/drag4"
+         android:layout_alignEnd="@id/drag6"
+         android:layout_margin="30dp"/>
     </RelativeLayout>
 </RelativeLayout>

@@ -52,6 +52,7 @@ public class Correct_wrong extends universal{
 
         //---------------Toolbar functionality------------------//
         back=findViewById(R.id.backbutton);
+        restart=findViewById(R.id.restartbutton);
         header = findViewById(R.id.title);
         header.setText(title);
         back.setOnClickListener(new View.OnClickListener() {

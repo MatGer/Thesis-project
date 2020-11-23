@@ -3,11 +3,9 @@ package com.example.diplwmatikh;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
-import android.text.method.ScrollingMovementMethod;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
-import android.widget.TextView;
 
 public class choose extends universal{
     Button check;
@@ -31,10 +29,6 @@ public class choose extends universal{
         woman.setOnClickListener(click);
         cake.setOnClickListener(click);
         ice_cream.setOnClickListener(click);
-
-        TextView title = findViewById(R.id.title);
-        title.setText("Επέλεξε το σωστό. Πάτησε στο ηχειάκι για να ακούσεις τις οδηγίες");
-        title.setMovementMethod(new ScrollingMovementMethod());
 
         check.setOnClickListener(new View.OnClickListener() {
             @Override
