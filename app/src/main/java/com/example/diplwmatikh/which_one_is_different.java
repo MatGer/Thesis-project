@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 public class which_one_is_different extends universal {
     ImageView row11,row12,row13,row21,row22,row23,row31,row32,row33;
@@ -19,6 +20,10 @@ public class which_one_is_different extends universal {
         setContentView(R.layout.activity_which_one_is_different);
 
         runtime();
+
+        TextView title = findViewById(R.id.title);
+        title.setText("Επέλεξε την εικόνα που δεν ταιριάζει.");
+        title.setSelected(true);
 
         row11=findViewById(R.id.row11);
         row12=findViewById(R.id.row12);

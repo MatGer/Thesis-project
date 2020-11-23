@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 
 public class write_height extends universal {
     EditText no1,no2,no3,no4,no5;
@@ -18,6 +19,10 @@ public class write_height extends universal {
 
         runtime();
 
+        TextView title = findViewById(R.id.title);
+        title.setText("Γράψε το ύψος του κάθε αντικειμένου.");
+        title.setSelected(true);
+
         no1=findViewById(R.id.type1);
         no2=findViewById(R.id.type2);
         no3=findViewById(R.id.type3);
@@ -28,20 +33,35 @@ public class write_height extends universal {
         check.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(Integer.parseInt(no1.getText().toString())==4){
-                    score++;
+                if(no1.getText().toString().trim().length()!=0){
+                    String a=no1.getText().toString();
+                    if(Integer.parseInt(a)==4){
+                        score++;
+                    }
                 }
-                if(Integer.parseInt(no2.getText().toString())==8){
-                    score++;
+                if(no2.getText().toString().trim().length()!=0){
+                    String b=no2.getText().toString();
+                    if(Integer.parseInt(b)==7){
+                        score++;
+                    }
                 }
-                if(Integer.parseInt(no3.getText().toString())==3){
-                    score++;
+                if(no3.getText().toString().trim().length()!=0){
+                    String c=no3.getText().toString();
+                    if(Integer.parseInt(c)==3){
+                        score++;
+                    }
                 }
-                if(Integer.parseInt(no4.getText().toString())==3){
-                    score++;
+                if(no4.getText().toString().trim().length()!=0){
+                    String d=no4.getText().toString();
+                    if(Integer.parseInt(d)==3){
+                        score++;
+                    }
                 }
-                if(Integer.parseInt(no5.getText().toString())==2){
-                    score++;
+                if(no5.getText().toString().trim().length()!=0){
+                    String e=no5.getText().toString();
+                    if(Integer.parseInt(e)==2){
+                        score++;
+                    }
                 }
 
                 upload_score("write height", score);

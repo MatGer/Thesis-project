@@ -18,6 +18,10 @@ public class next_number extends universal {
 
         runtime();
 
+        TextView title = findViewById(R.id.title);
+        title.setText("Επέλεξε τον αριθμό που ακολουθεί.");
+        title.setSelected(true);
+
         no1=findViewById(R.id.no15);
         no2=findViewById(R.id.no16);
         no3=findViewById(R.id.no25);

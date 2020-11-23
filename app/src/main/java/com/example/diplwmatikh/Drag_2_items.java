@@ -7,6 +7,7 @@ import android.view.DragEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 public class Drag_2_items extends universal {
     Button check;
@@ -21,6 +22,11 @@ public class Drag_2_items extends universal {
         runtime();
 
         check=findViewById(R.id.check);
+
+        TextView title = findViewById(R.id.title);
+        title.setText("Σείρε δύο αντικείμενα στο κουτί.");
+        title.setSelected(true);
+
         target=findViewById(R.id.target);
         drag1=findViewById(R.id.drag1);
         drag2=findViewById(R.id.drag2);

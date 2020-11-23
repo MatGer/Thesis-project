@@ -259,16 +259,5 @@
             android:layout_toEndOf="@id/tile25"
             android:layout_below="@id/tile15"/>
         </RelativeLayout>
-        <Button
-            android:id="@+id/check_path_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:padding="15dp"
-            android:text="Έλεγχος"
-            android:textAllCaps="false"
-            android:textColor="@color/register_login"
-            android:layout_centerHorizontal="true"
-            android:layout_below="@id/content_layout"
-            android:layout_marginTop="40dp"/>
     </RelativeLayout>
 </RelativeLayout>

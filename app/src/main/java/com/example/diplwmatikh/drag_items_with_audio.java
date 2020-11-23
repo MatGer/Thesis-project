@@ -7,6 +7,7 @@ import android.view.DragEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 public class drag_items_with_audio extends universal{
     ImageView circle,rectangle,square,triangle;
@@ -22,6 +23,10 @@ public class drag_items_with_audio extends universal{
         setContentView(R.layout.activity_drag_items_with_audio);
 
         runtime();
+
+        TextView title = findViewById(R.id.title);
+        title.setText("Σείρε τις εικόνες μέσα στα σχήματα με βάση τις οδηγίες. Πάτησε στο ηχειάκι για να ακούσεις την εκφώνηση");
+        title.setSelected(true);
 
         circle=findViewById(R.id.target1);
         rectangle=findViewById(R.id.target2);

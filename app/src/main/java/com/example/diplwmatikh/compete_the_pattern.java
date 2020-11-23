@@ -36,6 +36,10 @@ public class compete_the_pattern extends universal {
         setContentView(R.layout.activity_compete_the_pattern);
         runtime();
 
+        TextView title = findViewById(R.id.title);
+        title.setText("Ολοκλήρωσε το μοτίβο");
+        title.setSelected(true);
+
         fill1_1=findViewById(R.id.fill1_7);
         fill1_2=findViewById(R.id.fill1_8);
         fill2_1=findViewById(R.id.fill2_7);
@@ -50,8 +54,7 @@ public class compete_the_pattern extends universal {
         drag5=findViewById(R.id.row4_5);
         drag6=findViewById(R.id.row4_6);
 
-        text=findViewById(R.id.info);
-        check=findViewById(R.id.complete_check);
+        check=findViewById(R.id.check);
 
         drag1.setOnLongClickListener(longClickListener);
         drag2.setOnLongClickListener(longClickListener);

@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 public class find_the_path extends universal {
     ImageView circle1,circle2,circle3,circle4,circle5,circle6,circle7,circle8,circle9,circle10;
@@ -23,6 +24,10 @@ public class find_the_path extends universal {
         setContentView(R.layout.activity_find_the_path);
 
         runtime();
+
+        TextView title = findViewById(R.id.title);
+        title.setText("Βοήθησε την καμηλοπάρδαλη να φτάσει στο μπισκοτάκι. Επέλεξε τα κουτάκια που θα πρέπει να διανύσει.");
+        title.setSelected(true);
 
         circle1=findViewById(R.id.circle1);
         circle2=findViewById(R.id.circle2);

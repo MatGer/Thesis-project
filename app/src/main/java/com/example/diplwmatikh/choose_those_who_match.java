@@ -22,6 +22,10 @@ public class choose_those_who_match extends universal {
 
         runtime();
 
+        TextView title = findViewById(R.id.title);
+        title.setText("Επέλεξε τις περιγραφές που ταιριάζουν με την κάθε εικόνα. Πάτησε στο ηχειάκι για να ακούσεις την εκφώνηση");
+        title.setSelected(true);
+
         txt1=findViewById(R.id.click1);
         txt2=findViewById(R.id.click2);
         txt3=findViewById(R.id.click3);

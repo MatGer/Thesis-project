@@ -12,6 +12,7 @@ import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -58,6 +59,7 @@ import io.grpc.internal.SharedResourceHolder;
         // hide the navigation bar.
         decorView.setSystemUiVisibility(uiOptions);
 
+        getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN);   //keyboard stay hidden
         //get user id
         fAuth=FirebaseAuth.getInstance();
         if(fAuth.getCurrentUser()!=null){
@@ -190,8 +192,15 @@ import io.grpc.internal.SharedResourceHolder;
          }
      };
     //track is an integer... must be formatted as R.raw.filename
-    public void play_sound(int track){
+    public void play_sound(int track, Button btn){
         final MediaPlayer player = MediaPlayer.create(this,track);
+        player.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mp) {
+                btn.setEnabled(true);
+            }
+        });
+        btn.setEnabled(false);
         player.start();
     }
 

@@ -29,7 +29,11 @@ public class complete_the_shape extends universal {
         runtime();
 
         text = findViewById(R.id.info);
-        check = findViewById(R.id.complete_check);
+        check = findViewById(R.id.check);
+
+        TextView title = findViewById(R.id.title);
+        title.setText("Ολοκλήρωσε τα σχήματα, σέρνοντας τα δεξιά μέρη.");
+        title.setSelected(true);
 
         drag1 = findViewById(R.id.drag1_complete);
         drag2 = findViewById(R.id.drag2_complete);

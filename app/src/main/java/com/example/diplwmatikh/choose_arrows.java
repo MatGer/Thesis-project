@@ -31,6 +31,10 @@ public class choose_arrows extends universal {
         sample=findViewById(R.id.sample);
         add_to_header=findViewById(R.id.title_text);
 
+        TextView title = findViewById(R.id.title);
+        title.setText("Επέλεξε τα κατάλληλα βελάκια. Πάτησε στο ηχειάκι για να ακούσεις την εκφώνηση");
+        title.setSelected(true);
+
         choice=new Random().nextBoolean();
 
         if(choice){ //if choice = true tote metrame ta deksia belakia

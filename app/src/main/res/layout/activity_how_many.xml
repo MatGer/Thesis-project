@@ -15,16 +15,18 @@
             android:id="@+id/toolbar"/>
     </RelativeLayout>
     <RelativeLayout
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="fill_parent"
-        android:layout_marginTop="?attr/actionBarSize">
+        android:layout_marginTop="?attr/actionBarSize"
+        android:layout_centerHorizontal="true">
         <ImageView
             android:id="@+id/drag1"
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:src="@drawable/dragdog"
             android:layout_alignParentStart="true"
-            android:layout_margin="10dp"/>
+            android:layout_marginVertical="10dp"
+            android:layout_marginHorizontal="30dp"/>
         <TextView
             android:id="@+id/no11"
             android:layout_width="100dp"
@@ -64,7 +66,8 @@
             android:layout_height="100dp"
             android:src="@drawable/dragowl"
             android:layout_centerVertical="true"
-            android:layout_margin="10dp"/>
+            android:layout_marginVertical="10dp"
+            android:layout_marginHorizontal="30dp"/>
         <TextView
             android:id="@+id/no21"
             android:layout_width="100dp"
@@ -104,7 +107,8 @@
             android:layout_height="100dp"
             android:src="@drawable/dragcat"
             android:layout_alignParentBottom="true"
-            android:layout_margin="10dp"/>
+            android:layout_marginVertical="10dp"
+            android:layout_marginHorizontal="30dp"/>
         <TextView
             android:id="@+id/no31"
             android:layout_width="100dp"
@@ -138,15 +142,5 @@
             android:layout_alignTop="@+id/drag3"
             android:layout_marginHorizontal="30dp"
             android:textAlignment="center"/>
-        <Button
-            android:id="@+id/check"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="check"
-            android:textColor="@color/register_login"
-            android:textAllCaps="false"
-            android:layout_centerVertical="true"
-            android:layout_alignParentEnd="true"
-            android:layout_marginEnd="30dp"/>
     </RelativeLayout>
 </RelativeLayout>

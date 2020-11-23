@@ -13,15 +13,6 @@
         android:layout_height="wrap_content">
         <include layout="@layout/appbar"
             android:id="@+id/toolbar"/>
-        <Button
-            android:id="@+id/check"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:padding="15dp"
-            android:text="Έλεγχος"
-            android:textAllCaps="false"
-            android:textColor="@color/register_login"
-            android:layout_alignParentEnd="true"/>
     </RelativeLayout>
     <RelativeLayout
         android:layout_width="match_parent"

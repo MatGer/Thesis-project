@@ -13,14 +13,7 @@
         android:layout_height="wrap_content">
         <include layout="@layout/appbar"
             android:id="@+id/toolbar"/>
-        <Button
-            android:id="@+id/check"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="check"
-            android:layout_alignParentEnd="true"/>
     </RelativeLayout>
-
     <RelativeLayout
         android:id="@+id/up"
         android:layout_width="match_parent"
@@ -29,7 +22,6 @@
         android:background="@drawable/unselected_tile_with_borders"
         android:layout_marginHorizontal="5dp"
         android:layout_marginBottom="5dp">
-
         <TextView
             android:id="@+id/title1"
             android:layout_width="wrap_content"
