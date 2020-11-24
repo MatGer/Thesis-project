@@ -10,6 +10,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
+import android.view.WindowManager;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
@@ -43,7 +44,7 @@ public class LoginActivity extends universal {
         prog=findViewById(R.id.progressbar_login);
         fAuth=FirebaseAuth.getInstance();
         forget_password_button=findViewById(R.id.forget_password_button);
-
+        getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN);   //keyboard stay hidden
         if(fAuth.getCurrentUser()!=null){
             startActivity(new Intent(getApplicationContext(), Mainmenu.class));
             finish();

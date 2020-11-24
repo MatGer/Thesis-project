@@ -25,110 +25,70 @@
             android:layout_marginBottom="?attr/actionBarSize"
             android:src="@drawable/graph"
             android:layout_centerHorizontal="true"/>
-        <ImageView
-            android:id="@+id/broom"
-            android:layout_width="70dp"
-            android:layout_height="145dp"
-            android:src="@drawable/broomstick"
-            android:layout_alignBottom="@+id/graph"
-            android:layout_alignStart="@+id/graph"
-            android:layout_marginStart="10dp"/>
-        <ImageView
-            android:id="@+id/axe"
-            android:layout_width="165dp"
-            android:layout_height="230dp"
-            android:src="@drawable/axe"
-            android:layout_alignBottom="@+id/graph"
-            android:layout_toEndOf="@+id/broom"
-            android:layout_marginBottom="10dp"/>
-        <ImageView
-            android:id="@+id/spray"
-            android:layout_width="70dp"
-            android:layout_height="95dp"
-            android:src="@drawable/spray"
-            android:layout_alignBottom="@+id/graph"
-            android:layout_toEndOf="@+id/axe"
-            android:layout_marginBottom="10dp"/>
-        <ImageView
-            android:id="@+id/lamp"
-            android:layout_width="60dp"
-            android:layout_height="95dp"
-            android:src="@drawable/lamp"
-            android:layout_alignBottom="@+id/graph"
-            android:layout_toEndOf="@+id/spray"
-            android:layout_marginBottom="5dp"/>
-        <ImageView
-            android:id="@+id/lighter"
-            android:layout_width="70dp"
-            android:layout_height="70dp"
-            android:src="@drawable/lighter"
-            android:layout_alignBottom="@+id/graph"
-            android:layout_toEndOf="@+id/lamp"
-            android:layout_marginBottom="5dp"/>
         <EditText
             android:id="@+id/type1"
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:inputType="number"
-            android:layout_toEndOf="@+id/equals3"
             android:textColor="@color/register_login"
             android:textColorHighlight="@color/register_login"
             android:textColorHint="@color/register_login"
             android:textColorLink="@color/register_login"
-            android:layout_below="@+id/broom"
-            android:layout_alignStart="@+id/broom"
-            android:layout_marginHorizontal="10dp"/>
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="15dp"
+            android:layout_toStartOf="@+id/type2"
+            android:layout_marginRight="30dp"/>
         <EditText
             android:id="@+id/type2"
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:inputType="number"
-            android:layout_toEndOf="@+id/equals3"
             android:textColor="@color/register_login"
             android:textColorHighlight="@color/register_login"
             android:textColorHint="@color/register_login"
             android:textColorLink="@color/register_login"
-            android:layout_below="@+id/axe"
-            android:layout_alignStart="@+id/axe"
-            android:layout_marginHorizontal="60dp"/>
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="15dp"
+            android:layout_toStartOf="@+id/type3"
+            android:layout_marginRight="30dp"/>
         <EditText
             android:id="@+id/type3"
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:inputType="number"
-            android:layout_toEndOf="@+id/equals3"
             android:textColor="@color/register_login"
             android:textColorHighlight="@color/register_login"
             android:textColorHint="@color/register_login"
             android:textColorLink="@color/register_login"
             android:layout_below="@+id/spray"
-            android:layout_alignStart="@+id/spray"
-            android:layout_marginHorizontal="10dp"/>
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="15dp"
+            android:layout_centerHorizontal="true"/>
         <EditText
             android:id="@+id/type4"
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:inputType="number"
-            android:layout_toEndOf="@+id/equals3"
             android:textColor="@color/register_login"
             android:textColorHighlight="@color/register_login"
             android:textColorHint="@color/register_login"
             android:textColorLink="@color/register_login"
-            android:layout_below="@+id/lamp"
-            android:layout_alignStart="@+id/lamp"
-            android:layout_marginHorizontal="10dp"/>
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="15dp"
+            android:layout_toEndOf="@+id/type3"
+            android:layout_marginLeft="35dp"/>
         <EditText
             android:id="@+id/type5"
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:inputType="number"
-            android:layout_toEndOf="@+id/equals3"
             android:textColor="@color/register_login"
             android:textColorHighlight="@color/register_login"
             android:textColorHint="@color/register_login"
             android:textColorLink="@color/register_login"
-            android:layout_below="@+id/lighter"
-            android:layout_alignStart="@+id/lighter"
-            android:layout_marginHorizontal="15dp"/>
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="15dp"
+            android:layout_toEndOf="@+id/type4"
+            android:layout_marginLeft="40dp"/>
     </RelativeLayout>
 </RelativeLayout>

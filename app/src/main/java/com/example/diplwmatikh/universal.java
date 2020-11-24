@@ -59,7 +59,6 @@ import io.grpc.internal.SharedResourceHolder;
         // hide the navigation bar.
         decorView.setSystemUiVisibility(uiOptions);
 
-        getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN);   //keyboard stay hidden
         //get user id
         fAuth=FirebaseAuth.getInstance();
         if(fAuth.getCurrentUser()!=null){

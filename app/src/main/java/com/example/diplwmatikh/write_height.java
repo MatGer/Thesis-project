@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -29,31 +30,31 @@ public class write_height extends universal {
         no4=findViewById(R.id.type4);
         no5=findViewById(R.id.type5);
         check=findViewById(R.id.check);
-
+        getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN);   //keyboard stay hidden
         check.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if(no1.getText().toString().trim().length()!=0){
                     String a=no1.getText().toString();
-                    if(Integer.parseInt(a)==4){
+                    if(Integer.parseInt(a)==6){
                         score++;
                     }
                 }
                 if(no2.getText().toString().trim().length()!=0){
                     String b=no2.getText().toString();
-                    if(Integer.parseInt(b)==7){
+                    if(Integer.parseInt(b)==3){
                         score++;
                     }
                 }
                 if(no3.getText().toString().trim().length()!=0){
                     String c=no3.getText().toString();
-                    if(Integer.parseInt(c)==3){
+                    if(Integer.parseInt(c)==4){
                         score++;
                     }
                 }
                 if(no4.getText().toString().trim().length()!=0){
                     String d=no4.getText().toString();
-                    if(Integer.parseInt(d)==3){
+                    if(Integer.parseInt(d)==5){
                         score++;
                     }
                 }

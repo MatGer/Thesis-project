@@ -27,6 +27,7 @@
         <activity
             android:name=".drag_items_with_audio"
             android:screenOrientation="landscape">
+
         </activity>
         <activity
             android:name=".choose_arrows"
@@ -45,7 +46,11 @@
         <activity
             android:name=".write_height"
             android:screenOrientation="landscape">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
         <activity
             android:name=".add_animals"
@@ -104,11 +109,6 @@
         <activity
             android:name=".place_in_order"
             android:screenOrientation="landscape">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity
             android:name=".Mainmenu"

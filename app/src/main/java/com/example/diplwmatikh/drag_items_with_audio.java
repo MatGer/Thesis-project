@@ -96,15 +96,12 @@ public class drag_items_with_audio extends universal{
 
                     x=(int) v.getX();
                     y=(int) v.getY();
-                    x=x+v.getWidth()/2 - view.getWidth()/2;
-                    y=y+v.getHeight()/2 - view.getHeight()/2;
+                    x+=v.getWidth()/2 - view.getWidth()/2;
+                    y+=v.getHeight()/2 - view.getHeight()/2;
                     //gia na min ginetai overlap sta borders tou trigwnou
-                    if(view.getId()==R.id.drag1 && v.getId()==R.id.target3){
-                        y=y+30;
-                    }else{
-                        y=y+70;
+                    if(v.getId()==R.id.target3){
+                        y=y+60;
                     }
-
                     view.animate()
                             .x(x)
                             .y(y)

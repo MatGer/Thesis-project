@@ -131,7 +131,7 @@
             android:layout_toEndOf="@+id/target3" />
         <ImageView
             android:id="@+id/drag1"
-            android:layout_width="wrap_content"
+            android:layout_width="35dp"
             android:layout_height="55dp"
             android:src="@drawable/ice_cream"
             android:layout_margin="5dp"

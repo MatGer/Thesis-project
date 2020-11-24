@@ -6,11 +6,12 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 public class choose extends universal{
     Button check;
-    ImageButton teddy,woman,cake,ice_cream;
+    ImageView teddy,woman,cake,ice_cream;
     int score=0;
     boolean row1,row2;
     @Override
