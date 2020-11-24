@@ -37,7 +37,7 @@ public class compete_the_pattern extends universal {
         runtime();
 
         TextView title = findViewById(R.id.title);
-        title.setText("Ολοκλήρωσε το μοτίβο");
+        title.setText("Σείρε τα σχήματα από την τελευταία σειρά, στα πράσινα κουτάκια για να ολοκληρώσεις τα μοτίβα.");
         title.setSelected(true);
 
         fill1_1=findViewById(R.id.fill1_7);

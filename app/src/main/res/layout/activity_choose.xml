@@ -15,13 +15,15 @@
             android:id="@+id/toolbar"/>
     </RelativeLayout>
     <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        android:layout_marginTop="?attr/actionBarSize">
+    <RelativeLayout
         android:id="@+id/up"
         android:layout_width="match_parent"
         android:layout_height="170dp"
-        android:layout_marginTop="?attr/actionBarSize"
         android:background="@drawable/unselected_tile_with_borders"
-        android:layout_marginHorizontal="5dp"
-        android:layout_marginBottom="5dp">
+        android:layout_margin="5dp">
         <TextView
             android:id="@+id/title1"
             android:layout_width="wrap_content"
@@ -102,5 +104,6 @@
             android:layout_marginHorizontal="30dp"
             android:background="@color/white"
             android:padding="5dp"/>
+        </RelativeLayout>
     </RelativeLayout>
 </RelativeLayout>

@@ -16,34 +16,35 @@
     </RelativeLayout>
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="fill_parent"
-        android:layout_marginTop="?attr/actionBarSize">
+        android:layout_height="wrap_content"
+        android:layout_marginTop="?attr/actionBarSize"
+        android:layout_centerVertical="true">
         <ImageView
             android:id="@+id/first"
             android:layout_width="match_parent"
-            android:layout_height="100dp"
+            android:layout_height="130dp"
             android:src="@drawable/unselected_tile_with_borders"
             android:layout_margin="10dp"/>
         <ImageView
             android:id="@+id/row11"
-            android:layout_width="100dp"
-            android:layout_height="90dp"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
             android:src="@drawable/baseball"
             android:layout_alignStart="@+id/first"
             android:layout_alignBottom="@+id/first"
             android:layout_margin="5dp"/>
         <ImageView
             android:id="@+id/row12"
-            android:layout_width="100dp"
-            android:layout_height="90dp"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
             android:src="@drawable/peach"
             android:layout_centerHorizontal="true"
             android:layout_alignBottom="@+id/first"
             android:layout_margin="5dp"/>
         <ImageView
             android:id="@+id/row13"
-            android:layout_width="100dp"
-            android:layout_height="90dp"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
             android:src="@drawable/apple"
             android:layout_alignEnd="@+id/first"
             android:layout_alignBottom="@+id/first"
@@ -51,30 +52,30 @@
         <ImageView
             android:id="@+id/second"
             android:layout_width="match_parent"
-            android:layout_height="100dp"
+            android:layout_height="130dp"
             android:src="@drawable/unselected_tile_with_borders"
             android:layout_below="@+id/first"
             android:layout_margin="10dp"/>
         <ImageView
             android:id="@+id/row21"
-            android:layout_width="100dp"
-            android:layout_height="90dp"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
             android:src="@drawable/car"
             android:layout_alignStart="@+id/second"
             android:layout_alignBottom="@+id/second"
             android:layout_margin="5dp"/>
         <ImageView
             android:id="@+id/row22"
-            android:layout_width="100dp"
-            android:layout_height="90dp"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
             android:src="@drawable/bus"
             android:layout_centerHorizontal="true"
             android:layout_alignBottom="@+id/second"
             android:layout_margin="5dp"/>
         <ImageView
             android:id="@+id/row23"
-            android:layout_width="100dp"
-            android:layout_height="90dp"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
             android:src="@drawable/ship"
             android:layout_alignEnd="@+id/second"
             android:layout_alignBottom="@+id/second"
@@ -82,30 +83,30 @@
         <ImageView
             android:id="@+id/third"
             android:layout_width="match_parent"
-            android:layout_height="100dp"
+            android:layout_height="130dp"
             android:src="@drawable/unselected_tile_with_borders"
             android:layout_below="@id/second"
             android:layout_margin="10dp"/>
         <ImageView
             android:id="@+id/row31"
-            android:layout_width="100dp"
-            android:layout_height="90dp"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
             android:src="@drawable/chair"
             android:layout_alignStart="@+id/second"
             android:layout_alignBottom="@+id/third"
             android:layout_margin="5dp"/>
         <ImageView
             android:id="@+id/row32"
-            android:layout_width="100dp"
-            android:layout_height="90dp"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
             android:src="@drawable/lighter"
             android:layout_centerHorizontal="true"
             android:layout_alignBottom="@+id/third"
             android:layout_margin="5dp"/>
         <ImageView
             android:id="@+id/row33"
-            android:layout_width="100dp"
-            android:layout_height="90dp"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
             android:src="@drawable/table"
             android:layout_alignEnd="@+id/third"
             android:layout_alignBottom="@+id/third"

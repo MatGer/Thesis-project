@@ -13,6 +13,17 @@
         android:layout_height="wrap_content">
         <include layout="@layout/appbar"
             android:id="@+id/toolbar"/>
+        <Button
+            android:layout_alignParentEnd="true"
+            android:id="@+id/check_this"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_marginRight="50dp"
+            android:layout_centerVertical="true"
+            android:textAlignment="center"
+            android:text="Έλεγχος"
+            android:textAllCaps="false"
+            android:textColor="@color/register_login"/>
     </RelativeLayout>
     <RelativeLayout
         android:layout_width="match_parent"
@@ -29,21 +40,21 @@
             android:layout_centerHorizontal="true">
             <ImageView
                 android:id="@+id/gir1"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
                 android:layout_margin="10dp"
                 android:src="@drawable/giraffe"/>
             <ImageView
                 android:id="@+id/gir2"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
                 android:src="@drawable/giraffe"
                 android:layout_margin="10dp"
                 android:layout_toEndOf="@+id/gir1"/>
             <TextView
                 android:id="@+id/plus1"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
                 android:layout_margin="10dp"
                 android:layout_toEndOf="@id/gir2"
                 android:text="+"
@@ -52,43 +63,43 @@
                 android:textColor="@color/black"/>
             <ImageView
                 android:id="@+id/gir3"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
                 android:src="@drawable/giraffe"
                 android:layout_margin="10dp"
                 android:layout_toEndOf="@id/plus1"/>
             <ImageView
                 android:id="@+id/gir4"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
                 android:src="@drawable/giraffe"
                 android:layout_margin="10dp"
                 android:layout_toEndOf="@id/gir3"/>
             <ImageView
                 android:id="@+id/gir5"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
                 android:src="@drawable/giraffe"
                 android:layout_margin="10dp"
                 android:layout_toEndOf="@id/gir4"/>
             <ImageView
                 android:id="@+id/gir6"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
                 android:src="@drawable/giraffe"
                 android:layout_margin="10dp"
                 android:layout_toEndOf="@id/gir5"/>
             <ImageView
                 android:id="@+id/gir7"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
                 android:src="@drawable/giraffe"
                 android:layout_margin="10dp"
                 android:layout_toEndOf="@+id/gir6"/>
             <TextView
                 android:id="@+id/equals1"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
                 android:layout_margin="10dp"
                 android:layout_toEndOf="@id/gir7"
                 android:text="="
@@ -97,8 +108,8 @@
                 android:textColor="@color/black"/>
             <EditText
                 android:id="@+id/type1"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
                 android:inputType="number"
                 android:layout_toEndOf="@+id/equals1"
                 android:layout_margin="10dp"
@@ -115,39 +126,39 @@
             android:layout_centerHorizontal="true">
             <ImageView
                 android:id="@+id/bear1"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
                 android:layout_marginVertical="10dp"
                 android:layout_marginHorizontal="5dp"
                 android:src="@drawable/bear" />
             <ImageView
                 android:id="@+id/bear2"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
                 android:src="@drawable/bear"
                 android:layout_marginVertical="10dp"
                 android:layout_marginHorizontal="5dp"
                 android:layout_toEndOf="@+id/bear1" />
             <ImageView
                 android:id="@+id/bear3"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
                 android:src="@drawable/bear"
                 android:layout_marginVertical="10dp"
                 android:layout_marginHorizontal="5dp"
                 android:layout_toEndOf="@id/bear2" />
             <ImageView
                 android:id="@+id/bear4"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
                 android:src="@drawable/bear"
                 android:layout_marginVertical="10dp"
                 android:layout_marginHorizontal="5dp"
                 android:layout_toEndOf="@id/bear3" />
             <TextView
                 android:id="@+id/plus2"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
                 android:layout_marginVertical="10dp"
                 android:layout_marginHorizontal="5dp"
                 android:layout_toEndOf="@id/bear4"
@@ -157,56 +168,56 @@
                 android:textColor="@color/black" />
             <ImageView
                 android:id="@+id/bear5"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
                 android:src="@drawable/bear"
                 android:layout_marginVertical="10dp"
                 android:layout_marginHorizontal="5dp"
                 android:layout_toEndOf="@id/plus2" />
             <ImageView
                 android:id="@+id/bear6"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
                 android:src="@drawable/bear"
                 android:layout_marginVertical="10dp"
                 android:layout_marginHorizontal="5dp"
                 android:layout_toEndOf="@id/bear5" />
             <ImageView
                 android:id="@+id/bear7"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
                 android:src="@drawable/bear"
                 android:layout_marginVertical="10dp"
                 android:layout_marginHorizontal="5dp"
                 android:layout_toEndOf="@+id/bear6" />
             <ImageView
                 android:id="@+id/bear8"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
                 android:src="@drawable/bear"
                 android:layout_marginVertical="10dp"
                 android:layout_marginHorizontal="5dp"
                 android:layout_toEndOf="@+id/bear7" />
             <ImageView
                 android:id="@+id/bear9"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
                 android:src="@drawable/bear"
                 android:layout_marginVertical="10dp"
                 android:layout_marginHorizontal="5dp"
                 android:layout_toEndOf="@+id/bear8" />
             <ImageView
                 android:id="@+id/bear10"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
                 android:src="@drawable/bear"
                 android:layout_marginVertical="10dp"
                 android:layout_marginHorizontal="5dp"
                 android:layout_toEndOf="@+id/bear9" />
             <TextView
                 android:id="@+id/equals2"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
                 android:layout_marginVertical="10dp"
                 android:layout_marginHorizontal="5dp"
                 android:layout_toEndOf="@id/bear10"
@@ -216,8 +227,8 @@
                 android:textColor="@color/black"/>
             <EditText
                 android:id="@+id/type2"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
                 android:inputType="number"
                 android:layout_toEndOf="@+id/equals2"
                 android:layout_marginVertical="10dp"
@@ -235,39 +246,39 @@
             android:layout_centerHorizontal="true">
             <ImageView
                 android:id="@+id/bunny1"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
                 android:layout_marginVertical="10dp"
                 android:layout_marginHorizontal="5dp"
                 android:src="@drawable/bunny" />
             <ImageView
                 android:id="@+id/bunny2"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
                 android:src="@drawable/bunny"
                 android:layout_marginVertical="10dp"
                 android:layout_marginHorizontal="5dp"
                 android:layout_toEndOf="@+id/bunny1" />
             <ImageView
                 android:id="@+id/bunny3"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
                 android:src="@drawable/bunny"
                 android:layout_marginVertical="10dp"
                 android:layout_marginHorizontal="5dp"
                 android:layout_toEndOf="@id/bunny2" />
             <ImageView
                 android:id="@+id/bunny4"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
                 android:src="@drawable/bunny"
                 android:layout_marginVertical="10dp"
                 android:layout_marginHorizontal="5dp"
                 android:layout_toEndOf="@id/bunny3" />
             <TextView
                 android:id="@+id/plus3"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
                 android:layout_marginVertical="10dp"
                 android:layout_marginHorizontal="5dp"
                 android:layout_toEndOf="@id/bunny4"
@@ -277,8 +288,8 @@
                 android:textColor="@color/black" />
             <ImageView
                 android:id="@+id/bunny5"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
                 android:src="@drawable/bunny"
                 android:layout_marginVertical="10dp"
                 android:layout_marginHorizontal="5dp"
@@ -286,8 +297,8 @@
 
             <TextView
                 android:id="@+id/equals3"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
                 android:layout_marginVertical="10dp"
                 android:layout_marginHorizontal="5dp"
                 android:layout_toEndOf="@id/bunny5"
@@ -297,8 +308,8 @@
                 android:textColor="@color/black"/>
             <EditText
                 android:id="@+id/type3"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
                 android:inputType="number"
                 android:layout_toEndOf="@+id/equals3"
                 android:layout_marginVertical="10dp"
@@ -316,23 +327,23 @@
             android:layout_centerHorizontal="true">
             <ImageView
                 android:id="@+id/duck1"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
                 android:layout_marginVertical="10dp"
                 android:layout_marginHorizontal="5dp"
                 android:src="@drawable/duck" />
             <ImageView
                 android:id="@+id/duck2"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
                 android:src="@drawable/duck"
                 android:layout_marginVertical="10dp"
                 android:layout_marginHorizontal="5dp"
                 android:layout_toEndOf="@+id/duck1" />
             <TextView
                 android:id="@+id/plus4"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
                 android:layout_marginVertical="10dp"
                 android:layout_marginHorizontal="5dp"
                 android:layout_toEndOf="@id/duck2"
@@ -342,24 +353,24 @@
                 android:textColor="@color/black" />
             <ImageView
                 android:id="@+id/duck3"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
                 android:src="@drawable/duck"
                 android:layout_marginVertical="10dp"
                 android:layout_marginHorizontal="5dp"
                 android:layout_toEndOf="@id/plus4" />
             <ImageView
                 android:id="@+id/duck4"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
                 android:src="@drawable/duck"
                 android:layout_marginVertical="10dp"
                 android:layout_marginHorizontal="5dp"
                 android:layout_toEndOf="@id/duck3" />
             <TextView
                 android:id="@+id/equals4"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
                 android:layout_marginVertical="10dp"
                 android:layout_marginHorizontal="5dp"
                 android:layout_toEndOf="@id/duck4"
@@ -369,8 +380,8 @@
                 android:textColor="@color/black"/>
             <EditText
                 android:id="@+id/type4"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
                 android:inputType="number"
                 android:layout_toEndOf="@+id/equals4"
                 android:layout_marginVertical="10dp"

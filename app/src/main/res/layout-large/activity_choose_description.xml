@@ -214,7 +214,7 @@
                         android:src="@drawable/play_button"
                         android:layout_toEndOf="@id/click5"
                         android:layout_alignBottom="@id/click5"
-                        android:padding="10dp"
+                        android:padding="8dp"
                         android:layout_marginVertical="1dp"/>
                     <ImageView
                         android:id="@+id/play_click6"
@@ -223,7 +223,7 @@
                         android:src="@drawable/play_button"
                         android:layout_toEndOf="@id/click6"
                         android:layout_alignBottom="@id/click6"
-                        android:padding="10dp"
+                        android:padding="8dp"
                         android:layout_marginLeft="10dp"/>
                 </RelativeLayout>
                 </RelativeLayout>

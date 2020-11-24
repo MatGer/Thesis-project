@@ -24,51 +24,50 @@
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
         android:gravity="center">
-
         <TextView
             android:id="@+id/tile1"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
             android:gravity="center"
             android:text="1"
             android:layout_toEndOf="@id/image_start"
             android:background="@drawable/unselected_tile_with_borders"/>
         <TextView
             android:id="@+id/tile2"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
             android:gravity="center"
             android:text="2"
             android:layout_toEndOf="@id/tile1"
             android:background="@drawable/unselected_tile_with_borders"/>
         <TextView
             android:id="@+id/tile3"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
             android:gravity="center"
             android:text="3"
             android:layout_toEndOf="@id/tile2"
             android:background="@drawable/unselected_tile_with_borders"/>
         <TextView
             android:id="@+id/tile4"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
             android:gravity="center"
             android:text="4"
             android:layout_toEndOf="@id/tile3"
             android:background="@drawable/unselected_tile_with_borders"/>
         <TextView
             android:id="@+id/tile5"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
             android:gravity="center"
             android:text="5"
             android:layout_toEndOf="@id/tile4"
             android:background="@drawable/unselected_tile_with_borders"/>
         <TextView
             android:id="@+id/tile6"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
             android:gravity="center"
             android:text="6"
             android:layout_below="@+id/tile1"
@@ -76,8 +75,8 @@
             android:background="@drawable/unselected_tile_with_borders"/>
         <TextView
             android:id="@+id/tile7"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
             android:gravity="center"
             android:text="7"
             android:layout_toEndOf="@id/tile6"
@@ -85,8 +84,8 @@
             android:background="@drawable/unselected_tile_with_borders"/>
         <TextView
             android:id="@+id/tile8"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
             android:gravity="center"
             android:text="8"
             android:layout_toEndOf="@id/tile7"
@@ -94,8 +93,8 @@
             android:background="@drawable/unselected_tile_with_borders"/>
         <TextView
             android:id="@+id/tile9"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
             android:gravity="center"
             android:text="9"
             android:layout_toEndOf="@id/tile8"
@@ -103,8 +102,8 @@
             android:background="@drawable/unselected_tile_with_borders"/>
         <TextView
             android:id="@+id/tile10"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
             android:gravity="center"
             android:text="10"
             android:layout_toEndOf="@id/tile9"
@@ -112,8 +111,8 @@
             android:background="@drawable/unselected_tile_with_borders"/>
         <TextView
             android:id="@+id/tile11"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
             android:gravity="center"
             android:text="11"
             android:layout_below="@+id/tile6"
@@ -121,8 +120,8 @@
             android:background="@drawable/unselected_tile_with_borders"/>
         <TextView
             android:id="@+id/tile12"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
             android:gravity="center"
             android:text="12"
             android:layout_toEndOf="@id/tile11"
@@ -130,8 +129,8 @@
             android:background="@drawable/unselected_tile_with_borders"/>
         <TextView
             android:id="@+id/tile13"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
             android:gravity="center"
             android:text="13"
             android:layout_toEndOf="@id/tile12"
@@ -139,8 +138,8 @@
             android:background="@drawable/unselected_tile_with_borders"/>
         <TextView
             android:id="@+id/tile14"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
             android:gravity="center"
             android:text="14"
             android:layout_toEndOf="@id/tile13"
@@ -148,8 +147,8 @@
             android:background="@drawable/unselected_tile_with_borders"/>
         <TextView
             android:id="@+id/tile15"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
             android:gravity="center"
             android:text="15"
             android:layout_toEndOf="@id/tile14"
@@ -157,8 +156,8 @@
             android:background="@drawable/unselected_tile_with_borders"/>
         <TextView
             android:id="@+id/tile16"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
             android:gravity="center"
             android:text="16"
             android:layout_below="@+id/tile11"
@@ -166,8 +165,8 @@
             android:background="@drawable/unselected_tile_with_borders"/>
         <TextView
             android:id="@+id/tile17"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
             android:gravity="center"
             android:text="17"
             android:layout_toEndOf="@id/tile16"
@@ -175,8 +174,8 @@
             android:background="@drawable/unselected_tile_with_borders"/>
         <TextView
             android:id="@+id/tile18"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
             android:gravity="center"
             android:text="18"
             android:layout_toEndOf="@id/tile17"
@@ -184,8 +183,8 @@
             android:background="@drawable/unselected_tile_with_borders"/>
         <TextView
             android:id="@+id/tile19"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
             android:gravity="center"
             android:text="19"
             android:layout_toEndOf="@id/tile18"
@@ -193,8 +192,8 @@
             android:background="@drawable/unselected_tile_with_borders"/>
         <TextView
             android:id="@+id/tile20"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
             android:gravity="center"
             android:text="20"
             android:layout_toEndOf="@id/tile19"
@@ -202,8 +201,8 @@
             android:background="@drawable/unselected_tile_with_borders"/>
         <TextView
             android:id="@+id/tile21"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
             android:gravity="center"
             android:text="21"
             android:layout_below="@+id/tile16"
@@ -211,8 +210,8 @@
             android:background="@drawable/unselected_tile_with_borders"/>
         <TextView
             android:id="@+id/tile22"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
             android:gravity="center"
             android:text="22"
             android:layout_toEndOf="@id/tile21"
@@ -220,8 +219,8 @@
             android:background="@drawable/unselected_tile_with_borders"/>
         <TextView
             android:id="@+id/tile23"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
             android:gravity="center"
             android:text="23"
             android:layout_toEndOf="@id/tile22"
@@ -229,8 +228,8 @@
             android:background="@drawable/unselected_tile_with_borders"/>
         <TextView
             android:id="@+id/tile24"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
             android:gravity="center"
             android:text="24"
             android:layout_toEndOf="@id/tile23"
@@ -238,8 +237,8 @@
             android:background="@drawable/unselected_tile_with_borders"/>
         <TextView
             android:id="@+id/tile25"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
             android:gravity="center"
             android:text="25"
             android:layout_toEndOf="@id/tile24"
@@ -247,14 +246,14 @@
             android:background="@drawable/unselected_tile_with_borders"/>
         <ImageView
             android:id="@+id/image_start"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
             android:src="@drawable/teddy"
             android:layout_below="@id/tile1"/>
         <ImageView
             android:id="@+id/image_end"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
             android:src="@drawable/candy"
             android:layout_toEndOf="@id/tile25"
             android:layout_below="@id/tile15"/>

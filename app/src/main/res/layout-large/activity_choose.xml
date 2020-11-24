@@ -15,13 +15,15 @@
             android:id="@+id/toolbar"/>
     </RelativeLayout>
     <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        android:layout_marginTop="?attr/actionBarSize">
+    <RelativeLayout
         android:id="@+id/up"
         android:layout_width="match_parent"
-        android:layout_height="170dp"
-        android:layout_marginTop="?attr/actionBarSize"
+        android:layout_height="250dp"
         android:background="@drawable/unselected_tile_with_borders"
-        android:layout_marginHorizontal="5dp"
-        android:layout_marginBottom="5dp">
+        android:layout_margin="5dp">
         <TextView
             android:id="@+id/title1"
             android:layout_width="wrap_content"
@@ -39,18 +41,22 @@
             android:background="@color/white"/>
         <ImageButton
             android:id="@+id/woman"
-            android:layout_width="150dp"
-            android:layout_height="150dp"
+            android:layout_width="230dp"
+            android:layout_height="230dp"
             android:src="@drawable/woman"
+            android:scaleType="fitCenter"
+            android:padding="20dp"
             android:layout_toEndOf="@+id/play_audio1"
             android:layout_centerVertical="true"
             android:layout_marginHorizontal="30dp"
             android:background="@color/white"/>
         <ImageButton
             android:id="@+id/teddy"
-            android:layout_width="150dp"
-            android:layout_height="150dp"
+            android:layout_width="230dp"
+            android:layout_height="230dp"
             android:src="@drawable/teddy"
+            android:scaleType="fitCenter"
+            android:padding="20dp"
             android:layout_toEndOf="@+id/woman"
             android:layout_centerVertical="true"
             android:layout_marginHorizontal="30dp"
@@ -59,7 +65,7 @@
     <RelativeLayout
         android:id="@+id/down"
         android:layout_width="match_parent"
-        android:layout_height="170dp"
+        android:layout_height="250dp"
         android:layout_marginVertical="5dp"
         android:background="@drawable/unselected_tile_with_borders"
         android:layout_marginHorizontal="5dp"
@@ -82,21 +88,26 @@
             android:padding="10dp"/>
         <ImageButton
             android:id="@+id/birthday_cake"
-            android:layout_width="220dp"
-            android:layout_height="165dp"
+            android:layout_width="260dp"
+            android:layout_height="235dp"
             android:src="@drawable/birthday_cake"
+            android:scaleType="fitCenter"
+            android:padding="20dp"
             android:layout_centerVertical="true"
             android:layout_toEndOf="@+id/play_audio2"
             android:layout_marginHorizontal="30dp"
             android:background="@color/white"/>
         <ImageButton
             android:id="@+id/ice_cream"
-            android:layout_width="140dp"
-            android:layout_height="165dp"
+            android:layout_width="200dp"
+            android:layout_height="235dp"
             android:src="@drawable/ice_cream"
             android:layout_centerVertical="true"
+            android:scaleType="fitCenter"
+            android:padding="20dp"
             android:layout_toEndOf="@+id/birthday_cake"
             android:layout_marginHorizontal="30dp"
             android:background="@color/white"/>
+        </RelativeLayout>
     </RelativeLayout>
 </RelativeLayout>
