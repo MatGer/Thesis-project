@@ -110,6 +110,7 @@ public class choose_those_who_match extends universal {
                         match_to_answer[0][3]=false;
                         txt4.setBackground(getDrawable(R.color.white));
                     }
+                    break;
                 case R.id.click5:
                     if(!match_to_answer[1][0]){
                         match_to_answer[1][0]=true;

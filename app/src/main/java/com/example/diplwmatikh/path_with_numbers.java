@@ -34,7 +34,7 @@ public class path_with_numbers extends universal implements OnClickListener {
         setContentView(R.layout.activity_path_with_numbers);
         runtime();
         TextView title = findViewById(R.id.title);
-        title.setText("Επέλεξε το αρκουδάκι να φτάσει στην καραμέλα.");
+        title.setText("Βοήθησε το αρκουδάκι να φτάσει στην καραμέλα. Επέλεξε τους αριθμούς που θα πρέπει να ακολουθήσει.");
         title.setSelected(true);
 
         selected_path=(int) (Math.random() * (3-0+1)+0);

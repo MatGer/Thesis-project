@@ -31,7 +31,7 @@ public class which_one_is_different extends universal {
         row21=findViewById(R.id.row21);
         row22=findViewById(R.id.row22);
         row23=findViewById(R.id.row23);
-        row31=findViewById(R.id.row13);
+        row31=findViewById(R.id.row31);
         row32=findViewById(R.id.row32);
         row33=findViewById(R.id.row33);
         check=findViewById(R.id.check);
@@ -71,13 +71,13 @@ public class which_one_is_different extends universal {
                 case R.id.row11:
                     row11.setBackground(getDrawable(R.color.teal_200));
                     row12.setBackground(getDrawable(R.color.white));
-                    row12.setBackground(getDrawable(R.color.white));
+                    row13.setBackground(getDrawable(R.color.white));
                     row1=0;
                     break;
                 case R.id.row12:
                     row12.setBackground(getDrawable(R.color.teal_200));
                     row11.setBackground(getDrawable(R.color.white));
-                    row12.setBackground(getDrawable(R.color.white));
+                    row13.setBackground(getDrawable(R.color.white));
                     row1=1;
                     break;
                 case R.id.row13:

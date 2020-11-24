@@ -9,7 +9,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 public class add_animals extends universal {
-    Button check;
+    Button check,check_this;
     EditText num1,num2,num3,num4;
     int score=0;
     @Override
@@ -24,12 +24,14 @@ public class add_animals extends universal {
         num3=findViewById(R.id.type3);
         num4=findViewById(R.id.type4);
         check=findViewById(R.id.check);
+        check.setVisibility(View.INVISIBLE);
+        check_this=findViewById(R.id.check_this);
 
         TextView title = findViewById(R.id.title);
         title.setText("Κάνε τις προσθέσεις.");
         title.setSelected(true);
 
-        check.setOnClickListener(new View.OnClickListener() {
+        check_this.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if(num1.getText().toString().trim().length()!=0){

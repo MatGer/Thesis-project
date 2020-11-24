@@ -25,119 +25,119 @@
             <!--row 1-->
                 <ImageView
                     android:id="@+id/row1_1"
-                    android:layout_width="65dp"
-                    android:layout_height="65dp"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
                     android:layout_margin="5dp"
                     android:src="@drawable/circle"/>
                 <ImageView
                     android:id="@+id/row1_2"
-                    android:layout_width="65dp"
-                    android:layout_height="65dp"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
                     android:layout_margin="5dp"
                     android:src="@drawable/heart"
                     android:layout_toEndOf="@id/row1_1"/>
                 <ImageView
                     android:id="@+id/row1_3"
-                    android:layout_width="65dp"
-                    android:layout_height="65dp"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
                     android:layout_margin="5dp"
                     android:src="@drawable/circle"
                     android:layout_toEndOf="@id/row1_2"/>
                 <ImageView
                     android:id="@+id/row1_4"
-                    android:layout_width="65dp"
-                    android:layout_height="65dp"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
                     android:layout_margin="5dp"
                     android:src="@drawable/heart"
                     android:layout_toEndOf="@id/row1_3"/>
                 <ImageView
                     android:id="@+id/row1_5"
-                    android:layout_width="65dp"
-                    android:layout_height="65dp"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
                     android:layout_margin="5dp"
                     android:src="@drawable/circle"
                     android:layout_toEndOf="@id/row1_4"/>
                 <ImageView
                     android:id="@+id/row1_6"
-                    android:layout_width="65dp"
-                    android:layout_height="65dp"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
                     android:layout_margin="5dp"
                     android:src="@drawable/heart"
                     android:layout_toEndOf="@id/row1_5"/>
                 <ImageView
                     android:id="@+id/fill1_7"
-                    android:layout_width="65dp"
-                    android:layout_height="65dp"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
                     android:layout_margin="5dp"
                     android:background="@color/background"
                     android:layout_toEndOf="@id/row1_6"/>
                 <ImageView
                     android:id="@+id/fill1_8"
-                    android:layout_width="65dp"
-                    android:layout_height="65dp"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
                     android:layout_margin="5dp"
                     android:background="@color/background"
                     android:layout_toEndOf="@id/fill1_7"/>
             <!--row 2-->
                 <ImageView
                     android:id="@+id/row2_1"
-                    android:layout_width="65dp"
-                    android:layout_height="65dp"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
                     android:layout_margin="5dp"
                     android:layout_below="@+id/row1_1"
                     android:src="@drawable/square"/>
                 <ImageView
                     android:id="@+id/row2_2"
-                    android:layout_width="65dp"
-                    android:layout_height="65dp"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
                     android:layout_margin="5dp"
                     android:src="@drawable/triangle"
                     android:layout_below="@+id/row1_1"
                     android:layout_toEndOf="@id/row2_1"/>
                 <ImageView
                     android:id="@+id/row2_3"
-                    android:layout_width="65dp"
-                    android:layout_height="65dp"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
                     android:layout_margin="5dp"
                     android:src="@drawable/square"
                     android:layout_below="@+id/row1_1"
                     android:layout_toEndOf="@id/row2_2"/>
                 <ImageView
                     android:id="@+id/row2_4"
-                    android:layout_width="65dp"
-                    android:layout_height="65dp"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
                     android:layout_margin="5dp"
                     android:src="@drawable/triangle"
                     android:layout_below="@+id/row1_1"
                     android:layout_toEndOf="@id/row2_3"/>
                 <ImageView
                     android:id="@+id/row2_5"
-                    android:layout_width="65dp"
-                    android:layout_height="65dp"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
                     android:layout_margin="5dp"
                     android:src="@drawable/square"
                     android:layout_below="@+id/row1_1"
                     android:layout_toEndOf="@id/row2_4"/>
                 <ImageView
                     android:id="@+id/row2_6"
-                    android:layout_width="65dp"
-                    android:layout_height="65dp"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
                     android:layout_margin="5dp"
                     android:src="@drawable/triangle"
                     android:layout_below="@+id/row1_1"
                     android:layout_toEndOf="@id/row2_5"/>
                 <ImageView
                     android:id="@+id/fill2_7"
-                    android:layout_width="65dp"
-                    android:layout_height="65dp"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
                     android:layout_margin="5dp"
                     android:background="@color/background"
                     android:layout_below="@+id/row1_1"
                     android:layout_toEndOf="@id/row2_6"/>
                 <ImageView
                     android:id="@+id/fill2_8"
-                    android:layout_width="65dp"
-                    android:layout_height="65dp"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
                     android:layout_margin="5dp"
                     android:background="@color/background"
                     android:layout_below="@+id/row1_1"
@@ -145,63 +145,63 @@
             <!--row 3-->
                 <ImageView
                     android:id="@+id/row3_1"
-                    android:layout_width="65dp"
-                    android:layout_height="65dp"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
                     android:layout_margin="5dp"
                     android:layout_below="@+id/row2_1"
                     android:src="@drawable/rombos"/>
                 <ImageView
                     android:id="@+id/row3_2"
-                    android:layout_width="65dp"
-                    android:layout_height="65dp"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
                     android:layout_margin="5dp"
                     android:src="@drawable/star"
                     android:layout_below="@+id/row2_1"
                     android:layout_toEndOf="@id/row3_1"/>
                 <ImageView
                     android:id="@+id/row3_3"
-                    android:layout_width="65dp"
-                    android:layout_height="65dp"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
                     android:layout_margin="5dp"
                     android:src="@drawable/rombos"
                     android:layout_below="@+id/row2_1"
                     android:layout_toEndOf="@id/row3_2"/>
                 <ImageView
                     android:id="@+id/row3_4"
-                    android:layout_width="65dp"
-                    android:layout_height="65dp"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
                     android:layout_margin="5dp"
                     android:src="@drawable/star"
                     android:layout_below="@+id/row2_1"
                     android:layout_toEndOf="@id/row3_3"/>
                 <ImageView
                     android:id="@+id/row3_5"
-                    android:layout_width="65dp"
-                    android:layout_height="65dp"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
                     android:layout_margin="5dp"
                     android:src="@drawable/rombos"
                     android:layout_below="@+id/row2_1"
                     android:layout_toEndOf="@id/row3_4"/>
                 <ImageView
                     android:id="@+id/row3_6"
-                    android:layout_width="65dp"
-                    android:layout_height="65dp"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
                     android:layout_margin="5dp"
                     android:src="@drawable/star"
                     android:layout_below="@+id/row2_1"
                     android:layout_toEndOf="@id/row3_5"/>
                 <ImageView
                     android:id="@+id/fill3_7"
-                    android:layout_width="65dp"
-                    android:layout_height="65dp"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
                     android:layout_margin="5dp"
                     android:background="@color/background"
                     android:layout_below="@+id/row2_1"
                     android:layout_toEndOf="@id/row3_6"/>
                 <ImageView
                     android:id="@+id/fill3_8"
-                    android:layout_width="65dp"
-                    android:layout_height="65dp"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
                     android:layout_margin="5dp"
                     android:background="@color/background"
                     android:layout_below="@+id/row2_1"
@@ -209,47 +209,47 @@
             <!--row 4-->
                 <ImageView
                     android:id="@+id/row4_1"
-                    android:layout_width="65dp"
-                    android:layout_height="65dp"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
                     android:layout_margin="5dp"
                     android:src="@drawable/triangle"
                     android:layout_below="@+id/row3_1"/>
                 <ImageView
                     android:id="@+id/row4_2"
-                    android:layout_width="65dp"
-                    android:layout_height="65dp"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
                     android:layout_margin="5dp"
                     android:src="@drawable/circle"
                     android:layout_below="@+id/row3_1"
                     android:layout_toEndOf="@id/row4_1"/>
                 <ImageView
                     android:id="@+id/row4_3"
-                    android:layout_width="65dp"
-                    android:layout_height="65dp"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
                     android:layout_margin="5dp"
                     android:src="@drawable/star"
                     android:layout_below="@+id/row3_1"
                     android:layout_toEndOf="@id/row4_2"/>
                 <ImageView
                     android:id="@+id/row4_4"
-                    android:layout_width="65dp"
-                    android:layout_height="65dp"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
                     android:layout_margin="5dp"
                     android:src="@drawable/square"
                     android:layout_below="@+id/row3_1"
                     android:layout_toEndOf="@id/row4_3"/>
                 <ImageView
                     android:id="@+id/row4_5"
-                    android:layout_width="65dp"
-                    android:layout_height="65dp"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
                     android:layout_margin="5dp"
                     android:src="@drawable/heart"
                     android:layout_below="@+id/row3_1"
                     android:layout_toEndOf="@id/row4_4"/>
                 <ImageView
                     android:id="@+id/row4_6"
-                    android:layout_width="65dp"
-                    android:layout_height="65dp"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
                     android:layout_margin="5dp"
                     android:src="@drawable/rombos"
                     android:layout_below="@+id/row3_1"

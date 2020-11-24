@@ -32,9 +32,9 @@
                 android:background="@drawable/unselected_tile_with_borders">
                 <ImageView
                     android:id="@+id/image1"
-                    android:layout_width="130dp"
+                    android:layout_width="150dp"
                     android:layout_height="match_parent"
-                    android:layout_marginVertical="5dp"
+                    android:layout_margin="5dp"
                     android:src="@drawable/old_man"/>
                 <RelativeLayout
                     android:layout_width="wrap_content"
@@ -44,6 +44,7 @@
                 <RelativeLayout
                     android:layout_width="200dp"
                     android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
                     android:layout_centerInParent="true">
                 <TextView
                     android:id="@+id/click1"
@@ -51,9 +52,9 @@
                     android:layout_height="wrap_content"
                     android:text="Είναι παππούς"
                     android:textAlignment="center"
-                    android:layout_margin="5dp"
+                    android:layout_margin="10dp"
                     android:layout_alignParentStart="true"
-                    android:padding="10dp"/>
+                    android:padding="20dp"/>
                 <TextView
                     android:id="@+id/click2"
                     android:layout_width="wrap_content"
@@ -61,29 +62,32 @@
                     android:text="Είναι παιδί"
                     android:textAlignment="center"
                     android:layout_alignStart="@+id/click1"
-                    android:layout_marginLeft="5dp"
+                    android:layout_marginLeft="10dp"
                     android:layout_alignEnd="@+id/click1"
                     android:layout_alignParentStart="true"
                     android:layout_below="@+id/click1"
-                    android:padding="10dp" />
+                    android:padding="20dp"
+                    android:layout_marginVertical="10dp"/>
 
                     <ImageView
                         android:id="@+id/play_click1"
                         android:layout_width="wrap_content"
-                        android:layout_height="40dp"
+                        android:layout_height="wrap_content"
                         android:src="@drawable/play_button"
                         android:layout_toEndOf="@id/click1"
                         android:layout_alignBottom="@id/click1"
-                        android:padding="10dp" />
+                        android:padding="10dp"
+                        android:layout_marginVertical="5dp"/>
                     <ImageView
                         android:id="@+id/play_click2"
                         android:layout_width="wrap_content"
-                        android:layout_height="40dp"
+                        android:layout_height="wrap_content"
                         android:src="@drawable/play_button"
                         android:layout_toEndOf="@id/click2"
                         android:layout_alignBottom="@id/click2"
                         android:padding="10dp"
-                        android:layout_marginLeft="5dp"/>
+                        android:layout_marginVertical="6dp"
+                        android:layout_marginLeft="10dp"/>
                 </RelativeLayout>
                 </RelativeLayout>
             </RelativeLayout>
@@ -95,7 +99,7 @@
                 android:background="@drawable/unselected_tile_with_borders">
                 <ImageView
                     android:id="@+id/image2"
-                    android:layout_width="140dp"
+                    android:layout_width="160dp"
                     android:layout_height="match_parent"
                     android:src="@drawable/mother_with_children"
                     android:layout_margin="5dp"/>
@@ -114,10 +118,10 @@
                         android:layout_height="wrap_content"
                         android:text="Είναι μόνη της"
                         android:textAlignment="center"
+                        android:layout_marginLeft="10dp"
                         android:layout_marginRight="5dp"
                         android:layout_alignParentStart="true"
-                        android:padding="12dp"
-                        android:layout_marginVertical="10dp"/>
+                        android:padding="20dp"/>
                     <TextView
                         android:id="@+id/click4"
                         android:layout_width="wrap_content"
@@ -125,27 +129,30 @@
                         android:text="Είναι με τα παιδιά της"
                         android:textAlignment="center"
                         android:layout_alignStart="@+id/click3"
+                        android:layout_marginLeft="10dp"
                         android:layout_alignParentStart="true"
                         android:layout_below="@+id/click3"
-                        android:padding="10dp"
+                        android:padding="20dp"
+                        android:layout_marginVertical="10dp"
                         android:layout_alignEnd="@+id/click3"/>
                     <ImageView
                         android:id="@+id/play_click3"
                         android:layout_width="wrap_content"
-                        android:layout_height="40dp"
+                        android:layout_height="wrap_content"
                         android:src="@drawable/play_button"
                         android:layout_toEndOf="@id/click3"
                         android:layout_alignBottom="@id/click3"
-                        android:padding="10dp"/>
+                        android:padding="10dp"
+                        android:layout_marginVertical="5dp"/>
                     <ImageView
                         android:id="@+id/play_click4"
                         android:layout_width="wrap_content"
-                        android:layout_height="40dp"
+                        android:layout_height="wrap_content"
                         android:src="@drawable/play_button"
                         android:layout_toEndOf="@id/click4"
                         android:layout_alignBottom="@id/click4"
                         android:padding="10dp"
-                        android:layout_marginBottom="10dp"
+                        android:layout_marginVertical="15dp"
                         android:layout_marginLeft="5dp"/>
                 </RelativeLayout>
                 </RelativeLayout>
@@ -165,7 +172,7 @@
                 android:background="@drawable/unselected_tile_with_borders">
                 <ImageView
                     android:id="@+id/image3"
-                    android:layout_width="140dp"
+                    android:layout_width="160dp"
                     android:layout_height="wrap_content"
                     android:src="@drawable/woman_in_dress"
                     android:layout_marginVertical="5dp"/>
@@ -180,45 +187,44 @@
                     android:layout_centerInParent="true">
                     <TextView
                         android:id="@+id/click5"
-                        android:layout_width="120dp"
-                        android:layout_height="40dp"
+                        android:layout_width="140dp"
+                        android:layout_height="wrap_content"
                         android:text="Φοράει παντελόνι"
                         android:textAlignment="center"
-                        android:layout_marginVertical="5dp"
+                        android:layout_margin="10dp"
                         android:layout_alignParentStart="true"
-                        android:paddingVertical="8dp"/>
+                        android:paddingVertical="15dp"/>
                     <TextView
                         android:id="@+id/click6"
                         android:layout_width="wrap_content"
-                        android:layout_height="40dp"
-                        android:text="Φοράει φόρεμα"
+                        android:layout_height="wrap_content"
+                        android:text="φοράει φόρεμα"
                         android:textAlignment="center"
                         android:layout_alignStart="@+id/click5"
+                        android:layout_marginLeft="10dp"
                         android:layout_alignEnd="@+id/click5"
                         android:layout_alignParentStart="true"
                         android:layout_below="@+id/click5"
-                        android:paddingVertical="7dp"
+                        android:paddingVertical="15dp"
                         android:layout_marginVertical="10dp" />
                     <ImageView
                         android:id="@+id/play_click5"
                         android:layout_width="wrap_content"
-                        android:layout_height="40dp"
+                        android:layout_height="wrap_content"
                         android:src="@drawable/play_button"
                         android:layout_toEndOf="@id/click5"
                         android:layout_alignBottom="@id/click5"
                         android:padding="10dp"
-                        android:layout_marginLeft="5dp"
-                        android:layout_marginBottom="2dp"/>
+                        android:layout_marginVertical="1dp"/>
                     <ImageView
                         android:id="@+id/play_click6"
                         android:layout_width="wrap_content"
-                        android:layout_height="40dp"
+                        android:layout_height="wrap_content"
                         android:src="@drawable/play_button"
                         android:layout_toEndOf="@id/click6"
                         android:layout_alignBottom="@id/click6"
                         android:padding="10dp"
-                        android:layout_marginLeft="5dp"
-                        android:layout_marginBottom="2dp"/>
+                        android:layout_marginLeft="10dp"/>
                 </RelativeLayout>
                 </RelativeLayout>
             </RelativeLayout>
@@ -230,7 +236,7 @@
                 android:background="@drawable/unselected_tile_with_borders">
                 <ImageView
                     android:id="@+id/image4"
-                    android:layout_width="140dp"
+                    android:layout_width="160dp"
                     android:layout_height="wrap_content"
                     android:src="@drawable/businessman"
                     android:layout_margin="5dp"/>
@@ -245,40 +251,42 @@
                     android:layout_centerInParent="true">
                     <TextView
                         android:id="@+id/click7"
-                        android:layout_width="110dp"
-                        android:layout_height="40dp"
+                        android:layout_width="140dp"
+                        android:layout_height="wrap_content"
                         android:text="Δουλεύει"
                         android:textAlignment="center"
+                        android:layout_marginLeft="10dp"
                         android:layout_alignParentStart="true"
                         android:paddingVertical="10dp"/>
                     <TextView
                         android:id="@+id/click8"
                         android:layout_width="wrap_content"
-                        android:layout_height="40dp"
+                        android:layout_height="wrap_content"
                         android:text="Ξεκουράζεται"
                         android:textAlignment="center"
                         android:layout_alignStart="@+id/click7"
+                        android:layout_marginLeft="10dp"
                         android:layout_alignEnd="@+id/click7"
                         android:layout_alignParentStart="true"
                         android:layout_below="@+id/click7"
-                        android:paddingVertical="9dp"
+                        android:paddingVertical="12dp"
                         android:layout_marginVertical="10dp"/>
                     <ImageView
                         android:id="@+id/play_click7"
                         android:layout_width="wrap_content"
-                        android:layout_height="40dp"
+                        android:layout_height="wrap_content"
                         android:src="@drawable/play_button"
                         android:layout_toEndOf="@id/click7"
                         android:layout_alignBottom="@id/click7"
-                        android:padding="9dp"/>
+                        android:padding="8dp"/>
                     <ImageView
                         android:id="@+id/play_click8"
                         android:layout_width="wrap_content"
-                        android:layout_height="40dp"
+                        android:layout_height="wrap_content"
                         android:src="@drawable/play_button"
                         android:layout_toEndOf="@id/click8"
                         android:layout_alignBottom="@id/click8"
-                        android:padding="9dp"/>
+                        android:padding="10dp"/>
                 </RelativeLayout>
                 </RelativeLayout>
             </RelativeLayout>

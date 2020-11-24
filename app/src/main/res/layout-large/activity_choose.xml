@@ -39,8 +39,8 @@
             android:background="@color/white"/>
         <ImageButton
             android:id="@+id/woman"
-            android:layout_width="130dp"
-            android:layout_height="130dp"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
             android:src="@drawable/woman"
             android:layout_toEndOf="@+id/play_audio1"
             android:layout_centerVertical="true"
@@ -48,8 +48,8 @@
             android:background="@color/white"/>
         <ImageButton
             android:id="@+id/teddy"
-            android:layout_width="130dp"
-            android:layout_height="130dp"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
             android:src="@drawable/teddy"
             android:layout_toEndOf="@+id/woman"
             android:layout_centerVertical="true"
@@ -82,25 +82,21 @@
             android:padding="10dp"/>
         <ImageButton
             android:id="@+id/birthday_cake"
-            android:layout_width="170dp"
-            android:layout_height="115dp"
+            android:layout_width="220dp"
+            android:layout_height="165dp"
             android:src="@drawable/birthday_cake"
-            android:scaleType="fitXY"
             android:layout_centerVertical="true"
             android:layout_toEndOf="@+id/play_audio2"
             android:layout_marginHorizontal="30dp"
-            android:background="@color/white"
-            android:padding="5dp"/>
+            android:background="@color/white"/>
         <ImageButton
             android:id="@+id/ice_cream"
-            android:layout_width="90dp"
-            android:layout_height="115dp"
+            android:layout_width="140dp"
+            android:layout_height="165dp"
             android:src="@drawable/ice_cream"
-            android:scaleType="fitCenter"
             android:layout_centerVertical="true"
             android:layout_toEndOf="@+id/birthday_cake"
             android:layout_marginHorizontal="30dp"
-            android:background="@color/white"
-            android:padding="5dp"/>
+            android:background="@color/white"/>
     </RelativeLayout>
 </RelativeLayout>

@@ -25,7 +25,7 @@ import java.util.Random;
 public class Correct_wrong extends universal{
     String title = "Σωστό - Λάθος";
     TextView header,question;
-    ImageButton restart,back;
+    ImageButton back;
     Button correct, wrong, next;
     int counter,getquestions,score=0;
     int selected_question=0;
@@ -58,14 +58,6 @@ public class Correct_wrong extends universal{
             @Override
             public void onClick(View v) {
                 AlertDialog alert = builderback.create();
-                alert.show();
-            }
-        });
-
-        restart.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                AlertDialog alert = builderreset.create();
                 alert.show();
             }
         });

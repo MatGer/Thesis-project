@@ -76,7 +76,7 @@ public class Drag_2_items extends universal {
                             score=2;
                             break;
                         case 3:
-                            itemX=(int) v.getX() +10;
+                            itemX=(int) v.getX() +30;
                             itemY = (int) v.getY() + 3*v.getHeight()/5;
                             counter++;
                             score=1;

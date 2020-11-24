@@ -24,7 +24,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Επέλεξε όλα τα βέλη που δείχνουν "
-            android:layout_marginVertical="20dp"
+            android:layout_marginVertical="30dp"
             android:layout_marginHorizontal="5dp"
             android:textColor="@color/black"/>
         <ImageButton
@@ -33,15 +33,15 @@
             android:layout_height="wrap_content"
             android:src="@drawable/play_button"
             android:layout_toEndOf="@+id/title_text"
-            android:layout_marginVertical="10dp"
+            android:layout_marginVertical="20dp"
             android:layout_marginHorizontal="10dp"/>
         <ImageView
             android:id="@+id/sample"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
             android:src="@drawable/arrow_right"
             android:layout_toEndOf="@+id/play_audio"
-            android:layout_margin="10dp"/>
+            android:layout_margin="5dp"/>
     </RelativeLayout>
     <RelativeLayout
         android:layout_width="match_parent"
@@ -49,7 +49,7 @@
         android:layout_below="@id/header">
         <GridLayout
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="fill_parent"
             android:layout_weight="10"
             android:rowCount="3"
             android:columnCount="8"
@@ -58,192 +58,192 @@
             android:layout_centerInParent="true">
             <ImageView
                 android:id="@+id/row11"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
                 android:src="@drawable/arrow_right"
                 android:layout_marginVertical="15dp"
                 android:layout_marginHorizontal="10dp"
                 android:layout_margin="5dp"/>
             <ImageView
                 android:id="@+id/row12"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
                 android:src="@drawable/arrow_left"
                 android:layout_marginVertical="15dp"
                 android:layout_marginHorizontal="10dp"
                 android:layout_margin="5dp"/>
             <ImageView
                 android:id="@+id/row13"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
                 android:src="@drawable/arrow_right"
                 android:layout_marginVertical="15dp"
                 android:layout_marginHorizontal="10dp"
                 android:layout_margin="5dp"/>
             <ImageView
                 android:id="@+id/row14"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
                 android:src="@drawable/arrow_left"
                 android:layout_marginVertical="15dp"
                 android:layout_marginHorizontal="10dp"
                 android:layout_margin="5dp"/>
             <ImageView
                 android:id="@+id/row15"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
                 android:src="@drawable/arrow_left"
                 android:layout_marginVertical="15dp"
                 android:layout_marginHorizontal="10dp"
                 android:layout_margin="5dp"/>
             <ImageView
                 android:id="@+id/row16"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
                 android:src="@drawable/arrow_right"
                 android:layout_marginVertical="15dp"
                 android:layout_marginHorizontal="10dp"
                 android:layout_margin="5dp"/>
             <ImageView
                 android:id="@+id/row17"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
                 android:src="@drawable/arrow_left"
                 android:layout_marginVertical="15dp"
                 android:layout_marginHorizontal="10dp"
                 android:layout_margin="5dp"/>
             <ImageView
                 android:id="@+id/row18"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
                 android:src="@drawable/arrow_right"
                 android:layout_marginVertical="15dp"
                 android:layout_marginHorizontal="10dp"
                 android:layout_margin="5dp"/>
             <ImageView
                 android:id="@+id/row21"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
                 android:src="@drawable/arrow_left"
                 android:layout_marginVertical="15dp"
                 android:layout_marginHorizontal="10dp"
                 android:layout_margin="5dp"/>
             <ImageView
                 android:id="@+id/row22"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
                 android:src="@drawable/arrow_right"
                 android:layout_marginVertical="15dp"
                 android:layout_marginHorizontal="10dp"
                 android:layout_margin="5dp"/>
             <ImageView
                 android:id="@+id/row23"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
                 android:src="@drawable/arrow_left"
                 android:layout_marginVertical="15dp"
                 android:layout_marginHorizontal="10dp"
                 android:layout_margin="5dp"/>
             <ImageView
                 android:id="@+id/row24"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
                 android:src="@drawable/arrow_right"
                 android:layout_marginVertical="15dp"
                 android:layout_marginHorizontal="10dp"
                 android:layout_margin="5dp"/>
             <ImageView
                 android:id="@+id/row25"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
                 android:src="@drawable/arrow_right"
                 android:layout_marginVertical="15dp"
                 android:layout_marginHorizontal="10dp"
                 android:layout_margin="5dp"/>
             <ImageView
                 android:id="@+id/row26"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
                 android:src="@drawable/arrow_right"
                 android:layout_marginVertical="15dp"
                 android:layout_marginHorizontal="10dp"
                 android:layout_margin="5dp"/>
             <ImageView
                 android:id="@+id/row27"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
                 android:src="@drawable/arrow_left"
                 android:layout_marginVertical="15dp"
                 android:layout_marginHorizontal="10dp"
                 android:layout_margin="5dp"/>
             <ImageView
                 android:id="@+id/row28"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
                 android:src="@drawable/arrow_right"
                 android:layout_marginVertical="15dp"
                 android:layout_marginHorizontal="10dp"
                 android:layout_margin="5dp"/>
             <ImageView
                 android:id="@+id/row31"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
                 android:src="@drawable/arrow_left"
                 android:layout_marginVertical="15dp"
                 android:layout_marginHorizontal="10dp"
                 android:layout_margin="5dp"/>
             <ImageView
                 android:id="@+id/row32"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
                 android:src="@drawable/arrow_left"
                 android:layout_marginVertical="15dp"
                 android:layout_marginHorizontal="10dp"
                 android:layout_margin="5dp"/>
             <ImageView
                 android:id="@+id/row33"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
                 android:src="@drawable/arrow_right"
                 android:layout_marginVertical="15dp"
                 android:layout_marginHorizontal="10dp"
                 android:layout_margin="5dp"/>
             <ImageView
                 android:id="@+id/row34"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
                 android:src="@drawable/arrow_left"
                 android:layout_marginVertical="15dp"
                 android:layout_marginHorizontal="10dp"
                 android:layout_margin="5dp"/>
             <ImageView
                 android:id="@+id/row35"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
                 android:src="@drawable/arrow_right"
                 android:layout_marginVertical="15dp"
                 android:layout_marginHorizontal="10dp"
                 android:layout_margin="5dp"/>
             <ImageView
                 android:id="@+id/row36"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
                 android:src="@drawable/arrow_left"
                 android:layout_marginVertical="15dp"
                 android:layout_marginHorizontal="10dp"
                 android:layout_margin="5dp"/>
             <ImageView
                 android:id="@+id/row37"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
                 android:src="@drawable/arrow_right"
                 android:layout_marginVertical="15dp"
                 android:layout_marginHorizontal="10dp"
                 android:layout_margin="5dp"/>
             <ImageView
                 android:id="@+id/row38"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
                 android:src="@drawable/arrow_left"
                 android:layout_marginVertical="15dp"
                 android:layout_marginHorizontal="10dp"

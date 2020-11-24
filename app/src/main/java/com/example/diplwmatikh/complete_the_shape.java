@@ -19,7 +19,6 @@ public class complete_the_shape extends universal {
     int[] answer = {5,3,2,0,1,4};
     int[] match_to_answer = {-1, -1, -1, -1, -1, -1};
     Button check;
-    TextView text;
     int score = 0;
 
     @Override
@@ -28,7 +27,6 @@ public class complete_the_shape extends universal {
         setContentView(R.layout.activity_complete_the_shape);
         runtime();
 
-        text = findViewById(R.id.info);
         check = findViewById(R.id.check);
 
         TextView title = findViewById(R.id.title);
@@ -104,9 +102,6 @@ public class complete_the_shape extends universal {
                             current_object = 5;
                             break;
                     }
-                    break;
-                case DragEvent.ACTION_DRAG_ENTERED:
-                    text.setText("target= " + v.getId() + " , source: " + view.getId() + "\n" + "target X " + v.getX() + " Y " + v.getY() + " , source: X " + view.getX() + " Y " + view.getY());
                     break;
                 case DragEvent.ACTION_DROP:
                     switch (v.getId()) {         //get target id

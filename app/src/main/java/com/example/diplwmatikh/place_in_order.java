@@ -19,7 +19,7 @@ import com.google.firebase.auth.FirebaseAuth;
 
 public class place_in_order extends universal {
     TextView header;
-    ImageButton restart,back;
+    ImageButton back;
     String title="Δημιούργησε μία ιστορία...";
     View target1,target2,target3,target4;
     ImageView drag1,drag2,drag3,drag4;
@@ -55,14 +55,6 @@ public class place_in_order extends universal {
                 AlertDialog alert = builderback.create();
                 alert.show();
 
-            }
-        });
-
-        restart.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                AlertDialog alert = builderreset.create();
-                alert.show();
             }
         });
 
