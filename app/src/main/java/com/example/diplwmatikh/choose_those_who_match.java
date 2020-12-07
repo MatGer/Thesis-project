@@ -5,14 +5,16 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 public class choose_those_who_match extends universal {
     int score=0;
-    TextView txt1,txt2,txt3,txt4,txt5,txt6,txt7,txt8;
+    TextView txt1,txt2,txt3,txt4,txt5,txt6,txt7,txt8,prevscore;
     ImageView play1,play2,play3,play4,play5,play6,play7,play8;
     Button check;
+    ImageButton back;
     boolean[][] answer = {{true,false,true,true},{false,false,true,false}};
     boolean[][] match_to_answer = {{false,false,false,false},{false,false,false,false}};
     @Override
@@ -22,9 +24,15 @@ public class choose_those_who_match extends universal {
 
         runtime();
 
+        prevscore=findViewById(R.id.score);
+        back=findViewById(R.id.backbutton);
+        back.setOnClickListener(back_button);
+
         TextView title = findViewById(R.id.title);
         title.setText("Επέλεξε τις περιγραφές που ταιριάζουν με την κάθε εικόνα. Πάτησε στο ηχειάκι για να ακούσεις την εκφώνηση");
         title.setSelected(true);
+
+        get_score_for_navbar("choose those who match", userID, prevscore, 2);
 
         txt1=findViewById(R.id.click1);
         txt2=findViewById(R.id.click2);

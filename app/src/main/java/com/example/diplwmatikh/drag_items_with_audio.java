@@ -2,10 +2,12 @@ package com.example.diplwmatikh;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.DragEvent;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -15,6 +17,7 @@ public class drag_items_with_audio extends universal{
     ImageView play1,play2,play3,play4;
     int x,y,score;
     Button check;
+    ImageButton back,restart;
     int current_object=-1;
     int [] answer = {2,3,0,1};
     int[] match_to_answer={-1,-1,-1,-1};
@@ -24,6 +27,10 @@ public class drag_items_with_audio extends universal{
         setContentView(R.layout.activity_drag_items_with_audio);
 
         runtime();
+
+        restart=findViewById(R.id.restart);
+        back=findViewById(R.id.backbutton);
+        back.setOnClickListener(back_button);
 
         TextView title = findViewById(R.id.title);
         title.setText("Σείρε τις εικόνες μέσα στα σχήματα με βάση τις οδηγίες. Πάτησε στο ηχειάκι για να ακούσεις την εκφώνηση");
@@ -66,6 +73,16 @@ public class drag_items_with_audio extends universal{
                 }
                 upload_score("drag items with audio", score);
                 create_builder_finished_with_score(score);
+            }
+        });
+
+        restart.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                intent = new Intent(drag_items_with_audio.this, drag_items_with_audio.class);
+                startActivity(intent);
+                intent=null;
+                finish();
             }
         });
     }

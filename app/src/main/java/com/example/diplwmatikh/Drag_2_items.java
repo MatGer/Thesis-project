@@ -2,6 +2,7 @@ package com.example.diplwmatikh;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.DragEvent;
 import android.view.View;
@@ -13,6 +14,7 @@ public class Drag_2_items extends universal {
     Button check;
     View target;
     ImageView drag1,drag2,drag3,drag4,drag5,drag6;
+    ImageView restart,back;
     int counter,score=0;
     int itemX,itemY=0; //thesi pou tha boun ta items
     @Override
@@ -22,6 +24,9 @@ public class Drag_2_items extends universal {
         runtime();
 
         check=findViewById(R.id.check);
+        restart=findViewById(R.id.restart);
+        back=findViewById(R.id.backbutton);
+        back.setOnClickListener(back_button);
 
         TextView title = findViewById(R.id.title);
         title.setText("Σείρε δύο αντικείμενα στο κουτί.");
@@ -49,6 +54,16 @@ public class Drag_2_items extends universal {
             public void onClick(View v) {
                 upload_score("drag 2 items", score);
                 create_builder_finished_with_score(score);
+            }
+        });
+
+        restart.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                intent = new Intent(Drag_2_items.this, Drag_2_items.class);
+                startActivity(intent);
+                intent=null;
+                finish();
             }
         });
     }

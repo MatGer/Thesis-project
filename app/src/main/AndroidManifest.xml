@@ -13,11 +13,6 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
         <activity android:name=".activity_scores">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity android:name=".leksilogio_menu" />
         <activity android:name=".settings" />
@@ -51,7 +46,13 @@
             android:screenOrientation="landscape" />
         <activity
             android:name=".add_animals"
-            android:screenOrientation="landscape" />
+            android:screenOrientation="landscape">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity
             android:name=".next_number"
             android:screenOrientation="landscape" />
@@ -71,7 +72,7 @@
             android:name=".complete_the_shape"
             android:screenOrientation="landscape" />
         <activity
-            android:name=".compete_the_pattern"
+            android:name=".complete_the_pattern"
             android:screenOrientation="landscape" />
         <activity
             android:name=".select_the_bigger"

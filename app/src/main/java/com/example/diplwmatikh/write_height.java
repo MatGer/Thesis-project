@@ -7,12 +7,14 @@ import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 public class write_height extends universal {
     EditText no1,no2,no3,no4,no5;
     Button check;
     int score=0;
+    ImageButton back;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -23,6 +25,8 @@ public class write_height extends universal {
         TextView title = findViewById(R.id.title);
         title.setText("Γράψε το ύψος του κάθε αντικειμένου.");
         title.setSelected(true);
+        back=findViewById(R.id.backbutton);
+        back.setOnClickListener(back_button);
 
         no1=findViewById(R.id.type1);
         no2=findViewById(R.id.type2);

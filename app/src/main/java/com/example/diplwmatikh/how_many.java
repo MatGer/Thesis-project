@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 public class how_many extends universal {
@@ -12,6 +13,7 @@ public class how_many extends universal {
     Button check;
     int row1,row2,row3=0;
     int score;
+    ImageButton back;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -23,6 +25,9 @@ public class how_many extends universal {
         title.setSelected(true);
 
         check=findViewById(R.id.check);
+        back=findViewById(R.id.backbutton);
+        back.setOnClickListener(back_button);
+
         no1=findViewById(R.id.no11);
         no2=findViewById(R.id.no12);
         no3=findViewById(R.id.no13);

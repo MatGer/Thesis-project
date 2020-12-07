@@ -6,6 +6,7 @@ import android.media.Image;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -14,6 +15,7 @@ public class which_one_is_different extends universal {
     int row1,row2,row3=-1;
     int score=0;
     Button check;
+    ImageButton back;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -24,6 +26,10 @@ public class which_one_is_different extends universal {
         TextView title = findViewById(R.id.title);
         title.setText("Επέλεξε την εικόνα που δεν ταιριάζει.");
         title.setSelected(true);
+
+        back=findViewById(R.id.backbutton);
+        back.setOnClickListener(back_button);
+
 
         row11=findViewById(R.id.row11);
         row12=findViewById(R.id.row12);

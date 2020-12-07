@@ -5,12 +5,14 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 public class next_number extends universal {
     TextView no1,no2,no3,no4,no5,no6;
     int row1,row2,row3,score=0;
     Button check;
+    ImageButton back;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -21,6 +23,10 @@ public class next_number extends universal {
         TextView title = findViewById(R.id.title);
         title.setText("Επέλεξε τον αριθμό που ακολουθεί.");
         title.setSelected(true);
+
+        back=findViewById(R.id.backbutton);
+        back.setOnClickListener(back_button);
+
 
         no1=findViewById(R.id.no15);
         no2=findViewById(R.id.no16);

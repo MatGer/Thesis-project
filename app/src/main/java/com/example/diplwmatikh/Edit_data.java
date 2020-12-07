@@ -11,6 +11,7 @@ import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -34,11 +35,16 @@ public class Edit_data extends universal {
     String userID,mail_from_database;
     FirebaseFirestore fStore;
     Button cancel,update;
+    ImageButton back;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_edit_data);
         runtime();
+        hide_labels();
+        back=findViewById(R.id.backbutton);
+        back.setOnClickListener(back_button);
+
         username=findViewById(R.id.showusername);
         email=findViewById(R.id.showemail);
         change_pass=findViewById(R.id.change_password);

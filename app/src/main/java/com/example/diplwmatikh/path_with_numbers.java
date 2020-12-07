@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 import com.google.firebase.auth.FirebaseAuth;
@@ -19,6 +20,7 @@ public class path_with_numbers extends universal implements OnClickListener {
     TextView tile16,tile17,tile18,tile19,tile20;
     TextView tile21,tile22,tile23,tile24,tile25;
     Button check;
+    ImageButton back;
     int counter_score=0;
     int selected_path; //poio path epilegetai kathe fora
     boolean [][] paths={
@@ -36,6 +38,9 @@ public class path_with_numbers extends universal implements OnClickListener {
         TextView title = findViewById(R.id.title);
         title.setText("Βοήθησε το αρκουδάκι να φτάσει στην καραμέλα. Επέλεξε τους αριθμούς που θα πρέπει να ακολουθήσει.");
         title.setSelected(true);
+
+        back=findViewById(R.id.backbutton);
+        back.setOnClickListener(back_button);
 
         selected_path=(int) (Math.random() * (3-0+1)+0);
         //assign tiles

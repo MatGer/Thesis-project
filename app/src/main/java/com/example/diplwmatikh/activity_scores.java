@@ -43,12 +43,7 @@ public class activity_scores extends universal {
 
          */
 
-        back.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                finish();
-            }
-        });
+        back.setOnClickListener(back_button);
 
         gotomenu.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -23,6 +23,7 @@ public class settings extends universal {
         logout=findViewById(R.id.logout);
         showscores=findViewById(R.id.showscores);
         back=findViewById(R.id.backbutton);
+        back.setOnClickListener(back_button);
 
         change_details.setOnClickListener(new View.OnClickListener() {
             @Override

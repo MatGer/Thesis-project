@@ -13,9 +13,9 @@ import java.util.Random;
 
 public class choose_arrows extends universal {
     Button check;
-    ImageButton play;
+    ImageButton play,back;
     ImageView sample; //eikona sthn ekfwnhsh
-    TextView add_to_header; //ekfwnhsh
+    TextView prevscore,add_to_header; //ekfwnhsh
     ImageView row11,row12,row13,row14,row15,row16,row17,row18;
     ImageView row21,row22,row23,row24,row25,row26,row27,row28;
     ImageView row31,row32,row33,row34,row35,row36,row37,row38;
@@ -32,10 +32,15 @@ public class choose_arrows extends universal {
         sample=findViewById(R.id.sample);
         add_to_header=findViewById(R.id.title_text);
         play=findViewById(R.id.play_audio);
+        prevscore=findViewById(R.id.score);
+        back=findViewById(R.id.backbutton);
+        back.setOnClickListener(back_button);
 
         TextView title = findViewById(R.id.title);
         title.setText("Επέλεξε τα κατάλληλα βελάκια. Πάτησε στο ηχειάκι για να ακούσεις την εκφώνηση");
         title.setSelected(true);
+
+        get_score_for_navbar("choose arrows", userID, prevscore, 24);
 
         choice=new Random().nextBoolean();
 

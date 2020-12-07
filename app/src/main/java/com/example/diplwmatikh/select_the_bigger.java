@@ -12,7 +12,7 @@ import android.widget.Toast;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class select_the_bigger extends universal {
-    ImageButton first,second;
+    ImageButton first,second,back;
     Button next;
     int counter=0;
     int score=0;
@@ -27,6 +27,9 @@ public class select_the_bigger extends universal {
         TextView title = findViewById(R.id.title);
         title.setText("Επέλεξε την μεγαλύτερη εικόνα");
         title.setSelected(true);
+
+        back=findViewById(R.id.backbutton);
+        back.setOnClickListener(back_button);
 
         findViewById(R.id.check).setVisibility(View.INVISIBLE);
 

@@ -38,6 +38,7 @@ public class RegisterActivity extends universal {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
         runtime();
+        hide_labels();
 
         username=findViewById(R.id.edgetusername);
         email=findViewById(R.id.edgetemail);

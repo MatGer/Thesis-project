@@ -43,6 +43,9 @@ public class place_in_order extends universal {
         drag4=findViewById(R.id.drag4);
 
         check=findViewById(R.id.check);
+        back=findViewById(R.id.backbutton);
+        back.setOnClickListener(back_button);
+
         userID=FirebaseAuth.getInstance().getUid();
         //---------------Toolbar functionality------------------//
         back=findViewById(R.id.backbutton);

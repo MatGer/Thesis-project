@@ -7,11 +7,14 @@ import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 public class add_animals extends universal {
     Button check;
     EditText num1,num2,num3,num4;
+    TextView prevscore;
+    ImageButton back;
     int score=0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,11 +29,16 @@ public class add_animals extends universal {
         num3=findViewById(R.id.type3);
         num4=findViewById(R.id.type4);
         check=findViewById(R.id.check);
+        back=findViewById(R.id.backbutton);
+        back.setOnClickListener(back_button);
+        prevscore=findViewById(R.id.score);
 
         getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN);   //keyboard stay hidden
         TextView title = findViewById(R.id.title);
         title.setText("Κάνε τις προσθέσεις.");
         title.setSelected(true);
+
+        get_score_for_navbar("add animals",userID,prevscore,4);
 
         check.setOnClickListener(new View.OnClickListener() {
             @Override

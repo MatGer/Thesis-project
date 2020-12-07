@@ -13,6 +13,14 @@
         android:layout_height="wrap_content">
         <include layout="@layout/appbar"
             android:id="@+id/toolbar"/>
+        <ImageButton
+            android:id="@+id/restart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/ic_baseline_refresh_24"
+            android:padding="10dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="50dp"/>
     </RelativeLayout>
     <RelativeLayout
         android:layout_width="match_parent"

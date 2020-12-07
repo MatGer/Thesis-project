@@ -37,6 +37,8 @@ public class LoginActivity extends universal {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         runtime();
+        hide_labels();
+
         login_email=findViewById(R.id.edloginemail);
         login_password=findViewById(R.id.edloginpassword);
         login_button=findViewById(R.id.loginbutton);
@@ -45,6 +47,7 @@ public class LoginActivity extends universal {
         fAuth=FirebaseAuth.getInstance();
         forget_password_button=findViewById(R.id.forget_password_button);
         getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN);   //keyboard stay hidden
+
         if(fAuth.getCurrentUser()!=null){
             startActivity(new Intent(getApplicationContext(), Mainmenu.class));
             finish();

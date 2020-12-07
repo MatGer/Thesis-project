@@ -2,10 +2,12 @@ package com.example.diplwmatikh;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.DragEvent;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -15,6 +17,7 @@ public class drag_and_drop_numbers extends universal {
     TextView txt1,txt2,txt3;
     ImageView img1,img2,img3;
     Button check;
+    ImageButton restart,back;
     int[] answers={0,1,2};
     int[] match_to_answer = {-1,-1,-1};
     int score=0;
@@ -25,6 +28,10 @@ public class drag_and_drop_numbers extends universal {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_drag_and_drop_numbers);
         runtime();
+
+        restart=findViewById(R.id.restart);
+        back=findViewById(R.id.backbutton);
+        back.setOnClickListener(back_button);
 
         TextView title = findViewById(R.id.title);
         title.setText("Σείρε τους αριθμούς στις εικόνες ανάλογα με τον αριθμό των αντικειμένων που περιέχουν.");
@@ -60,6 +67,17 @@ public class drag_and_drop_numbers extends universal {
                 }
             }
         });
+
+        restart.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                intent = new Intent(drag_and_drop_numbers.this, drag_and_drop_numbers.class);
+                startActivity(intent);
+                intent=null;
+                finish();
+            }
+        });
+
     }
     View.OnDragListener dragListener = new View.OnDragListener() {
         @Override

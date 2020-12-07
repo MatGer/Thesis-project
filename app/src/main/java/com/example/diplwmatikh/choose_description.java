@@ -5,16 +5,18 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 public class choose_description extends universal {
-    TextView txt1,txt2,txt3,txt4,txt5,txt6,txt7,txt8;
+    TextView txt1,txt2,txt3,txt4,txt5,txt6,txt7,txt8,prevscore;
     ImageView play1,play2,play3,play4,play5,play6,play7,play8;
     Button check;
     int upleft,upright,bottomleft,bottomright=-1;
 //correct   1     2         2          1
     int score=0;
+    ImageButton back;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,6 +47,9 @@ public class choose_description extends universal {
         play8=findViewById(R.id.play_click8);
 
         check=findViewById(R.id.check);
+        prevscore=findViewById(R.id.score);
+        back=findViewById(R.id.backbutton);
+        back.setOnClickListener(back_button);
 
         txt1.setOnClickListener(clickListener);
         txt2.setOnClickListener(clickListener);
@@ -63,6 +68,8 @@ public class choose_description extends universal {
         play6.setOnClickListener(play);
         play7.setOnClickListener(play);
         play8.setOnClickListener(play);
+
+        get_score_for_navbar("choose description", userID, prevscore, 4);
 
         check.setOnClickListener(new View.OnClickListener() {
             @Override

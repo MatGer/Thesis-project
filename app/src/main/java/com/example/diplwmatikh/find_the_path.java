@@ -2,10 +2,12 @@ package com.example.diplwmatikh;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -17,6 +19,7 @@ public class find_the_path extends universal {
     boolean[] current_state_triangles={false,false,false,false,false,false,false,false}; //for the rest objects to change backround colours
     boolean[] current_state_rhombuses={false,false,false,false,false,false,false,false};
     Button check;
+    ImageButton back,restart;
     int score=0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,6 +31,10 @@ public class find_the_path extends universal {
         TextView title = findViewById(R.id.title);
         title.setText("Βοήθησε την καμηλοπάρδαλη να φτάσει στο μπισκοτάκι. Επέλεξε τα κουτάκια που θα πρέπει να διανύσει.");
         title.setSelected(true);
+
+        restart=findViewById(R.id.restart);
+        back=findViewById(R.id.backbutton);
+        back.setOnClickListener(back_button);
 
         circle1=findViewById(R.id.circle1);
         circle2=findViewById(R.id.circle2);
@@ -99,6 +106,16 @@ public class find_the_path extends universal {
                 }
                 upload_score("find the path", score);
                 create_builder_finished_with_score(score);
+            }
+        });
+
+        restart.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                intent = new Intent(find_the_path.this, find_the_path.class);
+                startActivity(intent);
+                intent=null;
+                finish();
             }
         });
     }

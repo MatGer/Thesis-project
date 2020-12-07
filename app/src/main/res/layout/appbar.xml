@@ -9,7 +9,6 @@
     app:titleTextColor="@color/white"
     android:gravity="center_vertical">
     <ImageButton
-        android:layout_alignParentStart="true"
         android:id="@+id/backbutton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -35,7 +34,7 @@
         android:scrollHorizontally="true"/>
     <TextView
         android:id="@+id/prev_score"
-        android:layout_width="75dp"
+        android:layout_width="110dp"
         android:layout_height="match_parent"
         android:layout_marginStart="10dp"
         android:layout_marginEnd="0dp"
@@ -43,18 +42,18 @@
         android:textColor="@color/white"
         android:padding="5dp"
         android:textSize="15sp"
-        android:text="Last Score:"
-        android:textAlignment="center"
+        android:text="Προηγούμενο σκορ:"
+        android:gravity="center"
         android:layout_toStartOf="@+id/score"/>
     <TextView
         android:id="@+id/score"
-        android:layout_width="50dp"
+        android:layout_width="60dp"
         android:layout_height="match_parent"
         android:layout_centerVertical="true"
         android:textColor="@color/white"
-        android:textAlignment="center"
+        android:gravity="center"
         android:textSize="20sp"
-        android:text="15"
+        android:text="--"
         android:paddingVertical="10dp"
         android:layout_toStartOf="@+id/check"/>
     <Button

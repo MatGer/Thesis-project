@@ -197,6 +197,30 @@ import io.grpc.internal.SharedResourceHolder;
             }
         });
     }
+     public void get_score_for_navbar(String activityname,String uid,TextView field,int max_activity_score){
+         FirebaseFirestore fStore=FirebaseFirestore.getInstance();
+         DocumentReference fetch_test = fStore.collection("scores").document(uid);
+         fetch_test.addSnapshotListener(this, new EventListener<DocumentSnapshot>() {
+             @Override
+             public void onEvent(@Nullable DocumentSnapshot value, @Nullable FirebaseFirestoreException error) {
+                 int output;
+                 double score=0;
+                 if(value.getDouble(activityname)==null){
+                     score=-1;
+                     //if null we want to show different message
+                 }else{
+                     score = value.getDouble(activityname);
+                 }
+                 if(score==-1){
+                     field.setText("--");
+                 }else{
+                     output=(int) score;
+                     field.setText(output+"/"+max_activity_score);
+                 }
+             }
+         });
+     }
+
      View.OnLongClickListener longClickListener = new View.OnLongClickListener() {
          @Override
          public boolean onLongClick(View v) {
@@ -206,6 +230,13 @@ import io.grpc.internal.SharedResourceHolder;
              return true;
          }
      };
+
+    View.OnClickListener back_button = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            finish();
+        }
+    };
     //track is an integer... must be formatted as R.raw.filename
     public void play_sound(int track, ImageButton btn){
         player = MediaPlayer.create(this,track);
@@ -247,5 +278,12 @@ import io.grpc.internal.SharedResourceHolder;
      public void onResume(){
          super.onResume();
          decorView.setSystemUiVisibility(uiOptions);
+     }
+
+     public void hide_labels(){
+         findViewById(R.id.title).setVisibility(View.INVISIBLE);
+         findViewById(R.id.prev_score).setVisibility(View.INVISIBLE);
+         findViewById(R.id.score).setVisibility(View.INVISIBLE);
+         findViewById(R.id.check).setVisibility(View.INVISIBLE);
      }
 }

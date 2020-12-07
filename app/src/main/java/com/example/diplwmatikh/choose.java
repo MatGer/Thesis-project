@@ -15,6 +15,8 @@ public class choose extends universal{
     int score=0;
     boolean row1,row2;
     ImageView play1,play2;
+    TextView prevscore;
+    ImageButton back;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,10 +35,15 @@ public class choose extends universal{
         woman.setOnClickListener(click);
         cake.setOnClickListener(click);
         ice_cream.setOnClickListener(click);
+        prevscore=findViewById(R.id.score);
+        back=findViewById(R.id.backbutton);
+        back.setOnClickListener(back_button);
 
         TextView title = findViewById(R.id.title);
         title.setText("Επέλεξε την κατάλληλη εικόνα. Πάτησε στο ηχειάκι για να ακούσεις την εκφώνηση");
         title.setSelected(true);
+
+        get_score_for_navbar("choose", userID, prevscore, 2);
 
         play1.setOnClickListener(new View.OnClickListener() {
             @Override
