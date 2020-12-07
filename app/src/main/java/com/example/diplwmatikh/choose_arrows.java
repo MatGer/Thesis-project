@@ -13,6 +13,7 @@ import java.util.Random;
 
 public class choose_arrows extends universal {
     Button check;
+    ImageButton play;
     ImageView sample; //eikona sthn ekfwnhsh
     TextView add_to_header; //ekfwnhsh
     ImageView row11,row12,row13,row14,row15,row16,row17,row18;
@@ -30,6 +31,7 @@ public class choose_arrows extends universal {
         runtime();
         sample=findViewById(R.id.sample);
         add_to_header=findViewById(R.id.title_text);
+        play=findViewById(R.id.play_audio);
 
         TextView title = findViewById(R.id.title);
         title.setText("Επέλεξε τα κατάλληλα βελάκια. Πάτησε στο ηχειάκι για να ακούσεις την εκφώνηση");
@@ -117,7 +119,19 @@ public class choose_arrows extends universal {
                 create_builder_finished_with_score(score);
             }
         });
+
+        play.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(choice){
+                    play_sound(R.raw.arrows_right, play);
+                }else{
+                    play_sound(R.raw.arrows_left, play);
+                }
+            }
+        });
     }
+
 
     View.OnClickListener select = new View.OnClickListener() {
         @Override

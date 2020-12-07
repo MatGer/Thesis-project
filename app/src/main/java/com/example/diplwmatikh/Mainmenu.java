@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -22,27 +23,50 @@ import com.google.firebase.firestore.FirebaseFirestoreException;
 import com.google.firebase.firestore.auth.User;
 
 public class Mainmenu extends universal {
-    Button dragndrop, correct_wrong,place_in_order,logoutbutton,setscore,bringscore;
+    Button logoutbutton, glwssikes, gnwstikes;
+    ImageButton settings;
     FirebaseFirestore fStore;
     String UserID=null;
-    DocumentReference fetch_test;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         runtime();
         setContentView(R.layout.activity_mainmenu);
-        dragndrop=findViewById(R.id.dragndrop);
-        correct_wrong=findViewById(R.id.correctwrong);
-        place_in_order=findViewById(R.id.placeinorder);
-        logoutbutton=findViewById(R.id.logout_mainmenu_button);
-        setscore=findViewById(R.id.set_score_button);
-        bringscore=findViewById(R.id.bring_score_button);
 
+        logoutbutton=findViewById(R.id.logout_mainmenu_button);
+        glwssikes=findViewById(R.id.glwssikes);
+        gnwstikes=findViewById(R.id.gnwstikes);
+        settings=findViewById(R.id.settings);
         fStore=FirebaseFirestore.getInstance();
         fAuth=FirebaseAuth.getInstance();
 
         UserID=fAuth.getCurrentUser().getUid();
 
+        glwssikes.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                intent = new Intent(Mainmenu.this, glwssikes_menu.class);
+                startActivity(intent);
+                intent=null;
+            }
+        });
+        gnwstikes.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                intent = new Intent(Mainmenu.this, gnwstikes_menu.class);
+                startActivity(intent);
+                intent=null;
+            }
+        });
+
+        settings.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                intent = new Intent(Mainmenu.this, settings.class);
+                startActivity(intent);
+                intent=null;
+            }
+        });
         /*
         if(userID!=null){
             //------------bring data code--------------
@@ -73,52 +97,5 @@ public class Mainmenu extends universal {
         //------------bring data code end--------------
 
          */
-        dragndrop.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(Mainmenu.this, MainActivity.class);
-                startActivity(intent);
-            }
-        });
-
-        correct_wrong.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(Mainmenu.this, Correct_wrong.class);
-                startActivity(intent);
-            }
-        });
-
-        place_in_order.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(Mainmenu.this, place_in_order.class);
-                startActivity(intent);
-            }
-        });
-
-        logoutbutton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                userID=null;
-                fAuth.signOut();
-                startActivity(new Intent(Mainmenu.this, LoginActivity.class));
-                finish();
-            }
-        });
-
-        setscore.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                upload_score("activity1",7);
-            }
-        });
-
-        bringscore.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                get_score("activity1", UserID);
-            }
-        });
     }
 }

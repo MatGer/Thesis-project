@@ -14,6 +14,7 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -44,6 +45,7 @@ import io.grpc.internal.SharedResourceHolder;
     View decorView;
     FirebaseAuth fAuth;
     String userID;
+    MediaPlayer player;
     int uiOptions = View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION        //options to hide nav bar, status bar and further functionality
             | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
             | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
@@ -127,11 +129,18 @@ import io.grpc.internal.SharedResourceHolder;
                 }).create().show();
     }
 
-    void create_builder_finished(){
+    void create_builder_finished(int rating){
         builderfinished = new AlertDialog.Builder(universal.this);
         builderfinished.setTitle("Η δραστηριότητα ολοκληρώθηκε!");
-        builderfinished.setMessage("Συγχαρητήρια! Ολοκληρώσατε την δραστηριότητα. Θέλετε να ξαναξεκινήσετε;")
-                .setPositiveButton("Ναι", new DialogInterface.OnClickListener() {
+        switch(rating){
+            case 1:builderfinished.setMessage("Χρειάζεται περισσότερη προσπάθεια. Θελετε να ξαναπροσπαθήσετε;");
+                   break;
+            case 2:builderfinished.setMessage("Καλή δουλειά. Συνεχίστε έτσι. Θέλετε να ξαναξεκινήσετε;");
+                   break;
+            case 3:builderfinished.setMessage("Συγχαρητήρια! Πολύ καλή δουλειά. Θέλετε να ξαναξεκινήσετε;");
+                   break;
+        }
+                builderfinished.setPositiveButton("Ναι", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         intent = getIntent();
@@ -165,18 +174,25 @@ import io.grpc.internal.SharedResourceHolder;
 
     }
 
-    public void get_score(String activityname,String uid){
+    public void get_score(String activityname,String uid,TextView field){
         FirebaseFirestore fStore=FirebaseFirestore.getInstance();
         DocumentReference fetch_test = fStore.collection("scores").document(uid);
         fetch_test.addSnapshotListener(this, new EventListener<DocumentSnapshot>() {
             @Override
             public void onEvent(@Nullable DocumentSnapshot value, @Nullable FirebaseFirestoreException error) {
-                if(value.getDouble("activity1")==null){
-                    //Handle exception here
-                    Toast.makeText(getApplicationContext(), "Null value occured (class: universal method:get_score)", Toast.LENGTH_SHORT).show();
+                int output;
+                double score=0;
+                if(value.getDouble(activityname)==null){
+                    score=-1;
+                    //if null we want to show different message
                 }else{
-                    double score = value.getDouble(activityname);
-                    create_builder_finished_with_score((int) score);
+                    score = value.getDouble(activityname);
+                }
+                if(score==-1){
+                    field.setText("Η "+activityname+" δεν έχει ολοκληρωθεί ακόμα.");
+                }else{
+                    output=(int) score;
+                    field.setText(activityname +": "+output);
                 }
             }
         });
@@ -191,8 +207,8 @@ import io.grpc.internal.SharedResourceHolder;
          }
      };
     //track is an integer... must be formatted as R.raw.filename
-    public void play_sound(int track, Button btn){
-        final MediaPlayer player = MediaPlayer.create(this,track);
+    public void play_sound(int track, ImageButton btn){
+        player = MediaPlayer.create(this,track);
         player.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
@@ -203,6 +219,31 @@ import io.grpc.internal.SharedResourceHolder;
         player.start();
     }
 
+    public void play_sound(int track, ImageView btn){
+        player = MediaPlayer.create(this,track);
+        player.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mp) {
+                btn.setEnabled(true);
+            }
+        });
+        btn.setEnabled(false);
+        player.start();
+    }
+
+    public void show_rating(int score, int max){
+        int rating = max/3;
+        if(score<=rating){
+            //fair
+            create_builder_finished(1);
+        }else if(score<=2*rating){
+            //good
+            create_builder_finished(2);
+        }else{
+            //very good
+            create_builder_finished(3);
+        }
+    }
      public void onResume(){
          super.onResume();
          decorView.setSystemUiVisibility(uiOptions);

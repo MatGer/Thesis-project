@@ -14,16 +14,24 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="2">
-            <TextView
-                android:id="@+id/weclome_text"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textColor="@color/white"
-                android:text="Γεια σου!!!"
-                android:textStyle="bold"
-                android:textSize="20sp"
-                android:layout_centerInParent="true"/>
-
+        <TextView
+            android:id="@+id/weclome_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:text="Επέλεξε κατηγορία"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:layout_centerInParent="true"/>
+        <ImageButton
+            android:id="@+id/settings"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/ic_baseline_settings_24"
+            android:layout_centerVertical="true"
+            android:background="@color/background"
+            android:layout_alignParentEnd="true"
+            android:layout_marginRight="10dp"/>
     </RelativeLayout>
     <GridLayout
         android:layout_width="match_parent"
@@ -40,12 +48,7 @@
             android:elevation="5dp"
             android:layout_height="0dp"
             android:layout_width="0dp">
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Catergory 1"
-                android:gravity="center"
-                android:padding="10dp"/><!--add textview for title-->
+            <!--add textview for title-->
             <androidx.core.widget.NestedScrollView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -53,113 +56,10 @@
                 android:layout_marginTop="30dp"><!--Add this line and textview to add titles-->
                 <!--to make text scrollable just move textview inside linear layout-->
                 <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:weightSum="3"
-                android:orientation="vertical">
-
-                <Button
-                    android:id="@+id/dragndrop"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:text="drag n drop"
-                    android:textColor="@color/white"
-                    android:background="@drawable/start_menu_button"
-                    android:padding="15dp"
-                    android:layout_margin="15dp"
-                    android:textAllCaps="false"
-                    android:layout_gravity="center"/>
-                <Button
-                    android:id="@+id/correctwrong"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:text="Correct Wrong"
-                    android:textColor="@color/white"
-                    android:background="@drawable/start_menu_button"
-                    android:padding="15dp"
-                    android:layout_margin="15dp"
-                    android:textAllCaps="false"
-                    android:layout_gravity="center"/>
-                <Button
-                    android:id="@+id/placeinorder"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:text="Place in order"
-                    android:textColor="@color/white"
-                    android:background="@drawable/start_menu_button"
-                    android:padding="15dp"
-                    android:layout_margin="15dp"
-                    android:textAllCaps="false"
-                    android:layout_gravity="center"/>
-                <Button
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:text="drag n drop"
-                    android:textColor="@color/white"
-                    android:background="@drawable/start_menu_button"
-                    android:padding="15dp"
-                    android:layout_margin="15dp"
-                    android:textAllCaps="false"
-                    android:layout_gravity="center"/>
-            </LinearLayout>
-            </androidx.core.widget.NestedScrollView>
-        </androidx.cardview.widget.CardView>
-
-        <androidx.cardview.widget.CardView
-            android:layout_columnWeight="1"
-            android:layout_rowWeight="1"
-            android:elevation="5dp"
-            android:layout_height="0dp"
-            android:layout_width="0dp">
-            <androidx.core.widget.NestedScrollView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center">
-                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:weightSum="3"
                     android:orientation="vertical">
-                    <Button
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:text="large"
-                        android:textColor="@color/white"
-                        android:background="@drawable/start_menu_button"
-                        android:padding="15dp"
-                        android:layout_margin="15dp"
-                        android:textAllCaps="false"
-                        android:layout_gravity="center"/>
-                    <Button
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:text="Correct Wrong"
-                        android:textColor="@color/white"
-                        android:background="@drawable/start_menu_button"
-                        android:padding="15dp"
-                        android:layout_margin="15dp"
-                        android:textAllCaps="false"
-                        android:layout_gravity="center"/>
-                    <Button
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:text="drag n drop"
-                        android:textColor="@color/white"
-                        android:background="@drawable/start_menu_button"
-                        android:padding="15dp"
-                        android:layout_margin="15dp"
-                        android:textAllCaps="false"
-                        android:layout_gravity="center"/>
-                    <Button
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:text="drag n drop"
-                        android:textColor="@color/white"
-                        android:background="@drawable/start_menu_button"
-                        android:padding="15dp"
-                        android:layout_margin="15dp"
-                        android:textAllCaps="false"
-                        android:layout_gravity="center"/>
                 </LinearLayout>
             </androidx.core.widget.NestedScrollView>
         </androidx.cardview.widget.CardView>
@@ -180,39 +80,41 @@
                     android:weightSum="3"
                     android:orientation="vertical">
                     <Button
+                        android:id="@+id/glwssikes"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:text="drag n drop"
+                        android:text="Γλωσσικές Δραστηριότητες"
                         android:textColor="@color/white"
                         android:background="@drawable/start_menu_button"
                         android:padding="15dp"
                         android:layout_margin="15dp"
                         android:textAllCaps="false"
                         android:layout_gravity="center"/>
+
+                </LinearLayout>
+            </androidx.core.widget.NestedScrollView>
+        </androidx.cardview.widget.CardView>
+        α
+        <androidx.cardview.widget.CardView
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:elevation="5dp"
+            android:layout_height="0dp"
+            android:layout_width="0dp">
+            <androidx.core.widget.NestedScrollView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:weightSum="3"
+                    android:orientation="vertical">
                     <Button
+                        android:id="@+id/gnwstikes"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:text="Correct Wrong"
-                        android:textColor="@color/white"
-                        android:background="@drawable/start_menu_button"
-                        android:padding="15dp"
-                        android:layout_margin="15dp"
-                        android:textAllCaps="false"
-                        android:layout_gravity="center"/>
-                    <Button
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:text="drag n drop"
-                        android:textColor="@color/white"
-                        android:background="@drawable/start_menu_button"
-                        android:padding="15dp"
-                        android:layout_margin="15dp"
-                        android:textAllCaps="false"
-                        android:layout_gravity="center"/>
-                    <Button
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:text="drag n drop"
+                        android:text="Γνωστικές σραστηριότητες"
                         android:textColor="@color/white"
                         android:background="@drawable/start_menu_button"
                         android:padding="15dp"
@@ -249,38 +151,7 @@
                         android:layout_margin="15dp"
                         android:textAllCaps="false"
                         android:layout_gravity="center"/>
-                    <Button
-                        android:id="@+id/set_score_button"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:text="Upload score"
-                        android:textColor="@color/white"
-                        android:background="@drawable/start_menu_button"
-                        android:padding="15dp"
-                        android:layout_margin="15dp"
-                        android:textAllCaps="false"
-                        android:layout_gravity="center"/>
-                    <Button
-                        android:id="@+id/bring_score_button"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:text="get score"
-                        android:textColor="@color/white"
-                        android:background="@drawable/start_menu_button"
-                        android:padding="15dp"
-                        android:layout_margin="15dp"
-                        android:textAllCaps="false"
-                        android:layout_gravity="center"/>
-                    <Button
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:text="drag n drop"
-                        android:textColor="@color/white"
-                        android:background="@drawable/start_menu_button"
-                        android:padding="15dp"
-                        android:layout_margin="15dp"
-                        android:textAllCaps="false"
-                        android:layout_gravity="center"/>
+
                 </LinearLayout>
             </androidx.core.widget.NestedScrollView>
         </androidx.cardview.widget.CardView>

@@ -14,6 +14,7 @@ public class choose extends universal{
     ImageView teddy,woman,cake,ice_cream;
     int score=0;
     boolean row1,row2;
+    ImageView play1,play2;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,7 +27,8 @@ public class choose extends universal{
         woman= findViewById(R.id.woman);
         cake=findViewById(R.id.birthday_cake);
         ice_cream=findViewById(R.id.ice_cream);
-
+        play1=findViewById(R.id.play_audio1);
+        play2=findViewById(R.id.play_audio2);
         teddy.setOnClickListener(click);
         woman.setOnClickListener(click);
         cake.setOnClickListener(click);
@@ -35,6 +37,19 @@ public class choose extends universal{
         TextView title = findViewById(R.id.title);
         title.setText("Επέλεξε την κατάλληλη εικόνα. Πάτησε στο ηχειάκι για να ακούσεις την εκφώνηση");
         title.setSelected(true);
+
+        play1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                play_sound(R.raw.epilekse_ton_anthrwpo, play1);
+            }
+        });
+        play2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                play_sound(R.raw.epilekse_to_pagwto, play2);
+            }
+        });
 
         check.setOnClickListener(new View.OnClickListener() {
             @Override

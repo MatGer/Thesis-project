@@ -12,6 +12,7 @@ import android.widget.TextView;
 public class drag_items_with_audio extends universal{
     ImageView circle,rectangle,square,triangle;
     ImageView ice_cream,cake,cookie,candy;
+    ImageView play1,play2,play3,play4;
     int x,y,score;
     Button check;
     int current_object=-1;
@@ -37,6 +38,11 @@ public class drag_items_with_audio extends universal{
         cookie=findViewById(R.id.drag2);
         candy=findViewById(R.id.drag3);
         cake=findViewById(R.id.drag4);
+
+        play1=findViewById(R.id.play1);
+        play2=findViewById(R.id.play2);
+        play3=findViewById(R.id.play3);
+        play4=findViewById(R.id.play4);
 
         ice_cream.setOnLongClickListener(longClickListener);
         cake.setOnLongClickListener(longClickListener);
@@ -110,6 +116,18 @@ public class drag_items_with_audio extends universal{
                     break;
             }
             return true;
+        }
+    };
+
+    View.OnClickListener play = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            switch (v.getId()){
+                case R.id.play1: play_sound(R.raw.pagwto_trigwno, play1); break;
+                case R.id.play2: play_sound(R.raw.biskoto_tetragwno, play2); break;
+                case R.id.play3: play_sound(R.raw.karamela_kyklos, play3); break;
+                case R.id.play4: play_sound(R.raw.tourta_orthogwnio, play4); break;
+            }
         }
     };
 }

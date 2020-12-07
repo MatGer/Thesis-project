@@ -160,12 +160,15 @@ public class MainActivity extends universal{
                         }
                         break;
                 }
+                /*
                 if (activity_finished==2){
                     create_builder_finished();
                     AlertDialog alert = builderfinished.create();
                     alert.show();
                     activity_finished=0;
                 }
+
+                 */
                 return true;
             }
         };

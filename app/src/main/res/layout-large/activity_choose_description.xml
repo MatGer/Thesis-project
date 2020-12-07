@@ -42,7 +42,7 @@
                     android:layout_toEndOf="@+id/image1"
                     android:layout_alignParentEnd="true">
                 <RelativeLayout
-                    android:layout_width="200dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
                     android:layout_centerInParent="true">
@@ -68,25 +68,20 @@
                     android:layout_below="@+id/click1"
                     android:padding="20dp"
                     android:layout_marginVertical="10dp"/>
-
-                    <ImageView
+                    <ImageButton
                         android:id="@+id/play_click1"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
                         android:src="@drawable/play_button"
                         android:layout_toEndOf="@id/click1"
-                        android:layout_alignBottom="@id/click1"
-                        android:padding="10dp"
-                        android:layout_marginVertical="5dp"/>
-                    <ImageView
+                        android:layout_alignBottom="@id/click1"/>
+                    <ImageButton
                         android:id="@+id/play_click2"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
                         android:src="@drawable/play_button"
                         android:layout_toEndOf="@id/click2"
                         android:layout_alignBottom="@id/click2"
-                        android:padding="10dp"
-                        android:layout_marginVertical="6dp"
                         android:layout_marginLeft="10dp"/>
                 </RelativeLayout>
                 </RelativeLayout>
@@ -109,7 +104,7 @@
                 android:layout_toEndOf="@+id/image2"
                 android:layout_alignParentEnd="true">
                 <RelativeLayout
-                    android:layout_width="200dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerInParent="true">
                     <TextView
@@ -135,19 +130,17 @@
                         android:padding="20dp"
                         android:layout_marginVertical="10dp"
                         android:layout_alignEnd="@+id/click3"/>
-                    <ImageView
+                    <ImageButton
                         android:id="@+id/play_click3"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
                         android:src="@drawable/play_button"
                         android:layout_toEndOf="@id/click3"
-                        android:layout_alignBottom="@id/click3"
-                        android:padding="10dp"
-                        android:layout_marginVertical="5dp"/>
-                    <ImageView
+                        android:layout_alignBottom="@id/click3" />
+                    <ImageButton
                         android:id="@+id/play_click4"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
                         android:src="@drawable/play_button"
                         android:layout_toEndOf="@id/click4"
                         android:layout_alignBottom="@id/click4"
@@ -182,7 +175,7 @@
                 android:layout_toEndOf="@+id/image3"
                 android:layout_alignParentEnd="true">
                 <RelativeLayout
-                    android:layout_width="200dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerInParent="true">
                     <TextView
@@ -193,7 +186,7 @@
                         android:textAlignment="center"
                         android:layout_margin="10dp"
                         android:layout_alignParentStart="true"
-                        android:paddingVertical="15dp"/>
+                        android:paddingVertical="18dp"/>
                     <TextView
                         android:id="@+id/click6"
                         android:layout_width="wrap_content"
@@ -205,25 +198,22 @@
                         android:layout_alignEnd="@+id/click5"
                         android:layout_alignParentStart="true"
                         android:layout_below="@+id/click5"
-                        android:paddingVertical="15dp"
+                        android:paddingVertical="18dp"
                         android:layout_marginVertical="10dp" />
-                    <ImageView
+                    <ImageButton
                         android:id="@+id/play_click5"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
                         android:src="@drawable/play_button"
                         android:layout_toEndOf="@id/click5"
-                        android:layout_alignBottom="@id/click5"
-                        android:padding="8dp"
-                        android:layout_marginVertical="1dp"/>
-                    <ImageView
+                        android:layout_alignBottom="@id/click5" />
+                    <ImageButton
                         android:id="@+id/play_click6"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
                         android:src="@drawable/play_button"
                         android:layout_toEndOf="@id/click6"
                         android:layout_alignBottom="@id/click6"
-                        android:padding="8dp"
                         android:layout_marginLeft="10dp"/>
                 </RelativeLayout>
                 </RelativeLayout>
@@ -246,7 +236,7 @@
                 android:layout_toEndOf="@+id/image4"
                 android:layout_alignParentEnd="true">
                 <RelativeLayout
-                    android:layout_width="200dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerInParent="true">
                     <TextView
@@ -257,7 +247,7 @@
                         android:textAlignment="center"
                         android:layout_marginLeft="10dp"
                         android:layout_alignParentStart="true"
-                        android:paddingVertical="10dp"/>
+                        android:paddingVertical="18dp"/>
                     <TextView
                         android:id="@+id/click8"
                         android:layout_width="wrap_content"
@@ -269,24 +259,24 @@
                         android:layout_alignEnd="@+id/click7"
                         android:layout_alignParentStart="true"
                         android:layout_below="@+id/click7"
-                        android:paddingVertical="12dp"
+                        android:paddingVertical="18dp"
                         android:layout_marginVertical="10dp"/>
-                    <ImageView
+                    <ImageButton
                         android:id="@+id/play_click7"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
                         android:src="@drawable/play_button"
                         android:layout_toEndOf="@id/click7"
                         android:layout_alignBottom="@id/click7"
-                        android:padding="8dp"/>
-                    <ImageView
+                        android:layout_marginLeft="10dp"/>
+                    <ImageButton
                         android:id="@+id/play_click8"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
                         android:src="@drawable/play_button"
                         android:layout_toEndOf="@id/click8"
                         android:layout_alignBottom="@id/click8"
-                        android:padding="10dp"/>
+                        android:layout_marginLeft="10dp"/>
                 </RelativeLayout>
                 </RelativeLayout>
             </RelativeLayout>

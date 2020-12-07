@@ -67,7 +67,7 @@
                     android:layout_below="@+id/click1"
                     android:padding="10dp" />
 
-                    <ImageView
+                    <ImageButton
                         android:id="@+id/play_click1"
                         android:layout_width="wrap_content"
                         android:layout_height="40dp"
@@ -75,7 +75,7 @@
                         android:layout_toEndOf="@id/click1"
                         android:layout_alignBottom="@id/click1"
                         android:padding="10dp" />
-                    <ImageView
+                    <ImageButton
                         android:id="@+id/play_click2"
                         android:layout_width="wrap_content"
                         android:layout_height="40dp"
@@ -129,7 +129,7 @@
                         android:layout_below="@+id/click3"
                         android:padding="10dp"
                         android:layout_alignEnd="@+id/click3"/>
-                    <ImageView
+                    <ImageButton
                         android:id="@+id/play_click3"
                         android:layout_width="wrap_content"
                         android:layout_height="40dp"
@@ -137,7 +137,7 @@
                         android:layout_toEndOf="@id/click3"
                         android:layout_alignBottom="@id/click3"
                         android:padding="10dp"/>
-                    <ImageView
+                    <ImageButton
                         android:id="@+id/play_click4"
                         android:layout_width="wrap_content"
                         android:layout_height="40dp"
@@ -163,7 +163,7 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:background="@drawable/unselected_tile_with_borders">
-                <ImageView
+                <ImageButton
                     android:id="@+id/image3"
                     android:layout_width="140dp"
                     android:layout_height="wrap_content"
@@ -199,7 +199,7 @@
                         android:layout_below="@+id/click5"
                         android:paddingVertical="7dp"
                         android:layout_marginVertical="10dp" />
-                    <ImageView
+                    <ImageButton
                         android:id="@+id/play_click5"
                         android:layout_width="wrap_content"
                         android:layout_height="40dp"
@@ -209,7 +209,7 @@
                         android:padding="10dp"
                         android:layout_marginLeft="5dp"
                         android:layout_marginBottom="2dp"/>
-                    <ImageView
+                    <ImageButton
                         android:id="@+id/play_click6"
                         android:layout_width="wrap_content"
                         android:layout_height="40dp"
@@ -263,7 +263,7 @@
                         android:layout_below="@+id/click7"
                         android:paddingVertical="9dp"
                         android:layout_marginVertical="10dp"/>
-                    <ImageView
+                    <ImageButton
                         android:id="@+id/play_click7"
                         android:layout_width="wrap_content"
                         android:layout_height="40dp"
@@ -271,7 +271,7 @@
                         android:layout_toEndOf="@id/click7"
                         android:layout_alignBottom="@id/click7"
                         android:padding="9dp"/>
-                    <ImageView
+                    <ImageButton
                         android:id="@+id/play_click8"
                         android:layout_width="wrap_content"
                         android:layout_height="40dp"

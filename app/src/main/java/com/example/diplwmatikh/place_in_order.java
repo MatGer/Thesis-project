@@ -104,7 +104,7 @@ public class place_in_order extends universal {
                     }
             }
             if(activity_finished==4){
-                create_builder_finished();
+                create_builder_finished_with_score(3);
                 AlertDialog alert = builderfinished.create();
                 alert.show();
                 activity_finished=0;

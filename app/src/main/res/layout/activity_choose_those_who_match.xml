@@ -58,7 +58,7 @@
                             android:id="@+id/click2"
                             android:layout_width="wrap_content"
                             android:layout_height="35dp"
-                            android:text="Είναι φθινόπωρο"
+                            android:text="   Είναι άνοιξη   "
                             android:textAlignment="center"
                             android:layout_below="@+id/click1"
                             android:padding="6dp"/>
@@ -148,7 +148,7 @@
                             android:id="@+id/click5"
                             android:layout_width="wrap_content"
                             android:layout_height="35dp"
-                            android:text="Ακούει μουσική"
+                            android:text="Παίζει μουσική"
                             android:textAlignment="center"
                             android:padding="6dp" />
                         <TextView

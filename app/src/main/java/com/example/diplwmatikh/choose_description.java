@@ -55,6 +55,15 @@ public class choose_description extends universal {
         txt7.setOnClickListener(clickListener);
         txt8.setOnClickListener(clickListener);
 
+        play1.setOnClickListener(play);
+        play2.setOnClickListener(play);
+        play3.setOnClickListener(play);
+        play4.setOnClickListener(play);
+        play5.setOnClickListener(play);
+        play6.setOnClickListener(play);
+        play7.setOnClickListener(play);
+        play8.setOnClickListener(play);
+
         check.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -120,6 +129,22 @@ public class choose_description extends universal {
                     txt7.setBackground(getDrawable(R.color.white));
                     bottomright=2;
                     break;
+            }
+        }
+    };
+
+    View.OnClickListener play = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            switch (v.getId()){
+                case R.id.play_click1: play_sound(R.raw.einai_pappous, play1); break;
+                case R.id.play_click2: play_sound(R.raw.einai_paidi, play2); break;
+                case R.id.play_click3: play_sound(R.raw.monh_ths, play3); break;
+                case R.id.play_click4: play_sound(R.raw.me_paidia_ths, play4); break;
+                case R.id.play_click5: play_sound(R.raw.fwraei_panteloni, play5); break;
+                case R.id.play_click6: play_sound(R.raw.forema, play6); break;
+                case R.id.play_click7: play_sound(R.raw.doulevei, play7); break;
+                case R.id.play_click8: play_sound(R.raw.ksekourazetai, play8); break;
             }
         }
     };
