@@ -21,6 +21,7 @@ public class find_the_path extends universal {
     Button check;
     ImageButton back,restart;
     int score=0;
+    TextView prevscore;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,6 +36,8 @@ public class find_the_path extends universal {
         restart=findViewById(R.id.restart);
         back=findViewById(R.id.backbutton);
         back.setOnClickListener(back_button);
+        prevscore=findViewById(R.id.score);
+        get_score_for_navbar("find the path", userID, prevscore, 10);
 
         circle1=findViewById(R.id.circle1);
         circle2=findViewById(R.id.circle2);
@@ -105,7 +108,7 @@ public class find_the_path extends universal {
                     }
                 }
                 upload_score("find the path", score);
-                create_builder_finished_with_score(score);
+                show_rating(score, 10);
             }
         });
 

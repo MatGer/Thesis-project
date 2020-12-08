@@ -16,6 +16,7 @@ public class which_one_is_different extends universal {
     int score=0;
     Button check;
     ImageButton back;
+    TextView prevscore;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,6 +27,8 @@ public class which_one_is_different extends universal {
         TextView title = findViewById(R.id.title);
         title.setText("Επέλεξε την εικόνα που δεν ταιριάζει.");
         title.setSelected(true);
+        prevscore=findViewById(R.id.score);
+        get_score_for_navbar("which one is different", userID, prevscore, 3);
 
         back=findViewById(R.id.backbutton);
         back.setOnClickListener(back_button);
@@ -65,7 +68,7 @@ public class which_one_is_different extends universal {
                     score++;
                 }
                 upload_score("which one is different", score);
-                create_builder_finished_with_score(score);
+                show_rating(score,3);
             }
         });
     }

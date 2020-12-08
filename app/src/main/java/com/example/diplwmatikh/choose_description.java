@@ -87,7 +87,7 @@ public class choose_description extends universal {
                     score++;
                 }
                 upload_score("choose description", score);
-                create_builder_finished_with_score(score);
+                show_rating(score,4);
             }
         });
     }
@@ -97,43 +97,59 @@ public class choose_description extends universal {
         public void onClick(View v) {
             switch (v.getId()){
                 case R.id.click1:
-                    txt1.setBackground(getDrawable(R.color.light_blue_A200));
+                    txt1.setBackground(getDrawable(R.drawable.start_menu_button));
                     txt2.setBackground(getDrawable(R.color.white));
+                    txt1.setTextColor(getColor(R.color.white));
+                    txt2.setTextColor(getColor(R.color.default_text));
                     upleft=1;
                     break;
                 case R.id.click2:
-                    txt2.setBackground(getDrawable(R.color.light_blue_A200));
+                    txt2.setBackground(getDrawable(R.drawable.start_menu_button));
                     txt1.setBackground(getDrawable(R.color.white));
+                    txt2.setTextColor(getColor(R.color.white));
+                    txt1.setTextColor(getColor(R.color.default_text));
                     upleft=2;
                     break;
                 case R.id.click3:
-                    txt3.setBackground(getDrawable(R.color.light_blue_A200));
+                    txt3.setBackground(getDrawable(R.drawable.start_menu_button));
                     txt4.setBackground(getDrawable(R.color.white));
+                    txt3.setTextColor(getColor(R.color.white));
+                    txt4.setTextColor(getColor(R.color.default_text));
                     upright=1;
                     break;
                 case R.id.click4:
-                    txt4.setBackground(getDrawable(R.color.light_blue_A200));
+                    txt4.setBackground(getDrawable(R.drawable.start_menu_button));
                     txt3.setBackground(getDrawable(R.color.white));
+                    txt4.setTextColor(getColor(R.color.white));
+                    txt3.setTextColor(getColor(R.color.default_text));
                     upright=2;
                     break;
                 case R.id.click5:
-                    txt5.setBackground(getDrawable(R.color.light_blue_A200));
+                    txt5.setBackground(getDrawable(R.drawable.start_menu_button));
                     txt6.setBackground(getDrawable(R.color.white));
+                    txt5.setTextColor(getColor(R.color.white));
+                    txt6.setTextColor(getColor(R.color.default_text));
                     bottomleft=1;
                     break;
                 case R.id.click6:
-                    txt6.setBackground(getDrawable(R.color.light_blue_A200));
+                    txt6.setBackground(getDrawable(R.drawable.start_menu_button));
                     txt5.setBackground(getDrawable(R.color.white));
+                    txt6.setTextColor(getColor(R.color.white));
+                    txt5.setTextColor(getColor(R.color.default_text));
                     bottomleft=2;
                     break;
                 case R.id.click7:
-                    txt7.setBackground(getDrawable(R.color.light_blue_A200));
+                    txt7.setBackground(getDrawable(R.drawable.start_menu_button));
                     txt8.setBackground(getDrawable(R.color.white));
+                    txt7.setTextColor(getColor(R.color.white));
+                    txt8.setTextColor(getColor(R.color.default_text));
                     bottomright=1;
                     break;
                 case R.id.click8:
-                    txt8.setBackground(getDrawable(R.color.light_blue_A200));
+                    txt8.setBackground(getDrawable(R.drawable.start_menu_button));
                     txt7.setBackground(getDrawable(R.color.white));
+                    txt8.setTextColor(getColor(R.color.white));
+                    txt7.setTextColor(getColor(R.color.default_text));
                     bottomright=2;
                     break;
             }

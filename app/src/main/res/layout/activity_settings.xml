@@ -76,6 +76,19 @@
             android:layout_height="1dp"
             android:background="@color/grey"/>
         <TextView
+            android:id="@+id/resetscores"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:textColor="@color/register_login"
+            android:text="Διαγραφή όλων των βαθμολογιών"
+            android:paddingVertical="10dp"
+            android:paddingLeft="10dp"/>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/grey"/>
+        <TextView
             android:id="@+id/logout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

@@ -75,7 +75,7 @@ public class complete_the_pattern extends universal {
                     }
                 }
                 upload_score("complete the pattern",score);
-                create_builder_finished_with_score(score);
+                show_rating(score,6);
             }
         });
 

@@ -14,6 +14,7 @@ import com.google.firebase.auth.FirebaseAuth;
 public class select_the_bigger extends universal {
     ImageButton first,second,back;
     Button next;
+    TextView prevscore;
     int counter=0;
     int score=0;
     int selected=0;      //if 0, no selection made. if 1 first image selected. if 2 second image selected
@@ -27,7 +28,8 @@ public class select_the_bigger extends universal {
         TextView title = findViewById(R.id.title);
         title.setText("Επέλεξε την μεγαλύτερη εικόνα");
         title.setSelected(true);
-
+        prevscore=findViewById(R.id.score);
+        get_score_for_navbar("select the bigger", userID, prevscore, 4);
         back=findViewById(R.id.backbutton);
         back.setOnClickListener(back_button);
 
@@ -96,8 +98,8 @@ public class select_the_bigger extends universal {
                         break;
 
                     case 4:
-                        upload_score("select_the_bigger",score);
-                        create_builder_finished_with_score(score);
+                        upload_score("select the bigger",score);
+                        show_rating(score,4);
                         break;
                     default:
                         throw new IllegalStateException("Unexpected value: " + counter);

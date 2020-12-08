@@ -52,6 +52,7 @@
                             android:text="Είναι τάρανδος"
                             android:textAlignment="center"
                             android:padding="6dp"
+                            android:layout_marginVertical="1dp"
                             android:layout_alignStart="@+id/click2"
                             android:layout_alignEnd="@+id/click2"/>
                         <TextView
@@ -61,7 +62,8 @@
                             android:text="   Είναι άνοιξη   "
                             android:textAlignment="center"
                             android:layout_below="@+id/click1"
-                            android:padding="6dp"/>
+                            android:padding="6dp"
+                            android:layout_marginVertical="1dp"/>
                         <TextView
                             android:id="@+id/click3"
                             android:layout_width="wrap_content"
@@ -70,6 +72,7 @@
                             android:textAlignment="center"
                             android:layout_below="@+id/click2"
                             android:padding="6dp"
+                            android:layout_marginVertical="1dp"
                             android:layout_alignStart="@+id/click2"
                             android:layout_alignEnd="@+id/click2"/>
                         <TextView
@@ -80,6 +83,7 @@
                             android:textAlignment="center"
                             android:layout_below="@+id/click3"
                             android:padding="6dp"
+                            android:layout_marginVertical="1dp"
                             android:layout_alignStart="@+id/click2"
                             android:layout_alignEnd="@+id/click2"/>
                         <ImageView
@@ -88,6 +92,7 @@
                             android:layout_height="35dp"
                             android:src="@drawable/play_button"
                             android:padding="6dp"
+                            android:layout_marginVertical="1dp"
                             android:layout_toEndOf="@+id/click1"/>
                         <ImageView
                             android:id="@+id/play_click2"
@@ -95,6 +100,7 @@
                             android:layout_height="35dp"
                             android:src="@drawable/play_button"
                             android:padding="6dp"
+                            android:layout_marginVertical="1dp"
                             android:layout_toEndOf="@+id/click2"
                             android:layout_below="@+id/play_click1"/>
                         <ImageView
@@ -103,6 +109,7 @@
                             android:layout_height="35dp"
                             android:src="@drawable/play_button"
                             android:padding="6dp"
+                            android:layout_marginVertical="1dp"
                             android:layout_toEndOf="@+id/click3"
                             android:layout_below="@id/play_click2"/>
                         <ImageView
@@ -111,6 +118,7 @@
                             android:layout_height="35dp"
                             android:src="@drawable/play_button"
                             android:padding="6dp"
+                            android:layout_marginVertical="1dp"
                             android:layout_toEndOf="@+id/click4"
                             android:layout_below="@id/play_click3"/>
                     </RelativeLayout>
@@ -150,7 +158,8 @@
                             android:layout_height="35dp"
                             android:text="Παίζει μουσική"
                             android:textAlignment="center"
-                            android:padding="6dp" />
+                            android:padding="6dp"
+                            android:layout_marginVertical="1dp"/>
                         <TextView
                             android:id="@+id/click6"
                             android:layout_width="wrap_content"
@@ -159,6 +168,7 @@
                             android:textAlignment="center"
                             android:layout_below="@+id/click5"
                             android:padding="6dp"
+                            android:layout_marginVertical="1dp"
                             android:layout_alignStart="@+id/click5"
                             android:layout_alignEnd="@+id/click5"/>
                         <TextView
@@ -169,6 +179,7 @@
                             android:textAlignment="center"
                             android:layout_below="@+id/click6"
                             android:padding="6dp"
+                            android:layout_marginVertical="1dp"
                             android:layout_alignStart="@+id/click5"
                             android:layout_alignEnd="@+id/click5"/>
                         <TextView
@@ -179,6 +190,7 @@
                             android:textAlignment="center"
                             android:layout_below="@+id/click7"
                             android:padding="6dp"
+                            android:layout_marginVertical="1dp"
                             android:layout_alignStart="@+id/click5"
                             android:layout_alignEnd="@+id/click5"/>
                         <ImageView
@@ -187,6 +199,7 @@
                             android:layout_height="35dp"
                             android:src="@drawable/play_button"
                             android:padding="6dp"
+                            android:layout_marginVertical="1dp"
                             android:layout_toEndOf="@+id/click5"/>
                         <ImageView
                             android:id="@+id/play_click6"
@@ -194,6 +207,7 @@
                             android:layout_height="35dp"
                             android:src="@drawable/play_button"
                             android:padding="6dp"
+                            android:layout_marginVertical="1dp"
                             android:layout_toEndOf="@+id/click6"
                             android:layout_below="@+id/play_click5"/>
                         <ImageView
@@ -202,6 +216,7 @@
                             android:layout_height="35dp"
                             android:src="@drawable/play_button"
                             android:padding="6dp"
+                            android:layout_marginVertical="1dp"
                             android:layout_toEndOf="@+id/click7"
                             android:layout_below="@id/play_click6"/>
                         <ImageView
@@ -210,6 +225,7 @@
                             android:layout_height="35dp"
                             android:src="@drawable/play_button"
                             android:padding="6dp"
+                            android:layout_marginVertical="1dp"
                             android:layout_toEndOf="@+id/click8"
                             android:layout_below="@id/play_click7"/>
                     </RelativeLayout>

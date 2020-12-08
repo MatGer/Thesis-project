@@ -145,7 +145,7 @@
                         android:layout_toEndOf="@id/click4"
                         android:layout_alignBottom="@id/click4"
                         android:padding="10dp"
-                        android:layout_marginVertical="15dp"
+                        android:layout_marginVertical="10dp"
                         android:layout_marginLeft="5dp"/>
                 </RelativeLayout>
                 </RelativeLayout>

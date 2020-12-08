@@ -31,6 +31,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.EventListener;
+import com.google.firebase.firestore.FieldValue;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.FirebaseFirestoreException;
 
@@ -160,18 +161,43 @@ import io.grpc.internal.SharedResourceHolder;
     }
 
     public void upload_score(String activityname,int score){
+        //bring previous score
         FirebaseFirestore fStore=FirebaseFirestore.getInstance();
-        Map<String, Object> data = new HashMap<>();
-        fStore.collection("scores").document(userID);
-                data.put(activityname, score);
-                fStore.collection("scores").document(userID).update(data)
-                        .addOnFailureListener(new OnFailureListener() {
-                            @Override
-                            public void onFailure(@NonNull Exception e) {
-                                Log.w("upload score method", "Error on uploading score document", e);
-                            }
-                        });
+        DocumentReference bring_old = fStore.collection("scores").document(userID);
+        bring_old.addSnapshotListener(this, new EventListener<DocumentSnapshot>() {
+            @Override
+            public void onEvent(@Nullable DocumentSnapshot value, @Nullable FirebaseFirestoreException error) {
+                Map<String, Object> data = new HashMap<>();
+                //if field not exists
+                if(value.getDouble(activityname)==null){
+                    //fStore.collection("scores").document(userID);
+                    data.put(activityname, score);
+                    fStore.collection("scores").document(userID).update(data)
+                            .addOnFailureListener(new OnFailureListener() {
+                                @Override
+                                public void onFailure(@NonNull Exception e) {
+                                    Log.w("upload score method", "Error on uploading score document", e);
+                                }
+                            });
+                }else{
+                    //if field exists
+                    double old_score=value.getDouble(activityname);
+                    //if new score > old score then upload the new score else keep the old one
+                    if(score > (int) old_score){
+                        //fStore.collection("scores").document(userID);
+                        data.put(activityname, score);
+                        fStore.collection("scores").document(userID).update(data)
+                                .addOnFailureListener(new OnFailureListener() {
+                                    @Override
+                                    public void onFailure(@NonNull Exception e) {
+                                        Log.w("upload score method", "Error on uploading score document", e);
+                                    }
+                                });
+                    }
+                }
 
+            }
+        });
     }
 
     public void get_score(String activityname,String uid,TextView field){
@@ -182,9 +208,9 @@ import io.grpc.internal.SharedResourceHolder;
             public void onEvent(@Nullable DocumentSnapshot value, @Nullable FirebaseFirestoreException error) {
                 int output;
                 double score=0;
-                if(value.getDouble(activityname)==null){
+                if(value.getDouble(activityname)==null || value.getDouble(activityname)==-1){
                     score=-1;
-                    //if null we want to show different message
+                    //if null or -1 (if user deleted data) we want to show different message
                 }else{
                     score = value.getDouble(activityname);
                 }
@@ -262,28 +288,52 @@ import io.grpc.internal.SharedResourceHolder;
         player.start();
     }
 
-    public void show_rating(int score, int max){
-        int rating = max/3;
+    public void show_rating(int score, int max_activity_score){
+        float rating = max_activity_score/3;
         if(score<=rating){
             //fair
             create_builder_finished(1);
+            return;
         }else if(score<=2*rating){
             //good
             create_builder_finished(2);
+            return;
         }else{
             //very good
             create_builder_finished(3);
+            return;
         }
     }
-     public void onResume(){
-         super.onResume();
-         decorView.setSystemUiVisibility(uiOptions);
-     }
 
      public void hide_labels(){
          findViewById(R.id.title).setVisibility(View.INVISIBLE);
          findViewById(R.id.prev_score).setVisibility(View.INVISIBLE);
          findViewById(R.id.score).setVisibility(View.INVISIBLE);
          findViewById(R.id.check).setVisibility(View.INVISIBLE);
+     }
+
+     public void reset_score(String activityname){
+        //deletes the field
+        //System.out.println(userID+"   00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000");
+         FirebaseFirestore fStore=FirebaseFirestore.getInstance();
+         DocumentReference reset = fStore.collection("scores").document(userID);
+         reset.addSnapshotListener(this, new EventListener<DocumentSnapshot>() {
+             @Override
+             public void onEvent(@Nullable DocumentSnapshot value, @Nullable FirebaseFirestoreException error) {
+                 Map<String,Object> hashMap = new HashMap<>();
+                 if(value.getDouble(activityname)==null){
+                     //System.out.println("00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000         null found");
+                 }else{
+                     hashMap.put(activityname, FieldValue.delete());
+                     reset.update(hashMap);
+                     //System.out.println("00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000        field deleted");
+                 }
+             }
+         });
+     }
+
+     public void onResume(){
+         super.onResume();
+         decorView.setSystemUiVisibility(uiOptions);
      }
 }

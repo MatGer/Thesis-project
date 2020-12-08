@@ -33,6 +33,7 @@ public class choose_arrows extends universal {
         add_to_header=findViewById(R.id.title_text);
         play=findViewById(R.id.play_audio);
         prevscore=findViewById(R.id.score);
+        get_score_for_navbar("choose arrows", userID, prevscore, 12);
         back=findViewById(R.id.backbutton);
         back.setOnClickListener(back_button);
 
@@ -40,18 +41,14 @@ public class choose_arrows extends universal {
         title.setText("Επέλεξε τα κατάλληλα βελάκια. Πάτησε στο ηχειάκι για να ακούσεις την εκφώνηση");
         title.setSelected(true);
 
-        get_score_for_navbar("choose arrows", userID, prevscore, 24);
-
         choice=new Random().nextBoolean();
 
         if(choice){ //if choice = true tote metrame ta deksia belakia
-
             sample.setImageDrawable(getDrawable(R.drawable.arrow_right));
             add_to_header.append("δεξιά");
             answers=new boolean[][]{{true,false,true,false,false,true,false,true},{false,true,false,true,true,true,false,true},{false,false,true,false,true,false,true,false}};
 
         }else{  //if choice = false tote metrame ta aristera belakia
-
             sample.setImageDrawable(getDrawable(R.drawable.arrow_left));
             add_to_header.append("αριστερά");
             answers=new boolean[][]{{false,true,false,true,true,false,true,false},{true,false,true,false,false,false,true,false},{true,true,false,true,false,true,false,true}};// inverted se sxesh me ton apo panw pinaka
@@ -118,10 +115,10 @@ public class choose_arrows extends universal {
                         }
                     }
                 }
-                System.out.println("----------------------------------------------------------------------------------"+ score);
+                //System.out.println("----------------------------------------------------------------------------------"+ score);
                 //score=0; //enable this command for debbuging
                 upload_score("choose arrows", score);
-                create_builder_finished_with_score(score);
+                show_rating(score,12);
             }
         });
 

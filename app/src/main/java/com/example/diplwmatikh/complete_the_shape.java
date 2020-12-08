@@ -18,6 +18,7 @@ public class complete_the_shape extends universal {
     ImageView drag1, drag2, drag3, drag4, drag5, drag6;
     ImageView fill1, fill2, fill3, fill4, fill5, fill6;
     ImageButton restart,back;
+    TextView prevscore;
     int current_object = -1;
     int[] answer = {5,3,2,0,1,4};
     int[] match_to_answer = {-1, -1, -1, -1, -1, -1};
@@ -33,7 +34,8 @@ public class complete_the_shape extends universal {
         check = findViewById(R.id.check);
         back=findViewById(R.id.backbutton);
         back.setOnClickListener(back_button);
-
+        prevscore=findViewById(R.id.score);
+        get_score_for_navbar("complete the shape", userID, prevscore, 6);
         TextView title = findViewById(R.id.title);
         title.setText("Ολοκλήρωσε τα σχήματα, σέρνοντας τα δεξιά μέρη.");
         title.setSelected(true);
@@ -75,7 +77,7 @@ public class complete_the_shape extends universal {
                     }
                 }
                 upload_score("complete the shape",score);
-                create_builder_finished_with_score(score);
+                show_rating(score,6);
             }
         });
 

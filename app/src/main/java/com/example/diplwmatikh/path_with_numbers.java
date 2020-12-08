@@ -19,9 +19,11 @@ public class path_with_numbers extends universal implements OnClickListener {
     TextView tile11,tile12,tile13,tile14,tile15;
     TextView tile16,tile17,tile18,tile19,tile20;
     TextView tile21,tile22,tile23,tile24,tile25;
+    TextView prevscore;
     Button check;
     ImageButton back;
-    int counter_score=0;
+    int score=0;
+    int correct_on_path;    // number of correct answer existing on current path
     int selected_path; //poio path epilegetai kathe fora
     boolean [][] paths={
             {true,true,false,false,false,true,true,false,false,false,false,true,true,false,false,false,false,true,true,true,false,false,true,true,false},//path0
@@ -41,8 +43,17 @@ public class path_with_numbers extends universal implements OnClickListener {
 
         back=findViewById(R.id.backbutton);
         back.setOnClickListener(back_button);
-
         selected_path=(int) (Math.random() * (3-0+1)+0);
+
+        prevscore=findViewById(R.id.score);
+
+        if(selected_path==3){
+            correct_on_path=13;
+            get_score_for_navbar("path with numbers", userID, prevscore, correct_on_path);
+        }else{
+            correct_on_path=11;
+            get_score_for_navbar("path with numbers", userID, prevscore, correct_on_path);
+        }
         //assign tiles
         tile1=findViewById(R.id.tile1);
         tile2=findViewById(R.id.tile2);
@@ -104,11 +115,11 @@ public class path_with_numbers extends universal implements OnClickListener {
             public void onClick(View v) {
                 for(int i=0;i<25;i++){
                     if(current_state[i]==true && paths[selected_path][i]==true){
-                        counter_score++;
+                        score++;
                     }
                 }
-                upload_score("path_of_numbers2",counter_score);
-                create_builder_finished_with_score(counter_score);
+                upload_score("path with numbers",score);
+                show_rating(score,correct_on_path);
             }
         });
     }

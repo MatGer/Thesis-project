@@ -14,6 +14,7 @@ public class how_many extends universal {
     int row1,row2,row3=0;
     int score;
     ImageButton back;
+    TextView prevscore;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,7 +28,8 @@ public class how_many extends universal {
         check=findViewById(R.id.check);
         back=findViewById(R.id.backbutton);
         back.setOnClickListener(back_button);
-
+        prevscore=findViewById(R.id.score);
+        get_score_for_navbar("how many", userID, prevscore, 3);
         no1=findViewById(R.id.no11);
         no2=findViewById(R.id.no12);
         no3=findViewById(R.id.no13);
@@ -62,7 +64,7 @@ public class how_many extends universal {
                     score++;
                 }
                 upload_score("how many", score);
-                create_builder_finished_with_score(score);
+                show_rating(score,3);
             }
         });
     }

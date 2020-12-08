@@ -15,6 +15,7 @@ public class Drag_2_items extends universal {
     View target;
     ImageView drag1,drag2,drag3,drag4,drag5,drag6;
     ImageView restart,back;
+    TextView prevscore;
     int counter,score=0;
     int itemX,itemY=0; //thesi pou tha boun ta items
     @Override
@@ -27,6 +28,8 @@ public class Drag_2_items extends universal {
         restart=findViewById(R.id.restart);
         back=findViewById(R.id.backbutton);
         back.setOnClickListener(back_button);
+        prevscore=findViewById(R.id.score);
+        get_score_for_navbar("drag 2 items", userID, prevscore, 2);
 
         TextView title = findViewById(R.id.title);
         title.setText("Σείρε δύο αντικείμενα στο κουτί.");
@@ -53,7 +56,7 @@ public class Drag_2_items extends universal {
             @Override
             public void onClick(View v) {
                 upload_score("drag 2 items", score);
-                create_builder_finished_with_score(score);
+                show_rating(score,2);
             }
         });
 

@@ -13,6 +13,7 @@ public class next_number extends universal {
     int row1,row2,row3,score=0;
     Button check;
     ImageButton back;
+    TextView prevscore;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,7 +27,8 @@ public class next_number extends universal {
 
         back=findViewById(R.id.backbutton);
         back.setOnClickListener(back_button);
-
+        prevscore=findViewById(R.id.score);
+        get_score_for_navbar("next number", userID, prevscore, 3);
 
         no1=findViewById(R.id.no15);
         no2=findViewById(R.id.no16);
@@ -56,7 +58,7 @@ public class next_number extends universal {
                     score++;
                 }
                 upload_score("next number",score);
-                create_builder_finished_with_score(score);
+                show_rating(score,3);
             }
         });
     }

@@ -83,7 +83,7 @@ public class choose_those_who_match extends universal {
                     }
                 }
                 upload_score("choose those who match",score);
-                create_builder_finished_with_score(score);
+                show_rating(score,2);
             }
         });
     }
@@ -95,73 +95,89 @@ public class choose_those_who_match extends universal {
                 case R.id.click1:
                     if(!match_to_answer[0][0]){
                         match_to_answer[0][0]=true;
-                        txt1.setBackground(getDrawable(R.color.light_blue_A200));
+                        txt1.setBackground(getDrawable(R.drawable.start_menu_button));
+                        txt1.setTextColor(getColor(R.color.white));
                     }else{
                         match_to_answer[0][0]=false;
                         txt1.setBackground(getDrawable(R.color.white));
+                        txt1.setTextColor(getColor(R.color.default_text));
                     }
                     break;
                 case R.id.click2:
                     if(!match_to_answer[0][1]){
                         match_to_answer[0][1]=true;
-                        txt2.setBackground(getDrawable(R.color.light_blue_A200));
+                        txt2.setBackground(getDrawable(R.drawable.start_menu_button));
+                        txt2.setTextColor(getColor(R.color.white));
                     }else{
                         match_to_answer[0][1]=false;
                         txt2.setBackground(getDrawable(R.color.white));
+                        txt2.setTextColor(getColor(R.color.default_text));
                     }
                     break;
                 case R.id.click3:
                     if(!match_to_answer[0][2]){
                         match_to_answer[0][2]=true;
-                        txt3.setBackground(getDrawable(R.color.light_blue_A200));
+                        txt3.setBackground(getDrawable(R.drawable.start_menu_button));
+                        txt3.setTextColor(getColor(R.color.white));
                     }else{
                         match_to_answer[0][2]=false;
                         txt3.setBackground(getDrawable(R.color.white));
+                        txt3.setTextColor(getColor(R.color.default_text));
                     }
                     break;
                 case R.id.click4:
                     if(!match_to_answer[0][3]){
                         match_to_answer[0][3]=true;
-                        txt4.setBackground(getDrawable(R.color.light_blue_A200));
+                        txt4.setBackground(getDrawable(R.drawable.start_menu_button));
+                        txt4.setTextColor(getColor(R.color.white));
                     }else{
                         match_to_answer[0][3]=false;
                         txt4.setBackground(getDrawable(R.color.white));
+                        txt4.setTextColor(getColor(R.color.default_text));
                     }
                     break;
                 case R.id.click5:
                     if(!match_to_answer[1][0]){
                         match_to_answer[1][0]=true;
-                        txt5.setBackground(getDrawable(R.color.light_blue_A200));
+                        txt5.setBackground(getDrawable(R.drawable.start_menu_button));
+                        txt5.setTextColor(getColor(R.color.white));
                     }else{
                         match_to_answer[1][0]=false;
                         txt5.setBackground(getDrawable(R.color.white));
+                        txt5.setTextColor(getColor(R.color.default_text));
                     }
                     break;
                 case R.id.click6:
                     if(!match_to_answer[1][1]){
                         match_to_answer[1][1]=true;
-                        txt6.setBackground(getDrawable(R.color.light_blue_A200));
+                        txt6.setBackground(getDrawable(R.drawable.start_menu_button));
+                        txt6.setTextColor(getColor(R.color.white));
                     }else{
                         match_to_answer[1][1]=false;
                         txt6.setBackground(getDrawable(R.color.white));
+                        txt6.setTextColor(getColor(R.color.default_text));
                     }
                     break;
                 case R.id.click7:
                     if(!match_to_answer[1][2]){
                         match_to_answer[1][2]=true;
-                        txt7.setBackground(getDrawable(R.color.light_blue_A200));
+                        txt7.setBackground(getDrawable(R.drawable.start_menu_button));
+                        txt7.setTextColor(getColor(R.color.white));
                     }else{
                         match_to_answer[1][2]=false;
                         txt7.setBackground(getDrawable(R.color.white));
+                        txt7.setTextColor(getColor(R.color.default_text));
                     }
                     break;
                 case R.id.click8:
                     if(!match_to_answer[1][3]){
                         match_to_answer[1][3]=true;
-                        txt8.setBackground(getDrawable(R.color.light_blue_A200));
+                        txt8.setBackground(getDrawable(R.drawable.start_menu_button));
+                        txt8.setTextColor(getColor(R.color.white));
                     }else{
                         match_to_answer[1][3]=false;
                         txt8.setBackground(getDrawable(R.color.white));
+                        txt8.setTextColor(getColor(R.color.default_text));
                     }
                     break;
             }

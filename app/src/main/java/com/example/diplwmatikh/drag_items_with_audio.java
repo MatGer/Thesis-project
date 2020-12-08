@@ -18,6 +18,7 @@ public class drag_items_with_audio extends universal{
     int x,y,score;
     Button check;
     ImageButton back,restart;
+    TextView prevscore;
     int current_object=-1;
     int [] answer = {2,3,0,1};
     int[] match_to_answer={-1,-1,-1,-1};
@@ -31,6 +32,8 @@ public class drag_items_with_audio extends universal{
         restart=findViewById(R.id.restart);
         back=findViewById(R.id.backbutton);
         back.setOnClickListener(back_button);
+        prevscore=findViewById(R.id.score);
+        get_score_for_navbar("drag items with audio", userID, prevscore, 4);
 
         TextView title = findViewById(R.id.title);
         title.setText("Σείρε τις εικόνες μέσα στα σχήματα με βάση τις οδηγίες. Πάτησε στο ηχειάκι για να ακούσεις την εκφώνηση");
@@ -72,7 +75,7 @@ public class drag_items_with_audio extends universal{
                     }
                 }
                 upload_score("drag items with audio", score);
-                create_builder_finished_with_score(score);
+                show_rating(score,4);
             }
         });
 

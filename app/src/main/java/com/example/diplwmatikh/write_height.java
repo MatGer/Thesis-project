@@ -15,6 +15,7 @@ public class write_height extends universal {
     Button check;
     int score=0;
     ImageButton back;
+    TextView prevscore;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,6 +28,8 @@ public class write_height extends universal {
         title.setSelected(true);
         back=findViewById(R.id.backbutton);
         back.setOnClickListener(back_button);
+        prevscore=findViewById(R.id.score);
+        get_score_for_navbar("write height", userID, prevscore, 5);
 
         no1=findViewById(R.id.type1);
         no2=findViewById(R.id.type2);
@@ -70,7 +73,7 @@ public class write_height extends universal {
                 }
 
                 upload_score("write height", score);
-                create_builder_finished_with_score(score);
+                show_rating(score,5);
             }
         });
     }

@@ -14,7 +14,7 @@ import android.widget.TextView;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class drag_and_drop_numbers extends universal {
-    TextView txt1,txt2,txt3;
+    TextView txt1,txt2,txt3,prevscore;
     ImageView img1,img2,img3;
     Button check;
     ImageButton restart,back;
@@ -32,7 +32,8 @@ public class drag_and_drop_numbers extends universal {
         restart=findViewById(R.id.restart);
         back=findViewById(R.id.backbutton);
         back.setOnClickListener(back_button);
-
+        prevscore=findViewById(R.id.score);
+        get_score_for_navbar("drag and drop numbers", userID, prevscore, 3);
         TextView title = findViewById(R.id.title);
         title.setText("Σείρε τους αριθμούς στις εικόνες ανάλογα με τον αριθμό των αντικειμένων που περιέχουν.");
         title.setSelected(true);
@@ -63,7 +64,7 @@ public class drag_and_drop_numbers extends universal {
                         score++;
                     }
                     upload_score("drag and drop numbers", score);
-                    create_builder_finished_with_score(score);
+                    show_rating(score, 3);
                 }
             }
         });
