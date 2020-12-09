@@ -37,7 +37,6 @@ public class LoginActivity extends universal {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         runtime();
-        hide_labels();
 
         login_email=findViewById(R.id.edloginemail);
         login_password=findViewById(R.id.edloginpassword);

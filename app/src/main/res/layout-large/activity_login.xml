@@ -10,9 +10,8 @@
     android:background="@color/white">
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        <include layout="@layout/appbar"
-            android:id="@+id/toolbar"/>
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/background">
     </RelativeLayout>
     <RelativeLayout
         android:layout_width="match_parent"

@@ -16,31 +16,29 @@
         android:layout_weight="2">
         <ImageButton
             android:id="@+id/backbutton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:padding="10dp"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
             android:background="@drawable/ic_baseline_arrow_back_24"
-            android:layout_margin="10dp"
-            android:layout_centerVertical="true"/>
+            android:layout_margin="20dp"/>
         <TextView
             android:id="@+id/weclome_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@color/white"
-            android:text="Γλωσσικές δραστηριότητες"
+            android:text="Δραστηριότητες με αριθμούς"
             android:textStyle="bold"
             android:textSize="20sp"
             android:layout_centerInParent="true"/>
-
     </RelativeLayout>
     <GridLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="10"
-        android:columnCount="3"
+        android:columnCount="4"
         android:rowCount="3"
         android:padding="15dp"
         android:background="@drawable/main_manu_background">
+
         <androidx.cardview.widget.CardView
             android:layout_columnWeight="1"
             android:layout_rowWeight="1"
@@ -49,26 +47,16 @@
             android:layout_width="0dp">
             <!--add textview for title-->
             <androidx.core.widget.NestedScrollView
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center">
+                android:layout_gravity="center"
+                android:layout_marginTop="30dp"><!--Add this line and textview to add titles-->
+                <!--to make text scrollable just move textview inside linear layout-->
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:weightSum="3"
                     android:orientation="vertical">
-                    <Button
-                        android:id="@+id/perigrafi"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:text="Περιγραφή"
-                        android:textColor="@color/white"
-                        android:background="@drawable/start_menu_button"
-                        android:padding="15dp"
-                        android:layout_margin="15dp"
-                        android:textAllCaps="false"
-                        android:layout_gravity="center"/>
-
                 </LinearLayout>
             </androidx.core.widget.NestedScrollView>
         </androidx.cardview.widget.CardView>
@@ -80,7 +68,7 @@
             android:layout_height="0dp"
             android:layout_width="0dp">
             <androidx.core.widget.NestedScrollView
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center">
                 <LinearLayout
@@ -89,10 +77,10 @@
                     android:weightSum="3"
                     android:orientation="vertical">
                     <Button
-                        android:id="@+id/odhgies"
+                        android:id="@+id/btn1"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:text="Οδηγίες"
+                        android:text="Σείρε τους αριθμούς"
                         android:textColor="@color/white"
                         android:background="@drawable/start_menu_button"
                         android:padding="15dp"
@@ -100,6 +88,35 @@
                         android:textAllCaps="false"
                         android:layout_gravity="center"/>
 
+                </LinearLayout>
+            </androidx.core.widget.NestedScrollView>
+        </androidx.cardview.widget.CardView>
+        <androidx.cardview.widget.CardView
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:elevation="5dp"
+            android:layout_height="0dp"
+            android:layout_width="0dp">
+            <androidx.core.widget.NestedScrollView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:weightSum="3"
+                    android:orientation="vertical">
+                    <Button
+                        android:id="@+id/btn2"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="Βρες το μονοπάτι"
+                        android:textColor="@color/white"
+                        android:background="@drawable/start_menu_button"
+                        android:padding="15dp"
+                        android:layout_margin="15dp"
+                        android:textAllCaps="false"
+                        android:layout_gravity="center"/>
                 </LinearLayout>
             </androidx.core.widget.NestedScrollView>
         </androidx.cardview.widget.CardView>
@@ -111,7 +128,7 @@
             android:layout_height="0dp"
             android:layout_width="0dp">
             <androidx.core.widget.NestedScrollView
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center">
                 <LinearLayout
@@ -119,20 +136,10 @@
                     android:layout_height="wrap_content"
                     android:weightSum="3"
                     android:orientation="vertical">
-                    <Button
-                        android:id="@+id/arithmoi"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:text="Αριθμοί"
-                        android:textColor="@color/white"
-                        android:background="@drawable/start_menu_button"
-                        android:padding="15dp"
-                        android:layout_margin="15dp"
-                        android:textAllCaps="false"
-                        android:layout_gravity="center"/>
                 </LinearLayout>
             </androidx.core.widget.NestedScrollView>
         </androidx.cardview.widget.CardView>
     </GridLayout>
+
 </LinearLayout>
     <!--app:cardCornerRadius="45dp"-->

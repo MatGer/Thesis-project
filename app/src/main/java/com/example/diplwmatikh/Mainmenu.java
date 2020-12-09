@@ -23,7 +23,7 @@ import com.google.firebase.firestore.FirebaseFirestoreException;
 import com.google.firebase.firestore.auth.User;
 
 public class Mainmenu extends universal {
-    Button logoutbutton, glwssikes, gnwstikes;
+    Button glwssikes, gnwstikes;
     ImageButton settings;
     FirebaseFirestore fStore;
     String UserID=null;
@@ -33,7 +33,6 @@ public class Mainmenu extends universal {
         runtime();
         setContentView(R.layout.activity_mainmenu);
 
-        logoutbutton=findViewById(R.id.logout_mainmenu_button);
         glwssikes=findViewById(R.id.glwssikes);
         gnwstikes=findViewById(R.id.gnwstikes);
         settings=findViewById(R.id.settings);
@@ -48,6 +47,7 @@ public class Mainmenu extends universal {
                 intent = new Intent(Mainmenu.this, glwssikes_menu.class);
                 startActivity(intent);
                 intent=null;
+                finish();
             }
         });
         gnwstikes.setOnClickListener(new View.OnClickListener() {
@@ -56,6 +56,7 @@ public class Mainmenu extends universal {
                 intent = new Intent(Mainmenu.this, gnwstikes_menu.class);
                 startActivity(intent);
                 intent=null;
+                finish();
             }
         });
 
@@ -65,6 +66,7 @@ public class Mainmenu extends universal {
                 intent = new Intent(Mainmenu.this, settings.class);
                 startActivity(intent);
                 intent=null;
+                finish();
             }
         });
         /*

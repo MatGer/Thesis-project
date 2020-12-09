@@ -12,11 +12,24 @@
         android:screenOrientation="landscape"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
-        <activity android:name=".activity_scores">
+        <activity android:name=".motiba_menu"></activity>
+        <activity android:name=".arithmhtikh_menu" />
+        <activity android:name=".sigrish_menu" />
+        <activity android:name=".arithmoi_menu" />
+        <activity android:name=".odhgies_menu" />
+        <activity android:name=".perigrafh_menu" />
+        <activity
+            android:name=".choose_the_bigger_number"
+            android:screenOrientation="landscape">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
+        <activity android:name=".activity_scores" />
         <activity android:name=".leksilogio_menu" />
-        <activity android:name=".settings">
-        </activity>
+        <activity android:name=".settings" />
         <activity android:name=".gnwstikes_menu" />
         <activity android:name=".glwssikes_menu" />
         <activity android:name=".change_password" />
@@ -25,24 +38,16 @@
             android:screenOrientation="landscape" />
         <activity
             android:name=".choose_those_who_match"
-            android:screenOrientation="landscape" >
-        </activity>
+            android:screenOrientation="landscape" />
         <activity
             android:name=".choose_description"
-            android:screenOrientation="landscape">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+            android:screenOrientation="landscape" />
         <activity
             android:name=".drag_items_with_audio"
             android:screenOrientation="landscape" />
         <activity
             android:name=".choose_arrows"
-            android:screenOrientation="landscape">
-        </activity>
+            android:screenOrientation="landscape" />
         <activity
             android:name=".choose"
             android:screenOrientation="landscape" />
@@ -54,9 +59,7 @@
             android:screenOrientation="landscape" />
         <activity
             android:name=".add_animals"
-            android:screenOrientation="landscape">
-
-        </activity>
+            android:screenOrientation="landscape" />
         <activity
             android:name=".next_number"
             android:screenOrientation="landscape" />
@@ -80,8 +83,7 @@
             android:screenOrientation="landscape" />
         <activity
             android:name=".select_the_bigger"
-            android:screenOrientation="landscape">
-        </activity>
+            android:screenOrientation="landscape" />
         <activity
             android:name=".path_with_numbers"
             android:screenOrientation="landscape" />
@@ -90,9 +92,7 @@
             android:screenOrientation="portrait" />
         <activity
             android:name=".LoginActivity"
-            android:screenOrientation="portrait">
-
-        </activity>
+            android:screenOrientation="portrait" />
         <activity
             android:name=".place_in_order"
             android:screenOrientation="landscape" />

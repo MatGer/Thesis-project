@@ -140,18 +140,6 @@
                     android:layout_height="wrap_content"
                     android:weightSum="3"
                     android:orientation="vertical">
-                    <Button
-                        android:id="@+id/logout_mainmenu_button"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:text="Log out"
-                        android:textColor="@color/white"
-                        android:background="@drawable/start_menu_button"
-                        android:padding="15dp"
-                        android:layout_margin="15dp"
-                        android:textAllCaps="false"
-                        android:layout_gravity="center"/>
-
                 </LinearLayout>
             </androidx.core.widget.NestedScrollView>
         </androidx.cardview.widget.CardView>
