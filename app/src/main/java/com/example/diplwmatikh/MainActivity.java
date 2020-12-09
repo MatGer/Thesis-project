@@ -74,8 +74,8 @@ public class MainActivity extends universal{
         restart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                AlertDialog alert = builderreset.create();
-                alert.show();
+               // AlertDialog alert = builderreset.create();
+               // alert.show();
             }
         });
         check.setOnClickListener(new View.OnClickListener() {

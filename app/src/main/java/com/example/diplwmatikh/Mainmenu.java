@@ -26,7 +26,6 @@ public class Mainmenu extends universal {
     Button glwssikes, gnwstikes;
     ImageButton settings;
     FirebaseFirestore fStore;
-    String UserID=null;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,15 +38,12 @@ public class Mainmenu extends universal {
         fStore=FirebaseFirestore.getInstance();
         fAuth=FirebaseAuth.getInstance();
 
-        UserID=fAuth.getCurrentUser().getUid();
-
         glwssikes.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 intent = new Intent(Mainmenu.this, glwssikes_menu.class);
                 startActivity(intent);
                 intent=null;
-                finish();
             }
         });
         gnwstikes.setOnClickListener(new View.OnClickListener() {
@@ -55,8 +51,6 @@ public class Mainmenu extends universal {
             public void onClick(View v) {
                 intent = new Intent(Mainmenu.this, gnwstikes_menu.class);
                 startActivity(intent);
-                intent=null;
-                finish();
             }
         });
 
@@ -65,8 +59,6 @@ public class Mainmenu extends universal {
             public void onClick(View v) {
                 intent = new Intent(Mainmenu.this, settings.class);
                 startActivity(intent);
-                intent=null;
-                finish();
             }
         });
         /*

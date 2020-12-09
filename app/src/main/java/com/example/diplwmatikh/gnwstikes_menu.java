@@ -14,7 +14,7 @@ public class gnwstikes_menu extends universal {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_glwssikes_menu);
+        setContentView(R.layout.activity_gnwstikes_menu);
         runtime();
 
         back=findViewById(R.id.backbutton);
@@ -29,8 +29,6 @@ public class gnwstikes_menu extends universal {
             public void onClick(View v) {
                 intent = new Intent(gnwstikes_menu.this, sigrish_menu.class);
                 startActivity(intent);
-                intent=null;
-                finish();
             }
         });
         arithmitikh.setOnClickListener(new View.OnClickListener() {
@@ -38,8 +36,6 @@ public class gnwstikes_menu extends universal {
             public void onClick(View v) {
                 intent = new Intent(gnwstikes_menu.this, arithmhtikh_menu.class);
                 startActivity(intent);
-                intent=null;
-                finish();
             }
         });
         motiba.setOnClickListener(new View.OnClickListener() {
@@ -47,8 +43,6 @@ public class gnwstikes_menu extends universal {
             public void onClick(View v) {
                 intent = new Intent(gnwstikes_menu.this, motiba_menu.class);
                 startActivity(intent);
-                intent=null;
-                finish();
             }
         });
     }

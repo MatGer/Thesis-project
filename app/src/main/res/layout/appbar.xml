@@ -47,7 +47,7 @@
         android:layout_toStartOf="@+id/score"/>
     <TextView
         android:id="@+id/score"
-        android:layout_width="60dp"
+        android:layout_width="80dp"
         android:layout_height="match_parent"
         android:layout_centerVertical="true"
         android:textColor="@color/white"

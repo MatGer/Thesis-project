@@ -83,7 +83,7 @@ public class choose_those_who_match extends universal {
                     }
                 }
                 upload_score("choose those who match",score);
-                show_rating(score,2);
+                show_rating(score,2,choose_those_who_match.class,choose_description.class, false);
             }
         });
     }

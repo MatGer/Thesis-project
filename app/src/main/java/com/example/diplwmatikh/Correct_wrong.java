@@ -86,10 +86,10 @@ public class Correct_wrong extends universal{
                 correct.setEnabled(true);
                 wrong.setEnabled(true);
                 if(counter==4){
-                    create_builder_finished_with_score(score);
-                    AlertDialog alert = builderfinished_score.create();
-                    upload_score("correct wrong",  33);
-                    alert.show();
+                    //create_builder_finished(4);
+                    //AlertDialog alert = builderfinished_score.create();
+                    //upload_score("correct wrong",  33);
+                    //alert.show();
                     counter=0;
                 }
                 counter++;

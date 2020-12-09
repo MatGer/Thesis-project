@@ -58,7 +58,7 @@ public class choose_the_bigger_number extends universal {
                     }
                 }
                 upload_score("choose the bigger number", score);
-                show_rating(score,4);
+                show_rating(score,4,choose_the_bigger_number.class,null,true);
             }
         });
     }

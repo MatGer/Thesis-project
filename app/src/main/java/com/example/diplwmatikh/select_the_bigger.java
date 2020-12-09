@@ -99,7 +99,7 @@ public class select_the_bigger extends universal {
 
                     case 4:
                         upload_score("select the bigger",score);
-                        show_rating(score,4);
+                        show_rating(score,4,select_the_bigger.class,write_height.class,false);
                         break;
                     default:
                         throw new IllegalStateException("Unexpected value: " + counter);

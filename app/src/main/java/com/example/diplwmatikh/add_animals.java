@@ -68,7 +68,7 @@ public class add_animals extends universal {
                     }
                 }
                 upload_score("add animals", score);
-                show_rating(score,4);
+                show_rating(score,4,add_animals.class,next_number.class,false);
             }
         });
     }

@@ -5,6 +5,7 @@ import android.content.ClipData;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.media.MediaPlayer;
@@ -47,6 +48,7 @@ import io.grpc.internal.SharedResourceHolder;
     FirebaseAuth fAuth;
     String userID;
     MediaPlayer player;
+    int Aactivityscore,Bactivityscore,A_max_activity_score,B_max_activity_score; //for pop up 3rd activity
     int uiOptions = View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION        //options to hide nav bar, status bar and further functionality
             | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
             | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
@@ -67,87 +69,73 @@ import io.grpc.internal.SharedResourceHolder;
         if(fAuth.getCurrentUser()!=null){
             userID=fAuth.getCurrentUser().getUid();
         }
-
-
-        builderback = new AlertDialog.Builder(universal.this);
-        builderback.setCancelable(false);       //makes alert to close only if you press yes or no
-        builderback.setMessage("Θέλετε να επιστρέψετε στο αρχικό μενού;")
-                .setPositiveButton("Ναι", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        intent = new Intent(universal.this, Mainmenu.class);
-                        startActivity(intent);
-                        intent=null;
-                    }
-                })
-                .setNegativeButton("Όχι", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        decorView.setSystemUiVisibility(uiOptions);
-                    }
-                });
-
-        builderreset = new AlertDialog.Builder(universal.this);
-        builderreset.setCancelable(false);          //makes alert to close only if you press yes or no
-        builderreset.setMessage("Θέλετε να ξανακάνετε την δραστηριότητα;")
-                .setPositiveButton("Ναι", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        intent = getIntent();
-                        finish();
-                        startActivity(intent);
-                        intent=null;
-                    }
-                })
-                .setNegativeButton("Όχι", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        decorView.setSystemUiVisibility(uiOptions);
-                    }
-                });
     }
+    /*
+    public void pop_up_3rd_activity(int scoreA,int scoreB,int maxA,int maxB, Class calling_class, Class next_class){
+         float percentage_A=scoreA/maxA;
+         float percentage_B=scoreB/maxB;
+         if(percentage_A<0.5 && percentage_B<0.5){
+             create_builder_for_3rd_activity(next_class);
+         }else {
+             show_rating(scoreB, maxB,calling_class,next_class);
+         }
+     }
 
-    void create_builder_finished_with_score(int score){
-        builderfinished_score = new AlertDialog.Builder(universal.this);
-        builderfinished_score.setTitle("Η δραστηριότητα ολοκληρώθηκε!");
-        builderfinished_score.setMessage("Το σκορ ειναι : "+score+" .Θέλετε να ξανακάνετε την δραστηριότητα;")
-                .setPositiveButton("Ναι", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        intent = getIntent();
-                        finish();
-                        startActivity(intent);
-                        intent=null;
-                    }
-                })
-                .setNegativeButton("Όχι", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        intent = new Intent(universal.this, Mainmenu.class);
-                        startActivity(intent);
-                        intent=null;
-                    }
-                }).create().show();
-    }
-
-    void create_builder_finished(int rating){
+     */
+    //adjust text and call builder
+    public void show_rating(int score, int max_activity_score,Class calling_class, Class next_class, boolean select_builder){
+        float rating = max_activity_score/3;                                                        //false=text optimised for 1st activity
+        String text="";                                                                             //true=text optimised for 2nd activity
+        if(next_class==null){                                                           //if next_class==null -> no next activity -> different builder
+            if(score<=rating){
+                //fair
+                text="Χρειάζεται περισσότερη προσπάθεια. Θέλεις να σπιστρέψεις στο αρχικό μενού;";
+            }else if(score<=2*rating){
+                //good
+                text="Καλή δουλειά. Συνέχισε έτσι. Θέλεις να σπιστρέψεις στο αρχικό μενού;";
+            }else{
+                //very good
+                text="Συγχαρητήρια! Πολύ καλή δουλειά. Θέλεις να σπιστρέψεις στο αρχικό μενού;";
+            }
+            create_builder_for_3rd_activity(calling_class, text);
+        }else{
+            if(!select_builder){
+                if(score<=rating){
+                    //fair
+                    text="Χρειάζεται περισσότερη προσπάθεια. Θέλεις να πας στην επόμενη δραστηριότητα;";
+                }else if(score<=2*rating){
+                    //good
+                    text="Καλή δουλειά. Συνέχισε έτσι. Θέλεις να πας στην επόμενη δραστηριότητα;";
+                }else{
+                    //very good
+                    text="Συγχαρητήρια! Πολύ καλή δουλειά. Θέλεις να πας στην επόμενη δραστηριότητα;";
+                }
+            }else{
+                if(score<=rating){
+                    //fair
+                    text="Χρειάζεται περισσότερη προσπάθεια. Θέλεις να δοκιμάσεις μια άλλη δραστηριότητα;";
+                }else if(score<=2*rating){
+                    //good
+                    text="Καλή δουλειά. Συνέχισε έτσι. Θέλεις να δοκιμάσεις μια άλλη δραστηριότητα;";
+                }else{
+                    //very good
+                    text="Συγχαρητήρια! Πολύ καλή δουλειά. Θέλεις να δοκιμάσεις μια άλλη δραστηριότητα;";
+                }
+            }
+            create_builder_finished(calling_class,next_class,text);
+        }
+     }
+    //show message at the end of the activity
+    void create_builder_finished(Class calling_class, Class next_class, String txt){
         builderfinished = new AlertDialog.Builder(universal.this);
         builderfinished.setTitle("Η δραστηριότητα ολοκληρώθηκε!");
-        switch(rating){
-            case 1:builderfinished.setMessage("Χρειάζεται περισσότερη προσπάθεια. Θελετε να ξαναπροσπαθήσετε;");
-                   break;
-            case 2:builderfinished.setMessage("Καλή δουλειά. Συνεχίστε έτσι. Θέλετε να ξαναξεκινήσετε;");
-                   break;
-            case 3:builderfinished.setMessage("Συγχαρητήρια! Πολύ καλή δουλειά. Θέλετε να ξαναξεκινήσετε;");
-                   break;
-        }
+        builderfinished.setMessage(txt);
+
                 builderfinished.setPositiveButton("Ναι", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        intent = getIntent();
-                        finish();
+                        intent = new Intent(universal.this, next_class);
                         startActivity(intent);
-                        intent=null;
                     }
                 })
                 .setNegativeButton("Όχι", new DialogInterface.OnClickListener() {
@@ -155,12 +143,39 @@ import io.grpc.internal.SharedResourceHolder;
                     public void onClick(DialogInterface dialog, int which) {
                         intent = new Intent(universal.this, Mainmenu.class);
                         startActivity(intent);
-                        intent=null;
                     }
-                }).create().show();
+                })
+                .setNeutralButton("Θα ξαναπροσπαθήσω", new DialogInterface.OnClickListener() {
+                    @Override
+                     public void onClick(DialogInterface dialog, int which) {
+                        intent = new Intent(universal.this, calling_class);
+                        startActivity(intent);
+                     }
+                  }).create().show();
     }
+    //builder for 3rd activity
+     void create_builder_for_3rd_activity(Class calling_class, String txt){
+         builderfinished = new AlertDialog.Builder(universal.this);
+         builderfinished.setTitle("Η δραστηριότητα ολοκληρώθηκε!");
+         builderfinished.setMessage(txt);
 
-    public void upload_score(String activityname,int score){
+         builderfinished.setPositiveButton("Ναι", new DialogInterface.OnClickListener() {
+             @Override
+             public void onClick(DialogInterface dialog, int which) {
+                 intent = new Intent(universal.this, Mainmenu.class);
+                 startActivity(intent);
+             }
+         })
+                 .setNegativeButton("Θα ξαναπροσπαθήσω", new DialogInterface.OnClickListener() {
+                     @Override
+                     public void onClick(DialogInterface dialog, int which) {
+                         intent = new Intent(universal.this, calling_class);
+                         startActivity(intent);
+                     }
+                 }).create().show();
+     }
+     //to upload score
+     public void upload_score(String activityname,int score){
         //bring previous score
         FirebaseFirestore fStore=FirebaseFirestore.getInstance();
         DocumentReference bring_old = fStore.collection("scores").document(userID);
@@ -199,10 +214,10 @@ import io.grpc.internal.SharedResourceHolder;
             }
         });
     }
-
-    public void get_score(String activityname,String uid,TextView field){
+    //to get the scores for score tab
+    public void get_score(String activityname,String greek_name,TextView field){
         FirebaseFirestore fStore=FirebaseFirestore.getInstance();
-        DocumentReference fetch_test = fStore.collection("scores").document(uid);
+        DocumentReference fetch_test = fStore.collection("scores").document(userID);
         fetch_test.addSnapshotListener(this, new EventListener<DocumentSnapshot>() {
             @Override
             public void onEvent(@Nullable DocumentSnapshot value, @Nullable FirebaseFirestoreException error) {
@@ -215,17 +230,18 @@ import io.grpc.internal.SharedResourceHolder;
                     score = value.getDouble(activityname);
                 }
                 if(score==-1){
-                    field.setText("Η "+activityname+" δεν έχει ολοκληρωθεί ακόμα.");
+                    field.setText(greek_name+" : δεν έχει ολοκληρωθεί ακόμα.");
                 }else{
                     output=(int) score;
-                    field.setText(activityname +": "+output);
+                    field.setText(greek_name +": "+output);
                 }
             }
         });
     }
+    //get score for navigation bar
      public void get_score_for_navbar(String activityname,String uid,TextView field,int max_activity_score){
          FirebaseFirestore fStore=FirebaseFirestore.getInstance();
-         DocumentReference fetch_test = fStore.collection("scores").document(uid);
+         DocumentReference fetch_test = fStore.collection("scores").document(userID);
          fetch_test.addSnapshotListener(this, new EventListener<DocumentSnapshot>() {
              @Override
              public void onEvent(@Nullable DocumentSnapshot value, @Nullable FirebaseFirestoreException error) {
@@ -246,23 +262,24 @@ import io.grpc.internal.SharedResourceHolder;
              }
          });
      }
-
+     //long click listener
      View.OnLongClickListener longClickListener = new View.OnLongClickListener() {
          @Override
-         public boolean onLongClick(View v) {
+        public boolean onLongClick(View v) {
              ClipData data = ClipData.newPlainText("clipdata","text2");
              View.DragShadowBuilder myShadowBBuilder = new View.DragShadowBuilder(v);// Instantiates the drag shadow builder.
              v.startDragAndDrop(data, myShadowBBuilder, v, 0);
              return true;
          }
      };
-
+    //go back
     View.OnClickListener back_button = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
             finish();
         }
     };
+    //to play the sounds
     //track is an integer... must be formatted as R.raw.filename
     public void play_sound(int track, ImageButton btn){
         player = MediaPlayer.create(this,track);
@@ -287,31 +304,14 @@ import io.grpc.internal.SharedResourceHolder;
         btn.setEnabled(false);
         player.start();
     }
-
-    public void show_rating(int score, int max_activity_score){
-        float rating = max_activity_score/3;
-        if(score<=rating){
-            //fair
-            create_builder_finished(1);
-            return;
-        }else if(score<=2*rating){
-            //good
-            create_builder_finished(2);
-            return;
-        }else{
-            //very good
-            create_builder_finished(3);
-            return;
-        }
-    }
-
-     public void hide_labels(){
+    //hilde labels from navbar if needed
+    public void hide_labels(){
          findViewById(R.id.title).setVisibility(View.INVISIBLE);
          findViewById(R.id.prev_score).setVisibility(View.INVISIBLE);
          findViewById(R.id.score).setVisibility(View.INVISIBLE);
          findViewById(R.id.check).setVisibility(View.INVISIBLE);
      }
-
+     //to reset score. deletes a field at a time
      public void reset_score(String activityname){
         //deletes the field
         //System.out.println(userID+"   00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000");

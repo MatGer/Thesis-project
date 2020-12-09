@@ -32,6 +32,7 @@ public class complete_the_shape extends universal {
         runtime();
 
         check = findViewById(R.id.check);
+        restart=findViewById(R.id.restart);
         back=findViewById(R.id.backbutton);
         back.setOnClickListener(back_button);
         prevscore=findViewById(R.id.score);
@@ -77,7 +78,7 @@ public class complete_the_shape extends universal {
                     }
                 }
                 upload_score("complete the shape",score);
-                show_rating(score,6);
+                show_rating(score,6,complete_the_shape.class,which_one_is_different.class,true);
             }
         });
 
@@ -86,8 +87,6 @@ public class complete_the_shape extends universal {
             public void onClick(View v) {
                 intent = new Intent(complete_the_shape.this, complete_the_shape.class);
                 startActivity(intent);
-                intent=null;
-                finish();
             }
         });
     }

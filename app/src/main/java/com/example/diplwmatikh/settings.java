@@ -32,7 +32,6 @@ public class settings extends universal {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(settings.this, Edit_data.class));
-                finish();
             }
         });
         logout.setOnClickListener(new View.OnClickListener() {
@@ -48,7 +47,6 @@ public class settings extends universal {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(settings.this, activity_scores.class));
-                finish();
             }
         });
 

@@ -64,7 +64,7 @@ public class drag_and_drop_numbers extends universal {
                         score++;
                     }
                     upload_score("drag and drop numbers", score);
-                    show_rating(score, 3);
+                    show_rating(score, 3,drag_and_drop_numbers.class,path_with_numbers.class,false);
                 }
             }
         });

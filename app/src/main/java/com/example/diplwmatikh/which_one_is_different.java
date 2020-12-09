@@ -68,7 +68,7 @@ public class which_one_is_different extends universal {
                     score++;
                 }
                 upload_score("which one is different", score);
-                show_rating(score,3);
+                show_rating(score,3,which_one_is_different.class,null,true);
             }
         });
     }

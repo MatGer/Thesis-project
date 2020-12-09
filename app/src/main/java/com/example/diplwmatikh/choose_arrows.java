@@ -118,7 +118,7 @@ public class choose_arrows extends universal {
                 //System.out.println("----------------------------------------------------------------------------------"+ score);
                 //score=0; //enable this command for debbuging
                 upload_score("choose arrows", score);
-                show_rating(score,12);
+                show_rating(score,12,choose_arrows.class,drag_items_with_audio.class,true);
             }
         });
 

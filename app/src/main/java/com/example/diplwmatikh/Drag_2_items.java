@@ -56,7 +56,7 @@ public class Drag_2_items extends universal {
             @Override
             public void onClick(View v) {
                 upload_score("drag 2 items", score);
-                show_rating(score,2);
+                show_rating(score,2,Drag_2_items.class,null,true);
             }
         });
 
@@ -65,8 +65,6 @@ public class Drag_2_items extends universal {
             public void onClick(View v) {
                 intent = new Intent(Drag_2_items.this, Drag_2_items.class);
                 startActivity(intent);
-                intent=null;
-                finish();
             }
         });
     }

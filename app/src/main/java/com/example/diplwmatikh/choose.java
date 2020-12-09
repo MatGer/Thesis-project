@@ -68,7 +68,7 @@ public class choose extends universal{
                     score++;
                 }
                 upload_score("choose ", score);
-                show_rating(score,2);
+                show_rating(score,2,choose.class,null,true);
             }
         });
     }
