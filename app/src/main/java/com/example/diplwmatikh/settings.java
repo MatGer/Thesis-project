@@ -1,5 +1,6 @@
 package com.example.diplwmatikh;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.AlertDialog;
@@ -9,6 +10,15 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.EventListener;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.FirebaseFirestoreException;
+import com.google.firebase.firestore.Source;
 
 public class settings extends universal {
     TextView change_details,change_pass,logout,showscores,resetscores;
@@ -57,6 +67,21 @@ public class settings extends universal {
             }
         });
 
+        change_pass.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                FirebaseFirestore fStore=FirebaseFirestore.getInstance();
+                DocumentReference fetch_mail = fStore.collection("users").document(userID);
+                fetch_mail.addSnapshotListener(new EventListener<DocumentSnapshot>() {
+                    @Override
+                    public void onEvent(@Nullable DocumentSnapshot value, @Nullable FirebaseFirestoreException error) {
+                        String mail=value.getString("Email");
+                        fAuth.sendPasswordResetEmail(mail);
+                        Toast.makeText(settings.this, "Σου έχει σταλεί ενα mail για την αλλαγή κωδικού.", Toast.LENGTH_SHORT).show();
+                    }
+                });
+            }
+        });
         resetscores.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

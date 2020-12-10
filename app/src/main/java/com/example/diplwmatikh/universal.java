@@ -136,6 +136,7 @@ import io.grpc.internal.SharedResourceHolder;
                     public void onClick(DialogInterface dialog, int which) {
                         intent = new Intent(universal.this, next_class);
                         startActivity(intent);
+                        finish();
                     }
                 })
                 .setNegativeButton("Όχι", new DialogInterface.OnClickListener() {
@@ -143,6 +144,7 @@ import io.grpc.internal.SharedResourceHolder;
                     public void onClick(DialogInterface dialog, int which) {
                         intent = new Intent(universal.this, Mainmenu.class);
                         startActivity(intent);
+                        finish();
                     }
                 })
                 .setNeutralButton("Θα ξαναπροσπαθήσω", new DialogInterface.OnClickListener() {
@@ -150,6 +152,7 @@ import io.grpc.internal.SharedResourceHolder;
                      public void onClick(DialogInterface dialog, int which) {
                         intent = new Intent(universal.this, calling_class);
                         startActivity(intent);
+                        finish();
                      }
                   }).create().show();
     }
@@ -164,6 +167,7 @@ import io.grpc.internal.SharedResourceHolder;
              public void onClick(DialogInterface dialog, int which) {
                  intent = new Intent(universal.this, Mainmenu.class);
                  startActivity(intent);
+                 finish();
              }
          })
                  .setNegativeButton("Θα ξαναπροσπαθήσω", new DialogInterface.OnClickListener() {
@@ -171,6 +175,7 @@ import io.grpc.internal.SharedResourceHolder;
                      public void onClick(DialogInterface dialog, int which) {
                          intent = new Intent(universal.this, calling_class);
                          startActivity(intent);
+                         finish();
                      }
                  }).create().show();
      }

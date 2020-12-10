@@ -80,16 +80,17 @@ public class Drag_2_items extends universal {
                             itemX=(int) v.getX() +30;
                             itemY=(int) v.getY() + v.getHeight()/5;
                             counter++;
+                            score=1;
                             break;
                         case 1:
                             itemX=itemX+v.getWidth()/3;
                             counter++;
-                            score=1;
+                            score=2;
                         break;
                         case 2:
                             itemX=itemX+v.getWidth()/3;
                             counter++;
-                            score=2;
+                            score=1;
                             break;
                         case 3:
                             itemX=(int) v.getX() +30;

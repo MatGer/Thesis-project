@@ -132,9 +132,4 @@ public class RegisterActivity extends universal {
             }
         });
     }
-
-    public void send_verification_email(){
-        //send verification Email
-
-    }
 }

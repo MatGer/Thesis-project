@@ -25,7 +25,7 @@ public class choose_the_bigger_number extends universal {
         prevscore=findViewById(R.id.score);
         check=findViewById(R.id.check);
         TextView title = findViewById(R.id.title);
-        title.setText("Επίλεξε τον μεγαλύτερο αριθμό σε κάθε περίπτωση.");
+        title.setText("Επίλεξε τον μεγαλύτερο αριθμό.");
         title.setSelected(true);
         get_score_for_navbar("choose the bigger number", userID, prevscore, 4);
         back=findViewById(R.id.backbutton);

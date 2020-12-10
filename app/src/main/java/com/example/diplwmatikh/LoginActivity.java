@@ -139,12 +139,6 @@ public class LoginActivity extends universal {
                             decorView.setVisibility(uiOptions);
                       }
                   });
-                password_reset.setNegativeButton("Άκυρο", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        System.out.println("-------------------------------------------------------------------------cancel"+ps.getText().toString());
-                    }
-                });
                 password_reset.create().show();
             }
         });
