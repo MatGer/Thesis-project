@@ -62,7 +62,6 @@
             android:textColorHighlight="@color/register_login"
             android:textColorHint="@color/register_login"
             android:textColorLink="@color/register_login"
-            android:layout_below="@+id/spray"
             android:layout_alignParentBottom="true"
             android:layout_marginBottom="150dp"
             android:layout_centerHorizontal="true"

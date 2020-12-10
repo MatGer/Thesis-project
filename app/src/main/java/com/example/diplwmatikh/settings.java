@@ -118,7 +118,7 @@ public class settings extends universal {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
                                 //restore ui elements
-                                decorView.setSystemUiVisibility(uiOptions);
+                                onResume();
                             }
                         }).create().show();
             }

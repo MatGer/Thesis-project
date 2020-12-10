@@ -43,17 +43,16 @@ import io.grpc.internal.SharedResourceHolder;
 
  public class universal extends AppCompatActivity {
     Intent intent;
-    AlertDialog.Builder builderreset, builderback, builderfinished, builderfinished_score;
+    AlertDialog.Builder builderback, builderfinished;
     View decorView;
     FirebaseAuth fAuth;
     String userID;
     MediaPlayer player;
-    int Aactivityscore,Bactivityscore,A_max_activity_score,B_max_activity_score; //for pop up 3rd activity
-    int uiOptions = View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION        //options to hide nav bar, status bar and further functionality
-            | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
-            | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
-            | View.SYSTEM_UI_FLAG_FULLSCREEN
-            | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY;
+
+     //options to hide nav bar, status bar and further functionality
+     // DO NOT TOUCH THE LINE BELOW
+    int uiOptions=View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION|View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN|View.SYSTEM_UI_FLAG_HIDE_NAVIGATION|View.SYSTEM_UI_FLAG_FULLSCREEN|View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY;
+
     public void runtime(){
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);//screen always on
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
@@ -62,7 +61,7 @@ import io.grpc.internal.SharedResourceHolder;
         // SYSTEM_UI_FLAG_FULLSCREEN is only available on Android 4.1 and higher, but as
         // a general rule, you should design your app to hide the status bar whenever you
         // hide the navigation bar.
-        decorView.setSystemUiVisibility(uiOptions);
+        onResume();
 
         //get user id
         fAuth=FirebaseAuth.getInstance();
@@ -339,6 +338,8 @@ import io.grpc.internal.SharedResourceHolder;
 
      public void onResume(){
          super.onResume();
-         decorView.setSystemUiVisibility(uiOptions);
+         for(int i=0;i<=4;i++){
+             decorView.setSystemUiVisibility(uiOptions);
+         }
      }
 }

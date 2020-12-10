@@ -136,7 +136,7 @@ public class LoginActivity extends universal {
                   .setNegativeButton("Ακυρο", new DialogInterface.OnClickListener() {
                       @Override
                       public void onClick(DialogInterface dialog, int which) {
-                            decorView.setVisibility(uiOptions);
+                            onResume();
                       }
                   });
                 password_reset.create().show();

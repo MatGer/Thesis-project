@@ -89,7 +89,7 @@ public class Edit_data extends universal {
                                 Log.w("upload data class", "Error on updating data", e);
                             }
                         });
-                decorView.setSystemUiVisibility(uiOptions);//to dissapear nav bar
+                onResume();//to dissapear nav bar
                 /*
                 String newpass=pass2.getText().toString().trim();
                 user.updatePassword(newpass)
