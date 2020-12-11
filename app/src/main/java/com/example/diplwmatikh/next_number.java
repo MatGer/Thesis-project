@@ -26,9 +26,9 @@ public class next_number extends universal {
         title.setSelected(true);
 
         back=findViewById(R.id.backbutton);
-        back.setOnClickListener(back_button);
+        back.setOnClickListener(back_button_from_activity);
         prevscore=findViewById(R.id.score);
-        get_score_for_navbar("next number", userID, prevscore, 3);
+        get_score_for_navbar("next number",prevscore, 3);
 
         no1=findViewById(R.id.no15);
         no2=findViewById(R.id.no16);

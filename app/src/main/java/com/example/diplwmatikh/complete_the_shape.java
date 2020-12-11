@@ -34,9 +34,9 @@ public class complete_the_shape extends universal {
         check = findViewById(R.id.check);
         restart=findViewById(R.id.restart);
         back=findViewById(R.id.backbutton);
-        back.setOnClickListener(back_button);
+        back.setOnClickListener(back_button_from_activity);
         prevscore=findViewById(R.id.score);
-        get_score_for_navbar("complete the shape", userID, prevscore, 6);
+        get_score_for_navbar("complete the shape", prevscore, 6);
         TextView title = findViewById(R.id.title);
         title.setText("Ολοκλήρωσε τα σχήματα, σέρνοντας τα δεξιά μέρη.");
         title.setSelected(true);

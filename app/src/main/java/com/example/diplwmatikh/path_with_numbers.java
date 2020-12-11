@@ -42,17 +42,17 @@ public class path_with_numbers extends universal implements OnClickListener {
         title.setSelected(true);
 
         back=findViewById(R.id.backbutton);
-        back.setOnClickListener(back_button);
+        back.setOnClickListener(back_button_from_activity);
         selected_path=(int) (Math.random() * (3-0+1)+0);
 
         prevscore=findViewById(R.id.score);
 
         if(selected_path==3){
             correct_on_path=13;
-            get_score_for_navbar("path with numbers", userID, prevscore, correct_on_path);
+            get_score_for_navbar("path with numbers", prevscore, correct_on_path);
         }else{
             correct_on_path=11;
-            get_score_for_navbar("path with numbers", userID, prevscore, correct_on_path);
+            get_score_for_navbar("path with numbers", prevscore, correct_on_path);
         }
         //assign tiles
         tile1=findViewById(R.id.tile1);

@@ -27,9 +27,9 @@ public class write_height extends universal {
         title.setText("Γράψε το ύψος του κάθε αντικειμένου.");
         title.setSelected(true);
         back=findViewById(R.id.backbutton);
-        back.setOnClickListener(back_button);
+        back.setOnClickListener(back_button_from_activity);
         prevscore=findViewById(R.id.score);
-        get_score_for_navbar("write height", userID, prevscore, 5);
+        get_score_for_navbar("write height", prevscore, 5);
 
         no1=findViewById(R.id.type1);
         no2=findViewById(R.id.type2);

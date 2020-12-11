@@ -33,9 +33,9 @@ public class choose_arrows extends universal {
         add_to_header=findViewById(R.id.title_text);
         play=findViewById(R.id.play_audio);
         prevscore=findViewById(R.id.score);
-        get_score_for_navbar("choose arrows", userID, prevscore, 12);
+        get_score_for_navbar("choose arrows", prevscore, 12);
         back=findViewById(R.id.backbutton);
-        back.setOnClickListener(back_button);
+        back.setOnClickListener(back_button_from_activity);
 
         TextView title = findViewById(R.id.title);
         title.setText("Επέλεξε τα κατάλληλα βελάκια. Πάτησε στο ηχειάκι για να ακούσεις την εκφώνηση");

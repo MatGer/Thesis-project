@@ -31,9 +31,9 @@ public class drag_items_with_audio extends universal{
 
         restart=findViewById(R.id.restart);
         back=findViewById(R.id.backbutton);
-        back.setOnClickListener(back_button);
+        back.setOnClickListener(back_button_from_activity);
         prevscore=findViewById(R.id.score);
-        get_score_for_navbar("drag items with audio", userID, prevscore, 4);
+        get_score_for_navbar("drag items with audio", prevscore, 4);
 
         TextView title = findViewById(R.id.title);
         title.setText("Σείρε τις εικόνες μέσα στα σχήματα με βάση τις οδηγίες. Πάτησε στο ηχειάκι για να ακούσεις την εκφώνηση");

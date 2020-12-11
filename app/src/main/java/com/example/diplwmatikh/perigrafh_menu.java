@@ -18,7 +18,7 @@ public class perigrafh_menu extends universal {
         runtime();
 
         back=findViewById(R.id.backbutton);
-        back.setOnClickListener(back_button);
+        back.setOnClickListener(back_button_from_activity);
         btn1=findViewById(R.id.btn1);
         btn2=findViewById(R.id.btn2);
 

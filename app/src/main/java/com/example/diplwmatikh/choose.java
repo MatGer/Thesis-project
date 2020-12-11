@@ -37,13 +37,13 @@ public class choose extends universal{
         ice_cream.setOnClickListener(click);
         prevscore=findViewById(R.id.score);
         back=findViewById(R.id.backbutton);
-        back.setOnClickListener(back_button);
+        back.setOnClickListener(back_button_from_activity);
 
         TextView title = findViewById(R.id.title);
         title.setText("Επέλεξε την κατάλληλη εικόνα. Πάτησε στο ηχειάκι για να ακούσεις την εκφώνηση");
         title.setSelected(true);
 
-        get_score_for_navbar("choose", userID, prevscore, 2);
+        get_score_for_navbar("choose", prevscore, 2);
 
         play1.setOnClickListener(new View.OnClickListener() {
             @Override

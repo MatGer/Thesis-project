@@ -35,9 +35,9 @@ public class find_the_path extends universal {
 
         restart=findViewById(R.id.restart);
         back=findViewById(R.id.backbutton);
-        back.setOnClickListener(back_button);
+        back.setOnClickListener(back_button_from_activity);
         prevscore=findViewById(R.id.score);
-        get_score_for_navbar("find the path", userID, prevscore, 10);
+        get_score_for_navbar("find the path", prevscore, 10);
 
         circle1=findViewById(R.id.circle1);
         circle2=findViewById(R.id.circle2);

@@ -27,9 +27,9 @@ public class Drag_2_items extends universal {
         check=findViewById(R.id.check);
         restart=findViewById(R.id.restart);
         back=findViewById(R.id.backbutton);
-        back.setOnClickListener(back_button);
+        back.setOnClickListener(back_button_from_activity);
         prevscore=findViewById(R.id.score);
-        get_score_for_navbar("drag 2 items", userID, prevscore, 2);
+        get_score_for_navbar("drag 2 items", prevscore, 2);
 
         TextView title = findViewById(R.id.title);
         title.setText("Σείρε δύο αντικείμενα στο κουτί.");

@@ -30,10 +30,10 @@ public class add_animals extends universal {
         num4=findViewById(R.id.type4);
         check=findViewById(R.id.check);
         back=findViewById(R.id.backbutton);
-        back.setOnClickListener(back_button);
+        back.setOnClickListener(back_button_from_activity);
 
         prevscore=findViewById(R.id.score);
-        get_score_for_navbar("add animals",userID,prevscore,4);
+        get_score_for_navbar("add animals",prevscore,4);
 
         getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN);   //keyboard stay hidden
         TextView title = findViewById(R.id.title);

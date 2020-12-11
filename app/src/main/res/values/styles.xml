@@ -1,8 +1,4 @@
 <resources>
-    <style name="Widget.Theme.Diplwmatikh.ActionBar.Fullscreen" parent="Theme.AppCompat.Light">
-        <item name="android:background">@color/white</item>
-        <item name="android:windowFullscreen">true</item>
-    </style>
 
 
 </resources>

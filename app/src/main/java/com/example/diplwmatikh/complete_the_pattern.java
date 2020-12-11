@@ -28,13 +28,13 @@ public class complete_the_pattern extends universal {
         prevscore=findViewById(R.id.score);
         restart=findViewById(R.id.restart);
         back=findViewById(R.id.backbutton);
-        back.setOnClickListener(back_button);
+        back.setOnClickListener(back_button_from_activity);
 
         TextView title = findViewById(R.id.title);
         title.setText("Σείρε τα σχήματα από την τελευταία σειρά, στα πράσινα κουτάκια για να ολοκληρώσεις τα μοτίβα.");
         title.setSelected(true);
 
-        get_score_for_navbar("complete the pattern", userID, prevscore, 6);
+        get_score_for_navbar("complete the pattern", prevscore, 6);
 
         fill1_1=findViewById(R.id.fill1_7);
         fill1_2=findViewById(R.id.fill1_8);

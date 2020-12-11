@@ -29,9 +29,6 @@
             android:screenOrientation="landscape" />
         <activity android:name=".activity_scores" />
 
-        <activity android:name=".leksilogio_menu"
-            android:screenOrientation="landscape"/>
-
         <activity android:name=".settings"
             android:screenOrientation="portrait"/>
 

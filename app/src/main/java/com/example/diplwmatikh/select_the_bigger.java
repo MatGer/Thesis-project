@@ -29,9 +29,9 @@ public class select_the_bigger extends universal {
         title.setText("Επέλεξε την μεγαλύτερη εικόνα");
         title.setSelected(true);
         prevscore=findViewById(R.id.score);
-        get_score_for_navbar("select the bigger", userID, prevscore, 4);
+        get_score_for_navbar("select the bigger", prevscore, 4);
         back=findViewById(R.id.backbutton);
-        back.setOnClickListener(back_button);
+        back.setOnClickListener(back_button_from_activity);
 
         findViewById(R.id.check).setVisibility(View.INVISIBLE);
 

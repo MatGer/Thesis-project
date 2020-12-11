@@ -28,10 +28,10 @@ public class which_one_is_different extends universal {
         title.setText("Επέλεξε την εικόνα που δεν ταιριάζει.");
         title.setSelected(true);
         prevscore=findViewById(R.id.score);
-        get_score_for_navbar("which one is different", userID, prevscore, 3);
+        get_score_for_navbar("which one is different", prevscore, 3);
 
         back=findViewById(R.id.backbutton);
-        back.setOnClickListener(back_button);
+        back.setOnClickListener(back_button_from_activity);
 
 
         row11=findViewById(R.id.row11);

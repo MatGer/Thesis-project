@@ -43,7 +43,7 @@ import io.grpc.internal.SharedResourceHolder;
 
  public class universal extends AppCompatActivity {
     Intent intent;
-    AlertDialog.Builder builderback, builderfinished;
+    AlertDialog.Builder builderback, builderfinished,builderexit;
     View decorView;
     FirebaseAuth fAuth;
     String userID;
@@ -125,7 +125,7 @@ import io.grpc.internal.SharedResourceHolder;
         }
      }
     //show message at the end of the activity
-    void create_builder_finished(Class calling_class, Class next_class, String txt){
+    public void create_builder_finished(Class calling_class, Class next_class, String txt){
         builderfinished = new AlertDialog.Builder(universal.this);
         builderfinished.setTitle("Η δραστηριότητα ολοκληρώθηκε!");
         builderfinished.setMessage(txt);
@@ -156,7 +156,7 @@ import io.grpc.internal.SharedResourceHolder;
                   }).create().show();
     }
     //builder for 3rd activity
-     void create_builder_for_3rd_activity(Class calling_class, String txt){
+     public void create_builder_for_3rd_activity(Class calling_class, String txt){
          builderfinished = new AlertDialog.Builder(universal.this);
          builderfinished.setTitle("Η δραστηριότητα ολοκληρώθηκε!");
          builderfinished.setMessage(txt);
@@ -175,6 +175,24 @@ import io.grpc.internal.SharedResourceHolder;
                          intent = new Intent(universal.this, calling_class);
                          startActivity(intent);
                          finish();
+                     }
+                 }).create().show();
+     }
+     public void create_exit_builder(){
+         builderexit = new AlertDialog.Builder(universal.this);
+         builderexit.setTitle("Έξοδος από την δραστηριότητα.");
+         builderexit.setMessage("Θέλεις σίγουρα να φύγεις;");
+
+         builderexit.setPositiveButton("Ναι", new DialogInterface.OnClickListener() {
+             @Override
+             public void onClick(DialogInterface dialog, int which) {
+                 finish();
+             }
+         });
+         builderexit.setNegativeButton("Οχι", new DialogInterface.OnClickListener() {
+                     @Override
+                     public void onClick(DialogInterface dialog, int which) {
+                         onResume();
                      }
                  }).create().show();
      }
@@ -219,7 +237,7 @@ import io.grpc.internal.SharedResourceHolder;
         });
     }
     //to get the scores for score tab
-    public void get_score(String activityname,String greek_name,TextView field){
+    public void get_score(String activityname,int max_score, String greek_name,TextView field){
         FirebaseFirestore fStore=FirebaseFirestore.getInstance();
         DocumentReference fetch_test = fStore.collection("scores").document(userID);
         fetch_test.addSnapshotListener(this, new EventListener<DocumentSnapshot>() {
@@ -237,13 +255,18 @@ import io.grpc.internal.SharedResourceHolder;
                     field.setText(greek_name+" : δεν έχει ολοκληρωθεί ακόμα.");
                 }else{
                     output=(int) score;
-                    field.setText(greek_name +": "+output);
+                    if(activityname.equals("path with numbers")){
+                        if(output>max_score){
+                            field.setText(greek_name +": "+output+"από τα 13");
+                        }
+                    }
+                    field.setText(greek_name +" : "+output+"από τα "+max_score);
                 }
             }
         });
     }
     //get score for navigation bar
-     public void get_score_for_navbar(String activityname,String uid,TextView field,int max_activity_score){
+     public void get_score_for_navbar(String activityname,TextView field,int max_activity_score){
          FirebaseFirestore fStore=FirebaseFirestore.getInstance();
          DocumentReference fetch_test = fStore.collection("scores").document(userID);
          fetch_test.addSnapshotListener(this, new EventListener<DocumentSnapshot>() {
@@ -281,6 +304,12 @@ import io.grpc.internal.SharedResourceHolder;
         @Override
         public void onClick(View v) {
             finish();
+        }
+    };
+    View.OnClickListener back_button_from_activity = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            create_exit_builder();
         }
     };
     //to play the sounds

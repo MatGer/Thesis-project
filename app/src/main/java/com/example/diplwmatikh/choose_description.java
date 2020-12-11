@@ -49,7 +49,7 @@ public class choose_description extends universal {
         check=findViewById(R.id.check);
         prevscore=findViewById(R.id.score);
         back=findViewById(R.id.backbutton);
-        back.setOnClickListener(back_button);
+        back.setOnClickListener(back_button_from_activity);
 
         txt1.setOnClickListener(clickListener);
         txt2.setOnClickListener(clickListener);
@@ -69,7 +69,7 @@ public class choose_description extends universal {
         play7.setOnClickListener(play);
         play8.setOnClickListener(play);
 
-        get_score_for_navbar("choose description", userID, prevscore, 4);
+        get_score_for_navbar("choose description", prevscore, 4);
 
         check.setOnClickListener(new View.OnClickListener() {
             @Override

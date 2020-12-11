@@ -31,9 +31,9 @@ public class drag_and_drop_numbers extends universal {
 
         restart=findViewById(R.id.restart);
         back=findViewById(R.id.backbutton);
-        back.setOnClickListener(back_button);
+        back.setOnClickListener(back_button_from_activity);
         prevscore=findViewById(R.id.score);
-        get_score_for_navbar("drag and drop numbers", userID, prevscore, 3);
+        get_score_for_navbar("drag and drop numbers", prevscore, 3);
         TextView title = findViewById(R.id.title);
         title.setText("Σείρε τους αριθμούς μέσα στις στις εικόνες");
         title.setSelected(true);

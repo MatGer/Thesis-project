@@ -27,9 +27,9 @@ public class how_many extends universal {
 
         check=findViewById(R.id.check);
         back=findViewById(R.id.backbutton);
-        back.setOnClickListener(back_button);
+        back.setOnClickListener(back_button_from_activity);
         prevscore=findViewById(R.id.score);
-        get_score_for_navbar("how many", userID, prevscore, 3);
+        get_score_for_navbar("how many", prevscore, 3);
         no1=findViewById(R.id.no11);
         no2=findViewById(R.id.no12);
         no3=findViewById(R.id.no13);

@@ -26,13 +26,13 @@ public class choose_those_who_match extends universal {
 
         prevscore=findViewById(R.id.score);
         back=findViewById(R.id.backbutton);
-        back.setOnClickListener(back_button);
+        back.setOnClickListener(back_button_from_activity);
 
         TextView title = findViewById(R.id.title);
         title.setText("Επέλεξε τις περιγραφές που ταιριάζουν με την κάθε εικόνα. Πάτησε στο ηχειάκι για να ακούσεις την εκφώνηση");
         title.setSelected(true);
 
-        get_score_for_navbar("choose those who match", userID, prevscore, 2);
+        get_score_for_navbar("choose those who match", prevscore, 2);
 
         txt1=findViewById(R.id.click1);
         txt2=findViewById(R.id.click2);
