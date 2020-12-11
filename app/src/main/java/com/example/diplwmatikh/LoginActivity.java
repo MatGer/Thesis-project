@@ -119,6 +119,7 @@ public class LoginActivity extends universal {
                                     @Override
                                     public void onSuccess(Void aVoid) {
                                         //System.out.println("-------------------------------------------------------------------------done");
+                                        getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN);   //keyboard stay hidden
                                         Toast.makeText(LoginActivity.this, "Στάλθηκε e-mail στη διεύθυνση που πληκτρολογήσατε", Toast.LENGTH_SHORT).show();
                                     }
                                 })

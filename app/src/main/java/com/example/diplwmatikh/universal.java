@@ -260,7 +260,7 @@ import io.grpc.internal.SharedResourceHolder;
                             field.setText(greek_name +": "+output+"από τα 13");
                         }
                     }
-                    field.setText(greek_name +" : "+output+"από τα "+max_score);
+                    field.setText(greek_name +" : "+output+" από τα "+max_score);
                 }
             }
         });

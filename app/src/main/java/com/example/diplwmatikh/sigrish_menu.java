@@ -25,7 +25,7 @@ public class sigrish_menu extends universal {
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                intent = new Intent(sigrish_menu.this, choose_the_bigger_number.class);
+                intent = new Intent(sigrish_menu.this, select_the_bigger.class);
                 startActivity(intent);
                 intent=null;
                 finish();

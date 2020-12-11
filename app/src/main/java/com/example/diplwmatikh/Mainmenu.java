@@ -35,8 +35,7 @@ public class Mainmenu extends universal {
         glwssikes=findViewById(R.id.glwssikes);
         gnwstikes=findViewById(R.id.gnwstikes);
         settings=findViewById(R.id.settings);
-        fStore=FirebaseFirestore.getInstance();
-        fAuth=FirebaseAuth.getInstance();
+
 
         glwssikes.setOnClickListener(new View.OnClickListener() {
             @Override
