@@ -117,9 +117,6 @@ public class complete_the_pattern extends universal {
                             break;
                     }
                     break;
-                case DragEvent.ACTION_DRAG_ENTERED:
-                    text.setText("target= "+v.getId()+" , source: "+view.getId()+"\n"+"target X "+v.getX()+" Y "+v.getY()+" , source: X "+view.getX()+" Y "+view.getY());
-                    break;
                 case DragEvent.ACTION_DROP:
                         switch (v.getId()) {         //get target id
                             case R.id.fill1_7:
