@@ -32,7 +32,7 @@ public class choose_those_who_match extends universal {
         title.setText("Επέλεξε τις περιγραφές που ταιριάζουν με την κάθε εικόνα. Πάτησε στο ηχειάκι για να ακούσεις την εκφώνηση");
         title.setSelected(true);
 
-        get_score_for_navbar("choose those who match", prevscore, 2);
+        get_score_for_navbar("choose those who match", prevscore, 8);
 
         txt1=findViewById(R.id.click1);
         txt2=findViewById(R.id.click2);
@@ -77,7 +77,7 @@ public class choose_those_who_match extends universal {
             public void onClick(View v) {
                 for (int x=0;x<2;x++){
                     for (int y=0; y<4;y++){
-                        if (match_to_answer[x][y]==answer[x][y] && answer[x][y]==true){
+                        if (match_to_answer[x][y]==answer[x][y]){
                             score++;
                         }
                     }

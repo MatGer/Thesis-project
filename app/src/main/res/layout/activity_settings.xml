@@ -75,7 +75,7 @@
             android:layout_height="wrap_content"
             android:textSize="20sp"
             android:textColor="@color/register_login"
-            android:text="Προβολή όλων των βαρμολογιών"
+            android:text="Προβολή όλων των βαθμολογιών"
             android:paddingVertical="10dp"
             android:paddingLeft="10dp"
             android:layout_below="@+id/line3"/>

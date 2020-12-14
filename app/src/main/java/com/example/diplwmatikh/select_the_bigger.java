@@ -67,42 +67,42 @@ public class select_the_bigger extends universal {
             public void onClick(View v) {
                 if(selected==0){
                     Toast.makeText(select_the_bigger.this, "Δεν επιλέχθηκε κάποια εικόνα",Toast.LENGTH_SHORT).show();
-                }
-                else if(selected==1){
-                    if(counter==1 || counter==3){
-                        score++;
+                }else{
+                    if(selected==1){
+                        if(counter==1 || counter==3){
+                            score++;
+                        }
+                    }else if (selected==2){
+                        if(counter==0 || counter==2){
+                            score++;
+                        }
                     }
-                }else if (selected==2){
-                    if(counter==0 || counter==2){
-                        score++;
+                    counter++;
+                    selected=0;
+                    second.setBackground(getDrawable(R.color.white));
+                    first.setBackground(getDrawable(R.color.white));
+                    switch(counter){
+                        case 1:
+                            first.setImageDrawable(getDrawable(R.drawable.basketball));
+                            second.setImageDrawable(getDrawable(R.drawable.baseball));
+                            break;
+                        case 2:
+                            first.setImageDrawable(getDrawable(R.drawable.plant));
+                            second.setImageDrawable(getDrawable(R.drawable.tree));
+                            break;
+
+                        case 3:
+                            first.setImageDrawable(getDrawable(R.drawable.elephant));
+                            second.setImageDrawable(getDrawable(R.drawable.cat));
+                            break;
+
+                        case 4:
+                            upload_score("select the bigger",score);
+                            show_rating(score,4,select_the_bigger.class,write_height.class,false);
+                            break;
+                        default:
+                            throw new IllegalStateException("Unexpected value: " + counter);
                     }
-                }
-                counter++;
-                selected=0;
-                second.setBackground(getDrawable(R.color.white));
-                first.setBackground(getDrawable(R.color.white));
-                switch(counter){
-                    case 1:
-                        first.setImageDrawable(getDrawable(R.drawable.basketball));
-                        second.setImageDrawable(getDrawable(R.drawable.baseball));
-                        break;
-
-                    case 2:
-                        first.setImageDrawable(getDrawable(R.drawable.plant));
-                        second.setImageDrawable(getDrawable(R.drawable.tree));
-                        break;
-
-                    case 3:
-                        first.setImageDrawable(getDrawable(R.drawable.elephant));
-                        second.setImageDrawable(getDrawable(R.drawable.cat));
-                        break;
-
-                    case 4:
-                        upload_score("select the bigger",score);
-                        show_rating(score,4,select_the_bigger.class,write_height.class,false);
-                        break;
-                    default:
-                        throw new IllegalStateException("Unexpected value: " + counter);
                 }
             }
         });
