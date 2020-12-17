@@ -12,7 +12,7 @@ public class next_number extends universal {
     TextView no1,no2,no3,no4,no5,no6;
     int row1,row2,row3,score=0;
     Button check;
-    ImageButton back;
+    ImageButton back,home;
     TextView prevscore;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +27,8 @@ public class next_number extends universal {
 
         back=findViewById(R.id.backbutton);
         back.setOnClickListener(back_button_from_activity);
+        home=findViewById(R.id.homebutton);
+        home.setOnClickListener(home_button_listener);
         prevscore=findViewById(R.id.score);
         get_score_for_navbar("next number",prevscore, 3);
 

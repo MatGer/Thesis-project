@@ -42,7 +42,6 @@ public class Mainmenu extends universal {
             public void onClick(View v) {
                 intent = new Intent(Mainmenu.this, glwssikes_menu.class);
                 startActivity(intent);
-                intent=null;
             }
         });
         gnwstikes.setOnClickListener(new View.OnClickListener() {

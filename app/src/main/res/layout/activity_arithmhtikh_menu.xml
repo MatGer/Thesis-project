@@ -16,10 +16,12 @@
         android:layout_weight="2">
         <ImageButton
             android:id="@+id/backbutton"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
             android:background="@drawable/ic_baseline_arrow_back_24"
-            android:layout_margin="20dp"/>
+            android:layout_margin="10dp"
+            android:layout_centerVertical="true"/>
         <TextView
             android:id="@+id/weclome_text"
             android:layout_width="wrap_content"
@@ -31,11 +33,13 @@
             android:layout_centerInParent="true"/>
         <ImageButton
             android:id="@+id/infobutton"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:background="@drawable/ic_baseline_info_24"
-            android:layout_margin="20dp"
-            android:layout_alignParentEnd="true"/>
+            android:layout_margin="10dp"
+            android:layout_alignParentEnd="true"
+            android:padding="10dp"
+            android:layout_centerVertical="true"/>
     </RelativeLayout>
     <GridLayout
         android:layout_width="match_parent"
@@ -94,7 +98,18 @@
                         android:layout_margin="15dp"
                         android:textAllCaps="false"
                         android:layout_gravity="center"/>
-
+                    <Button
+                        android:id="@+id/btn3"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="Πόσα ζωάκια υπάρχουν"
+                        android:textColor="@color/white"
+                        android:background="@drawable/start_menu_button"
+                        android:padding="15dp"
+                        android:layout_margin="15dp"
+                        android:textAllCaps="false"
+                        android:layout_gravity="center"
+                        android:visibility="invisible"/>
                 </LinearLayout>
             </androidx.core.widget.NestedScrollView>
         </androidx.cardview.widget.CardView>
@@ -124,6 +139,18 @@
                         android:layout_margin="15dp"
                         android:textAllCaps="false"
                         android:layout_gravity="center"/>
+                    <Button
+                        android:id="@+id/btn4"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="Βρες τον επόμενο αριθμό"
+                        android:textColor="@color/white"
+                        android:background="@drawable/start_menu_button"
+                        android:padding="15dp"
+                        android:layout_margin="15dp"
+                        android:textAllCaps="false"
+                        android:layout_gravity="center"
+                        android:visibility="invisible"/>
                 </LinearLayout>
             </androidx.core.widget.NestedScrollView>
         </androidx.cardview.widget.CardView>

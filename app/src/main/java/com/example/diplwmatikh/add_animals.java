@@ -14,7 +14,7 @@ public class add_animals extends universal {
     Button check;
     EditText num1,num2,num3,num4;
     TextView prevscore;
-    ImageButton back;
+    ImageButton back,home;
     int score=0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +31,8 @@ public class add_animals extends universal {
         check=findViewById(R.id.check);
         back=findViewById(R.id.backbutton);
         back.setOnClickListener(back_button_from_activity);
+        home=findViewById(R.id.homebutton);
+        home.setOnClickListener(home_button_listener);
 
         prevscore=findViewById(R.id.score);
         get_score_for_navbar("add animals",prevscore,4);

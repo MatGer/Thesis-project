@@ -13,7 +13,7 @@ import java.util.Random;
 
 public class choose_arrows extends universal {
     Button check;
-    ImageButton back;
+    ImageButton back,home;
     ImageView play;
     ImageView sample; //eikona sthn ekfwnhsh
     TextView prevscore,add_to_header; //ekfwnhsh
@@ -37,6 +37,8 @@ public class choose_arrows extends universal {
         get_score_for_navbar("choose arrows", prevscore, 12);
         back=findViewById(R.id.backbutton);
         back.setOnClickListener(back_button_from_activity);
+        home=findViewById(R.id.homebutton);
+        home.setOnClickListener(home_button_listener);
 
         TextView title = findViewById(R.id.title);
         title.setText("Επέλεξε τα κατάλληλα βελάκια. Πάτησε στο ηχειάκι για να ακούσεις την εκφώνηση");

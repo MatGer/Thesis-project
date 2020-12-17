@@ -8,11 +8,6 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
-import com.google.firebase.auth.FirebaseAuth;
-
-import java.util.ArrayList;
-import java.util.Collections;
-
 public class path_with_numbers extends universal implements OnClickListener {
     TextView tile1,tile2,tile3,tile4,tile5;
     TextView tile6,tile7,tile8,tile9,tile10;
@@ -21,7 +16,7 @@ public class path_with_numbers extends universal implements OnClickListener {
     TextView tile21,tile22,tile23,tile24,tile25;
     TextView prevscore;
     Button check;
-    ImageButton back;
+    ImageButton back,home;
     int score=0;
     int correct_on_path;    // number of correct answer existing on current path
     int selected_path; //poio path epilegetai kathe fora
@@ -43,10 +38,12 @@ public class path_with_numbers extends universal implements OnClickListener {
 
         back=findViewById(R.id.backbutton);
         back.setOnClickListener(back_button_from_activity);
+        home=findViewById(R.id.homebutton);
+        home.setOnClickListener(home_button_listener);
+
         selected_path=(int) (Math.random() * (3-0+1)+0);
 
         prevscore=findViewById(R.id.score);
-
         if(selected_path==3){
             correct_on_path=13;
             get_score_for_navbar("path with numbers", prevscore, correct_on_path);
@@ -119,7 +116,7 @@ public class path_with_numbers extends universal implements OnClickListener {
                     }
                 }
                 upload_score("path with numbers",score,correct_on_path);
-                show_rating(score,correct_on_path,path_with_numbers.class,Drag_2_items.class,true);
+                show_rating(score,correct_on_path,path_with_numbers.class, drag_2_items.class,true);
             }
         });
     }

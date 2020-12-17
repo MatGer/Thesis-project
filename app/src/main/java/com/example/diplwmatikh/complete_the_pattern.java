@@ -14,7 +14,7 @@ public class complete_the_pattern extends universal {
     ImageView drag1,drag2,drag3,drag4,drag5,drag6;
     Button check;
     TextView text,prevscore;
-    ImageButton restart,back;
+    ImageButton restart,back,home;
     int[] answer = {1,4,3,0,5,2};
     int[] match_to_answer = {-1,-1,-1,-1,-1,-1};
     int current_object=-1;
@@ -29,7 +29,8 @@ public class complete_the_pattern extends universal {
         restart=findViewById(R.id.restart);
         back=findViewById(R.id.backbutton);
         back.setOnClickListener(back_button_from_activity);
-
+        home=findViewById(R.id.homebutton);
+        home.setOnClickListener(home_button_listener);
         TextView title = findViewById(R.id.title);
         title.setText("Σείρε τα σχήματα από την τελευταία σειρά, στα πράσινα κουτάκια για να ολοκληρώσεις τα μοτίβα.");
         title.setSelected(true);

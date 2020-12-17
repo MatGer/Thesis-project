@@ -9,7 +9,7 @@ import android.widget.Button;
 import android.widget.ImageButton;
 
 public class motiba_menu extends universal {
-    Button btn1,btn2;
+    Button btn1,btn2,btn3;
     ImageButton back,info;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,11 +21,12 @@ public class motiba_menu extends universal {
         back.setOnClickListener(back_button);
         btn1=findViewById(R.id.btn1);
         btn2=findViewById(R.id.btn2);
+        btn3=findViewById(R.id.btn3);
         info=findViewById(R.id.infobutton);
         info.setOnClickListener(info_button);
         get_color("complete the pattern", btn1);
         get_color("complete the shape", btn2);
-
+        get_color("which one is different", btn3);
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -37,6 +38,13 @@ public class motiba_menu extends universal {
             @Override
             public void onClick(View v) {
                 intent = new Intent(motiba_menu.this, complete_the_shape.class);
+                startActivity(intent);
+            }
+        });
+        btn3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                intent = new Intent(motiba_menu.this, which_one_is_different.class);
                 startActivity(intent);
             }
         });

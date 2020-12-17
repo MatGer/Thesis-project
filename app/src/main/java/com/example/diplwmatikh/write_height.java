@@ -14,7 +14,7 @@ public class write_height extends universal {
     EditText no1,no2,no3,no4,no5;
     Button check;
     int score=0;
-    ImageButton back;
+    ImageButton back,home;
     TextView prevscore;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,6 +28,8 @@ public class write_height extends universal {
         title.setSelected(true);
         back=findViewById(R.id.backbutton);
         back.setOnClickListener(back_button_from_activity);
+        home=findViewById(R.id.homebutton);
+        home.setOnClickListener(home_button_listener);
         prevscore=findViewById(R.id.score);
         get_score_for_navbar("write height", prevscore, 5);
 

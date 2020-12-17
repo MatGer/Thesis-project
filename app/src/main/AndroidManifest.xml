@@ -95,7 +95,7 @@
         <activity android:name=".how_many"
             android:screenOrientation="landscape" />
 
-        <activity android:name=".Drag_2_items"
+        <activity android:name=".drag_2_items"
             android:screenOrientation="landscape" />
 
         <activity android:name=".drag_and_drop_numbers"

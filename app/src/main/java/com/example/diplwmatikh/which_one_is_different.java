@@ -15,7 +15,7 @@ public class which_one_is_different extends universal {
     int row1,row2,row3=-1;
     int score=0;
     Button check;
-    ImageButton back;
+    ImageButton back,home;
     TextView prevscore;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,7 +32,8 @@ public class which_one_is_different extends universal {
 
         back=findViewById(R.id.backbutton);
         back.setOnClickListener(back_button_from_activity);
-
+        home=findViewById(R.id.homebutton);
+        home.setOnClickListener(home_button_listener);
 
         row11=findViewById(R.id.row11);
         row12=findViewById(R.id.row12);

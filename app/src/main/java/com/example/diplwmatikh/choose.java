@@ -16,7 +16,7 @@ public class choose extends universal{
     boolean row1,row2;
     ImageView play1,play2;
     TextView prevscore;
-    ImageButton back;
+    ImageButton back,home;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,6 +38,8 @@ public class choose extends universal{
         prevscore=findViewById(R.id.score);
         back=findViewById(R.id.backbutton);
         back.setOnClickListener(back_button_from_activity);
+        home=findViewById(R.id.homebutton);
+        home.setOnClickListener(home_button_listener);
 
         TextView title = findViewById(R.id.title);
         title.setText("Επέλεξε την κατάλληλη εικόνα. Πάτησε στο ηχειάκι για να ακούσεις την εκφώνηση");

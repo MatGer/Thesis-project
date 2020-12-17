@@ -17,7 +17,7 @@ public class drag_and_drop_numbers extends universal {
     TextView txt1,txt2,txt3,prevscore;
     ImageView img1,img2,img3;
     Button check;
-    ImageButton restart,back;
+    ImageButton restart,back,home;
     int[] answers={0,1,2};
     int[] match_to_answer = {-1,-1,-1};
     int score=0;
@@ -32,6 +32,8 @@ public class drag_and_drop_numbers extends universal {
         restart=findViewById(R.id.restart);
         back=findViewById(R.id.backbutton);
         back.setOnClickListener(back_button_from_activity);
+        home=findViewById(R.id.homebutton);
+        home.setOnClickListener(home_button_listener);
         prevscore=findViewById(R.id.score);
         get_score_for_navbar("drag and drop numbers", prevscore, 3);
         TextView title = findViewById(R.id.title);

@@ -1,7 +1,5 @@
 package com.example.diplwmatikh;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.DragEvent;
@@ -10,11 +8,11 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-public class Drag_2_items extends universal {
+public class drag_2_items extends universal {
     Button check;
     View target;
     ImageView drag1,drag2,drag3,drag4,drag5,drag6;
-    ImageView restart,back;
+    ImageView restart,back,home;
     TextView prevscore;
     int counter,score=0;
     int itemX,itemY=0; //thesi pou tha boun ta items
@@ -28,6 +26,8 @@ public class Drag_2_items extends universal {
         restart=findViewById(R.id.restart);
         back=findViewById(R.id.backbutton);
         back.setOnClickListener(back_button_from_activity);
+        home=findViewById(R.id.homebutton);
+        home.setOnClickListener(home_button_listener);
         prevscore=findViewById(R.id.score);
         get_score_for_navbar("drag 2 items", prevscore, 2);
 
@@ -56,14 +56,14 @@ public class Drag_2_items extends universal {
             @Override
             public void onClick(View v) {
                 upload_score("drag 2 items", score,2);
-                show_rating(score,2,Drag_2_items.class,null,true);
+                show_rating(score,2, drag_2_items.class,null,true);
             }
         });
 
         restart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                intent = new Intent(Drag_2_items.this, Drag_2_items.class);
+                intent = new Intent(drag_2_items.this, drag_2_items.class);
                 startActivity(intent);
             }
         });

@@ -19,7 +19,7 @@
             android:layout_height="wrap_content"
             android:background="@drawable/ic_baseline_refresh_24"
             android:padding="10dp"
-            android:layout_marginLeft="50dp"
+            android:layout_marginLeft="100dp"
             android:layout_centerVertical="true"/>
     </RelativeLayout>
     <RelativeLayout

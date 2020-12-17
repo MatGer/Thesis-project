@@ -17,12 +17,22 @@
         android:layout_margin="10dp"
         android:layout_centerVertical="true"/>
 
+    <ImageButton
+        android:id="@+id/homebutton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:background="@drawable/ic_baseline_home_24"
+        android:layout_margin="10dp"
+        android:layout_centerVertical="true"
+        android:layout_toEndOf="@+id/backbutton"/>
+
     <TextView
         android:id="@+id/title"
         android:layout_width="0dp"
         android:layout_height="30dp"
         android:layout_marginStart="10dp"
-        android:layout_toEndOf="@+id/backbutton"
+        android:layout_toEndOf="@+id/homebutton"
         android:layout_centerVertical="true"
         android:textColor="@color/white"
         android:textSize="15sp"
@@ -36,8 +46,6 @@
         android:id="@+id/prev_score"
         android:layout_width="110dp"
         android:layout_height="match_parent"
-        android:layout_marginStart="10dp"
-        android:layout_marginEnd="0dp"
         android:layout_centerVertical="true"
         android:textColor="@color/white"
         android:padding="5dp"

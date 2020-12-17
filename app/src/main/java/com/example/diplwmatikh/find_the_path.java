@@ -19,7 +19,7 @@ public class find_the_path extends universal {
     boolean[] current_state_triangles={false,false,false,false,false,false,false,false}; //for the rest objects to change backround colours
     boolean[] current_state_rhombuses={false,false,false,false,false,false,false,false};
     Button check;
-    ImageButton back,restart;
+    ImageButton back,restart,home;
     int score=0;
     TextView prevscore;
     @Override
@@ -37,6 +37,8 @@ public class find_the_path extends universal {
         back=findViewById(R.id.backbutton);
         back.setOnClickListener(back_button_from_activity);
         prevscore=findViewById(R.id.score);
+        home=findViewById(R.id.homebutton);
+        home.setOnClickListener(home_button_listener);
         get_score_for_navbar("find the path", prevscore, 10);
 
         circle1=findViewById(R.id.circle1);

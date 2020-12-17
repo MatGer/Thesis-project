@@ -14,7 +14,7 @@ public class choose_those_who_match extends universal {
     TextView txt1,txt2,txt3,txt4,txt5,txt6,txt7,txt8,prevscore;
     ImageView play1,play2,play3,play4,play5,play6,play7,play8;
     Button check;
-    ImageButton back;
+    ImageButton back,home;
     boolean[][] answer = {{true,false,true,true},{false,false,true,false}};
     boolean[][] match_to_answer = {{false,false,false,false},{false,false,false,false}};
     @Override
@@ -27,7 +27,8 @@ public class choose_those_who_match extends universal {
         prevscore=findViewById(R.id.score);
         back=findViewById(R.id.backbutton);
         back.setOnClickListener(back_button_from_activity);
-
+        home=findViewById(R.id.homebutton);
+        home.setOnClickListener(home_button_listener);
         TextView title = findViewById(R.id.title);
         title.setText("Επέλεξε τις περιγραφές που ταιριάζουν με την κάθε εικόνα. Πάτησε στο ηχειάκι για να ακούσεις την εκφώνηση");
         title.setSelected(true);

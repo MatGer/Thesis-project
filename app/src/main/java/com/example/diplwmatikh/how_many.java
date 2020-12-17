@@ -13,7 +13,7 @@ public class how_many extends universal {
     Button check;
     int row1,row2,row3=0;
     int score;
-    ImageButton back;
+    ImageButton back,home;
     TextView prevscore;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,6 +28,8 @@ public class how_many extends universal {
         check=findViewById(R.id.check);
         back=findViewById(R.id.backbutton);
         back.setOnClickListener(back_button_from_activity);
+        home=findViewById(R.id.homebutton);
+        home.setOnClickListener(home_button_listener);
         prevscore=findViewById(R.id.score);
         get_score_for_navbar("how many", prevscore, 3);
         no1=findViewById(R.id.no11);

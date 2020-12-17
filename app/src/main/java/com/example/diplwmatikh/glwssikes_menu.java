@@ -29,8 +29,6 @@ public class glwssikes_menu extends universal {
             public void onClick(View v) {
                 intent = new Intent(glwssikes_menu.this, perigrafh_menu.class);
                 startActivity(intent);
-                intent=null;
-                finish();
             }
         });
         odhgies.setOnClickListener(new View.OnClickListener() {
@@ -38,8 +36,6 @@ public class glwssikes_menu extends universal {
             public void onClick(View v) {
                 intent = new Intent(glwssikes_menu.this, odhgies_menu.class);
                 startActivity(intent);
-                intent=null;
-                finish();
             }
         });
         arithmoi.setOnClickListener(new View.OnClickListener() {
@@ -47,8 +43,6 @@ public class glwssikes_menu extends universal {
             public void onClick(View v) {
                 intent = new Intent(glwssikes_menu.this, arithmoi_menu.class);
                 startActivity(intent);
-                intent=null;
-                finish();
             }
         });
     }

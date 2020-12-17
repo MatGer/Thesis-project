@@ -17,7 +17,7 @@ public class drag_items_with_audio extends universal{
     ImageView play1,play2,play3,play4;
     int x,y,score;
     Button check;
-    ImageButton back,restart;
+    ImageButton back,restart,home;
     TextView prevscore;
     int current_object=-1;
     int [] answer = {2,3,0,1};
@@ -32,6 +32,8 @@ public class drag_items_with_audio extends universal{
         restart=findViewById(R.id.restart);
         back=findViewById(R.id.backbutton);
         back.setOnClickListener(back_button_from_activity);
+        home=findViewById(R.id.homebutton);
+        home.setOnClickListener(home_button_listener);
         prevscore=findViewById(R.id.score);
         get_score_for_navbar("drag items with audio", prevscore, 4);
 

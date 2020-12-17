@@ -88,37 +88,37 @@ import io.grpc.internal.SharedResourceHolder;
         if(next_class==null){                                                           //if next_class==null -> no next activity -> different builder
             if(score<=rating){
                 //fair
-                text="Χρειάζεται περισσότερη προσπάθεια. Θέλεις να σπιστρέψεις στο αρχικό μενού;";
+                text="Χρειάζεται περισσότερη προσπάθεια.Η βαθμολογία σου είναι "+score +" από τα "+max_activity_score+". Θέλεις να σπιστρέψεις στο αρχικό μενού;";
             }else if(score<=2*rating){
                 //good
-                text="Καλή δουλειά. Συνέχισε έτσι. Θέλεις να σπιστρέψεις στο αρχικό μενού;";
+                text="Καλή δουλειά. Συνέχισε έτσι. Η βαθμολογία σου είναι "+score +" από τα "+max_activity_score+". Θέλεις να σπιστρέψεις στο αρχικό μενού;";;
             }else{
                 //very good
-                text="Συγχαρητήρια! Πολύ καλή δουλειά. Θέλεις να σπιστρέψεις στο αρχικό μενού;";
+                text="Συγχαρητήρια! Πολύ καλή δουλειά. Η βαθμολογία σου είναι "+score +" από τα "+max_activity_score+". Θέλεις να σπιστρέψεις στο αρχικό μενού;";;
             }
             create_builder_for_3rd_activity(calling_class, text);
         }else{
             if(!select_builder){
                 if(score<=rating){
                     //fair
-                    text="Χρειάζεται περισσότερη προσπάθεια. Θέλεις να πας στην επόμενη δραστηριότητα;";
+                    text="Χρειάζεται περισσότερη προσπάθεια. Η βαθμολογία σου είναι "+score +" από τα "+max_activity_score+". Θέλεις να πας στην επόμενη δραστηριότητα;";
                 }else if(score<=2*rating){
                     //good
-                    text="Καλή δουλειά. Συνέχισε έτσι. Θέλεις να πας στην επόμενη δραστηριότητα;";
+                    text="Καλή δουλειά. Συνέχισε έτσι. Η βαθμολογία σου είναι "+score +" από τα "+max_activity_score+". Θέλεις να πας στην επόμενη δραστηριότητα;";
                 }else{
                     //very good
-                    text="Συγχαρητήρια! Πολύ καλή δουλειά. Θέλεις να πας στην επόμενη δραστηριότητα;";
+                    text="Συγχαρητήρια! Πολύ καλή δουλειά. Η βαθμολογία σου είναι "+score +" από τα "+max_activity_score+". Θέλεις να πας στην επόμενη δραστηριότητα;";
                 }
             }else{
                 if(score<=rating){
                     //fair
-                    text="Χρειάζεται περισσότερη προσπάθεια. Θέλεις να δοκιμάσεις μια άλλη δραστηριότητα;";
+                    text="Χρειάζεται περισσότερη προσπάθεια. Η βαθμολογία σου είναι "+score +" από τα "+max_activity_score+". Θέλεις να δοκιμάσεις μια άλλη δραστηριότητα;";
                 }else if(score<=2*rating){
                     //good
-                    text="Καλή δουλειά. Συνέχισε έτσι. Θέλεις να δοκιμάσεις μια άλλη δραστηριότητα;";
+                    text="Καλή δουλειά. Συνέχισε έτσι. Η βαθμολογία σου είναι "+score +" από τα "+max_activity_score+". Θέλεις να δοκιμάσεις μια άλλη δραστηριότητα;";
                 }else{
                     //very good
-                    text="Συγχαρητήρια! Πολύ καλή δουλειά. Θέλεις να δοκιμάσεις μια άλλη δραστηριότητα;";
+                    text="Συγχαρητήρια! Πολύ καλή δουλειά. Η βαθμολογία σου είναι "+score +" από τα "+max_activity_score+". Θέλεις να δοκιμάσεις μια άλλη δραστηριότητα;";
                 }
             }
             create_builder_finished(calling_class,next_class,text);
@@ -196,6 +196,27 @@ import io.grpc.internal.SharedResourceHolder;
                      }
                  }).create().show();
      }
+     public void return_to_home_builder(){
+         builderexit = new AlertDialog.Builder(universal.this);
+         builderexit.setTitle("Μετάβαση στο αρχικό μενού!");
+         builderexit.setMessage("Θέλεις σίγουρα να επιστρέψεις στο αρχικό μενού;");
+
+         builderexit.setPositiveButton("Ναι", new DialogInterface.OnClickListener() {
+             @Override
+             public void onClick(DialogInterface dialog, int which) {
+                 intent = new Intent(universal.this, Mainmenu.class);
+                 startActivity(intent);
+                 finish();
+             }
+         });
+         builderexit.setNegativeButton("Οχι", new DialogInterface.OnClickListener() {
+             @Override
+             public void onClick(DialogInterface dialog, int which) {
+                 onResume();
+             }
+         }).create().show();
+     }
+
      //to upload score
      public void upload_score(String activityname,int score, int max_score){
         //bring previous score
@@ -281,6 +302,7 @@ import io.grpc.internal.SharedResourceHolder;
              @Override
              public void onEvent(@Nullable DocumentSnapshot value, @Nullable FirebaseFirestoreException error) {
                  if (value.getString(activityname) != null) {
+                     btn.setVisibility(View.VISIBLE);// if button is hidden, show it
                      switch (value.getString(activityname)) {
                          case "red":
                              btn.setBackground(getDrawable(R.drawable.start_menu_button_red));
@@ -349,6 +371,14 @@ import io.grpc.internal.SharedResourceHolder;
              }
          });
      }
+     //home button listener
+     View.OnClickListener home_button_listener = new View.OnClickListener() {
+         @Override
+         public void onClick(View v) {
+             return_to_home_builder();
+         }
+     };
+
      //long click listener
      View.OnLongClickListener longClickListener = new View.OnLongClickListener() {
          @Override

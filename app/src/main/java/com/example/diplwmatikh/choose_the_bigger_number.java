@@ -11,7 +11,7 @@ import android.widget.TextView;
 public class choose_the_bigger_number extends universal {
     TextView n1,n2,n3,n4,n5,n6,n7,n8;
     Button check;
-    ImageButton back;
+    ImageButton back,home;
     TextView prevscore;
     int[] answers={0,0,0,0}; //0=start value, 1=left tile correct, 2=right tile correct
     int[] correct_answers={2,1,2,1};
@@ -24,6 +24,8 @@ public class choose_the_bigger_number extends universal {
 
         prevscore=findViewById(R.id.score);
         check=findViewById(R.id.check);
+        home=findViewById(R.id.homebutton);
+        home.setOnClickListener(home_button_listener);
         TextView title = findViewById(R.id.title);
         title.setText("Επίλεξε τον μεγαλύτερο αριθμό.");
         title.setSelected(true);

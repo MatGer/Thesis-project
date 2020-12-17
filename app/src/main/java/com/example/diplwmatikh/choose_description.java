@@ -13,10 +13,10 @@ public class choose_description extends universal {
     TextView txt1,txt2,txt3,txt4,txt5,txt6,txt7,txt8,prevscore;
     ImageView play1,play2,play3,play4,play5,play6,play7,play8;
     Button check;
+    ImageButton back,home;
     int upleft,upright,bottomleft,bottomright=-1;
 //correct   1     2         2          1
     int score=0;
-    ImageButton back;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -50,6 +50,8 @@ public class choose_description extends universal {
         prevscore=findViewById(R.id.score);
         back=findViewById(R.id.backbutton);
         back.setOnClickListener(back_button_from_activity);
+        home=findViewById(R.id.homebutton);
+        home.setOnClickListener(home_button_listener);
 
         txt1.setOnClickListener(clickListener);
         txt2.setOnClickListener(clickListener);

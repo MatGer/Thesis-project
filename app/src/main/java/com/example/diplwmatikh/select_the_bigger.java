@@ -12,7 +12,7 @@ import android.widget.Toast;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class select_the_bigger extends universal {
-    ImageButton first,second,back;
+    ImageButton first,second,back,home;
     Button next;
     TextView prevscore;
     int counter=0;
@@ -32,6 +32,8 @@ public class select_the_bigger extends universal {
         get_score_for_navbar("select the bigger", prevscore, 4);
         back=findViewById(R.id.backbutton);
         back.setOnClickListener(back_button_from_activity);
+        home=findViewById(R.id.homebutton);
+        home.setOnClickListener(home_button_listener);
 
         findViewById(R.id.check).setVisibility(View.INVISIBLE);
 
