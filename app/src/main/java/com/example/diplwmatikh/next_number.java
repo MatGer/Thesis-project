@@ -57,7 +57,7 @@ public class next_number extends universal {
                 if(row3==1){
                     score++;
                 }
-                upload_score("next number",score);
+                upload_score("next number",score,3);
                 show_rating(score,3,next_number.class,how_many.class,true);
             }
         });

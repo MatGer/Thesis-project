@@ -97,7 +97,7 @@ public class select_the_bigger extends universal {
                             break;
 
                         case 4:
-                            upload_score("select the bigger",score);
+                            upload_score("select the bigger",score,4);
                             show_rating(score,4,select_the_bigger.class,write_height.class,false);
                             break;
                         default:

@@ -77,7 +77,7 @@ public class complete_the_shape extends universal {
                         score++;
                     }
                 }
-                upload_score("complete the shape",score);
+                upload_score("complete the shape",score,6);
                 show_rating(score,6,complete_the_shape.class,which_one_is_different.class,true);
             }
         });

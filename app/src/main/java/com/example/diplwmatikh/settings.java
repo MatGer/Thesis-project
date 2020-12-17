@@ -94,24 +94,46 @@ public class settings extends universal {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
                                 //delete all fields if they exist
-                                reset_score("add animals");
-                                reset_score("choose");
-                                reset_score("choose arrows");
-                                reset_score("choose description");
-                                reset_score("choose those who match");
-                                reset_score("complete the pattern");
-                                reset_score("drag 2 items");
-                                reset_score("drag and drop numbers");
-                                reset_score("drag items with audio");
-                                reset_score("find the path");
-                                reset_score("how many");
-                                reset_score("next number");
-                                reset_score("path_of_numbers2");
-                                reset_score("place in order");
-                                reset_score("select the bigger");
-                                reset_score("which one is different");
-                                reset_score("write height");
-                                reset_score("add animals");
+                                reset_score("add animals","scores");
+                                reset_score("choose","scores");
+                                reset_score("choose arrows","scores");
+                                reset_score("choose description","scores");
+                                reset_score("choose those who match","scores");
+                                reset_score("complete the pattern","scores");
+                                reset_score("drag 2 items","scores");
+                                reset_score("drag and drop numbers","scores");
+                                reset_score("drag items with audio","scores");
+                                reset_score("find the path","scores");
+                                reset_score("how many","scores");
+                                reset_score("next number","scores");
+                                reset_score("path_of_numbers2","scores");
+                                reset_score("place in order","scores");
+                                reset_score("select the bigger","scores");
+                                reset_score("which one is different","scores");
+                                reset_score("write height","scores");
+                                reset_score("add animals","scores");
+
+                                reset_score("add animals","buttons");
+                                reset_score("choose","buttons");
+                                reset_score("choose arrows","buttons");
+                                reset_score("choose description","buttons");
+                                reset_score("choose those who match","buttons");
+                                reset_score("complete the pattern","buttons");
+                                reset_score("drag 2 items","buttons");
+                                reset_score("drag and drop numbers","buttons");
+                                reset_score("drag items with audio","buttons");
+                                reset_score("find the path","buttons");
+                                reset_score("how many","buttons");
+                                reset_score("next number","buttons");
+                                reset_score("path_of_numbers2","buttons");
+                                reset_score("place in order","buttons");
+                                reset_score("select the bigger","buttons");
+                                reset_score("which one is different","buttons");
+                                reset_score("write height","buttons");
+                                reset_score("add animals","buttons");
+
+                                Toast.makeText(settings.this, "Οι βαθμολογίες σου διαγράφηκαν!", Toast.LENGTH_SHORT).show();
+                                onResume();
                             }
                         })
                         .setNegativeButton("Άκυρο", new DialogInterface.OnClickListener() {

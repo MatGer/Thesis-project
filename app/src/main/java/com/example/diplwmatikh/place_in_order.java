@@ -74,7 +74,7 @@ public class place_in_order extends universal {
         check.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                upload_score("place in order",1);
+                upload_score("place in order",1,4);
             }
         });
     }

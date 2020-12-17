@@ -10,7 +10,7 @@ import android.widget.ImageButton;
 
 public class arithmhtikh_menu extends universal {
     Button btn1,btn2;
-    ImageButton back;
+    ImageButton back,info;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -21,6 +21,10 @@ public class arithmhtikh_menu extends universal {
         back.setOnClickListener(back_button);
         btn1=findViewById(R.id.btn1);
         btn2=findViewById(R.id.btn2);
+        info=findViewById(R.id.infobutton);
+        info.setOnClickListener(info_button);
+        get_color("add animals", btn1);
+        get_color("next number", btn2);
 
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override

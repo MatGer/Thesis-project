@@ -43,7 +43,7 @@ import io.grpc.internal.SharedResourceHolder;
 
  public class universal extends AppCompatActivity {
     Intent intent;
-    AlertDialog.Builder builderback, builderfinished,builderexit;
+    AlertDialog.Builder builderback, builderfinished,builderexit, builderinfo;
     View decorView;
     FirebaseAuth fAuth;
     String userID;
@@ -197,13 +197,14 @@ import io.grpc.internal.SharedResourceHolder;
                  }).create().show();
      }
      //to upload score
-     public void upload_score(String activityname,int score){
+     public void upload_score(String activityname,int score, int max_score){
         //bring previous score
         FirebaseFirestore fStore=FirebaseFirestore.getInstance();
         DocumentReference bring_old = fStore.collection("scores").document(userID);
         bring_old.addSnapshotListener(this, new EventListener<DocumentSnapshot>() {
             @Override
             public void onEvent(@Nullable DocumentSnapshot value, @Nullable FirebaseFirestoreException error) {
+                float rating = max_score/3; //split max score in three parts for the button colours
                 Map<String, Object> data = new HashMap<>();
                 //if field not exists
                 if(value.getDouble(activityname)==null){
@@ -216,6 +217,13 @@ import io.grpc.internal.SharedResourceHolder;
                                     Log.w("upload score method", "Error on uploading score document", e);
                                 }
                             });
+                    if(score<=rating){
+                        upload_color(activityname, "red");
+                    }else if(score<=2*rating){
+                        upload_color(activityname, "yellow");
+                    }else{
+                        upload_color(activityname, "green");
+                    }
                 }else{
                     //if field exists
                     double old_score=value.getDouble(activityname);
@@ -230,12 +238,64 @@ import io.grpc.internal.SharedResourceHolder;
                                         Log.w("upload score method", "Error on uploading score document", e);
                                     }
                                 });
+                        if(score<=rating){
+                            upload_color(activityname, "red");
+                        }else if(score<=2*rating){
+                            upload_color(activityname, "yellow");
+                        }else{
+                            upload_color(activityname, "green");
+                        }
                     }
                 }
 
             }
         });
     }
+    //to set button color
+     public void upload_color(String activityname, String colour){
+         FirebaseFirestore fStore=FirebaseFirestore.getInstance();
+         DocumentReference bring = fStore.collection("buttons").document(userID);
+         bring.addSnapshotListener(this, new EventListener<DocumentSnapshot>() {
+             @Override
+             public void onEvent(@Nullable DocumentSnapshot value, @Nullable FirebaseFirestoreException error) {
+                 Map<String, Object> data = new HashMap<>();
+                 //if field not exists
+                 //no need ot check if field exists. this check happens on upload score method
+                     data.put(activityname, colour);
+                     fStore.collection("buttons").document(userID).update(data)
+                             .addOnFailureListener(new OnFailureListener() {
+                                 @Override
+                                 public void onFailure(@NonNull Exception e) {
+                                     Log.w("upload buttons method", "Error on uploading buttons document", e);
+                                 }
+                             });
+             }
+         });
+     }
+
+     //to get the button's colour for score tab
+     public void get_color(String activityname, Button btn){
+         FirebaseFirestore fStore=FirebaseFirestore.getInstance();
+         DocumentReference fetch_test = fStore.collection("buttons").document(userID);
+         fetch_test.addSnapshotListener(this, new EventListener<DocumentSnapshot>() {
+             @Override
+             public void onEvent(@Nullable DocumentSnapshot value, @Nullable FirebaseFirestoreException error) {
+                 if (value.getString(activityname) != null) {
+                     switch (value.getString(activityname)) {
+                         case "red":
+                             btn.setBackground(getDrawable(R.drawable.start_menu_button_red));
+                             break;
+                         case "yellow":
+                             btn.setBackground(getDrawable(R.drawable.start_menu_button_yellow));
+                             break;
+                         case "green":
+                             btn.setBackground(getDrawable(R.drawable.start_menu_button_green));
+                             break;
+                     }
+                 }
+             }
+         });
+     }
     //to get the scores for score tab
     public void get_score(String activityname,int max_score, String greek_name,TextView field){
         FirebaseFirestore fStore=FirebaseFirestore.getInstance();
@@ -314,27 +374,17 @@ import io.grpc.internal.SharedResourceHolder;
     };
     //to play the sounds
     //track is an integer... must be formatted as R.raw.filename
-    public void play_sound(int track, ImageButton btn){
-        player = MediaPlayer.create(this,track);
-        player.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-            @Override
-            public void onCompletion(MediaPlayer mp) {
-                btn.setEnabled(true);
-            }
-        });
-        btn.setEnabled(false);
-        player.start();
-    }
-
     public void play_sound(int track, ImageView btn){
         player = MediaPlayer.create(this,track);
         player.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
                 btn.setEnabled(true);
+                btn.setImageDrawable(getDrawable(R.drawable.play_button));
             }
         });
         btn.setEnabled(false);
+        btn.setImageDrawable(getDrawable(R.drawable.play_button_grey));
         player.start();
     }
     //hilde labels from navbar if needed
@@ -345,16 +395,21 @@ import io.grpc.internal.SharedResourceHolder;
          findViewById(R.id.check).setVisibility(View.INVISIBLE);
      }
      //to reset score. deletes a field at a time
-     public void reset_score(String activityname){
+     public void reset_score(String activityname,String category){
         //deletes the field
         //System.out.println(userID+"   00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000");
          FirebaseFirestore fStore=FirebaseFirestore.getInstance();
-         DocumentReference reset = fStore.collection("scores").document(userID);
+         DocumentReference reset;
+         if(category=="scores"){
+             reset = fStore.collection("scores").document(userID);
+         }else{
+             reset = fStore.collection("buttons").document(userID);
+         }
          reset.addSnapshotListener(this, new EventListener<DocumentSnapshot>() {
              @Override
              public void onEvent(@Nullable DocumentSnapshot value, @Nullable FirebaseFirestoreException error) {
                  Map<String,Object> hashMap = new HashMap<>();
-                 if(value.getDouble(activityname)==null){
+                 if(value.get(activityname)==null){
                      //System.out.println("00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000         null found");
                  }else{
                      hashMap.put(activityname, FieldValue.delete());
@@ -364,11 +419,26 @@ import io.grpc.internal.SharedResourceHolder;
              }
          });
      }
-
+    //show information on menus
+     View.OnClickListener info_button = new View.OnClickListener() {
+         @Override
+         public void onClick(View v) {
+             builderinfo = new AlertDialog.Builder(universal.this);
+             builderinfo.setTitle("Πληροφορίες.");
+             builderinfo.setMessage("Αν το κουμπί της δραστηριότητας είναι μπλε, τότε δεν έχει ολοκληρωθεί ακόμα.\n" +
+                     "Αν το κουμπί της δραστηριότητας είναι κόκκινο, σημαίνει ότι ολοκληρώθηκε αλλά χρειάζεται κι άλλη προσπάθεια.\n" +
+                     "Αν το κουμπί της δραστηριότητας είναι κίτρινο, σημαίνει ότι ολοκληρώθηκε με καλή βαθμολογία.\n" +
+                     "Αν το κουμπί της δραστηριότητας είναι πράσινο, σημαίνει ότι ολοκληρώθηκε με πολύ καλή βαθμολογία.");
+             builderinfo.setPositiveButton("Κλείσιμο", new DialogInterface.OnClickListener() {
+                 @Override
+                 public void onClick(DialogInterface dialog, int which) {
+                     onResume();
+                 }
+             }).create().show();
+         }
+     };
      public void onResume(){
          super.onResume();
-         for(int i=0;i<=4;i++){
              decorView.setSystemUiVisibility(uiOptions);
-         }
      }
 }

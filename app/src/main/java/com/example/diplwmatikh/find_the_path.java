@@ -107,7 +107,7 @@ public class find_the_path extends universal {
                         score++;
                     }
                 }
-                upload_score("find the path", score);
+                upload_score("find the path", score,10);
                 show_rating(score, 10,find_the_path.class,choose_arrows.class, false);
             }
         });

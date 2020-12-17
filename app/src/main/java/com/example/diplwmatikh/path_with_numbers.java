@@ -118,7 +118,7 @@ public class path_with_numbers extends universal implements OnClickListener {
                         score++;
                     }
                 }
-                upload_score("path with numbers",score);
+                upload_score("path with numbers",score,correct_on_path);
                 show_rating(score,correct_on_path,path_with_numbers.class,Drag_2_items.class,true);
             }
         });

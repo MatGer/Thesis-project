@@ -67,22 +67,22 @@
                     android:layout_below="@+id/click1"
                     android:padding="10dp" />
 
-                    <ImageButton
+                    <ImageView
                         android:id="@+id/play_click1"
                         android:layout_width="wrap_content"
                         android:layout_height="40dp"
                         android:src="@drawable/play_button"
                         android:layout_toEndOf="@id/click1"
                         android:layout_alignBottom="@id/click1"
-                        android:padding="10dp" />
-                    <ImageButton
+                        android:paddingHorizontal="10dp"/>
+                    <ImageView
                         android:id="@+id/play_click2"
                         android:layout_width="wrap_content"
                         android:layout_height="40dp"
                         android:src="@drawable/play_button"
                         android:layout_toEndOf="@id/click2"
                         android:layout_alignBottom="@id/click2"
-                        android:padding="10dp"
+                        android:paddingHorizontal="10dp"
                         android:layout_marginLeft="5dp"/>
                 </RelativeLayout>
                 </RelativeLayout>
@@ -129,22 +129,22 @@
                         android:layout_below="@+id/click3"
                         android:padding="10dp"
                         android:layout_alignEnd="@+id/click3"/>
-                    <ImageButton
+                    <ImageView
                         android:id="@+id/play_click3"
                         android:layout_width="wrap_content"
                         android:layout_height="40dp"
                         android:src="@drawable/play_button"
                         android:layout_toEndOf="@id/click3"
                         android:layout_alignBottom="@id/click3"
-                        android:padding="10dp"/>
-                    <ImageButton
+                        android:paddingHorizontal="10dp"/>
+                    <ImageView
                         android:id="@+id/play_click4"
                         android:layout_width="wrap_content"
                         android:layout_height="40dp"
                         android:src="@drawable/play_button"
                         android:layout_toEndOf="@id/click4"
                         android:layout_alignBottom="@id/click4"
-                        android:padding="10dp"
+                        android:paddingHorizontal="10dp"
                         android:layout_marginBottom="10dp"
                         android:layout_marginLeft="5dp"/>
                 </RelativeLayout>
@@ -199,24 +199,24 @@
                         android:layout_below="@+id/click5"
                         android:paddingVertical="7dp"
                         android:layout_marginVertical="10dp" />
-                    <ImageButton
+                    <ImageView
                         android:id="@+id/play_click5"
                         android:layout_width="wrap_content"
                         android:layout_height="40dp"
                         android:src="@drawable/play_button"
                         android:layout_toEndOf="@id/click5"
                         android:layout_alignBottom="@id/click5"
-                        android:padding="10dp"
+                        android:paddingHorizontal="10dp"
                         android:layout_marginLeft="5dp"
                         android:layout_marginBottom="2dp"/>
-                    <ImageButton
+                    <ImageView
                         android:id="@+id/play_click6"
                         android:layout_width="wrap_content"
                         android:layout_height="40dp"
                         android:src="@drawable/play_button"
                         android:layout_toEndOf="@id/click6"
                         android:layout_alignBottom="@id/click6"
-                        android:padding="10dp"
+                        android:paddingHorizontal="10dp"
                         android:layout_marginLeft="5dp"
                         android:layout_marginBottom="2dp"/>
                 </RelativeLayout>
@@ -250,10 +250,11 @@
                         android:text="Δουλεύει"
                         android:textAlignment="center"
                         android:layout_alignParentStart="true"
-                        android:paddingVertical="10dp"/>
+                        android:paddingVertical="10dp"
+                        android:layout_marginVertical="5dp"/>
                     <TextView
                         android:id="@+id/click8"
-                        android:layout_width="wrap_content"
+                        android:layout_width="110dp"
                         android:layout_height="40dp"
                         android:text="Ξεκουράζεται"
                         android:textAlignment="center"
@@ -262,23 +263,24 @@
                         android:layout_alignParentStart="true"
                         android:layout_below="@+id/click7"
                         android:paddingVertical="9dp"
-                        android:layout_marginVertical="10dp"/>
-                    <ImageButton
+                        android:layout_marginVertical="10dp" />
+                    <ImageView
                         android:id="@+id/play_click7"
                         android:layout_width="wrap_content"
                         android:layout_height="40dp"
                         android:src="@drawable/play_button"
                         android:layout_toEndOf="@id/click7"
                         android:layout_alignBottom="@id/click7"
-                        android:padding="9dp"/>
-                    <ImageButton
+                        android:paddingHorizontal="10dp"/>
+                    <ImageView
                         android:id="@+id/play_click8"
                         android:layout_width="wrap_content"
                         android:layout_height="40dp"
                         android:src="@drawable/play_button"
+                        android:layout_alignStart="@+id/play_click7"
                         android:layout_toEndOf="@id/click8"
                         android:layout_alignBottom="@id/click8"
-                        android:padding="9dp"/>
+                        android:paddingHorizontal="10dp" />
                 </RelativeLayout>
                 </RelativeLayout>
             </RelativeLayout>

@@ -27,13 +27,14 @@
             android:layout_marginVertical="20dp"
             android:layout_marginHorizontal="5dp"
             android:textColor="@color/black"/>
-        <ImageButton
+        <ImageView
             android:id="@+id/play_audio"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/play_button"
             android:layout_toEndOf="@+id/title_text"
             android:layout_marginVertical="10dp"
+            android:padding="8dp"
             android:layout_marginHorizontal="10dp"/>
         <ImageView
             android:id="@+id/sample"

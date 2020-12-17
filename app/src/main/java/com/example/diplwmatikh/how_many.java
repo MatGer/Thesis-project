@@ -63,7 +63,7 @@ public class how_many extends universal {
                 if (row3==1){
                     score++;
                 }
-                upload_score("how many", score);
+                upload_score("how many", score,3);
                 show_rating(score,3,how_many.class,null,false);
             }
         });

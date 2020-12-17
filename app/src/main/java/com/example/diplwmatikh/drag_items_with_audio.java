@@ -74,7 +74,7 @@ public class drag_items_with_audio extends universal{
                         score++;
                     }
                 }
-                upload_score("drag items with audio", score);
+                upload_score("drag items with audio", score,4);
                 show_rating(score,4,drag_items_with_audio.class,null,true);
             }
         });

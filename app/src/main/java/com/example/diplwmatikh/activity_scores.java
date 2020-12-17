@@ -34,7 +34,7 @@ public class activity_scores extends universal {
         };
         //------------------------------------------------------------------------------------------------------------------------
          */
-        get_score("choose those who match", 2,"Eπίλεξε αυτά που ταιριάζουν",findViewById(R.id.ac1));
+        get_score("choose those who match", 8,"Eπίλεξε αυτά που ταιριάζουν",findViewById(R.id.ac1));
         get_score("choose description",4 ,"Επίλεξε περιγραφή",findViewById(R.id.ac2));
         get_score("find the path", 10,"Βρες το μονοπάτι",findViewById(R.id.ac3));
         get_score("choose arrows",12 ,"Επίλεξε τα βελάκια",findViewById(R.id.ac4));

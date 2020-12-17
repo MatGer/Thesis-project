@@ -55,7 +55,7 @@ public class Drag_2_items extends universal {
         check.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                upload_score("drag 2 items", score);
+                upload_score("drag 2 items", score,2);
                 show_rating(score,2,Drag_2_items.class,null,true);
             }
         });

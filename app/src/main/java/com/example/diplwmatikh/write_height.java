@@ -72,7 +72,7 @@ public class write_height extends universal {
                     }
                 }
 
-                upload_score("write height", score);
+                upload_score("write height", score,5);
                 show_rating(score,5,write_height.class,choose_the_bigger_number.class,true);
             }
         });

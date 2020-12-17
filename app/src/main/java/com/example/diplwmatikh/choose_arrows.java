@@ -13,7 +13,8 @@ import java.util.Random;
 
 public class choose_arrows extends universal {
     Button check;
-    ImageButton play,back;
+    ImageButton back;
+    ImageView play;
     ImageView sample; //eikona sthn ekfwnhsh
     TextView prevscore,add_to_header; //ekfwnhsh
     ImageView row11,row12,row13,row14,row15,row16,row17,row18;
@@ -117,7 +118,7 @@ public class choose_arrows extends universal {
                 }
                 //System.out.println("----------------------------------------------------------------------------------"+ score);
                 //score=0; //enable this command for debbuging
-                upload_score("choose arrows", score);
+                upload_score("choose arrows", score,12);
                 show_rating(score,12,choose_arrows.class,drag_items_with_audio.class,true);
             }
         });

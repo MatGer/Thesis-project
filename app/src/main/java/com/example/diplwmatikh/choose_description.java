@@ -86,7 +86,7 @@ public class choose_description extends universal {
                 if(bottomright==1){
                     score++;
                 }
-                upload_score("choose description", score);
+                upload_score("choose description", score,4);
                 show_rating(score,4,choose_description.class, choose.class, true);
             }
         });

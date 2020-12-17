@@ -30,6 +30,13 @@
             android:textStyle="bold"
             android:textSize="20sp"
             android:layout_centerInParent="true"/>
+        <ImageButton
+            android:id="@+id/infobutton"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:background="@drawable/ic_baseline_info_24"
+            android:layout_margin="20dp"
+            android:layout_alignParentEnd="true"/>
     </RelativeLayout>
     <GridLayout
         android:layout_width="match_parent"

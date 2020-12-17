@@ -14,8 +14,11 @@
     <color name="grey">#A1A1A1</color>
     <color name="light_grey">#D1D1D1</color>
     <color name="purple">#8B109C</color>
-    <color name="yellow_light">#FFD970</color>
-    <color name="light_red">#FF9494</color>
+    <color name="button_red">#BA2B2B</color>
+    <color name="button_yellow">#BFA93B</color>
+    <color name="button_green">#2C9E43</color>
     <color name="light_blue">#94BDFF</color>
     <color name="default_text">#808080</color>
+    <color name="light_red">#FA6B6B</color>
+    <color name="yellow_light">#FAF36B</color>
 </resources>

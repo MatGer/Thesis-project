@@ -116,6 +116,17 @@ public class RegisterActivity extends universal {
                                     Log.d("Register Activity", "something went wrong" +e.getMessage().toString());
                                 }
                             });
+
+                            Map<String, Object> button = new HashMap<>();
+                            button.put("user_created","blank");
+                            fStore.collection("buttons").document(userID)
+                                    .set(button)
+                                    .addOnFailureListener(new OnFailureListener() {
+                                        @Override
+                                        public void onFailure(@NonNull Exception e) {
+                                            Log.d("Register Activity", "something went wrong" +e.getMessage().toString());
+                                        }
+                                    });
                             startActivity(new Intent(getApplicationContext(),Mainmenu.class));
                         }else{
                             Toast.makeText(RegisterActivity.this, "Error: "+ task.getException().getMessage(), Toast.LENGTH_SHORT).show();
