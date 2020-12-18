@@ -114,12 +114,12 @@ public class LoginActivity extends universal {
                 password_reset.setPositiveButton("Οκ", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
+                        getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN);   //keyboard stay hidden
                         fAuth.sendPasswordResetEmail(ps.getText().toString().trim())
                                 .addOnSuccessListener(new OnSuccessListener<Void>() {
                                     @Override
                                     public void onSuccess(Void aVoid) {
                                         //System.out.println("-------------------------------------------------------------------------done");
-                                        getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN);   //keyboard stay hidden
                                         Toast.makeText(LoginActivity.this, "Στάλθηκε e-mail στη διεύθυνση που πληκτρολογήσατε", Toast.LENGTH_SHORT).show();
                                     }
                                 })

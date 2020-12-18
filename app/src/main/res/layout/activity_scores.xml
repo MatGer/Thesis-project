@@ -58,6 +58,19 @@
                         android:layout_height="1dp"
                         android:background="@color/grey"/>
                     <TextView
+                        android:id="@+id/tag1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="15sp"
+                        android:text="Σημασιολoγία"
+                        android:textColor="@color/light_blue_600"
+                        android:paddingVertical="10dp"
+                        android:paddingLeft="10dp"/>
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/grey"/>
+                    <TextView
                         android:id="@+id/ac1"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -131,6 +144,19 @@
                         android:layout_height="1dp"
                         android:background="@color/grey"/>
                     <TextView
+                        android:id="@+id/tag2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="15sp"
+                        android:text="Προμαθηματικές έννοιες"
+                        android:textColor="@color/light_blue_600"
+                        android:paddingVertical="10dp"
+                        android:paddingLeft="10dp"/>
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/grey"/>
+                    <TextView
                         android:id="@+id/ac7"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -179,6 +205,19 @@
                         android:layout_height="1dp"
                         android:background="@color/grey"/>
                     <TextView
+                        android:id="@+id/tag3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="15sp"
+                        android:text="Μαθηματικές έννοιες"
+                        android:textColor="@color/light_blue_600"
+                        android:paddingVertical="10dp"
+                        android:paddingLeft="10dp"/>
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/grey"/>
+                    <TextView
                         android:id="@+id/ac11"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -192,6 +231,78 @@
                         android:background="@color/grey"/>
                     <TextView
                         android:id="@+id/ac12"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="15sp"
+                        android:textColor="@color/register_login"
+                        android:paddingVertical="10dp"
+                        android:paddingLeft="10dp"/>
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/grey"/>
+                    <TextView
+                        android:id="@+id/ac13"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="15sp"
+                        android:textColor="@color/register_login"
+                        android:paddingVertical="10dp"
+                        android:paddingLeft="10dp"/>
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/grey"/>
+                    <TextView
+                        android:id="@+id/ac14"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="15sp"
+                        android:textColor="@color/register_login"
+                        android:paddingVertical="10dp"
+                        android:paddingLeft="10dp"/>
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/grey"/>
+                    <TextView
+                        android:id="@+id/ac15"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="15sp"
+                        android:textColor="@color/register_login"
+                        android:paddingVertical="10dp"
+                        android:paddingLeft="10dp"/>
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/grey"/>
+                    <TextView
+                        android:id="@+id/ac16"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="15sp"
+                        android:textColor="@color/register_login"
+                        android:paddingVertical="10dp"
+                        android:paddingLeft="10dp"/>
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/grey"/>
+                    <TextView
+                        android:id="@+id/ac17"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="15sp"
+                        android:textColor="@color/register_login"
+                        android:paddingVertical="10dp"
+                        android:paddingLeft="10dp"/>
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/grey"/>
+                    <TextView
+                        android:id="@+id/ac18"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:textSize="15sp"

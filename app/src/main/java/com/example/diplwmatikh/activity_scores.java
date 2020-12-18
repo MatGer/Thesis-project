@@ -34,18 +34,26 @@ public class activity_scores extends universal {
         };
         //------------------------------------------------------------------------------------------------------------------------
          */
-        get_score("choose those who match", 8,"Eπίλεξε αυτά που ταιριάζουν",findViewById(R.id.ac1));
-        get_score("choose description",4 ,"Επίλεξε περιγραφή",findViewById(R.id.ac2));
-        get_score("find the path", 10,"Βρες το μονοπάτι",findViewById(R.id.ac3));
-        get_score("choose arrows",12 ,"Επίλεξε τα βελάκια",findViewById(R.id.ac4));
-        get_score("drag and drop numbers", 3,"Σείρε τους αριθμούς",findViewById(R.id.ac5));
-        get_score("path with numbers", 11,"Βρες το μονοπάτι με τους αριθμούς",findViewById(R.id.ac6));
-        get_score("select the bigger",4 ,"Επίλεξε το μεγαλύτερο",findViewById(R.id.ac7));
-        get_score("write height", 5,"Γράψε το ύψος",findViewById(R.id.ac8));
-        get_score("add animals",4 ,"Πρόσθεσε τα ζωάκια",findViewById(R.id.ac9));
-        get_score("next number",3 ,"Βρες τον επόμενο αριθμό",findViewById(R.id.ac10));
-        get_score("complete the pattern", 6,"Ολοκλήρωσε το μοτίβο",findViewById(R.id.ac11));
-        get_score("complete the shape", 6,"Ολοκλήρωσε το σχήμα",findViewById(R.id.ac12));
+        get_score("choose those who match", 8,"Σημασιολογία",findViewById(R.id.ac1));
+        get_score("choose description",4 ,"Κατηγοριοποίηση/ταξινόμηση",findViewById(R.id.ac2));
+        get_score("choose arrows",12 ,"Χωρικός Προσανατολισμός",findViewById(R.id.ac3));
+        get_score("choose", 2,"Προσληπτικό λεξιλόγιο",findViewById(R.id.ac4));
+        get_score("drag items with audio", 4,"Οδηγίες",findViewById(R.id.ac5));
+        get_score("which one is different", 3,"Κατηγοριοποίηση",findViewById(R.id.ac6));
+
+        get_score("find the path", 10,"Σχήματα",findViewById(R.id.ac7));
+        get_score("select the bigger",4 ,"Σύγκριση",findViewById(R.id.ac8));
+        get_score("complete the pattern", 6,"Ακολουθίες",findViewById(R.id.ac9));
+        get_score("complete the shape", 6,"Καθρεπτισμός",findViewById(R.id.ac10));
+
+        get_score("write height", 5,"Μετρήσεις",findViewById(R.id.ac11));
+        get_score("add animals",4 ,"Αριθμητικές πράξεις",findViewById(R.id.ac12));
+        get_score("next number",3 ,"Ααριθμητικές ακολουθίες 2",findViewById(R.id.ac13));
+        get_score("drag and drop numbers", 3,"Ποσότητες",findViewById(R.id.ac14));
+        get_score("path with numbers", 11,"Αριθμητικές ακολουθίες",findViewById(R.id.ac15));
+        get_score("drag 2 items", 2,"Ποσότητες 2",findViewById(R.id.ac16));
+        get_score("choose the bigger number", 4,"Συγκρίσεις",findViewById(R.id.ac17));
+        get_score("how many", 3,"Ποσότητες 3",findViewById(R.id.ac18));
 
         /*
 

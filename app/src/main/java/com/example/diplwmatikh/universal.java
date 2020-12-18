@@ -319,7 +319,7 @@ import io.grpc.internal.SharedResourceHolder;
          });
      }
     //to get the scores for score tab
-    public void get_score(String activityname,int max_score, String greek_name,TextView field){
+    public void get_score(String activityname,int max_score, String scientific_name,TextView field){
         FirebaseFirestore fStore=FirebaseFirestore.getInstance();
         DocumentReference fetch_test = fStore.collection("scores").document(userID);
         fetch_test.addSnapshotListener(this, new EventListener<DocumentSnapshot>() {
@@ -334,15 +334,15 @@ import io.grpc.internal.SharedResourceHolder;
                     score = value.getDouble(activityname);
                 }
                 if(score==-1){
-                    field.setText(greek_name+" : δεν έχει ολοκληρωθεί ακόμα.");
+                    field.setText(scientific_name+" : δεν έχει ολοκληρωθεί ακόμα.");
                 }else{
                     output=(int) score;
                     if(activityname.equals("path with numbers")){
                         if(output>max_score){
-                            field.setText(greek_name +": "+output+"από τα 13");
+                            field.setText(scientific_name +": "+output+" από τα 13");
                         }
                     }
-                    field.setText(greek_name +" : "+output+" από τα "+max_score);
+                    field.setText(scientific_name +" : "+output+" από τα "+max_score);
                 }
             }
         });
