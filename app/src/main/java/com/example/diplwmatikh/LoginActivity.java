@@ -80,7 +80,8 @@ public class LoginActivity extends universal {
                                     FirebaseUser user = fAuth.getCurrentUser();
                                     startActivity(new Intent(getApplicationContext(),Mainmenu.class));
                                 }else{
-                                    Toast.makeText(LoginActivity.this, "Error: "+ task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                                    getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN);   //keyboard stay hidden
+                                    Toast.makeText(LoginActivity.this, "Ο κωδικός ή το Email χρήστη δεν είναι σωστά.", Toast.LENGTH_SHORT).show();
                                 }
                             }
                         })

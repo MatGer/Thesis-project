@@ -12,7 +12,9 @@ import android.widget.TextView;
 
 public class which_one_is_different extends universal {
     ImageView row11,row12,row13,row21,row22,row23,row31,row32,row33;
-    int row1,row2,row3=-1;
+    int row1=-1;
+    int row2=-1;
+    int row3=-1;
     int score=0;
     Button check;
     ImageButton back,home;

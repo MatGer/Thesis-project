@@ -10,7 +10,10 @@ import android.widget.TextView;
 
 public class next_number extends universal {
     TextView no1,no2,no3,no4,no5,no6;
-    int row1,row2,row3,score=0;
+    int row1=-1;
+    int row2=-1;
+    int row3=-1;
+    int score=0;
     Button check;
     ImageButton back,home;
     TextView prevscore;

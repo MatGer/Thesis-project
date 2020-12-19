@@ -11,7 +11,9 @@ import android.widget.TextView;
 public class how_many extends universal {
     View no1,no2,no3,no4,no5,no6,no7,no8,no9;
     Button check;
-    int row1,row2,row3=0;
+    int row1=-1;
+    int row2=-1;
+    int row3=-1;
     int score;
     ImageButton back,home;
     TextView prevscore;

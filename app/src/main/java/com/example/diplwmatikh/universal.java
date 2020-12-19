@@ -43,12 +43,11 @@ import io.grpc.internal.SharedResourceHolder;
 
  public class universal extends AppCompatActivity {
     Intent intent;
-    AlertDialog.Builder builderback, builderfinished,builderexit, builderinfo;
+    AlertDialog.Builder builderback, builderfinished, builderfinished2,builderexit, builderinfo;
     View decorView;
     FirebaseAuth fAuth;
     String userID;
     MediaPlayer player;
-
      //options to hide nav bar, status bar and further functionality
      // DO NOT TOUCH THE LINE BELOW
     int uiOptions=View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION|View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN|View.SYSTEM_UI_FLAG_HIDE_NAVIGATION|View.SYSTEM_UI_FLAG_FULLSCREEN|View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY;
@@ -83,13 +82,13 @@ import io.grpc.internal.SharedResourceHolder;
      */
     //adjust text and call builder
     public void show_rating(int score, int max_activity_score,Class calling_class, Class next_class, boolean select_builder){
-        float rating = max_activity_score/3;                                                        //false=text optimised for 1st activity
+        float rating = (float) score/max_activity_score;                                                        //false=text optimised for 1st activity
         String text="";                                                                             //true=text optimised for 2nd activity
         if(next_class==null){                                                           //if next_class==null -> no next activity -> different builder
-            if(score<=rating){
+            if(rating<=0.33){
                 //fair
                 text="Χρειάζεται περισσότερη προσπάθεια.Η βαθμολογία σου είναι "+score +" από τα "+max_activity_score+". Θέλεις να σπιστρέψεις στο αρχικό μενού;";
-            }else if(score<=2*rating){
+            }else if(rating<=0.66){
                 //good
                 text="Καλή δουλειά. Συνέχισε έτσι. Η βαθμολογία σου είναι "+score +" από τα "+max_activity_score+". Θέλεις να σπιστρέψεις στο αρχικό μενού;";;
             }else{
@@ -99,10 +98,10 @@ import io.grpc.internal.SharedResourceHolder;
             create_builder_for_3rd_activity(calling_class, text);
         }else{
             if(!select_builder){
-                if(score<=rating){
+                if(rating<=0.33){
                     //fair
                     text="Χρειάζεται περισσότερη προσπάθεια. Η βαθμολογία σου είναι "+score +" από τα "+max_activity_score+". Θέλεις να πας στην επόμενη δραστηριότητα;";
-                }else if(score<=2*rating){
+                }else if(rating<=0.66){
                     //good
                     text="Καλή δουλειά. Συνέχισε έτσι. Η βαθμολογία σου είναι "+score +" από τα "+max_activity_score+". Θέλεις να πας στην επόμενη δραστηριότητα;";
                 }else{
@@ -110,10 +109,10 @@ import io.grpc.internal.SharedResourceHolder;
                     text="Συγχαρητήρια! Πολύ καλή δουλειά. Η βαθμολογία σου είναι "+score +" από τα "+max_activity_score+". Θέλεις να πας στην επόμενη δραστηριότητα;";
                 }
             }else{
-                if(score<=rating){
+                if(rating<=0.33){
                     //fair
                     text="Χρειάζεται περισσότερη προσπάθεια. Η βαθμολογία σου είναι "+score +" από τα "+max_activity_score+". Θέλεις να δοκιμάσεις μια άλλη δραστηριότητα;";
-                }else if(score<=2*rating){
+                }else if(rating<=0.66){
                     //good
                     text="Καλή δουλειά. Συνέχισε έτσι. Η βαθμολογία σου είναι "+score +" από τα "+max_activity_score+". Θέλεις να δοκιμάσεις μια άλλη δραστηριότητα;";
                 }else{
@@ -157,11 +156,11 @@ import io.grpc.internal.SharedResourceHolder;
     }
     //builder for 3rd activity
      public void create_builder_for_3rd_activity(Class calling_class, String txt){
-         builderfinished = new AlertDialog.Builder(universal.this);
-         builderfinished.setTitle("Η δραστηριότητα ολοκληρώθηκε!");
-         builderfinished.setMessage(txt);
+         builderfinished2 = new AlertDialog.Builder(universal.this);
+         builderfinished2.setTitle("Η δραστηριότητα ολοκληρώθηκε!");
+         builderfinished2.setMessage(txt);
 
-         builderfinished.setPositiveButton("Ναι", new DialogInterface.OnClickListener() {
+         builderfinished2.setPositiveButton("Ναι", new DialogInterface.OnClickListener() {
              @Override
              public void onClick(DialogInterface dialog, int which) {
                  intent = new Intent(universal.this, Mainmenu.class);
@@ -225,7 +224,7 @@ import io.grpc.internal.SharedResourceHolder;
         bring_old.addSnapshotListener(this, new EventListener<DocumentSnapshot>() {
             @Override
             public void onEvent(@Nullable DocumentSnapshot value, @Nullable FirebaseFirestoreException error) {
-                float rating = max_score/3; //split max score in three parts for the button colours
+                float rating = (float) score/max_score; //split max score in three parts for the button colours
                 Map<String, Object> data = new HashMap<>();
                 //if field not exists
                 if(value.getDouble(activityname)==null){
@@ -238,9 +237,9 @@ import io.grpc.internal.SharedResourceHolder;
                                     Log.w("upload score method", "Error on uploading score document", e);
                                 }
                             });
-                    if(score<=rating){
+                    if(rating<=0.33){
                         upload_color(activityname, "red");
-                    }else if(score<=2*rating){
+                    }else if(rating<=0.66){
                         upload_color(activityname, "yellow");
                     }else{
                         upload_color(activityname, "green");
@@ -259,16 +258,15 @@ import io.grpc.internal.SharedResourceHolder;
                                         Log.w("upload score method", "Error on uploading score document", e);
                                     }
                                 });
-                        if(score<=rating){
+                        if(rating<=0.33){
                             upload_color(activityname, "red");
-                        }else if(score<=2*rating){
+                        }else if(rating<=0.66){
                             upload_color(activityname, "yellow");
                         }else{
                             upload_color(activityname, "green");
                         }
                     }
                 }
-
             }
         });
     }
@@ -423,6 +421,7 @@ import io.grpc.internal.SharedResourceHolder;
          findViewById(R.id.prev_score).setVisibility(View.INVISIBLE);
          findViewById(R.id.score).setVisibility(View.INVISIBLE);
          findViewById(R.id.check).setVisibility(View.INVISIBLE);
+         findViewById(R.id.homebutton).setVisibility(View.INVISIBLE);
      }
      //to reset score. deletes a field at a time
      public void reset_score(String activityname,String category){

@@ -1,5 +1,6 @@
 package com.example.diplwmatikh;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -12,7 +13,11 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.EventListener;
@@ -21,8 +26,9 @@ import com.google.firebase.firestore.FirebaseFirestoreException;
 import com.google.firebase.firestore.Source;
 
 public class settings extends universal {
-    TextView change_details,change_pass,logout,showscores,resetscores;
+    TextView change_details,change_pass,logout,showscores,resetscores,deleteuser;
     ImageButton back;
+    AlertDialog.Builder builderdelete;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,6 +43,7 @@ public class settings extends universal {
         back=findViewById(R.id.backbutton);
         back.setOnClickListener(back_button);
         resetscores=findViewById(R.id.resetscores);
+        deleteuser=findViewById(R.id.deleteuser);
 
         change_details.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -82,6 +89,45 @@ public class settings extends universal {
                 });
             }
         });
+
+        deleteuser.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                builderdelete = new AlertDialog.Builder(settings.this);
+                builderdelete.setTitle("Διαγραφή λογαριασμού");
+                builderdelete.setMessage("Θέλεις σίγουρα να διαγράψεις τον λογαριασμό σου; Αυτή η ενέργεια δεν μπορεί να ανερεθεί και θα " +
+                        "διαγράψει όλα τα δεδομένα του λογαριασμού σου!");
+                builderdelete.setPositiveButton("Διαγραφη", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+                        user.delete()
+                                .addOnCompleteListener(new OnCompleteListener<Void>() {
+                                    @Override
+                                    public void onComplete(@NonNull Task<Void> task) {
+                                        if (task.isSuccessful()) {
+                                            Toast.makeText(settings.this, "Ο λογαριασμός σου διαγράφηκε με επιτυχία!", Toast.LENGTH_SHORT).show();
+                                        }else{
+                                            Toast.makeText(settings.this, "Κάτι πήγε στραβά. Ξαναπροσπάθησε αργότερα!", Toast.LENGTH_SHORT).show();
+                                        }
+                                    }
+                                });
+                        userID=null;
+                        fAuth.signOut();
+                        startActivity(new Intent(settings.this, LoginActivity.class));
+                        finish();
+                    }
+                });
+                builderdelete.setNegativeButton("Οχι", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        onResume();
+                    }
+                }).create().show();
+            }
+        });
+
         resetscores.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -106,12 +152,12 @@ public class settings extends universal {
                                 reset_score("find the path","scores");
                                 reset_score("how many","scores");
                                 reset_score("next number","scores");
-                                reset_score("path_of_numbers2","scores");
-                                reset_score("place in order","scores");
+                                reset_score("path with numbers","scores");
+                                reset_score("choose the bigger number","scores");
                                 reset_score("select the bigger","scores");
                                 reset_score("which one is different","scores");
                                 reset_score("write height","scores");
-                                reset_score("add animals","scores");
+                                reset_score("complete the shape","scores");
 
                                 reset_score("add animals","buttons");
                                 reset_score("choose","buttons");
@@ -125,12 +171,12 @@ public class settings extends universal {
                                 reset_score("find the path","buttons");
                                 reset_score("how many","buttons");
                                 reset_score("next number","buttons");
-                                reset_score("path_of_numbers2","buttons");
-                                reset_score("place in order","buttons");
+                                reset_score("path with numbers","buttons");
+                                reset_score("choose the bigger number","buttons");
                                 reset_score("select the bigger","buttons");
                                 reset_score("which one is different","buttons");
                                 reset_score("write height","buttons");
-                                reset_score("add animals","buttons");
+                                reset_score("complete the shape","buttons");
 
                                 Toast.makeText(settings.this, "Οι βαθμολογίες σου διαγράφηκαν!", Toast.LENGTH_SHORT).show();
                                 onResume();
