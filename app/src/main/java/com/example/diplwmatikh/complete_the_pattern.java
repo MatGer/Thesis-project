@@ -13,7 +13,7 @@ public class complete_the_pattern extends universal {
     ImageView fill1_1,fill1_2,fill2_1,fill2_2,fill3_1,fill3_2;
     ImageView drag1,drag2,drag3,drag4,drag5,drag6;
     Button check;
-    TextView text,prevscore;
+    TextView prevscore;
     ImageButton restart,back,home;
     int[] answer = {1,4,3,0,5,2};
     int[] match_to_answer = {-1,-1,-1,-1,-1,-1};

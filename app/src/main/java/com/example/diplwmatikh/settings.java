@@ -57,6 +57,7 @@ public class settings extends universal {
                 userID=null;
                 fAuth.signOut();
                 startActivity(new Intent(settings.this, LoginActivity.class));
+                Toast.makeText(settings.this, "Αποσυνδέθηκες με επιτυχία!", Toast.LENGTH_SHORT).show();
                 finish();
             }
         });
@@ -84,7 +85,7 @@ public class settings extends universal {
                     public void onEvent(@Nullable DocumentSnapshot value, @Nullable FirebaseFirestoreException error) {
                         String mail=value.getString("Email");
                         fAuth.sendPasswordResetEmail(mail);
-                        Toast.makeText(settings.this, "Σου έχει σταλεί ενα mail για την αλλαγή κωδικού.", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(settings.this, "Σου έχει σταλεί ενα mail για την αλλαγή κωδικού!", Toast.LENGTH_SHORT).show();
                     }
                 });
             }
@@ -102,17 +103,8 @@ public class settings extends universal {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-                        user.delete()
-                                .addOnCompleteListener(new OnCompleteListener<Void>() {
-                                    @Override
-                                    public void onComplete(@NonNull Task<Void> task) {
-                                        if (task.isSuccessful()) {
-                                            Toast.makeText(settings.this, "Ο λογαριασμός σου διαγράφηκε με επιτυχία!", Toast.LENGTH_SHORT).show();
-                                        }else{
-                                            Toast.makeText(settings.this, "Κάτι πήγε στραβά. Ξαναπροσπάθησε αργότερα!", Toast.LENGTH_SHORT).show();
-                                        }
-                                    }
-                                });
+                        user.delete();
+                        Toast.makeText(settings.this, "Ο λογαριασμός σου διαγράφηκε με επιτυχία!", Toast.LENGTH_SHORT).show();
                         userID=null;
                         fAuth.signOut();
                         startActivity(new Intent(settings.this, LoginActivity.class));

@@ -281,11 +281,9 @@ public class path_with_numbers extends universal implements OnClickListener {
         if(current_state[id]){
             current_state[id]=false;
             txt.setBackground(getDrawable(R.drawable.unselected_tile_with_borders));
-            System.out.println("-------------------------------------------------cell " +id+ " changed to false");
         }else{
             current_state[id]=true;
             txt.setBackground(getDrawable(R.drawable.selected_tile_with_borders));
-            System.out.println("-------------------------------------------------cell " +id+ "changed to true");
         }
     }
 }

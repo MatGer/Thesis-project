@@ -76,12 +76,12 @@ public class LoginActivity extends universal {
                             @Override
                             public void onComplete(@NonNull Task<AuthResult> task) {
                                 if(task.isSuccessful()){
-                                    Toast.makeText(LoginActivity.this, "Συνδεθήκατε με επιτυχία", Toast.LENGTH_SHORT).show();
+                                    Toast.makeText(LoginActivity.this, "Συνδέθηκες με επιτυχία!", Toast.LENGTH_SHORT).show();
                                     FirebaseUser user = fAuth.getCurrentUser();
                                     startActivity(new Intent(getApplicationContext(),Mainmenu.class));
                                 }else{
                                     getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN);   //keyboard stay hidden
-                                    Toast.makeText(LoginActivity.this, "Ο κωδικός ή το Email χρήστη δεν είναι σωστά.", Toast.LENGTH_SHORT).show();
+                                    Toast.makeText(LoginActivity.this, "Ο κωδικός ή το Email χρήστη δεν είναι σωστά!", Toast.LENGTH_SHORT).show();
                                 }
                             }
                         })
