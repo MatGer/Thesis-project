@@ -195,7 +195,7 @@
                         android:id="@+id/click6"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="φοράει φόρεμα"
+                        android:text="Φοράει φόρεμα"
                         android:textAlignment="center"
                         android:layout_alignStart="@+id/click5"
                         android:layout_marginLeft="10dp"

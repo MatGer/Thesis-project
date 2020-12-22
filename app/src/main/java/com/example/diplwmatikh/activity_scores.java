@@ -26,49 +26,6 @@ public class activity_scores extends universal {
         back=findViewById(R.id.backbutton);
         back.setOnClickListener(back_button);
 
-        /*----------------------------------------names from first row == names from 2nd row--------------------------------------------
-        String[][] activity_names={{"choose those who match","choose description","find the path","choose arrows","drag and drop numbers","path with numbers",
-                "select the bigger","write height","add animals","next number","complete the pattern","complete the shape"},
-                {"επίλεξε αυτά που ταιριάζουν","επίλεξε περιγραφή","βρες το μονοπάτι","επίλεξε τα βελάκια","σείρε τους αριθμούς","βρες το μονοπάτι με τους αριθμούς",
-                        "επίλεξε το μεγαλύτερο","γράψε το ύψος","πρόσθεσε τα ζωάκια","βρες τον επόμενο αριθμό","ολοκλήρωσε το μοτίβο","ολοκλήρωσε το σχήμα"}
-        };
-        //------------------------------------------------------------------------------------------------------------------------
-         */
-        get_score("choose those who match", 4,"Σημασιολογία",findViewById(R.id.ac1));
-        get_score("choose description",4 ,"Κατηγοριοποίηση/ταξινόμηση",findViewById(R.id.ac2));
-        get_score("choose arrows",12 ,"Χωρικός Προσανατολισμός",findViewById(R.id.ac3));
-        get_score("choose", 2,"Προσληπτικό λεξιλόγιο",findViewById(R.id.ac4));
-        get_score("drag items with audio", 4,"Οδηγίες",findViewById(R.id.ac5));
-        get_score("which one is different", 3,"Κατηγοριοποίηση",findViewById(R.id.ac6));
-
-        get_score("find the path", 10,"Σχήματα",findViewById(R.id.ac7));
-        get_score("select the bigger",4 ,"Σύγκριση",findViewById(R.id.ac8));
-        get_score("complete the pattern", 6,"Ακολουθίες",findViewById(R.id.ac9));
-        get_score("complete the shape", 6,"Καθρεπτισμός",findViewById(R.id.ac10));
-
-        get_score("write height", 5,"Μετρήσεις",findViewById(R.id.ac11));
-        get_score("add animals",4 ,"Αριθμητικές πράξεις",findViewById(R.id.ac12));
-        get_score("next number",3 ,"Αριθμητικές ακολουθίες 2",findViewById(R.id.ac13));
-        get_score("drag and drop numbers", 3,"Ποσότητες",findViewById(R.id.ac14));
-        get_score("path with numbers", 11,"Αριθμητικές ακολουθίες",findViewById(R.id.ac15));
-        get_score("drag 2 items", 2,"Ποσότητες 2",findViewById(R.id.ac16));
-        get_score("choose the bigger number", 4,"Συγκρίσεις",findViewById(R.id.ac17));
-        get_score("how many", 3,"Ποσότητες 3",findViewById(R.id.ac18));
-
-        /*
-
-        //implement names and add all activities
-
-        get_score("add animals", userID,findViewById(R.id.ac5));
-        get_score("choose arrows", userID,findViewById(R.id.ac6));
-        get_score("complete the pattern", userID,findViewById(R.id.ac7));
-        get_score("path_of_numbers2", userID,findViewById(R.id.ac8));
-        get_score("add animals", userID,findViewById(R.id.ac9));
-        get_score("choose arrows", userID,findViewById(R.id.ac10));
-        get_score("complete the pattern", userID,findViewById(R.id.ac11));
-        get_score("path_of_numbers2", userID,findViewById(R.id.ac12));
-
-         */
         ac1=findViewById(R.id.ac1);
         ac2=findViewById(R.id.ac2);
         ac3=findViewById(R.id.ac3);
@@ -106,6 +63,28 @@ public class activity_scores extends universal {
         ac16.setOnClickListener(cl);
         ac17.setOnClickListener(cl);
         ac18.setOnClickListener(cl);
+
+        get_score("choose those who match", 4,"Σημασιολογία",findViewById(R.id.ac1));
+        get_score("choose description",4 ,"Κατηγοριοποίηση/ταξινόμηση",findViewById(R.id.ac2));
+        get_score("choose arrows",12 ,"Χωρικός Προσανατολισμός",findViewById(R.id.ac3));
+        get_score("choose", 2,"Προσληπτικό λεξιλόγιο",findViewById(R.id.ac4));
+        get_score("drag items with audio", 4,"Οδηγίες",findViewById(R.id.ac5));
+        get_score("which one is different", 3,"Κατηγοριοποίηση",findViewById(R.id.ac6));
+
+        get_score("find the path", 10,"Σχήματα",findViewById(R.id.ac7));
+        get_score("select the bigger",4 ,"Σύγκριση",findViewById(R.id.ac8));
+        get_score("complete the pattern", 6,"Ακολουθίες",findViewById(R.id.ac9));
+        get_score("complete the shape", 6,"Καθρεπτισμός",findViewById(R.id.ac10));
+
+        get_score("write height", 5,"Μετρήσεις",findViewById(R.id.ac11));
+        get_score("add animals",4 ,"Αριθμητικές πράξεις",findViewById(R.id.ac12));
+        get_score("next number",3 ,"Αριθμητικές ακολουθίες 2",findViewById(R.id.ac13));
+        get_score("drag and drop numbers", 3,"Ποσότητες",findViewById(R.id.ac14));
+        get_score("path with numbers", 11,"Αριθμητικές ακολουθίες",findViewById(R.id.ac15));
+        get_score("drag 2 items", 2,"Ποσότητες 2",findViewById(R.id.ac16));
+        get_score("choose the bigger number", 4,"Συγκρίσεις",findViewById(R.id.ac17));
+        get_score("how many", 3,"Ποσότητες 3",findViewById(R.id.ac18));
+
     }
 
     View.OnClickListener cl = new View.OnClickListener() {

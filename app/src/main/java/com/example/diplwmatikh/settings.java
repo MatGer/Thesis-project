@@ -14,6 +14,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
@@ -85,7 +86,7 @@ public class settings extends universal {
                     public void onEvent(@Nullable DocumentSnapshot value, @Nullable FirebaseFirestoreException error) {
                         String mail=value.getString("Email");
                         fAuth.sendPasswordResetEmail(mail);
-                        Toast.makeText(settings.this, "Σου έχει σταλεί ενα mail για την αλλαγή κωδικού!", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(settings.this, "Σου έχει σταλεί ενα email για την αλλαγή κωδικού!", Toast.LENGTH_SHORT).show();
                     }
                 });
             }
@@ -103,8 +104,19 @@ public class settings extends universal {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-                        user.delete();
-                        Toast.makeText(settings.this, "Ο λογαριασμός σου διαγράφηκε με επιτυχία!", Toast.LENGTH_SHORT).show();
+                        user.delete()
+                                .addOnSuccessListener(new OnSuccessListener() {
+                                    @Override
+                                    public void onSuccess(Object o) {
+                                        Toast.makeText(settings.this, "Ο λογαριασμός σου διαγράφηκε με επιτυχία!", Toast.LENGTH_SHORT).show();
+                                    }
+                                })
+                                .addOnFailureListener(new OnFailureListener() {
+                                    @Override
+                                    public void onFailure(@NonNull Exception e) {
+                                        Toast.makeText(settings.this, "Κάτι πήγε στραβά! Ξαναπροσπάθησε αργότερα!", Toast.LENGTH_SHORT).show();
+                                    }
+                                });
                         userID=null;
                         fAuth.signOut();
                         startActivity(new Intent(settings.this, LoginActivity.class));

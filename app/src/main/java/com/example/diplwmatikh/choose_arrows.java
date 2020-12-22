@@ -121,7 +121,7 @@ public class choose_arrows extends universal {
                     }
                 }
                 //System.out.println("----------------------------------------------------------------------------------"+ score);
-                //score=0; //enable this command for debbuging
+                //score=0; //enable this command for debugging
                 if(score<0){
                     score=0;
                 }

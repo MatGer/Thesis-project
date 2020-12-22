@@ -66,6 +66,11 @@ public class drag_items_with_audio extends universal{
         triangle.setOnDragListener(dragListener);
         square.setOnDragListener(dragListener);
 
+        play1.setOnClickListener(play);
+        play2.setOnClickListener(play);
+        play3.setOnClickListener(play);
+        play4.setOnClickListener(play);
+
         check=findViewById(R.id.check);
 
         check.setOnClickListener(new View.OnClickListener() {

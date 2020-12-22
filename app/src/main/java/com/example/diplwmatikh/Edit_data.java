@@ -16,6 +16,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -83,24 +84,19 @@ public class Edit_data extends universal {
                 data.put("Username", username.getText().toString().trim());
                 data.put("Email", email.getText().toString().trim());
                 fStore.collection("users").document(userID).update(data)
+                        .addOnSuccessListener(new OnSuccessListener() {
+                            @Override
+                            public void onSuccess(Object o) {
+                                Toast.makeText(Edit_data.this, "Τα στοιχεία σου άλλαξαν με επιτυχία!", Toast.LENGTH_SHORT).show();
+                            }
+                        })
                         .addOnFailureListener(new OnFailureListener() {
                             @Override
                             public void onFailure(@NonNull Exception e) {
-                                Log.w("upload data class", "Error on updating data", e);
+                                Toast.makeText(Edit_data.this, "Κάτι πήγε στραβά! Ξαναπροσπάθησε αργότερα!", Toast.LENGTH_SHORT).show();
                             }
                         });
                 onResume();//to dissapear nav bar
-                /*
-                String newpass=pass2.getText().toString().trim();
-                user.updatePassword(newpass)
-                        .addOnFailureListener(new OnFailureListener() {
-                            @Override
-                            public void onFailure(@NonNull Exception e) {
-                                Log.w("upload data class", "Error on updating password", e);
-                            }
-                        });
-
-                 */
             }
         });
     }

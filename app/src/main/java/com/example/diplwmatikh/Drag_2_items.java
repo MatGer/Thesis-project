@@ -32,7 +32,7 @@ public class drag_2_items extends universal {
         get_score_for_navbar("drag 2 items", prevscore, 2);
 
         TextView title = findViewById(R.id.title);
-        title.setText("Σύρε δύο αντικείμενα στο κουτί.");
+        title.setText("Σύρε δύο αντικείμενα στο μαύρο πλαίσιο.");
         title.setSelected(true);
 
         target=findViewById(R.id.target);
@@ -99,10 +99,6 @@ public class drag_2_items extends universal {
                             score=0;
                             break;
                         case 4:
-                            itemX=itemX+v.getWidth()/3;
-                            counter++;
-                            score=0;
-                            break;
                         case 5:
                             itemX=itemX+v.getWidth()/3;
                             counter++;
