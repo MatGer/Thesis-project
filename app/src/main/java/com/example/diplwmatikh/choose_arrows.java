@@ -41,7 +41,7 @@ public class choose_arrows extends universal {
         home.setOnClickListener(home_button_listener);
 
         TextView title = findViewById(R.id.title);
-        title.setText("Επέλεξε τα κατάλληλα βελάκια. Πάτησε στο ηχειάκι για να ακούσεις την εκφώνηση");
+        title.setText("Επίλεξε τα κατάλληλα βελάκια. Πάτησε στο ηχειάκι για να ακούσεις την εκφώνηση");
         title.setSelected(true);
 
         choice=new Random().nextBoolean();
@@ -115,11 +115,16 @@ public class choose_arrows extends universal {
                     for(int y=0;y<8;y++){
                         if(match_to_answer[x][y]==answers[x][y] && answers[x][y]==true){
                             score++;
+                        }else{
+                            score--;
                         }
                     }
                 }
                 //System.out.println("----------------------------------------------------------------------------------"+ score);
                 //score=0; //enable this command for debbuging
+                if(score<0){
+                    score=0;
+                }
                 upload_score("choose arrows", score,12);
                 show_rating(score,12,choose_arrows.class,drag_items_with_audio.class,true);
             }

@@ -37,7 +37,7 @@ public class drag_and_drop_numbers extends universal {
         prevscore=findViewById(R.id.score);
         get_score_for_navbar("drag and drop numbers", prevscore, 3);
         TextView title = findViewById(R.id.title);
-        title.setText("Σείρε τους αριθμούς μέσα στις στις εικόνες");
+        title.setText("Σύρε τους αριθμούς μέσα στις στις εικόνες");
         title.setSelected(true);
 
         img1=findViewById(R.id.pencil);

@@ -34,7 +34,7 @@ public class activity_scores extends universal {
         };
         //------------------------------------------------------------------------------------------------------------------------
          */
-        get_score("choose those who match", 8,"Σημασιολογία",findViewById(R.id.ac1));
+        get_score("choose those who match", 4,"Σημασιολογία",findViewById(R.id.ac1));
         get_score("choose description",4 ,"Κατηγοριοποίηση/ταξινόμηση",findViewById(R.id.ac2));
         get_score("choose arrows",12 ,"Χωρικός Προσανατολισμός",findViewById(R.id.ac3));
         get_score("choose", 2,"Προσληπτικό λεξιλόγιο",findViewById(R.id.ac4));
@@ -126,7 +126,7 @@ public class activity_scores extends universal {
                     ac="Επίλεξε την εικόνα";
                     break;
                 case R.id.ac5: intent = new Intent(activity_scores.this, drag_items_with_audio.class);
-                    ac="Σείρε τις εικόνες";
+                    ac="Σύρε τις εικόνες";
                     break;
                 case R.id.ac6: intent = new Intent(activity_scores.this, which_one_is_different.class);
                     ac="Βρες το διαφορετικό";
@@ -153,13 +153,13 @@ public class activity_scores extends universal {
                     ac="Βρες τον επόμενο αριθμό";
                     break;
                 case R.id.ac14: intent = new Intent(activity_scores.this, drag_and_drop_numbers.class);
-                    ac="Σείρε τους αριθμούς";
+                    ac="Σύρε τους αριθμούς";
                     break;
                 case R.id.ac15: intent = new Intent(activity_scores.this, path_with_numbers.class);
                     ac="Βρες το μονοπάτι με τους αριθμούς";
                     break;
                 case R.id.ac16: intent = new Intent(activity_scores.this, drag_2_items.class);
-                    ac="Σείρε δύο εικόνες";
+                    ac="Σύρε δύο εικόνες";
                     break;
                 case R.id.ac17: intent = new Intent(activity_scores.this, choose_the_bigger_number.class);
                     ac="Επίλεξε τον μεγαλύτερο αριθμό";

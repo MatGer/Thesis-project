@@ -32,7 +32,7 @@ public class complete_the_pattern extends universal {
         home=findViewById(R.id.homebutton);
         home.setOnClickListener(home_button_listener);
         TextView title = findViewById(R.id.title);
-        title.setText("Σείρε τα σχήματα από την τελευταία σειρά, στα πράσινα κουτάκια για να ολοκληρώσεις τα μοτίβα.");
+        title.setText("Σύρε τα σχήματα από την τελευταία σειρά, στα πράσινα κουτάκια για να ολοκληρώσεις τα μοτίβα.");
         title.setSelected(true);
 
         get_score_for_navbar("complete the pattern", prevscore, 6);

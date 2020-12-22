@@ -325,9 +325,9 @@ import io.grpc.internal.SharedResourceHolder;
             public void onEvent(@Nullable DocumentSnapshot value, @Nullable FirebaseFirestoreException error) {
                 int output;
                 double score=0;
-                if(value.getDouble(activityname)==null || value.getDouble(activityname)==-1){
+                if(value.getDouble(activityname)==null){
                     score=-1;
-                    //if null or -1 (if user deleted data) we want to show different message
+                    //if null we want to show different message
                 }else{
                     score = value.getDouble(activityname);
                 }

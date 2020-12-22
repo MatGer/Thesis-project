@@ -38,7 +38,7 @@ public class drag_items_with_audio extends universal{
         get_score_for_navbar("drag items with audio", prevscore, 4);
 
         TextView title = findViewById(R.id.title);
-        title.setText("Σείρε τις εικόνες μέσα στα σχήματα με βάση τις οδηγίες. Πάτησε στο ηχειάκι για να ακούσεις την εκφώνηση");
+        title.setText("Σύρε τις εικόνες μέσα στα σχήματα με βάση τις οδηγίες. Πάτησε στο ηχειάκι για να ακούσεις την εκφώνηση");
         title.setSelected(true);
 
         circle=findViewById(R.id.target1);

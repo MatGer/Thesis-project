@@ -27,7 +27,7 @@ public class which_one_is_different extends universal {
         runtime();
 
         TextView title = findViewById(R.id.title);
-        title.setText("Επέλεξε την εικόνα που δεν ταιριάζει.");
+        title.setText("Επίλεξε την εικόνα που δεν ταιριάζει.");
         title.setSelected(true);
         prevscore=findViewById(R.id.score);
         get_score_for_navbar("which one is different", prevscore, 3);

@@ -26,7 +26,7 @@ public class select_the_bigger extends universal {
         runtime();
 
         TextView title = findViewById(R.id.title);
-        title.setText("Επέλεξε την μεγαλύτερη εικόνα");
+        title.setText("Επίλεξε την μεγαλύτερη εικόνα");
         title.setSelected(true);
         prevscore=findViewById(R.id.score);
         get_score_for_navbar("select the bigger", prevscore, 4);

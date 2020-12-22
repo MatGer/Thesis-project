@@ -102,7 +102,7 @@
                         android:id="@+id/btn3"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:text="Σείρε τα αντικείμενα"
+                        android:text="Σύρε τα αντικείμενα"
                         android:textColor="@color/white"
                         android:background="@drawable/start_menu_button"
                         android:padding="15dp"

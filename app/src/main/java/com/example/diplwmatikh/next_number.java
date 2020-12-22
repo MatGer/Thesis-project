@@ -26,7 +26,7 @@ public class next_number extends universal {
         runtime();
 
         TextView title = findViewById(R.id.title);
-        title.setText("Επέλεξε τον αριθμό που ακολουθεί.");
+        title.setText("Επίλεξε τον αριθμό που ακολουθεί.");
         title.setSelected(true);
 
         back=findViewById(R.id.backbutton);

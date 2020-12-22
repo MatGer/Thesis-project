@@ -24,7 +24,7 @@ public class how_many extends universal {
         runtime();
 
         TextView title = findViewById(R.id.title);
-        title.setText("Επέλεξε πόσα ζωάκια φαίνονται σε κάθε φωτογραφία");
+        title.setText("Επίλεξε πόσα ζωάκια φαίνονται σε κάθε φωτογραφία");
         title.setSelected(true);
 
         check=findViewById(R.id.check);

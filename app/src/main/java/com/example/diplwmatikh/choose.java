@@ -42,7 +42,7 @@ public class choose extends universal{
         home.setOnClickListener(home_button_listener);
 
         TextView title = findViewById(R.id.title);
-        title.setText("Επέλεξε την κατάλληλη εικόνα. Πάτησε στο ηχειάκι για να ακούσεις την εκφώνηση");
+        title.setText("Επίλεξε την κατάλληλη εικόνα. Πάτησε στο ηχειάκι για να ακούσεις την εκφώνηση");
         title.setSelected(true);
 
         get_score_for_navbar("choose", prevscore, 2);

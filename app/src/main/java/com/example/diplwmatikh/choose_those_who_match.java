@@ -30,10 +30,10 @@ public class choose_those_who_match extends universal {
         home=findViewById(R.id.homebutton);
         home.setOnClickListener(home_button_listener);
         TextView title = findViewById(R.id.title);
-        title.setText("Επέλεξε τις περιγραφές που ταιριάζουν με την κάθε εικόνα. Πάτησε στο ηχειάκι για να ακούσεις την εκφώνηση");
+        title.setText("Επίλεξε τις περιγραφές που ταιριάζουν με την κάθε εικόνα. Πάτησε στο ηχειάκι για να ακούσεις την εκφώνηση");
         title.setSelected(true);
 
-        get_score_for_navbar("choose those who match", prevscore, 8);
+        get_score_for_navbar("choose those who match", prevscore, 4);
 
         txt1=findViewById(R.id.click1);
         txt2=findViewById(R.id.click2);
@@ -78,10 +78,15 @@ public class choose_those_who_match extends universal {
             public void onClick(View v) {
                 for (int x=0;x<2;x++){
                     for (int y=0; y<4;y++){
-                        if (match_to_answer[x][y]==answer[x][y]){
+                        if (match_to_answer[x][y]==answer[x][y] && answer[x][y]==true){
                             score++;
+                        }else{
+                            score--;
                         }
                     }
+                }
+                if(score<0){
+                    score=0;
                 }
                 upload_score("choose those who match",score,8);
                 show_rating(score,8,choose_those_who_match.class,choose_description.class, false);

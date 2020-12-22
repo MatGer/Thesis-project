@@ -25,7 +25,7 @@ public class choose_description extends universal {
         runtime();
 
         TextView title = findViewById(R.id.title);
-        title.setText("Επέλεξε την περιγραφή που ταιριάζει σε κάθε εικόνα. Πάτησε στο ηχειάκι για να ακούσεις την εκφώνηση");
+        title.setText("Επίλεξε την περιγραφή που ταιριάζει σε κάθε εικόνα. Πάτησε στο ηχειάκι για να ακούσεις την εκφώνηση");
         title.setSelected(true);
 
         txt1=findViewById(R.id.click1);
