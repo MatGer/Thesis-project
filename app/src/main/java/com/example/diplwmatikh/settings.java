@@ -29,7 +29,7 @@ import com.google.firebase.firestore.Source;
 public class settings extends universal {
     TextView change_details,change_pass,logout,showscores,resetscores,deleteuser;
     ImageButton back;
-    AlertDialog.Builder builderdelete;
+    AlertDialog.Builder builderdelete,logoutbuilder;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -55,11 +55,25 @@ public class settings extends universal {
         logout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                userID=null;
-                fAuth.signOut();
-                startActivity(new Intent(settings.this, LoginActivity.class));
-                Toast.makeText(settings.this, "Αποσυνδέθηκες με επιτυχία!", Toast.LENGTH_SHORT).show();
-                finish();
+                logoutbuilder = new AlertDialog.Builder(settings.this);
+                logoutbuilder.setTitle("Αποσύνδεση!");
+                logoutbuilder.setMessage("Θέλεις σίγουρα να αποσυνδεθείς;");
+                logoutbuilder.setPositiveButton("Ναι", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        userID=null;
+                        fAuth.signOut();
+                        startActivity(new Intent(settings.this, LoginActivity.class));
+                        Toast.makeText(settings.this, "Αποσυνδέθηκες με επιτυχία!", Toast.LENGTH_SHORT).show();
+                        finish();
+                    }
+                })
+                .setNegativeButton("Ακυρο", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        onResume();
+                    }
+                }).create().show();
             }
         });
         showscores.setOnClickListener(new View.OnClickListener() {
@@ -103,20 +117,13 @@ public class settings extends universal {
                 builderdelete.setPositiveButton("Διαγραφη", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
+                        FirebaseFirestore fStore=FirebaseFirestore.getInstance();
+                        fStore.collection("users").document(userID).delete();
+                        fStore.collection("scores").document(userID).delete();
+                        fStore.collection("buttons").document(userID).delete();
                         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-                        user.delete()
-                                .addOnSuccessListener(new OnSuccessListener() {
-                                    @Override
-                                    public void onSuccess(Object o) {
-                                        Toast.makeText(settings.this, "Ο λογαριασμός σου διαγράφηκε με επιτυχία!", Toast.LENGTH_SHORT).show();
-                                    }
-                                })
-                                .addOnFailureListener(new OnFailureListener() {
-                                    @Override
-                                    public void onFailure(@NonNull Exception e) {
-                                        Toast.makeText(settings.this, "Κάτι πήγε στραβά! Ξαναπροσπάθησε αργότερα!", Toast.LENGTH_SHORT).show();
-                                    }
-                                });
+                        user.delete();
+                        Toast.makeText(settings.this, "Ο λογαριασμός σου διαγράφηκε με επιτυχία!", Toast.LENGTH_SHORT).show();
                         userID=null;
                         fAuth.signOut();
                         startActivity(new Intent(settings.this, LoginActivity.class));

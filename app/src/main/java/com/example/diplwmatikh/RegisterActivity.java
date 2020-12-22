@@ -53,11 +53,11 @@ public class RegisterActivity extends universal {
         register_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN);   //keyboard stay hidden
                 String Username=username.getText().toString().trim();
                 String Email=email.getText().toString().trim();
                 String Password=password.getText().toString().trim();
                 String ConfirmPassword=confirm_password.getText().toString().trim();
-
                 if(TextUtils.isEmpty(Username)){
                     username.setError("Πρέπει να προσθέσετε Όνομα χρήστη");
                     return;
