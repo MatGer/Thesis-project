@@ -1,7 +1,5 @@
 package com.example.diplwmatikh;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -80,16 +78,11 @@ public class choose_those_who_match extends universal {
                     for (int y=0; y<4;y++){
                         if (match_to_answer[x][y]==answer[x][y] && answer[x][y]==true){
                             score++;
-                        }else{
-                            score--;
                         }
                     }
                 }
-                if(score<0){
-                    score=0;
-                }
-                upload_score("choose those who match",score,8);
-                show_rating(score,8,choose_those_who_match.class,choose_description.class, false);
+                upload_score("choose those who match",score,4);
+                show_rating(score,4,choose_those_who_match.class,choose_description.class, false);
             }
         });
     }

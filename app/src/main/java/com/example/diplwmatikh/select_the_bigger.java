@@ -1,15 +1,11 @@
 package com.example.diplwmatikh;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
-
-import com.google.firebase.auth.FirebaseAuth;
 
 public class select_the_bigger extends universal {
     ImageButton first,second,back,home;

@@ -1,7 +1,5 @@
 package com.example.diplwmatikh;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -115,15 +113,8 @@ public class choose_arrows extends universal {
                     for(int y=0;y<8;y++){
                         if(match_to_answer[x][y]==answers[x][y] && answers[x][y]==true){
                             score++;
-                        }else{
-                            score--;
                         }
                     }
-                }
-                //System.out.println("----------------------------------------------------------------------------------"+ score);
-                //score=0; //enable this command for debugging
-                if(score<0){
-                    score=0;
                 }
                 upload_score("choose arrows", score,12);
                 show_rating(score,12,choose_arrows.class,drag_items_with_audio.class,true);

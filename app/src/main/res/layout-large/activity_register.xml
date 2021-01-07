@@ -10,9 +10,18 @@
     android:background="@color/white">
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        <include layout="@layout/appbar"
-            android:id="@+id/toolbar"/>
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/background">
+        <ImageButton
+            android:id="@+id/backbutton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="15dp"
+            android:background="@drawable/ic_baseline_arrow_back_24"
+            android:layout_marginVertical="10dp"
+            android:layout_marginHorizontal="5dp"
+            android:layout_centerVertical="true"/>
+
     </RelativeLayout>
     <RelativeLayout
         android:layout_width="match_parent"
@@ -107,12 +116,14 @@
             android:id="@+id/registerbutton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Register"
+            android:background="@drawable/start_menu_button"
+            android:text="Δημιουργία Λογαριασμού"
+            android:paddingHorizontal="10dp"
             android:layout_margin="20dp"
             android:textAllCaps="false"
             android:layout_below="@id/edconfirmpassword"
             android:layout_centerHorizontal="true"
-            android:textColor="@color/register_login" />
+            android:textColor="@color/white" />
         <ProgressBar
             android:id="@+id/progressbar_reg"
             android:layout_width="wrap_content"

@@ -1,8 +1,5 @@
 package com.example.diplwmatikh;
 
-import androidx.appcompat.app.AppCompatActivity;
-
-import android.content.ClipData;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.DragEvent;
@@ -11,8 +8,6 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
-
-import com.google.firebase.auth.FirebaseAuth;
 
 public class complete_the_shape extends universal {
     ImageView drag1, drag2, drag3, drag4, drag5, drag6;

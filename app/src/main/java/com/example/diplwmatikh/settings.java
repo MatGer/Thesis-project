@@ -1,9 +1,6 @@
 package com.example.diplwmatikh;
 
-import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -12,11 +9,6 @@ import android.view.View;
 import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
-
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.OnFailureListener;
-import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.DocumentReference;
@@ -24,7 +16,6 @@ import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.FirebaseFirestoreException;
-import com.google.firebase.firestore.Source;
 
 public class settings extends universal {
     TextView change_details,change_pass,logout,showscores,resetscores,deleteuser;
@@ -58,6 +49,7 @@ public class settings extends universal {
                 logoutbuilder = new AlertDialog.Builder(settings.this);
                 logoutbuilder.setTitle("Αποσύνδεση!");
                 logoutbuilder.setMessage("Θέλεις σίγουρα να αποσυνδεθείς;");
+                logoutbuilder.setCancelable(false);
                 logoutbuilder.setPositiveButton("Ναι", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
@@ -114,6 +106,7 @@ public class settings extends universal {
                 builderdelete.setTitle("Διαγραφή λογαριασμού");
                 builderdelete.setMessage("Θέλεις σίγουρα να διαγράψεις τον λογαριασμό σου; Αυτή η ενέργεια δεν μπορεί να ανερεθεί και θα " +
                         "διαγράψει όλα τα δεδομένα του λογαριασμού σου!");
+                builderdelete.setCancelable(false);
                 builderdelete.setPositiveButton("Διαγραφη", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {

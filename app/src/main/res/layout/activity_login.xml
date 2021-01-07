@@ -73,9 +73,10 @@
             android:text="Login"
             android:layout_margin="20dp"
             android:textAllCaps="false"
+            android:background="@drawable/start_menu_button"
+            android:textColor="@color/white"
             android:layout_below="@id/edloginpassword"
-            android:layout_centerHorizontal="true"
-            android:textColor="@color/register_login"/>
+            android:layout_centerHorizontal="true" />
         <TextView
             android:id="@+id/forget_password_button"
             android:layout_width="wrap_content"

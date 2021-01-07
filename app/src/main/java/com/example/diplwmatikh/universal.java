@@ -2,32 +2,19 @@
 
 import android.app.AlertDialog;
 import android.content.ClipData;
-import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.content.SharedPreferences;
-import android.graphics.Color;
-import android.graphics.drawable.ColorDrawable;
 import android.media.MediaPlayer;
 import android.util.Log;
 import android.view.View;
-import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
-import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
-
-import androidx.activity.OnBackPressedCallback;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
-
 import com.google.android.gms.tasks.OnFailureListener;
-import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
@@ -35,11 +22,8 @@ import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FieldValue;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.FirebaseFirestoreException;
-
 import java.util.HashMap;
 import java.util.Map;
-
-import io.grpc.internal.SharedResourceHolder;
 
  public class universal extends AppCompatActivity {
     Intent intent;
@@ -56,10 +40,7 @@ import io.grpc.internal.SharedResourceHolder;
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);//screen always on
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
         decorView = getWindow().getDecorView();
-        // Hide both the navigation bar and the status bar.
-        // SYSTEM_UI_FLAG_FULLSCREEN is only available on Android 4.1 and higher, but as
-        // a general rule, you should design your app to hide the status bar whenever you
-        // hide the navigation bar.
+        // SYSTEM_UI_FLAG_FULLSCREEN is only available on Android 4.1 and higher
         onResume();
 
         //get user id
@@ -90,10 +71,10 @@ import io.grpc.internal.SharedResourceHolder;
                 text="Χρειάζεται περισσότερη προσπάθεια.Η βαθμολογία σου είναι "+score +" από τα "+max_activity_score+". Θέλεις να σπιστρέψεις στο αρχικό μενού;";
             }else if(rating<=0.66){
                 //good
-                text="Καλή δουλειά. Συνέχισε έτσι. Η βαθμολογία σου είναι "+score +" από τα "+max_activity_score+". Θέλεις να σπιστρέψεις στο αρχικό μενού;";;
+                text="Καλή δουλειά. Συνέχισε έτσι. Η βαθμολογία σου είναι "+score +" από τα "+max_activity_score+". Θέλεις να σπιστρέψεις στο αρχικό μενού;";
             }else{
                 //very good
-                text="Συγχαρητήρια! Πολύ καλή δουλειά. Η βαθμολογία σου είναι "+score +" από τα "+max_activity_score+". Θέλεις να σπιστρέψεις στο αρχικό μενού;";;
+                text="Συγχαρητήρια! Πολύ καλή δουλειά. Η βαθμολογία σου είναι "+score +" από τα "+max_activity_score+". Θέλεις να σπιστρέψεις στο αρχικό μενού;";
             }
             create_builder_for_3rd_activity(calling_class, text);
         }else{
@@ -108,6 +89,7 @@ import io.grpc.internal.SharedResourceHolder;
                     //very good
                     text="Συγχαρητήρια! Πολύ καλή δουλειά. Η βαθμολογία σου είναι "+score +" από τα "+max_activity_score+". Θέλεις να πας στην επόμενη δραστηριότητα;";
                 }
+                create_builder_finished(calling_class,next_class,text);
             }else{
                 if(rating<=0.33){
                     //fair
@@ -119,8 +101,8 @@ import io.grpc.internal.SharedResourceHolder;
                     //very good
                     text="Συγχαρητήρια! Πολύ καλή δουλειά. Η βαθμολογία σου είναι "+score +" από τα "+max_activity_score+". Θέλεις να δοκιμάσεις μια άλλη δραστηριότητα;";
                 }
+                create_builder_finished(calling_class,next_class,text);
             }
-            create_builder_finished(calling_class,next_class,text);
         }
      }
     //show message at the end of the activity
@@ -128,7 +110,7 @@ import io.grpc.internal.SharedResourceHolder;
         builderfinished = new AlertDialog.Builder(universal.this);
         builderfinished.setTitle("Η δραστηριότητα ολοκληρώθηκε!");
         builderfinished.setMessage(txt);
-
+        builderfinished.setCancelable(false);
                 builderfinished.setPositiveButton("Ναι", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
@@ -159,7 +141,7 @@ import io.grpc.internal.SharedResourceHolder;
          builderfinished2 = new AlertDialog.Builder(universal.this);
          builderfinished2.setTitle("Η δραστηριότητα ολοκληρώθηκε!");
          builderfinished2.setMessage(txt);
-
+         builderfinished2.setCancelable(false);
          builderfinished2.setPositiveButton("Ναι", new DialogInterface.OnClickListener() {
              @Override
              public void onClick(DialogInterface dialog, int which) {
@@ -181,7 +163,7 @@ import io.grpc.internal.SharedResourceHolder;
          builderexit = new AlertDialog.Builder(universal.this);
          builderexit.setTitle("Έξοδος από την δραστηριότητα.");
          builderexit.setMessage("Θέλεις σίγουρα να φύγεις;");
-
+         builderexit.setCancelable(false);
          builderexit.setPositiveButton("Ναι", new DialogInterface.OnClickListener() {
              @Override
              public void onClick(DialogInterface dialog, int which) {
@@ -199,7 +181,7 @@ import io.grpc.internal.SharedResourceHolder;
          builderexit = new AlertDialog.Builder(universal.this);
          builderexit.setTitle("Μετάβαση στο αρχικό μενού!");
          builderexit.setMessage("Θέλεις σίγουρα να επιστρέψεις στο αρχικό μενού;");
-
+         builderexit.setCancelable(false);
          builderexit.setPositiveButton("Ναι", new DialogInterface.OnClickListener() {
              @Override
              public void onClick(DialogInterface dialog, int which) {
@@ -271,7 +253,7 @@ import io.grpc.internal.SharedResourceHolder;
         });
     }
     //to set button color
-     public void upload_color(String activityname, String colour){
+     public void upload_color(String activityname, String color){
          FirebaseFirestore fStore=FirebaseFirestore.getInstance();
          DocumentReference bring = fStore.collection("buttons").document(userID);
          bring.addSnapshotListener(this, new EventListener<DocumentSnapshot>() {
@@ -280,12 +262,12 @@ import io.grpc.internal.SharedResourceHolder;
                  Map<String, Object> data = new HashMap<>();
                  //if field not exists
                  //no need ot check if field exists. this check happens on upload score method
-                     data.put(activityname, colour);
+                     data.put(activityname, color);
                      fStore.collection("buttons").document(userID).update(data)
                              .addOnFailureListener(new OnFailureListener() {
                                  @Override
                                  public void onFailure(@NonNull Exception e) {
-                                     Log.w("upload buttons method", "Error on uploading buttons document", e);
+                                     Log.w("upload colors method", "Error on uploading colors document", e);
                                  }
                              });
              }
@@ -415,14 +397,6 @@ import io.grpc.internal.SharedResourceHolder;
         btn.setImageDrawable(getDrawable(R.drawable.play_button_grey));
         player.start();
     }
-    //hilde labels from navbar if needed
-    public void hide_labels(){
-         findViewById(R.id.title).setVisibility(View.INVISIBLE);
-         findViewById(R.id.prev_score).setVisibility(View.INVISIBLE);
-         findViewById(R.id.score).setVisibility(View.INVISIBLE);
-         findViewById(R.id.check).setVisibility(View.INVISIBLE);
-         findViewById(R.id.homebutton).setVisibility(View.INVISIBLE);
-     }
      //to reset score. deletes a field at a time
      public void reset_score(String activityname,String category){
         //deletes the field

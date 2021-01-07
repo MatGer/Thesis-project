@@ -1,7 +1,5 @@
 package com.example.diplwmatikh;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.DragEvent;
@@ -10,8 +8,6 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
-
-import com.google.firebase.auth.FirebaseAuth;
 
 public class drag_and_drop_numbers extends universal {
     TextView txt1,txt2,txt3,prevscore;
