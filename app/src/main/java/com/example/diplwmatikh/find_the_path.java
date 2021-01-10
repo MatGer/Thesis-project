@@ -106,6 +106,17 @@ public class find_the_path extends universal {
                         score++;
                     }
                 }
+                for(int y=0; y<8;y++){
+                    if(current_state_triangles[y]){
+                        score--;
+                    }
+                    if(current_state_rhombuses[y]){
+                        score--;
+                    }
+                }
+                if(score<0){
+                    score=0;
+                }
                 upload_score("find the path", score,10);
                 show_rating(score, 10,find_the_path.class,choose_arrows.class, false);
             }

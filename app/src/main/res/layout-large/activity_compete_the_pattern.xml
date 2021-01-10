@@ -82,14 +82,14 @@
                     android:layout_width="80dp"
                     android:layout_height="80dp"
                     android:layout_margin="5dp"
-                    android:background="@color/background"
+                    android:background="@drawable/rounded_background"
                     android:layout_toEndOf="@id/row1_6"/>
                 <ImageView
                     android:id="@+id/fill1_8"
                     android:layout_width="80dp"
                     android:layout_height="80dp"
                     android:layout_margin="5dp"
-                    android:background="@color/background"
+                    android:background="@drawable/rounded_background"
                     android:layout_toEndOf="@id/fill1_7"/>
             <!--row 2-->
                 <ImageView
@@ -144,7 +144,7 @@
                     android:layout_width="80dp"
                     android:layout_height="80dp"
                     android:layout_margin="5dp"
-                    android:background="@color/background"
+                    android:background="@drawable/rounded_background"
                     android:layout_below="@+id/row1_1"
                     android:layout_toEndOf="@id/row2_6"/>
                 <ImageView
@@ -152,7 +152,7 @@
                     android:layout_width="80dp"
                     android:layout_height="80dp"
                     android:layout_margin="5dp"
-                    android:background="@color/background"
+                    android:background="@drawable/rounded_background"
                     android:layout_below="@+id/row1_1"
                     android:layout_toEndOf="@id/fill2_7"/>
             <!--row 3-->
@@ -208,7 +208,7 @@
                     android:layout_width="80dp"
                     android:layout_height="80dp"
                     android:layout_margin="5dp"
-                    android:background="@color/background"
+                    android:background="@drawable/rounded_background"
                     android:layout_below="@+id/row2_1"
                     android:layout_toEndOf="@id/row3_6"/>
                 <ImageView
@@ -216,7 +216,7 @@
                     android:layout_width="80dp"
                     android:layout_height="80dp"
                     android:layout_margin="5dp"
-                    android:background="@color/background"
+                    android:background="@drawable/rounded_background"
                     android:layout_below="@+id/row2_1"
                     android:layout_toEndOf="@id/fill3_7"/>
             <!--row 4-->

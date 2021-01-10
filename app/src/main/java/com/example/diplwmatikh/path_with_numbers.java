@@ -23,8 +23,7 @@ public class path_with_numbers extends universal implements OnClickListener {
     boolean [][] paths={
             {true,true,false,false,false,true,true,false,false,false,false,true,true,false,false,false,false,true,true,true,false,false,true,true,false},//path0
             {false,false,false,true,true,true,true,true,true,true,true,true,false,false,true,false,false,false,false,true,false,false,false,false,false},//path1
-            {false,false,false,false,false,true,true,false,false,false,false,true,true,true,false,false,true,true,true,true,false,false,false,true,true},//path2
-            {false,false,false,false,false,true,false,true,true,false,true,false,true,true,false,true,true,true,true,true,false,true,true,false,false}};//path3
+            {false,false,false,false,false,true,true,false,false,false,false,true,true,true,false,false,true,true,true,true,false,false,false,true,true}};//path2
 
     boolean [] current_state={false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false};
     @Override
@@ -41,16 +40,11 @@ public class path_with_numbers extends universal implements OnClickListener {
         home=findViewById(R.id.homebutton);
         home.setOnClickListener(home_button_listener);
 
-        selected_path=(int) (Math.random() * (3-0+1)+0);
+        selected_path=(int) (Math.random() * (2-0+1)+0);
 
         prevscore=findViewById(R.id.score);
-        if(selected_path==3){
-            correct_on_path=13;
-            get_score_for_navbar("path with numbers", prevscore, correct_on_path);
-        }else{
-            correct_on_path=11;
-            get_score_for_navbar("path with numbers", prevscore, correct_on_path);
-        }
+        get_score_for_navbar("path with numbers", prevscore,11);
+
         //assign tiles
         tile1=findViewById(R.id.tile1);
         tile2=findViewById(R.id.tile2);
@@ -115,7 +109,7 @@ public class path_with_numbers extends universal implements OnClickListener {
                         score++;
                     }
                 }
-                upload_score("path with numbers",score,correct_on_path);
+                upload_score("path with numbers",score,11);
                 show_rating(score,correct_on_path,path_with_numbers.class, drag_2_items.class,true);
             }
         });
@@ -211,35 +205,6 @@ public class path_with_numbers extends universal implements OnClickListener {
                 tile21.setText("23");
                 tile22.setText("23");
                 tile23.setText("16");
-                break;
-            case 3:
-                tile6.setText("1");
-                tile11.setText("2");
-                tile16.setText("3");
-                tile17.setText("4");
-                tile22.setText("5");
-                tile23.setText("6");
-                tile18.setText("7");
-                tile13.setText("8");
-                tile8.setText("9");
-                tile9.setText("10");
-                tile14.setText("11");
-                tile19.setText("12");
-                tile20.setText("13");
-                //fill 14-25
-                //remaining_cells=new int[] {1,2,3,4,5,7,10,12,15,21,24,25};
-                tile1.setText("16");
-                tile2.setText("23");
-                tile3.setText("18");
-                tile4.setText("24");
-                tile5.setText("14");
-                tile7.setText("20");
-                tile10.setText("25");
-                tile12.setText("17");
-                tile15.setText("22");
-                tile21.setText("15");
-                tile24.setText("21");
-                tile25.setText("19");
                 break;
             default:
                 throw new IllegalStateException("Unexpected value: " + path);
