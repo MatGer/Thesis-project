@@ -29,7 +29,7 @@
         android:layout_marginTop="?attr/actionBarSize">
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="105dp"
+            android:layout_height="75dp"
             android:background="@color/light_blue"
             android:layout_alignParentBottom="true"/>
         <RelativeLayout
@@ -225,56 +225,56 @@
                     android:id="@+id/row4_1"
                     android:layout_width="65dp"
                     android:layout_height="65dp"
-                    android:layout_marginTop="10dp"
                     android:layout_marginHorizontal="5dp"
                     android:src="@drawable/triangle"
-                    android:layout_below="@+id/row3_1"
-                    android:layout_toEndOf="@id/row3_1"/>
+                    android:layout_toEndOf="@id/row3_1"
+                    android:layout_alignParentBottom="true"
+                    android:layout_margin="5dp"/>
                 <ImageView
                     android:id="@+id/row4_2"
                     android:layout_width="65dp"
                     android:layout_height="65dp"
-                    android:layout_marginTop="10dp"
                     android:layout_marginHorizontal="5dp"
                     android:src="@drawable/circle"
-                    android:layout_below="@+id/row3_1"
-                    android:layout_toEndOf="@id/row4_1"/>
+                    android:layout_toEndOf="@id/row4_1"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginBottom="5dp"/>
                 <ImageView
                     android:id="@+id/row4_3"
                     android:layout_width="65dp"
                     android:layout_height="65dp"
-                    android:layout_marginTop="10dp"
                     android:layout_marginHorizontal="5dp"
                     android:src="@drawable/star"
-                    android:layout_below="@+id/row3_1"
-                    android:layout_toEndOf="@id/row4_2"/>
+                    android:layout_toEndOf="@id/row4_2"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginBottom="5dp"/>
                 <ImageView
                     android:id="@+id/row4_4"
                     android:layout_width="65dp"
                     android:layout_height="65dp"
-                    android:layout_marginTop="10dp"
                     android:layout_marginHorizontal="5dp"
                     android:src="@drawable/square"
-                    android:layout_below="@+id/row3_1"
-                    android:layout_toEndOf="@id/row4_3"/>
+                    android:layout_toEndOf="@id/row4_3"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginBottom="5dp"/>
                 <ImageView
                     android:id="@+id/row4_5"
                     android:layout_width="65dp"
                     android:layout_height="65dp"
-                    android:layout_marginTop="10dp"
                     android:layout_marginHorizontal="5dp"
                     android:src="@drawable/heart"
-                    android:layout_below="@+id/row3_1"
-                    android:layout_toEndOf="@id/row4_4"/>
+                    android:layout_toEndOf="@id/row4_4"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginBottom="5dp"/>
                 <ImageView
                     android:id="@+id/row4_6"
                     android:layout_width="65dp"
                     android:layout_height="65dp"
-                    android:layout_marginTop="10dp"
                     android:layout_marginHorizontal="5dp"
                     android:src="@drawable/rombos"
-                    android:layout_below="@+id/row3_1"
-                    android:layout_toEndOf="@id/row4_5"/>
+                    android:layout_toEndOf="@id/row4_5"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginBottom="5dp"/>
         </RelativeLayout>
     </RelativeLayout>
 </RelativeLayout>

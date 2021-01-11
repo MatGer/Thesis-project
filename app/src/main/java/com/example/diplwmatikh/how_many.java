@@ -80,63 +80,63 @@ public class how_many extends universal {
                     no1.setBackground(getDrawable(R.color.white));
                     no2.setBackground(getDrawable(R.color.white));
                     no3.setBackground(getDrawable(R.color.white));
-                    v.setBackground(getDrawable(R.color.background));
+                    v.setBackground(getDrawable(R.color.light_blue_600));
                     row1=0;
                     break;
                 case R.id.no12:
                     no1.setBackground(getDrawable(R.color.white));
                     no2.setBackground(getDrawable(R.color.white));
                     no3.setBackground(getDrawable(R.color.white));
-                    v.setBackground(getDrawable(R.color.background));
+                    v.setBackground(getDrawable(R.color.light_blue_600));
                     row1=1;
                     break;
                 case R.id.no13:
                     no1.setBackground(getDrawable(R.color.white));
                     no2.setBackground(getDrawable(R.color.white));
                     no3.setBackground(getDrawable(R.color.white));
-                    v.setBackground(getDrawable(R.color.background));
+                    v.setBackground(getDrawable(R.color.light_blue_600));
                     row1=2;
                     break;
                 case R.id.no21:
                     no4.setBackground(getDrawable(R.color.white));
                     no5.setBackground(getDrawable(R.color.white));
                     no6.setBackground(getDrawable(R.color.white));
-                    v.setBackground(getDrawable(R.color.background));
+                    v.setBackground(getDrawable(R.color.light_blue_600));
                     row2=0;
                     break;
                 case R.id.no22:
                     no4.setBackground(getDrawable(R.color.white));
                     no5.setBackground(getDrawable(R.color.white));
                     no6.setBackground(getDrawable(R.color.white));
-                    v.setBackground(getDrawable(R.color.background));
+                    v.setBackground(getDrawable(R.color.light_blue_600));
                     row2=1;
                     break;
                 case R.id.no23:
                     no4.setBackground(getDrawable(R.color.white));
                     no5.setBackground(getDrawable(R.color.white));
                     no6.setBackground(getDrawable(R.color.white));
-                    v.setBackground(getDrawable(R.color.background));
+                    v.setBackground(getDrawable(R.color.light_blue_600));
                     row2=2;
                     break;
                 case R.id.no31:
                     no7.setBackground(getDrawable(R.color.white));
                     no8.setBackground(getDrawable(R.color.white));
                     no9.setBackground(getDrawable(R.color.white));
-                    v.setBackground(getDrawable(R.color.background));
+                    v.setBackground(getDrawable(R.color.light_blue_600));
                     row3=0;
                     break;
                 case R.id.no32:
                     no7.setBackground(getDrawable(R.color.white));
                     no8.setBackground(getDrawable(R.color.white));
                     no9.setBackground(getDrawable(R.color.white));
-                    v.setBackground(getDrawable(R.color.background));
+                    v.setBackground(getDrawable(R.color.light_blue_600));
                     row3=1;
                     break;
                 case R.id.no33:
                     no7.setBackground(getDrawable(R.color.white));
                     no8.setBackground(getDrawable(R.color.white));
                     no9.setBackground(getDrawable(R.color.white));
-                    v.setBackground(getDrawable(R.color.background));
+                    v.setBackground(getDrawable(R.color.light_blue_600));
                     row3=2;
                     break;
             }
