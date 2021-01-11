@@ -14,7 +14,7 @@
         android:layout_width="wrap_content"
         android:layout_height="30dp"
         android:textColor="@color/white"
-        android:text="Βαθμολογίες"
+        android:text="Οι βαθμολογίες σου"
         android:textStyle="bold"
         android:textSize="20sp"
         android:layout_centerHorizontal="true"
@@ -25,6 +25,13 @@
         android:layout_height="30dp"
         android:background="@drawable/ic_baseline_arrow_back_24"
         android:layout_margin="20dp"/>
+    <ImageButton
+        android:id="@+id/infobutton"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:background="@drawable/ic_baseline_info_24"
+        android:layout_margin="20dp"
+        android:layout_alignParentEnd="true"/>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="fill_parent"
@@ -32,9 +39,10 @@
         android:orientation="vertical"
         android:layout_below="@+id/weclome_text">
         <TextView
+            android:id="@+id/username"
             android:layout_width="wrap_content"
             android:layout_height="40dp"
-            android:text="Πάτησε σε μία δραστηριότητα για να μεταβείς σε αυτή."
+            android:text="Όνομα Χρήστη: "
             android:gravity="center"
             android:textColor="@color/black"
             android:layout_marginBottom="15dp"

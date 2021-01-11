@@ -7,10 +7,19 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import androidx.annotation.Nullable;
+
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.EventListener;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.FirebaseFirestoreException;
 
 public class activity_scores extends universal {
-    ImageButton back;
-    TextView ac1,ac2,ac3,ac4,ac5,ac6,ac7,ac8,ac9,ac10,ac11,ac12,ac13,ac14,ac15,ac16,ac17,ac18;
+    ImageButton back,info;
+    TextView username,ac1,ac2,ac3,ac4,ac5,ac6,ac7,ac8,ac9,ac10,ac11,ac12,ac13,ac14,ac15,ac16,ac17,ac18;
     AlertDialog.Builder goto_activity;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,6 +29,23 @@ public class activity_scores extends universal {
 
         back=findViewById(R.id.backbutton);
         back.setOnClickListener(back_button);
+        info=findViewById(R.id.infobutton);
+        info.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(activity_scores.this, "Πάτησε σε μία δραστηριότητα για να μεταβείς σε αυτή.",Toast.LENGTH_SHORT).show();
+            }
+        });
+        username=findViewById(R.id.username);
+        //add username to textview
+        FirebaseFirestore fStore=FirebaseFirestore.getInstance();
+        DocumentReference fetch_name = fStore.collection("users").document(userID);
+        fetch_name.addSnapshotListener(this, new EventListener<DocumentSnapshot>() {
+            @Override
+            public void onEvent(@Nullable DocumentSnapshot value, @Nullable FirebaseFirestoreException error) {
+                username.setText("Όνομα Χρήστη: "+ value.getString("Username"));
+            }
+        });
 
         ac1=findViewById(R.id.ac1);
         ac2=findViewById(R.id.ac2);
