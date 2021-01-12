@@ -107,7 +107,8 @@
                 android:textColorHighlight="@color/register_login"
                 android:textColorHint="@color/register_login"
                 android:textColorLink="@color/register_login"
-                android:textAlignment="center"/>
+                android:textAlignment="center"
+                android:imeOptions="actionDone"/>
         </RelativeLayout>
         <RelativeLayout
             android:id="@+id/row2"
@@ -228,7 +229,8 @@
                 android:textColorHighlight="@color/register_login"
                 android:textColorHint="@color/register_login"
                 android:textColorLink="@color/register_login"
-                android:textAlignment="center"/>
+                android:textAlignment="center"
+                android:imeOptions="actionDone"/>
         </RelativeLayout>
         <RelativeLayout
             android:id="@+id/row3"
@@ -310,7 +312,8 @@
                 android:textColorHighlight="@color/register_login"
                 android:textColorHint="@color/register_login"
                 android:textColorLink="@color/register_login"
-                android:textAlignment="center"/>
+                android:textAlignment="center"
+                android:imeOptions="actionDone"/>
         </RelativeLayout>
         <RelativeLayout
             android:id="@+id/row4"
@@ -383,7 +386,8 @@
                 android:textColorHighlight="@color/register_login"
                 android:textColorHint="@color/register_login"
                 android:textColorLink="@color/register_login"
-                android:textAlignment="center"/>
+                android:textAlignment="center"
+                android:imeOptions="actionDone"/>
             </RelativeLayout>
         </RelativeLayout>
     </RelativeLayout>

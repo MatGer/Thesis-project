@@ -38,7 +38,8 @@
             android:layout_marginBottom="15dp"
             android:layout_toStartOf="@+id/type2"
             android:layout_marginRight="30dp"
-            android:textAlignment="center"/>
+            android:textAlignment="center"
+            android:imeOptions="actionDone"/>
         <EditText
             android:id="@+id/type2"
             android:layout_width="40dp"
@@ -52,7 +53,8 @@
             android:layout_marginBottom="15dp"
             android:layout_toStartOf="@+id/type3"
             android:layout_marginRight="30dp"
-            android:textAlignment="center"/>
+            android:textAlignment="center"
+            android:imeOptions="actionDone"/>
         <EditText
             android:id="@+id/type3"
             android:layout_width="40dp"
@@ -65,7 +67,8 @@
             android:layout_alignParentBottom="true"
             android:layout_marginBottom="15dp"
             android:layout_centerHorizontal="true"
-            android:textAlignment="center"/>
+            android:textAlignment="center"
+            android:imeOptions="actionDone"/>
         <EditText
             android:id="@+id/type4"
             android:layout_width="40dp"
@@ -79,7 +82,8 @@
             android:layout_marginBottom="15dp"
             android:layout_toEndOf="@+id/type3"
             android:layout_marginLeft="35dp"
-            android:textAlignment="center"/>
+            android:textAlignment="center"
+            android:imeOptions="actionDone"/>
         <EditText
             android:id="@+id/type5"
             android:layout_width="40dp"
@@ -93,6 +97,7 @@
             android:layout_marginBottom="15dp"
             android:layout_toEndOf="@+id/type4"
             android:layout_marginLeft="40dp"
-            android:textAlignment="center"/>
+            android:textAlignment="center"
+            android:imeOptions="actionDone"/>
     </RelativeLayout>
 </RelativeLayout>
