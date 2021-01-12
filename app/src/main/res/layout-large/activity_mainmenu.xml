@@ -114,7 +114,7 @@
                         android:id="@+id/gnwstikes"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:text="Γνωστικές σραστηριότητες"
+                        android:text="Γνωστικές Δραστηριότητες"
                         android:textColor="@color/white"
                         android:background="@drawable/start_menu_button"
                         android:padding="15dp"
