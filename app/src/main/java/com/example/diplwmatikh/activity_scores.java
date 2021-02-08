@@ -99,9 +99,9 @@ public class activity_scores extends universal {
 
         get_score("write height", 5,"Μετρήσεις",findViewById(R.id.ac11));
         get_score("add animals",4 ,"Αριθμητικές πράξεις",findViewById(R.id.ac12));
-        get_score("next number",3 ,"Αριθμητικές ακολουθίες 2",findViewById(R.id.ac13));
+        get_score("next number",3 ,"Αριθμητικές ακολουθίες",findViewById(R.id.ac13));
         get_score("drag and drop numbers", 3,"Ποσότητες",findViewById(R.id.ac14));
-        get_score("path with numbers", 11,"Αριθμητικές ακολουθίες",findViewById(R.id.ac15));
+        get_score("path with numbers", 11,"Αριθμητικές ακολουθίες 2",findViewById(R.id.ac15));
         get_score("drag 2 items", 2,"Ποσότητες 2",findViewById(R.id.ac16));
         get_score("choose the bigger number", 4,"Συγκρίσεις",findViewById(R.id.ac17));
         get_score("how many", 3,"Ποσότητες 3",findViewById(R.id.ac18));

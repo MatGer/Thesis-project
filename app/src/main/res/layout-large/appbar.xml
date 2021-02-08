@@ -57,9 +57,9 @@
         android:text="Προηγούμενο σκορ:"
         android:gravity="center"
         android:layout_toStartOf="@+id/score"/>
-    <TextView
+     <TextView
         android:id="@+id/score"
-        android:layout_width="100dp"
+        android:layout_width="80dp"
         android:layout_height="match_parent"
         android:layout_centerVertical="true"
         android:textColor="@color/white"

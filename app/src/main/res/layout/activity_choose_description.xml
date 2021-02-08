@@ -32,7 +32,7 @@
                 android:background="@drawable/unselected_tile_with_borders">
                 <ImageView
                     android:id="@+id/image1"
-                    android:layout_width="130dp"
+                    android:layout_width="140dp"
                     android:layout_height="match_parent"
                     android:layout_marginVertical="5dp"
                     android:src="@drawable/old_man"/>
@@ -163,7 +163,7 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:background="@drawable/unselected_tile_with_borders">
-                <ImageButton
+                <ImageView
                     android:id="@+id/image3"
                     android:layout_width="140dp"
                     android:layout_height="wrap_content"

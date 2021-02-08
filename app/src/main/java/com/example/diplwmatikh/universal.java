@@ -314,14 +314,9 @@ import java.util.Map;
                     score = value.getDouble(activityname);
                 }
                 if(score==-1){
-                    field.setText(scientific_name+" : δεν έχει ολοκληρωθεί ακόμα.");
+                    field.setText(scientific_name+" : Δεν έχει ολοκληρωθεί ακόμα.");
                 }else{
                     output=(int) score;
-                    if(activityname.equals("path with numbers")){
-                        if(output>max_score){
-                            field.setText(scientific_name +": "+output+" από τα 13");
-                        }
-                    }
                     field.setText(scientific_name +" : "+output+" από τα "+max_score);
                 }
             }
