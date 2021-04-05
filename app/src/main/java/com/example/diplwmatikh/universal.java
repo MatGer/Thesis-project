@@ -395,7 +395,6 @@ import java.util.Map;
      //to reset score. deletes a field at a time
      public void reset_score(String activityname,String category){
         //deletes the field
-        //System.out.println(userID+"   00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000");
          FirebaseFirestore fStore=FirebaseFirestore.getInstance();
          DocumentReference reset;
          if(category=="scores"){
@@ -408,11 +407,11 @@ import java.util.Map;
              public void onEvent(@Nullable DocumentSnapshot value, @Nullable FirebaseFirestoreException error) {
                  Map<String,Object> hashMap = new HashMap<>();
                  if(value.get(activityname)==null){
-                     //System.out.println("00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000         null found");
+                     //System.out.println("0000000000000000000000000000000000000000000000000000000000         null found");
                  }else{
                      hashMap.put(activityname, FieldValue.delete());
                      reset.update(hashMap);
-                     //System.out.println("00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000        field deleted");
+                     //System.out.println("0000000000000000000000000000000000000000000000000000000000        field deleted");
                  }
              }
          });

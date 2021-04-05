@@ -71,6 +71,7 @@ public class Edit_data extends universal {
         update.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 Map<String, Object> data = new HashMap<>();
                 data.put("Username", username.getText().toString().trim());
                 data.put("Email", email.getText().toString().trim());
@@ -87,6 +88,7 @@ public class Edit_data extends universal {
                                 Toast.makeText(Edit_data.this, "Κάτι πήγε στραβά! Ξαναπροσπάθησε αργότερα!", Toast.LENGTH_SHORT).show();
                             }
                         });
+                getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);   //keyboard stay hidden
                 onResume();//to dissapear nav bar
             }
         });
