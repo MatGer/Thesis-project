@@ -18,7 +18,6 @@ public class path_with_numbers extends universal implements OnClickListener {
     Button check;
     ImageButton back,home;
     int score=0;
-    int correct_on_path;    // number of correct answer existing on current path
     int selected_path; //poio path epilegetai kathe fora
     boolean [][] paths={
             {true,true,false,false,false,true,true,false,false,false,false,true,true,false,false,false,false,true,true,true,false,false,true,true,false},//path0
@@ -110,7 +109,7 @@ public class path_with_numbers extends universal implements OnClickListener {
                     }
                 }
                 upload_score("path with numbers",score,11);
-                show_rating(score,correct_on_path,path_with_numbers.class, drag_2_items.class,true);
+                show_rating(score,11,path_with_numbers.class, drag_2_items.class,true);
             }
         });
     }
